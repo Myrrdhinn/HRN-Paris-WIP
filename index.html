@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="description" content="HR Tech World Congress">
+<meta name="keywords" content="HR Conference, HR event, HR Tech, HRN Europe">
+<meta name="author" content="HRN Europe - The Pan European HR Network">
+<meta name="designer" content="Designed by: Judit Bernat - juditbernat.mail@gmail.com ">
+<meta name="developer" content="Developed by: TesseracT - bottyan.tamas@web-developer.hu, Myrrdhinn - balazs.pentek@web-developer.hu">
+<meta charset="utf-8" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<title>HR Tech World Congress</title>
+<!--Include Raleway Google Font -->
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+
+<!-- Include Source Sans Prog Google Font -->
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+<!--Include Include Proxima Nova Font (Adobe Typekit) -->
+<script src="//use.typekit.net/gku8ogo.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+
+<!--Include Font Awesome -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<!-- Favicon setting -->
+<link rel="shortcut icon" href="favicon.png">
+
+<!-- Include General CSS Definitions -->
+<link rel="stylesheet" href="css/general.css" />
+
+<!-- Include the Navigation Menu`s CSS Definitions -->
+<link rel="stylesheet" href="css/menu.css" />
+
+<!-- Include Custom CSS Definitions -->
+<link rel="stylesheet" href="css/mainpage.css" />
+
+<!-- Include jQuery -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<!-- Scroll to top JS -->
+<script src="js/gotopscroll.js"></script>
+
+<!-- Revolution Slider -->
+<link rel="stylesheet" type="text/css" href="vendor/revolution_slider/css/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="vendor/revolution_slider/css/extralayers.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="vendor/revolution_slider/rs-plugin/css/settings.css" media="screen" />
+<script type="text/javascript" src="vendor/revolution_slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="vendor/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+<!-- SaveTheDate -->
+<script type="text/javascript" src="https://addthisevent.com/libs/1.5.8/ate.min.js"></script>
+
+<!-- AddThisEvent Settings -->
+<script type="text/javascript">
+addthisevent.settings({
+	mouse		: false,
+	css			: false,
+	outlook		: {show:true, text:"Outlook Calendar"},
+	google		: {show:true, text:"Google Calendar"},
+	yahoo		: {show:true, text:"Yahoo Calendar"},
+	ical		: {show:true, text:"iCal Calendar"},
+	hotmail		: {show:true, text:"Hotmail Calendar"},
+	facebook	: {show:true, text:"Facebook Calendar"}
+});
+</script>
+<style type="text/css"></style>
+
+
+<!-- Menu Transitions -->
+<script type="text/javascript">
+$(window).scroll(function() {    
+
+	/* Hide Get Tickets button  */
+	if ( (screen.width > 640 ) && (screen.width <= 1000)  ) { 
+		$( "#GetTickets" ).css({display:'none'}); 
+	}
+
+	/* Menu snapping from 1001px (DESKTOP view)*/
+	if ( (screen.width > 1000)  ) { 
+		var scroll = $(window).scrollTop();
+		if (scroll >= 770) {
+			$("#MainMenuContainer").addClass("FixedTop");
+			$(".MainMenuItem").css({margin:'0 0.79vw', color:'#000', top:'1.25vw', fontWeight:'400'}); 
+			$("#MenuLogo").css({display:'none' }); 
+			$("#MainMenuContainer").css({marginTop:'0px', borderBottom:'1px solid #c0c0c0' });
+			$( "#GetTickets" ).fadeIn();
+			$( "#HorizontalLogo" ).fadeIn();
+		}
+		else {
+			$("#MainMenuContainer").removeClass("FixedTop");
+			$(".MainMenuItem").css({margin:' 0.7875vw', color:'#fff', top:'-3vw', fontWeight:'1000'});
+			$("#MenuLogo").css({display:'url(img/menu/whitelogo.png) no-repeat', backgroundSize:'contain' });
+			$("#MainMenuContainer").css({marginTop:'-4.6875vw', borderBottom:'0px '  });
+			$( "#GetTickets" ).fadeOut("fast");  
+			$( "#HorizontalLogo" ).fadeOut("fast");
+		} 
+	}
+});
+</script>
+
+<!-- Include Sliphover -->
+
+<!-- Include Reveal Modal -->
+<link rel="stylesheet" href="vendor/reveal/reveal.css">
+<script src="vendor/reveal/jquery.min.js" type="text/javascript"></script>
+<script src="vendor/reveal/jquery.reveal.js" type="text/javascript"></script>
+
+
+
+<!-- Thank you modal -->
+<script type="text/javascript">
+$(document).ready(function() {
+if(window.location.href.indexOf('#ThankYouModal') != -1) {
+   jQuery("#ThankYouModal").reveal();
+  }
+});
+</script>
+<!-- END Thank you modal  -->
+
+<!-- Mainpage JS -->
+<script src="js/mainpage.js"></script>
+
+
+</head>
+<body>
+<nav>
+  <div id="MobileMenuContainer">
+    <div id="MobileMenuLogo"></div>
+    <div id="MobileMenuButton" onClick='ShowMobileMenu()'></div>
+
+  <aside id="MobileNav" class="sidebar">
+    <nav>
+     <div id="MobileMenuListContainer"> <img id="MobileMenuCloseButton" src="img/menu/mobile-close-button.png" alt="X" onClick='HideMobileMenu()'>
+        <ul id="MobileUl">
+            <li><a href="#AboutSection" onClick='HideMobileMenu()'>About</a></li>
+            <li><a href="#SpeakersSection" onClick='HideMobileMenu()'>Speakers</a></li>
+            <li><a href="#SponsorsSection" onClick='HideMobileMenu()'>Sponsors</a></li>
+            <li><a href="#HighlightsSection" onClick='HideMobileMenu()'>Highlights</a></li>
+            <li><a href="#VenueSection" onClick='HideMobileMenu()'>Venue</a></li>
+            <li><a href="#GetInTouchSection" onClick='HideMobileMenu()'>Get In Touch</a></li>
+            <li><a href="tickets" onClick='HideMobileMenu()'><i class="fa fa-ticket"></i> Get Tickets</a></li>
+        </ul>
+    </nav>
+    <div class="nav-social" style="display:none">
+        <a class="ico-fb no-link" target="blank" href="https://www.facebook.com/hrtecheu"></a>
+        <a class="ico-tw no-link" target="blank" href="https://twitter.com/hrtecheurope"></a>
+        <a class="ico-linkedin no-link" target="blank" href="http://www.linkedin.com/groups/HR-Technology-Europe-Human-Resources-3930182/about"></a>
+        <a class="ico-flickr no-link" target="blank" href="https://www.flickr.com/photos/hrtecheurope/sets/72157648919068765/"></a>
+        <a class="ico-slideshare no-link" target="blank" href="http://www.slideshare.net/hrtecheurope"></a>
+        
+    </div>
+</aside>
+
+  </div>
+  </nav>
+<!--Hidden video section-->
+<section id="VideoSection" style="display:none">
+<i id="HRNVideoPause" class="fa fa-pause"></i>
+
+
+   <video id="HRNVideo">
+       <source src="video/irecruit.ogv" type='video/ogg; codecs="theora, vorbis"'/>
+       <source src="video/irecruit.webm" type='video/webm' >
+       <source type="video/mp4" src="video/irecruit.mp4">
+        Your browser does not support the video tag. I suggest you upgrade your browser. 
+       </video>
+
+</section>
+<!--END Hidden video section-->
+
+
+<!-- Featured Content 
+@screen width < 1210px:  #FeaturediRecruit, #FeaturedDisruptHR are hidden .-->
+<section id="FeaturedContentSection">
+  <h6 class="InvisibleHeadline">Teaser</h6>
+  <div id="FeaturedParisMobileBG">
+	<img src="img/mainpage/featuredcontent/hrcongress-logo.png" alt="HR Tech World Congress Logo">
+    <div id="FeaturedParisMobileText"> 
+        <h2>paris</h2>
+        <p>27-28 october</p>
+
+    
+    
+    <a title="Add to Calendar" class="addthisevent BlueButton"> SAVE THE DATE <span class="arrow">&nbsp;</span> <span class="_start">27-10-2015 </span> <span class="_end">28-10-2015</span> <span class="_zonecode">40</span> <span class="_summary">HR Tech World Congress</span> <span class="_description">HR Tech World Congress is the world’s foremost event for global HR Leaders and the leading event on the future of work. As the largest global gathering of its kind, and influencing over 40 million employees globally, no other community has such a powerful impact on shaping the future of work through HR and technology.</span> <span class="_location">PALAIS DE CONGRÈS PARIS</span> <span class="_organizer">HRN Europe</span> <span class="_organizer_email">info@hrneurope.com</span> <span class="_all_day_event">true</span> <span class="_date_format">DD/MM/YYYY</span> </a> 
+    
+    </div>
+  </div>
+  <div id="FeaturedLeftContainer">
+    <div id="FeaturedParisBG"> <img src="img/mainpage/featuredcontent/hrcongress-logo.png" alt="HR Tech World Congress Logo">
+      <div id="FeaturedParisText">
+        <h2>paris</h2>
+        <p>27-28 october</p>
+        <a title="Add to Calendar" class="addthisevent BlueButton"> SAVE THE DATE <span class="arrow">&nbsp;</span> <span class="_start">27-10-2015 </span> <span class="_end">28-10-2015</span> <span class="_zonecode">40</span> <span class="_summary">HR Tech World Congress</span> <span class="_description">HR Tech World Congress is the world’s foremost event for global HR Leaders and the leading event on the future of work. As the largest global gathering of its kind, and influencing over 40 million employees globally, no other community has such a powerful impact on shaping the future of work through HR and technology.</span> <span class="_location">PALAIS DE CONGRÈS PARIS</span> <span class="_organizer">HRN Europe</span> <span class="_organizer_email">info@hrneurope.com</span> <span class="_all_day_event">true</span> <span class="_date_format">DD/MM/YYYY</span> </a> </div>
+    </div>
+    <div id="FeaturediRecruitBG">
+      <div id="FeaturediRecruitText"></div>
+    </div>
+    <div id="FeaturedCoderDojoBG">
+      <div id="FeaturedCoderDojoText"></div>
+    </div>
+  </div>
+  <div id="FeaturedRichardBG">
+    <div id="FeaturedRichardText"></div>
+  </div>
+</section>
+<!-- END Featured Content --> 
+
+<!-- About HR Tech / iRecruit --> 
+<a id="AboutSection"></a>
+<section id="AboutHRTechiRecruit"> 
+  <!-- MAIN MENU 
+This section is controlled by the menu.css 
+-->
+  
+  <nav id="MainMenuContainer">
+    <div id="MenuContainer"><a href="http://hrtechcongress.com"><img src="img/menu/horizontallogo.png" alt="HR Tech Congress Logo"  id="HorizontalLogo"/></a><a class="MainMenuItem" href="#AboutSection">ABOUT</a><a class="MainMenuItem"  href="#SpeakersSection">SPEAKERS</a><a class="MainMenuItem"  href="#SponsorsSection">SPONSORS</a>
+      <div id="MenuLogo"></div>
+      <a class="MainMenuItem"  href="#HighlightsSection">HIGHLIGHTS</a><a class="MainMenuItem"  href="#VenueSection">VENUE</a><a class="MainMenuItem"  href="#GetInTouchSection">GET IN TOUCH</a> <a class="MainMenuItem" href="tickets" id="GetTickets"><i class="fa fa-ticket"></i>GET TICKETS</a></div>
+  </nav>
+  
+  <!-- END MAIN MENU -->
+  <div id="AboutHRTechFadingContentOne">
+    <h1>Unleash Your People!</h1>
+    <h4>The Fastest Growing HR Event in the World for the last 3 years and running!</h4>
+    <p>HR Tech World opens in Paris this year. The world's foremost congress &amp; expo for global HR leaders is the largest gathering of its kind, playing host to buyers from over 80 countries worldwide with a combined spending power of more than €10 billion. Our growing community has influenced over 40 million employees globally. No other community is having such a powerful impact on shaping the future of work.</p>
+  </div>
+  <div id="AboutHRTechFadingContentTwo">
+    <h1>iRecruit World Congress</h1>
+    <h4>Where the Talent World Meets</h4>
+    <p>Connecting talent with opportunity, iRecruit is an exclusive community where members enjoy unprecedented access to the most exciting, compelling and disruptive characters in the business. Learn what today's leading recruiters are doing to find the right people and what trends are shaping their future plans.</p>
+  </div>
+  <div id="AboutHRTechFadingContentThree">
+    <h1>disruptHR</h1>
+    <p>disruptHR is an expo for startups that are changing the way we work. This year's event brings together experienced venture capitalists and young HR companies who will have the chance to pitch for investment in a Dragon's Den style format.</p>
+    <h3>“Chase the vision, not the money; the money will end up following you.”  –Tony Hsieh, Zappos CEO</h3>
+  </div>  
+  <div id="AboutButtonContainer">
+    <a href="#" data-reveal-id="ApplyFor2For1TicketsModal"><button id="TwoForOnebutton" class="FontRaleway">APPLY FOR 2 FOR 1 TICKETS</button></a>
+    <button id="VideoButton" class="FontRaleway">PLAY VIDEO<span id="Arrow">→</span></button>
+  </div>
+  <div id="FadingControlls">
+    <div id="FadeOne" class="ActiveFadingControll"></div>
+    <div id="FadeTwo"></div>
+    <div id="FadeThree"></div>
+  </div>
+  <script type="text/javascript">
+$(document).ready(function(){
+$('#FadeTwo').click(function(e){ 
+    var one = $('#FadeOne').attr('class');
+	var three = $('#FadeThree').attr('class');
+	
+	if (one == 'ActiveFadingControll') {
+			$('#AboutHRTechFadingContentOne').fadeOut('slow', function(){
+			$('#AboutHRTechFadingContentTwo').fadeIn('slow');
+			$('#AboutHRTechiRecruit').css('background-image', 'url(img/mainpage/abouthrtechirecruitexpo/about2-bg.jpg)');
+			$('#FadeOne').removeClass('ActiveFadingControll');
+			$('#FadeTwo').addClass('ActiveFadingControll');
+		   });
+		
+	} else if (three == 'ActiveFadingControll') {
+			$('#AboutHRTechFadingContentThree').fadeOut('slow', function(){
+			$('#AboutHRTechFadingContentTwo').fadeIn('slow');
+			$('#AboutHRTechiRecruit').css('background-image', 'url(img/mainpage/abouthrtechirecruitexpo/about2-bg.jpg)');
+			$('#FadeThree').removeClass('ActiveFadingControll');
+			$('#FadeTwo').addClass('ActiveFadingControll');
+		   });
+		
+	}
+
+});
+
+
+$('#FadeOne').click(function(e){  
+    var two = $('#FadeTwo').attr('class');
+	var three = $('#FadeThree').attr('class');
+	
+  if (two == 'ActiveFadingControll') {
+    $('#AboutHRTechFadingContentTwo').fadeOut('slow', function(){
+        $('#AboutHRTechFadingContentOne').fadeIn('slow');
+		$('#AboutHRTechiRecruit').css('background-image', 'url(img/mainpage/abouthrtechirecruitexpo/about-bg.jpg)');
+		$('#FadeTwo').removeClass('ActiveFadingControll');
+		$('#FadeOne').addClass('ActiveFadingControll');
+    });
+
+   } else if (three == 'ActiveFadingControll') {
+			$('#AboutHRTechFadingContentThree').fadeOut('slow', function(){
+			$('#AboutHRTechFadingContentOne').fadeIn('slow');
+			$('#AboutHRTechiRecruit').css('background-image', 'url(img/mainpage/abouthrtechirecruitexpo/about-bg.jpg)');
+			$('#FadeThree').removeClass('ActiveFadingControll');
+			$('#FadeOne').addClass('ActiveFadingControll');
+		   });
+		
+	}	
+	
+});
+
+$('#FadeThree').click(function(e){  
+    var one = $('#FadeOne').attr('class');
+	var two = $('#FadeTwo').attr('class');
+	
+  if (one == 'ActiveFadingControll') {
+    $('#AboutHRTechFadingContentOne').fadeOut('slow', function(){
+        $('#AboutHRTechFadingContentThree').fadeIn('slow');
+		$('#AboutHRTechiRecruit').css('background-image', 'url(img/mainpage/abouthrtechirecruitexpo/about3-bg.jpg)');
+		$('#FadeOne').removeClass('ActiveFadingControll');
+		$('#FadeThree').addClass('ActiveFadingControll');
+    });
+
+   } else if (two == 'ActiveFadingControll') {
+			$('#AboutHRTechFadingContentTwo').fadeOut('slow', function(){
+			$('#AboutHRTechFadingContentThree').fadeIn('slow');
+			$('#AboutHRTechiRecruit').css('background-image', 'url(img/mainpage/abouthrtechirecruitexpo/about3-bg.jpg)');
+			$('#FadeTwo').removeClass('ActiveFadingControll');
+			$('#FadeThree').addClass('ActiveFadingControll');
+		   });
+		
+	}	
+	
+});
+
+});
+</script> 
+</section>
+<!-- END About HR Tech / iRecruit --> 
+
+<!-- Speakers --> 
+<a id="SpeakersSection"></a>
+<section id="Speakers">
+  <h1 class="BlueText">SPEAKERS</h1>
+  <div id="SpeakersContainer">
+    <ul>
+      <li id="SpeakersBransonR"> <img class="Square" src="img/mainpage/speakers/speakers_richard_branson.jpg" title="<h3 class='SpeakerName'>Sir Richard Branson</h3><p class='SpeakerCompany'>Virgin Group</p><p class='SpeakerInfo'>Sir Richard Branson is Founder of the Virgin Group. Virgin is one of the world's most irresistible brands and has expanded into many diverse sectors from travel to telecommunications, health to financial services, and music to leisure.</p><p class='SpeakerHoverLinks'><a target='_blank' href='https://twitter.com/richardbranson'><i class='fa fa-twitter TwitterColor'></i></a><a target='_blank' href='http://www.virgin.com/'><i class='fa fa-link TwitterColor'></i></a></p>" /> </li>
+      <li id="SpeakersHumphreyA"> <img class="Square" src="img/mainpage/speakers/speakers_ambrosia_humphrey.jpg" title="<h3 class='SpeakerName'>Ambrosia Humphrey</h3><p class='SpeakerCompany'>Hootsuite</p><p class='SpeakerInfo'>Ambrosia is the VP of Talent at Hootsuite. Since 2011 she’s spearheaded the company’s hypergrowth, bringing its employees from 20 to over 500—in under 3 years. She’s passionate about empowering others in her field to effectively align technology with their objectives, their people and their culture.
+</p><p class='SpeakerHoverLinks'><a target='_blank' href='https://twitter.com/hambrody'><i class='fa fa-twitter TwitterColor'></i></a><a target='_blank' href='https://hootsuite.com/'><i class='fa fa-link TwitterColor'></i></a></p>" /> </li>
+      <li id="SpeakersShingD"> <img class="Square" src="img/mainpage/speakers/speakers_david_shing.jpg"title="<h3 class='SpeakerName'>David Shing</h3><p class='SpeakerCompany'>AOL</p><p class='SpeakerInfo'>David Shing is AOL’s Digital Prophet. He spends most of his time watching the future take shape across the vast online landscape. The rest he spends talking to people about where things are headed and how to get the most out of it. He identifies opportunities for AOL and works with marketing teams to develop creative brand engagement.</p><p class='SpeakerHoverLinks'><a target='_blank' href='https://twitter.com/shingy'><i class='fa fa-twitter TwitterColor'></i></a><a target='_blank' href='http://www.shingy.com/'><i class='fa fa-link TwitterColor'></i></a></p>" /> </li>
+      <li id="SpeakersRussoL"> <img class="Square" src="img/mainpage/speakers/speakers_lori_russo.jpg" title="<h3 class='SpeakerName'>Lori Russo</h3><p class='SpeakerCompany'>Tripadvisor</p><p class='SpeakerInfo'>Lori Russo’s background is in marketing and adverstising and prior to her appointment as Head of Global Talent Acquisition at Tripadvisor Lori was Director of Advertising Solutions.  Having spent her career in marketing Lori brings a new perspective to the world of talent acquisition.</p><p class='SpeakerHoverLinks'><a target='_blank' href='https://twitter.com/TheLoriRusso'><i class='fa fa-twitter TwitterColor'></i></a><a target='_blank' href='http://www.tripadvisor.com/'><i class='fa fa-link TwitterColor'></i></a></p>" /> </li>
+      <li id="SpeakersBersinJ"> <img class="Square" src="img/mainpage/speakers/speakers_josh_bersin.jpg" title="<h3 class='SpeakerName'>Josh Bersin</h3><p class='SpeakerCompany'>Bersin by Deloitte</p><p class='SpeakerInfo'>Listed in the Top 100 Influencers in HR globally and the Top 25 Influencers in Talent Management, Josh Bersin has made Bersin by Deloitte the “go to” source for learning and HR decision makers seeking product and market data, insight on trends, and expert advice on enterprise learning and talent management. 
+</p><p class='SpeakerHoverLinks'><a href='https://twitter.com/josh_bersin'><i class='fa fa-twitter TwitterColor'></i></a><a href='http://home.bersin.com/' target='_blank'><i class='fa fa-link TwitterColor'></i></a></p>" /> </li>
+      <li id="SpeakersMaloneyM"> <img class="Square" src="img/mainpage/speakers/speakers_mary_moloney.jpg" title="<h3 class='SpeakerName'>Mary Moloney</h3><p class='SpeakerCompany'>CoderDojo</p><p class='SpeakerInfo'>In 2014, Mary was awarded as runner up CEO of the Year in the Image Business Awards & as one of the top 100 Women in STEM by Silicon Republic. CoderDojo currently operates 550 free of charge coding clubs in 56 countries globally, reaching approximately 35,000 kids & young people aged 7 to 17 on a weekly basis.
+</p><p class='SpeakerHoverLinks'><a href='https://twitter.com/marydunph' target='_blank'><i class='fa fa-twitter TwitterColor'></i></a><a href='https://coderdojo.com/' target='_blank'><i class='fa fa-link TwitterColor'></i></a></p>" /> </li>
+      <li id="SpeakersTernynckJ"> <img class="Square" src="img/mainpage/speakers/speakers_jerome_ternynck.jpg" title="<h3 class='SpeakerName'>Jerome Ternynck</h3><p class='SpeakerCompany'>SmartRecruiters</p><p class='SpeakerInfo'>Jerome Ternynck is an entrepreneur with his heart in recruiting and his soul in technology. He is a SaaS evangelist and a strong believer in Open SaaS. Jerome’s passionate for what he does, hates the status quo, and loves innovation.</p><p class='SpeakerHoverLinks'><a href='https://twitter.com/jerometernynck'><i class='fa fa-twitter TwitterColor'></i></a><a href='https://www.smartrecruiters.com/' target='_blank'><i class='fa fa-link TwitterColor'></i></a></p>" /> </li>
+      <li id="SpeakersNelsonL"> <img class="Square" src="img/mainpage/speakers/speakers_lisa_nelson.jpg" title="<h3 class='SpeakerName'>Lisa Nelson</h3><p class='SpeakerCompany'>match.com</p><p class='SpeakerInfo'>Lisa Nelson is the VP of HR at match.com. Lisa has more than 18 years of experience in the industry, and previously led recruiting teams at Robert Walters, Michael Page International, Arnell Group and IAC.</p><p class='SpeakerHoverLinks'><a href='http://www.europe.match.com/' target='_blank'><i class='fa fa-link TwitterColor'></i></a></p>" /> </li>
+    </ul>
+  </div>
+  <!-- Include and initiate sliphover, the directional hover effect engine --> 
+  <script src="vendor/sliphover/jquery.sliphover.js"></script> 
+  <script type="text/javascript">
+          $(function(){
+        
+        $('#SpeakersContainer').sliphover({
+           
+        });
+        })
+        </script> 
+  
+  <!--END Speakers --> 
+</section>
+<!--END Speakers --> 
+<!-- Marketing Message Section -->
+<section id="MarketingMSG"> 
+<h1 id="MarketingText">Where Else in the World Will You Find <span>€10 Billion</span> of HR and Tech Budgets in the Same Room?</h1>
+</section>
+<!--END  Marketing Message Section --> 
+
+<!-- Sponsors --> 
+<a id="SponsorsSection"></a>
+<section id="Sponsors">
+  <h1 class="WhiteText">SPONSORS</h1>
+
+  <h5 class="WhiteText FontRaleway">Diamond</h5>
+  <div class="SponsorsWrapper" id="DiamondSponsorsWrapper">
+    <div id="Workday" class="SponsorSquare"></div>
+    <div id="CornerStone" class="SponsorSquare"></div>
+    <div id="SF" class="SponsorSquare"></div>
+    <div id="ADP" class="SponsorSquare"></div>
+    <div id="CrossKnowledge" class="SponsorSquare"></div>
+    <div id="SpecialSquare" class="SponsorSquare"></div>
+    <div class="SponsorSquare EmptySquare"></div>
+    <div class="SponsorSquare EmptySquare SquareWithNoBorder"></div>
+
+  </div>
+  <h5 class="WhiteText FontRaleway">Emerald</h5>
+  <div class="SponsorsWrapper">
+    <div id="AppLearn" class="SponsorSquare"></div>
+    <div id="Haufe" class="SponsorSquare"></div>
+    <div id="NGA" class="SponsorSquare"></div>
+    <div id="GloboForce" class="SponsorSquare"></div>
+    <div id="Indeed" class="SponsorSquare"></div>
+    <div id="Careerbuilder" class="SponsorSquare"></div>
+    <div id="CEB" class="SponsorSquare"></div>
+    <div class="SponsorSquare EmptySquareSpecial"></div>
+  </div>
+</section>
+<!--END Sponsors --> 
+
+
+
+<!-- Highlights --> 
+<a id="HighlightsSection"></a>
+<section id="Highlights">
+  <h1 class="BlueText">HIGHLIGHTS</h1>
+  
+  <!-- Twitter box 1 -->
+  <div class="HighlightSmallWrapper TwitterBox">
+  	<div class="TwitterImage"><img class="ResponsiveHighlightImage" src="img/mainpage/highlights/twitter1.jpg" alt="HR Tech Twitter"></div>
+    <div class="HighlightBox TwitterTextContainer">
+    	<div class="TwitterText">
+            <img class="TwitterIcon" src="img/mainpage/highlights/twitter-icon.png" alt="Twitter">
+            <p class="TweetHeadline">@hrtechworld<br><span class="TweetDate FontProximaNova">10 days ago</span></p>
+            <p class="TweetTitle FontProximaNova">Achieving change – time for HR to be courageous via<br> @hrmagazine</p>
+            <a class="TweetLink FontProximaNova" href="http://hubs.ly/y0sN0L0" target="_blank">http://hubs.ly/y0sN0L0</a>
+   		</div>
+    </div>
+  </div>
+  <!-- END Twitter box 1 -->
+  <!-- Video 1 -->
+  <div class="HighlightVideo">
+	  <div class='embed-container'><iframe src='http://www.youtube.com/embed/2ZCgi2L2eNU?rel=0&showinfo=0&controls=1&autohide=1' frameborder='0' allowfullscreen></iframe></div>
+  </div>
+  <!-- END Video 1 -->
+  <!-- HR Tech World Party -->
+  <div class="HighlightSmallWrapper DescriptionBox">
+	<div class="HighlightBox DescriptionContainer">
+    	<div class="DescriptionText" id="HRTechWoldPartyText">
+        	<p class="DescriptionHeadline">Networking by Night<br /> HR Tech World Party</p>
+            <p class="Description">Relax and network with thousands of your colleagues and counterparts in an informal setting.</p>
+        </div>
+    </div>
+    <div class="DescriptionImage"><img class="ResponsiveHighlightImage" src="img/mainpage/highlights/party1.jpg" alt="HR Tech World Party"></div>
+  </div>
+  <!-- END HR Tech World Party -->
+  <!-- Twitter box 2 -->
+  <div class="HighlightSmallWrapper TwitterBox">
+    <div class="HighlightBox TwitterTextContainer">
+    	<div class="TwitterText">
+            <img class="TwitterIcon" src="img/mainpage/highlights/twitter-icon.png" alt="Twitter">
+            <p class="TweetHeadline">@hrtechworld<br><span class="TweetDate FontProximaNova">15 days ago</span></p>
+            <p class="TweetTitle FontProximaNova">"Work Space Designs That Improve Productivity" via<br> @remodeling</p>
+            <a class="TweetLink FontProximaNova" href="http://hubs.ly/y0y94g0" target="_blank">http://hubs.ly/y0y94g0</a><br>
+            <a class="TweetLink FontProximaNova" href="https://twitter.com/hashtag/workspacedesign" target="_blank">#workspacedesign</a>
+            <a class="TweetLink FontProximaNova" href="https://twitter.com/hashtag/productivity" target="_blank">#productivity</a>            
+   		</div>
+    </div>
+  	<div class="TwitterImage"><img class="ResponsiveHighlightImage" src="img/mainpage/highlights/twitter2.jpg" alt="HR Tech Twitter"></div>    
+  </div>
+  <!-- END Twitter box 1 -->
+  <!-- Video 2 -->
+  <div class="HighlightVideo">
+	  <div class='embed-container'><iframe src='http://www.youtube.com/embed/CDqH6akVL1Q?rel=0&showinfo=0&controls=1&autohide=1' frameborder='0' allowfullscreen></iframe></div>
+  </div>
+  <!-- END Video 2 -->
+  <!-- Richard Branson - Leadership at 30.000 Feet -->
+  <div class="HighlightSmallWrapper DescriptionBox">
+	<div class="DescriptionImage"><img class="ResponsiveHighlightImage" src="img/mainpage/highlights/RichardBranson.jpg" alt="Richard Branson"></div>
+    <div class="HighlightBox DescriptionContainer">
+    	<div class="DescriptionText" id="DescriptionTextRichardBranson">
+        	<p class="DescriptionHeadline">Richard Branson<br> Leadership at 30.000 Feet</p>
+            <p class="Description">Richard Branson may be known as the world's greatest entrepeneur, but his innovative thinking in the field of travel sets him apart as a true visionary.</p>
+        </div>
+    </div>
+  </div>
+  <!-- END Richard Branson - Leadership at 30.000 Feet -->
+    <!-- Highlights: more items -->
+    <div id="HighlightsMore">
+      <!-- Talent Analytics -->
+      <div class="HighlightSmallWrapper DescriptionBox">
+        <div class="HighlightBox DescriptionContainer">
+            <div class="DescriptionText">
+                <p class="DescriptionHeadline">A Look at How New Analytics Tools Can Help Solve Workforce Challenges.</p>
+                <p class="Description"></p>
+            </div>
+        </div>
+        <div class="DescriptionImage"><img class="ResponsiveHighlightImage" src="img/mainpage/highlights/talent-analytics.jpg" alt="HR Tech Talent Analytics"></div>
+      </div>
+      <!-- END Talent Analytics -->
+      <!-- Video 3 -->
+      <div class="HighlightVideo">
+          <div class='embed-container'><iframe src='http://www.youtube.com/embed/cTOyB3KJSuQ?rel=0&showinfo=0&controls=1&autohide=1' frameborder='0' allowfullscreen></iframe></div>
+      </div>
+      <!-- END Video 3 -->
+      <!-- Twitter box 1-again -->
+      <div class="HighlightSmallWrapper TwitterBox">
+        <div class="TwitterImage"><img class="ResponsiveHighlightImage" src="img/mainpage/highlights/twitter1.jpg" alt="HR Tech Twitter"></div>
+        <div class="HighlightBox TwitterTextContainer">
+            <div class="TwitterText">
+                <img class="TwitterIcon" src="img/mainpage/highlights/twitter-icon.png" alt="Twitter">
+                <p class="TweetHeadline">@hrtechworld<br><span class="TweetDate FontProximaNova">10 days ago</span></p>
+                <p class="TweetTitle FontProximaNova">Achieving change – time for HR to be courageous via<br> @hrmagazine</p>
+                <a class="TweetLink FontProximaNova" href="http://hubs.ly/y0sN0L0" target="_blank">http://hubs.ly/y0sN0L0</a>
+            </div>
+        </div>
+      </div>
+      <!-- END Twitter box 1-again -->
+      <!-- Product Demo -->
+      <div class="HighlightSmallWrapper DescriptionBox">
+        <div class="DescriptionImage"><img class="ResponsiveHighlightImage" src="img/mainpage/highlights/product-demo.jpg" alt="HR Tech Product Demo"></div>
+        <div class="HighlightBox DescriptionContainer">
+            <div class="DescriptionText">
+                <p class="DescriptionHeadline">See Technology That's Shaping the Future of Work From the World's Leading Vendors.</p>
+                <p class="Description"></p>
+            </div>
+        </div>
+      </div>
+      <!-- END Product Demo -->
+      <!-- Video 4 -->
+      <div class="HighlightVideo">
+          <div class='embed-container'><iframe src='http://www.youtube.com/embed/dGlIEHuH6SA?rel=0&showinfo=0&controls=1&autohide=1' frameborder='0' allowfullscreen></iframe></div>
+      </div>
+      <!-- END Video 4 -->
+      <!-- SAAS and Cloud -->
+      <div class="HighlightSmallWrapper DescriptionBox">
+        <div class="HighlightBox DescriptionContainer">
+            <div class="DescriptionText">
+                <p class="DescriptionHeadline">Experiences of HR Solutions Delivered by Senior Enterprise Practitioners.</p>
+                <p class="Description"></p>
+            </div>
+        </div>
+        <div class="DescriptionImage"><img class="ResponsiveHighlightImage" src="img/mainpage/highlights/saas.jpg" alt="HR Tech SAAS and Cloud"></div>
+      </div>
+      <!-- END SAAS and Cloud -->
+    </div>  
+    <!-- END Highlights: more items -->
+  <div style="clear: both;"></div>
+  <button class="BlueButton" id="HighlightsLoadMoreButton">Load More</button>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#HighlightsLoadMoreButton").click(function() {
+		$("#HighlightsMore").fadeIn("slow");
+		$("#HighlightsLoadMoreButton").fadeOut("slow");
+	});
+});
+</script>
+</section>
+<!-- END Highlights --> 
+<!-- Venue --> 
+<a id="VenueSection"></a>
+<section id="Venue">
+  <h1 class="WhiteText">VENUE</h1>
+  <h5 class="YellowText FontSourceSansPro">Palais de Congrès paris</h5>
+  <p class="WhiteText">Combining bold architecture, international renown, a strategic location enjoying ease of access and a wide range of nearby hotel accommodation, this venue has all it takes to be one of the world’s most significant conference centres.</p>
+  <a id="GetDirections" href="https://www.google.com/maps/place/Le+Palais+des+Congr%C3%A8s+de+Paris/@48.879449,2.283712,17z/data=!3m1!4b1!4m2!3m1!1s0x47e66f8b41cac529:0x3c64b279efb84cbe" target="_blank"><i class="fa fa-map-marker"></i>
+  <h6 class="YellowText FontRaleway">VIEW IN GOOGLE MAPS</h6>
+  </a> </section>
+<!-- END Venue --> 
+<!-- Future of Work -->
+<section id="FutureOfWork">
+  <div id="FutureOfWorkWrapper" class="FontProximaNova">
+    <h1 class="BlueText">FUTURE OF WORK</h1>
+    <p class="BlueText">Your ticket opens up a door for you to the world of curated dinners, parties and events hosted by the World’s Leading Brands, Tech Companies, Service Providers, Investors and Media.</p>
+    <div id="TicketPriceContainer">
+    	<div class="TicketPrice">
+        	<h3 id="FutureTicketsTwoForOne">2 FOR 1 TICKETS AVAILABLE</h3>
+            <h3><span class="BlueText TicketSpan">Price: €595 <span class="EachTicket">/ ticket</span></span> <span class="RedText TicketSpan">Save €595 <span class="EachTicket">/ ticket</span></span></h3>
+           
+        </div>
+        <div style="clear: both;"></div>        
+    </div>
+    
+    <a href="#" data-reveal-id="ApplyFor2For1TicketsModal"><button class="BlueButton">GET 2 FOR 1 TICKETS</button></a>
+  </div>
+</section>
+<!-- END Future of Work --> 
+
+<!-- FOOTER 
+The #WorldCongressTextMobile is visible only on mobile, on desktop it is hidden.
+The .WordlCongressText in the TransparentFooter is visible only on tablet and desktop, on mobile it is hidden.
+--> 
+<a id="GetInTouchSection"></a>
+<footer id="GetInTouch">
+  <h1 class="FontProximaNova">GET IN TOUCH</h1>
+  <div id="GetInTouchWrapper">
+    <h2 class="Contact FontProximaNova"><i class="fa fa-phone"></i>+36 1 201 1469</h2>
+    <h2 class="Contact FontProximaNova"><i class="fa fa-phone"></i>UK/IE +44 20 34 689 689</h2>
+    <h2 class="Contact FontProximaNova"><i class="fa fa-envelope"></i><a href="mailto:hrn@hrneurope.com">hrn@hrneurope.com</a></h2>
+    <div id="GetInTouchButtonContainer">
+      <a href="#" data-reveal-id="DownloadBrochureModal"><button class="FontRaleway" id="DownloadBrochureButton" >Download Brochure</button></a>
+      <a href="#" data-reveal-id="ApplyFor2For1TicketsModal"><button class="FontRaleway" id="RegisterTodayButton">Register Today</button></a>
+    </div>
+    <div id="FooterSocialIconsContainer"> <a href="https://twitter.com/hrtecheurope" target="_blank">
+      <div id="FooterTwitter" class="FooterSocialIcon"></div>
+      </a> <a href="https://www.facebook.com/hrtecheu" target="_blank">
+      <div id="FooterFacebook" class="FooterSocialIcon"></div>
+      </a> <a href="http://www.linkedin.com/groups/HR-Technology-Europe-Human-Resources-3930182/about" target="_blank">
+      <div id="FooterLinkedIn" class="FooterSocialIcon"></div>
+      </a> <a href="http://www.slideshare.net/hrtecheurope" target="_blank">
+      <div id="FooterSlideShare" class="FooterSocialIcon"></div>
+      </a> <a href="https://www.flickr.com/photos/hrtecheurope/sets/72157648919068765/" target="_blank">
+      <div id="FooterFlickr" class="FooterSocialIcon"></div>
+      </a> </div>
+  </div>
+  <h6 class="FontSourceSansPro" id="WorldCongressTextMobile">HR Tech World Congress</h6>
+  <div id="TransparentFooter">
+    <h6 class="TransparentFooterText FontSourceSansPro WorldCongressText">HR Tech World Congress</h6>
+    <h6 class="TransparentFooterText FontRaleway" id="CopyrightText">Copyright &copy; 2015 HRN Europe. All Rights Reserved.</h6>
+    <h6 class="TransparentFooterText FontRaleway" id="PrivacyText">Privacy Policy | Terms and Conditions</h6>
+  </div>
+</footer>
+<!-- END FOOTER --> 
+
+<!-- Go to Top Button --> 
+<a href="#" class="GoTopButton">
+<div id="GoTopImg"><i class="fa fa-caret-up"></i></div>
+</a> 
+<!-- END Go to Top Button --> 
+
+<!-- Play Video Modal -->
+<div class="reveal-modal" id="PlayVideoModal"  data-reveal> <a class="close-reveal-modal" id="CloseVideoModal" onclick="location.reload()">&#215;</a>
+
+<style>.embed-container-modal { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container-modal iframe, .embed-container-modal object, .embed-container-modal embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container-modal'><iframe id="modal-video-player" src='http://www.youtube.com/embed/2ZCgi2L2eNU' frameborder='0' allowfullscreen></iframe></div>
+
+</div>
+<!-- END Play Video Modal -->
+
+<!-- Apply for 2 for 1 Tickets Modal -->
+<div id="ApplyFor2For1TicketsModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
+  <h2>APPLY FOR <br>2 FOR 1 TICKETS</h2>
+  <p>Thank you for your interest in 2 for 1 tickets. Please leave your details and we'll be in touch with how to claim your discounted passes.</p>
+  <!-- BEGINING of : APPLY FOR 2 FOR 1 TICKETS FORM -->
+  
+  <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+    <input type=hidden name="oid" value="00DD0000000nwgk">
+  <input type=hidden name="retURL" value="http://dev.hrtechcongress.com/index.html#ThankYouModal">
+                           
+      <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+      <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+
+        <input required placeholder="Email Address *" id="email" maxlength="80" name="email" size="20" type="text" />
+        <input required placeholder="Phone Number *" id="phone" maxlength="40" name="phone" size="20" type="text" />
+        <input required placeholder="Company *" id="company" maxlength="40" name="company" size="20" type="text" />
+        <input required placeholder="Job Title *" id="title" maxlength="40" name="title" size="20" type="text" />
+        <select  style="display:none;"   id="lead_source" name="lead_source" placeholder="Lead Source">
+          <option selected="selected" value="HRTechParis2015-2for1">HRTechParis2015-2for1</option>
+        </select>
+        <input onClick="_gaq.push(['_trackEvent', 'ApplyFor2For1TicketsForm ', 'FromSubmission', 'InquirySent']);" class="submitbutton" type="submit" name="submit" value="SEND">
+  </form>
+  <!-- END of : APPLY FOR 2 FOR 1 TICKETS FORM -->
+</div>
+<!-- END Apply for 2 for 1 Tickets Modal -->
+
+<!-- Download Brochure Modal -->
+<div id="DownloadBrochureModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
+  <h2>Download Brochure</h2>
+  <p>The Paris HR Tech Congress brochure is almost ready. Please leave your details and we'll email it to you as soon as it's available.</p>
+  <!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
+  <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+    <input type=hidden name="oid" value="00DD0000000nwgk">
+    <!--<input type=hidden name="retURL" value="http://london.hrtecheurope.com/PDF/2015_HR_Tech_London_Delegates.pdf">-->
+
+      <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+      <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+
+        <input required placeholder="Email Address *" id="email" maxlength="80" name="email" size="20" type="text" />
+        <input required placeholder="Phone Number *" id="phone" maxlength="40" name="phone" size="20" type="text" />
+        <input required placeholder="Company *" id="company" maxlength="40" name="company" size="20" type="text" />
+        <input required placeholder="Job Title *" id="title" maxlength="40" name="title" size="20" type="text" />
+        <select  style="display:none;"   id="lead_source" name="lead_source" placeholder="Lead Source">
+          <option selected="selected" value="HRTechParis2015-DownloadPDF">HRTechParis2015-DownloadPDF</option>
+        </select>
+        <input onClick="_gaq.push(['_trackEvent', 'DownloadPDFForm ', 'FromSubmission', 'InquirySent']);" class="submitbutton" type="submit" name="submit" value="SEND">
+  </form>
+  <!-- END of : DOWNLOAD BROCHURE MODAL FORM -->
+</div>
+<!-- END Download Brochure Modal -->
+
+<!-- Download Brochure Modal -->
+<div id="ThankYouModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
+  <h2>Thank you!</h2>
+  <p>You have successfully applied for 2 for 1 tickets. Thank you.</p>
+
+</div>
+<!-- END Download Brochure Modal -->
+
+
+<!-- SlickMaster Carousel js --> 
+<script type="text/javascript" src="vendor/slick-master/slick/slick.min.js"></script> 
+
+<!-- Named anchor Hashtag script --> 
+<script type="text/javascript">
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+</script>
+<!-- Start of Async HubSpot Analytics Code -->
+  <script type="text/javascript">
+    (function(d,s,i,r) {
+      if (d.getElementById(i)){return;}
+      var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+      n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/412210.js';
+      e.parentNode.insertBefore(n, e);
+    })(document,"script","hs-analytics",300000);
+  </script>
+<!-- End of Async HubSpot Analytics Code -->
+
+</body>
+</html>
