@@ -479,7 +479,15 @@ body {
 	width: 40.88541vw;
 	text-align: center;
 }
-#AboutButtonContainer button {
+#AboutButtonContainerTwo {
+	display:none;
+	margin: 0 auto;
+	margin-top: 5.2vw;
+	width: 40.88541vw;
+	text-align: center;
+}
+
+#AboutButtonContainer button, #AboutLearnMoreButtonContainer button, #AboutButtonContainerTwo button {
 	font-size: 1vw;
 	font-weight: bold;
 	border: 3px solid #fff;
@@ -489,12 +497,12 @@ body {
 	max-width: 15.625vw;
 	height: 3.64583vw;
 }
-#TwoForOnebutton {
+#TwoForOnebutton, #DisruptHRbutton {
 	color: #0a4271;
 	background-color: #fff;
 	transition: all 0.3s;
 }
-#TwoForOnebutton:hover {
+#TwoForOnebutton:hover, #DisruptHRbutton:hover {
 	color: #fff;
 	background: transparent;
 }
@@ -696,10 +704,13 @@ body {
 #SpeakersContainer ul li {
 	float: left;
 }
+.SpeakersImageContainer{
+	margin: 0.25vw;
+}
 .Square {
 	width: 24.2vw;
 	height: 24.2vw; /* match width for a 1:1 aspect ratio */
-	margin: 0.25vw;
+	/*margin: 0.25vw;*/
 }
 .SpeakerName {
 	font-size: 2.08vw;
@@ -737,7 +748,7 @@ body {
 	.Square {
 	width: 24vw;
 	height: 24vw; /* match width for a 1:1 aspect ratio */
-	margin: 0.25vw;
+	/*margin: 0.25vw;*/
 }
 	
 	}
@@ -754,8 +765,13 @@ body {
 .Square {
 	width: 47.60vw;
 	height: 49vw; /* match width for a 1:1 aspect ratio */
+	/*margin: 0.5vw;*/
+}
+
+.SpeakersImageContainer{
 	margin: 0.5vw;
 }
+
 .SpeakerName {
 	font-size: 4.1328125vw;
 	margin: 3.515625vw 0 0 2vw;
@@ -1702,7 +1718,7 @@ body {
 	max-width: 765px;
 	margin: 0 auto;
 	margin-top: 65px;
-	margin-bottom: 80px;	
+	margin-bottom: 40px;	
 }
 #FutureTicketsTwoForOne {
 	padding-bottom: 2vw;
@@ -1732,6 +1748,7 @@ body {
 	font-size: 36px;
 	margin: 0;	
 	font-weight: 700;
+	line-height: 30px;
 }
 .TicketPrice h3 .EachTicket {
 	font-size: 18px;
@@ -1740,6 +1757,13 @@ body {
 .TicketPrice p {
 	font-size: 20px;
 	margin: 10px 0 0 0;
+}
+#TicketPastPrice {
+	text-decoration:line-through;
+	-moz-text-decoration-color: red; /* Code for Firefox */
+    text-decoration-color: red;
+	-webkit-text-decoration-color: red;
+	
 }
 #FutureOfWork button {
 	max-width: 330px;
