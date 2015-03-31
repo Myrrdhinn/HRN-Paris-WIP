@@ -1,21 +1,6 @@
 // Play video button
 
 $(document).ready(function() {
-
- var num = Math.floor((Math.random() * 2) + 1);
- 
-   if (num == 1) {
-	   $('#FeaturediRecruitBG').addClass('FeaturedDojoClass');
-	   $('#FeaturediRecruitText').addClass('FeaturedDojoTextClass');
-	   $('#FeaturedCoderDojoBG').addClass('FeaturedShingyClass');
-	   $('#FeaturedCoderDojoText').addClass('FeaturedShingyTextClass');
-   } else {
-	   $('#FeaturediRecruitBG').addClass('FeaturedDistruptClass');
-	   $('#FeaturediRecruitText').addClass('FeaturedDistruptTextClass');
-	   $('#FeaturedCoderDojoBG').addClass('FeaturedIrecruitClass');
-	   $('#FeaturedCoderDojoText').addClass('FeaturedIrecruitTextClass');
-   }
-	
 	
 	$('#VideoButton').bind('click', function (e) {
 		e.preventDefault();
