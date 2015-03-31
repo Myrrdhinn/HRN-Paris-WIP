@@ -6,8 +6,6 @@ body {
 	overflow-x: hidden;
 }
 
-
-
 /* Featured Content Section */
 #FeaturedContentSection {
 	width: 100%;
@@ -346,12 +344,12 @@ body {
 	display: none;
 }
 
-#AboutHRTechiRecruit h1 {
+#AboutHRTechiRecruit h2 {
 	font-size: 6.25vw;
 	text-align: center;
-	margin-bottom: -1.041vw;
+	margin-bottom: 0;
 }
-#AboutHRTechiRecruit h4 {
+#AboutHRTechiRecruit h1, #AboutHRTechiRecruit h4 {
 	font-size: 1.77083vw;
 	text-align: center;
 	margin-bottom: 4.42708vw;
@@ -428,7 +426,7 @@ body {
 #AboutHRTechFadingContentThree {
 	text-align:center;	
 }
-#AboutHRTechFadingContentThree h1  {
+#AboutHRTechFadingContentThree h2  {
 	  padding-bottom: 5vw;
 	  padding-top: 2vw;
 }
@@ -453,7 +451,7 @@ body {
 	display: none;
 }
 
-#AboutHRTechFadingContentThree h1  {
+#AboutHRTechFadingContentThree h2  {
 	  padding-bottom: 10vw;
 }
 
@@ -462,12 +460,12 @@ body {
 }
 
 
-#AboutHRTechiRecruit h1 {
+#AboutHRTechiRecruit h2 {
 	font-size: 7.33594vw;
 	margin-bottom: -2.60416vw;
 }
 
-#AboutHRTechiRecruit h4 {
+#AboutHRTechiRecruit h1, #AboutHRTechiRecruit h4 {
 	font-size: 3.125vw;
 	max-width: 69.661458vw;
 	margin: 0 auto;
@@ -505,6 +503,14 @@ body {
 	width: 3.90625vw;
 	height: 1.5625vw;
 }
+
+#AboutButtonContainerTwo button {
+  font-size: 2vw;
+  max-width: 20.625vw;
+  height: 4.64583vw;
+}
+
+
 }
 
 @media (max-width: 640px) {
@@ -517,17 +523,17 @@ body {
 	display: none;
 }
 
-#AboutHRTechFadingContentThree h1  {
+#AboutHRTechFadingContentThree h2  {
 	  padding-bottom: 15vw;
 }
 #AboutHRTechFadingContentThree h3  {
 	font-size: 5vw;
 }
-#AboutHRTechiRecruit h1 {
+#AboutHRTechiRecruit h2 {
 	font-size: 7.5vw;
 	margin-bottom: -6.25vw;
 }
-#AboutHRTechiRecruit h4 {
+#AboutHRTechiRecruit h1, #AboutHRTechiRecruit h4 {
 	font-size: 5.625vw;
 	line-height: 8.125vw;
 	max-width: 84.375vw;
@@ -557,7 +563,7 @@ body {
 }
 #FadingControlls {
 	padding-bottom: 14.0625vw;
-	width: 60vw;
+	width: 70vw;
 	padding-top: 0;
 	text-align: center;
 	margin: 0 auto;
@@ -565,9 +571,16 @@ body {
 #FadingControlls div {
 	border: 0.625vw solid #fff;
 	float: left;
-	margin: 0 4.0625vw;
-	width: 9.375vw;
-	height: 3.75vw;
+    margin: 0 6vw;
+    width: 10vw;
+    height: 3.75vw;
+}
+
+#AboutButtonContainerTwo button {
+	  font-size: 4vw;
+  margin: 0 0 8vw -1vw;
+  max-width: 46vw;
+  height: 13.64583vw;
 }
 }
 /* END About HR Tech World / iRecruit */
@@ -577,7 +590,7 @@ body {
 	color: #fff;
 	margin: 0 1% 1% 0;
 }
-#Speakers h1 {
+#Speakers h2 {
 	font-size: 5.20833vw;
 	text-align: center;
 	  margin: 2vw auto;
@@ -647,7 +660,7 @@ body {
 	font-size: 1.302vw;
 	margin: 0 0.5% 1% 0.5%;
 }
-#Speakers h1 {
+#Speakers h2 {
 	font-size: 13.02083vw;
 	margin-top: 5.46875vw;
 	margin-bottom: 5.46875vw;
@@ -688,7 +701,7 @@ body {
 	font-size: 3.1248vw;
 	margin: 0 0.5% 1% 0.5%;
 }
-#Speakers h1 {
+#Speakers h2 {
 	font-size: 13.75vw;
 	margin-top: 9.375vw;
 	margin-bottom: 9.375vw;
@@ -780,7 +793,7 @@ body {
 	text-align: center;
 	padding: 0.052083vw 0;
 }
-#Sponsors h1 {
+#Sponsors h2 {
 	font-size: 3.20833vw;
 	margin:70px 0 5px 0;
 }
@@ -839,7 +852,7 @@ body {
 	min-height: 252.2083vw;
 
 }
-#Sponsors h1 {
+#Sponsors h2 {
 	margin-top: 8.463542vw;
 	margin-bottom: 0;
 	font-size: 13.02083vw;
@@ -875,7 +888,7 @@ body {
 	height: auto;
 	min-height: 460.75vw;
 }
-#Sponsors h1 {
+#Sponsors h2 {
 	margin-top: 12.5vw;
 	margin-bottom: 0;
 	font-size: 13.75vw;
@@ -986,11 +999,11 @@ body {
 	background-size: 64.94792vw;
 	padding-top: 3.125vw;
 }
-#SocialLove h1 {
+#SocialLove h2 {
 	font-size: 5.20833vw;
 	margin: 0;
 }
-#SocialLove h1 .fa {
+#SocialLove h2 .fa {
 	color: #fd494e;
 	position: relative;
 	top: -0.20833vw;
@@ -1064,10 +1077,10 @@ body {
 	background-size: 96.61458vw;
 	padding-top: 10.4166vw;
 }
-#SocialLove h1 {
+#SocialLove h2 {
 	font-size: 13.02083vw;
 }
-#SocialLove h1 .fa {
+#SocialLove h2 .fa {
 	top: -0.52083vw;
 	left: -2.60416vw;
 	font-size: 11.06771vw;
@@ -1106,10 +1119,10 @@ body {
 	background-image: none;
 	padding-top: 9.375vw;
 }
-#SocialLove h1 {
+#SocialLove h2 {
 	font-size: 13.75vw;
 }
-#SocialLove h1 .fa-heart {
+#SocialLove h2 .fa-heart {
 	font-size: 11.875vw;
 	left: -2.5vw;
 	top: -1.5625;
@@ -1206,7 +1219,7 @@ body {
 	margin: 0 auto;
 	background-color: #f4f4f2;
 }
-#Highlights h1 {
+#Highlights h2 {
 	font-size: 5.2083vw;
 	  margin: 2vw auto;
 }
@@ -1317,7 +1330,7 @@ body {
 	background-color: rgba(0, 255, 255, 0)
 }
 @media (max-width: 1000px) {
-	#Highlights h1 {
+	#Highlights h2 {
 		font-size: 13.02083vw;
 		margin-top: 7.1614583vw;
 		margin-bottom: 7.1614583vw;
@@ -1398,7 +1411,7 @@ body {
 }
 
 @media (max-width: 640px) {	
-	#Highlights h1 {
+	#Highlights h2 {
 		font-size: 13.75vw;
 		margin-top: 11.25vw;
 		margin-bottom: 11.25vw;
@@ -1477,7 +1490,7 @@ body {
 	padding: 3.6458vw 1.8229vw 5.9895vw 1.8229vw;
 	box-sizing: border-box; /* if it is turned off (default: content-box) the [#Venue p] center alignment (margin: 0 auto) won't work */
 }
-#Venue h1 {
+#Venue h2 {
 	font-size: 5.2083vw;
 	margin: 0 0 2.34375vw 0;
 }
@@ -1524,7 +1537,7 @@ body {
 #Venue {
 	padding: 6.51041vw 4.55729vw 15.625vw 4.55729vw;
 }
-#Venue h1 {
+#Venue h2 {
 	font-size: 13.02083vw;
 	margin: 0 0 5.859375vw 0;
 }
@@ -1552,7 +1565,7 @@ body {
 #Venue {
 	padding: 15.625vw 7.8125vw 18.75vw 7.8125vw;
 }
-#Venue h1 {
+#Venue h2 {
 	font-size: 13.75vw;
 }
 #Venue h5 {
@@ -1590,7 +1603,7 @@ body {
 	max-width: 78vw;
 	margin: 0 auto;
 }
-#FutureOfWorkWrapper h1 {
+#FutureOfWorkWrapper h2 {
 	font-size: 60px;
 	font-weight: 700;
 	margin: 0 0 70px 0;
@@ -1676,7 +1689,7 @@ body {
 		padding-top: 23.4375vw;
 		padding-bottom: 15.625vw;
 	}
-	#FutureOfWorkWrapper h1 {
+	#FutureOfWorkWrapper h2 {
 		font-size: 11.25vw;
 		margin: 0 0 15.625vw 0;
 	}
@@ -1736,7 +1749,7 @@ footer {
 	text-align: center;
 	color: #feffff;
 }
-footer h1 {
+footer h2 {
 	font-size: 3.125vw;
 	margin: 0;
 	padding-top: 3.385416vw;
@@ -1852,7 +1865,7 @@ footer h1 {
 }
 
 @media (max-width: 1000px) { /* TABLET view */
-footer h1 {
+footer h2 {
 	font-size: 7.8125vw;
 	margin: 0;
 	padding-top: 8.463542vw;
@@ -1915,7 +1928,7 @@ footer h1 {
 }
 
 @media (max-width: 640px) { /* mobile view: font-size and whitespace changes. The phone numbers and email address stack beneath eachother */
-footer h1 {
+footer h2 {
 	font-size: 11.25vw;
 	padding-top: 14.0625vw;
 	margin-bottom: 13.1875vw;
