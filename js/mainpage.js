@@ -7,7 +7,20 @@ $(document).ready(function() {
 		 $('#FeaturedContentSection').fadeOut();
 		 $('#VideoSection').fadeIn('slow');
 		 $("html, body").animate({ scrollTop: $('#VideoSection').offset().top }, 1000);
-		 var myVideo = document.getElementById("HRNVideo"); 
+		 
+		    var slide = $('#FadeTwo').attr('class');
+			
+			if (typeof slide !="undefined" && slide == "ActiveFadingControll") {
+				 var myVideo = document.getElementById("HRNVideo");
+				  $('#HRNVideoTwo').css('display','none');
+				  $('#HRNVideo').css('display','block');
+			} else {
+				 var myVideo = document.getElementById("HRNVideoTwo"); 
+				 $('#HRNVideo').css('display','none');
+				 $('#HRNVideoTwo').css('display','block');
+			}
+		   
+		// var myVideo = document.getElementById("HRNVideo"); 
 		 
           myVideo.load();
 		  myVideo.play(); 
@@ -19,15 +32,23 @@ $(document).ready(function() {
 		 
 		 $('#VideoSection').fadeOut();
 		 $('#FeaturedContentSection').fadeIn('slow');
+		 
+		 	 var slide = $('#FadeTwo').attr('class');
+			
+			if (typeof slide !="undefined" && slide == "ActiveFadingControll") {
+				 var myVideo = document.getElementById("HRNVideo"); 
+			} else {
+				 var myVideo = document.getElementById("HRNVideoTwo"); 
+			}
 		
-	var myVideo = document.getElementById("HRNVideo"); 
+	//var myVideo = document.getElementById("HRNVideo"); 
 		 
 
            myVideo.pause(); 
  
 	   
-	 })	
-	
+	 })
+	 	
 		
 });
 

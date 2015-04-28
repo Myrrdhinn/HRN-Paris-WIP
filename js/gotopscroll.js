@@ -10,7 +10,7 @@
 				//Determines up-or-down scrolling
 				if (st > lastScroll){
 					//Replace this with your function call for downward-scrolling
-					//$('.GoTopButton').fadeOut(500);
+					$('.GoTopButton').fadeOut(500);
 				}
 				else {
 					//Replace this with your function call for upward-scrolling

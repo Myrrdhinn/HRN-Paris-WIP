@@ -77,8 +77,9 @@ body {
 #FeaturedParisText .BlueButton {
 	font-size: 1.25vw;
 	width: 11.97916vw;
+	max-width: 15.625vw;
 	height: 3.645vw;
-	line-height: 3.645vw;
+	line-height: 1.4vw;
 	text-align: center;
 	font-weight: bold;
 	margin: 0 auto;
@@ -309,7 +310,7 @@ body {
   padding-left: 50%;
 }
 
-#HRNVideo {
+#HRNVideo, #HRNVideoTwo {
 	width:100%;
 	
 }
@@ -647,6 +648,26 @@ body {
 .TwitterColor:hover {
 	color:#FFF;
 }
+#CallForSpeakers {
+	/*font-size: 30px;*/
+	font-size: 1.5625vw;
+	font-weight: 400;
+	line-height: 300%;
+	/*margin-bottom: 10px;*/
+	margin-bottom: 0.520833vw;
+}
+#BecomeASpeakerButton {
+	margin: 0 0 2.08333vw 0;
+	max-width: 15.625vw;
+	height: 3.64583vw;
+	padding:0;
+	font-size: 1.25vw;
+	border: 3px solid #106ab5;
+}
+#BecomeASpeakerButton:hover {
+	border: 3px solid #106ab5;
+	background-color: rgba(0, 255, 255, 0);
+}
 @media  (max-width: 1416px) {
 	.Square {
 	width: 24vw;
@@ -694,6 +715,21 @@ body {
 	margin-right: 1.25vw;
 	margin-left: 1vw
 }
+#CallForSpeakers {
+	/*font-size: 30px;*/
+	font-size: 3.90625vw;
+	/*margin-bottom: 10px;*/
+	margin-bottom: 1.2499992vw;
+}
+#BecomeASpeakerButton {
+	margin: 0 0 5.208325vw 0;
+	max-width: 39.0625vw;
+	height: 9.114575vw;
+	font-size: 3.125vw;
+	border: 3px;
+}
+
+
 }
 
 @media (max-width: 640px) {
@@ -734,6 +770,20 @@ body {
 	height: 0;
 	overflow: hidden;
 }
+#CallForSpeakers {
+	/*font-size: 30px;*/
+	font-size: 6vw;
+	/*margin-bottom: 10px;*/
+	margin-bottom: 3vw;
+}
+#BecomeASpeakerButton {
+	margin: 0 0 5.208325vw 0;
+	max-width: 93.75vw;
+	height: 21.87498vw;
+	padding-top: 1vw;
+	font-size: 7.5vw;
+}
+
 }
 /*END Speakers */
 
@@ -839,6 +889,26 @@ body {
 #ADP, .SquareWithNoBorder, #GloboForce, .EmptySquareSpecial {
 	border-right: none;
 }
+#Sponsors .BlueButton {
+	padding: 0;	
+}
+#ViewAllSponsorsButton {
+	margin: 3vw 0 2.864583vw 0;
+	max-width: 15.625vw;
+	height: 3.64583vw;
+	padding-top: 0vw;
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	font-size: 1.25vw;
+	border: 3px solid #106ab5;
+}
+#ViewAllSponsorsButton:hover {
+	border: 3px solid #fff;
+	color: #fff;
+	background-color: rgba(255,255,255,0);
+}
+
 @media (max-width: 1280px) {
 	#Sponsors {
 	min-height: 74.45vw;
@@ -880,13 +950,18 @@ body {
 #CornerStone, #Haufe, #GloboForce, #Careerbuilder, #SpecialSquare {
 	border-right: none;
 }
-
+#ViewAllSponsorsButton {
+	margin: 0 0 7.1614575vw 0;
+	max-width: 39.0625vw;
+	height: 9.114575vw;
+	font-size: 3.125vw;
+}
 }
 
 @media (max-width: 640px) {
 #Sponsors {
 	height: auto;
-	min-height: 460.75vw;
+	min-height: 530.75vw;
 }
 #Sponsors h2 {
 	margin-top: 12.5vw;
@@ -911,7 +986,12 @@ body {
 	display:none;
 	
 }
-
+#ViewAllSponsorsButton {
+	margin: 8vw 0 13.187498vw 0;
+	max-width: 93.75vw;
+	height: 21.87498vw;
+	font-size: 7.5vw;
+}
 
 }  /*Messed up hover effect disabled by the will of God */
 
@@ -956,6 +1036,9 @@ body {
 #CrossKnowledge {
 	background-image: url(../img/mainpage/sponsors/bw/crossknowledge-bw-logo.png);
 }
+#Infor {
+	background-image: url(../img/mainpage/sponsors/bw/infor-bw-logo.png);
+}
 #Careerbuilder {
 	background-image: url(../img/mainpage/sponsors/bw/careerbuilder-bw-logo.png);
 }
@@ -988,229 +1071,6 @@ body {
 	background-image: url(../img/mainpage/sponsors/indeed-logo.png);
 }*/
 /*END Sponsors*/
-
-/* Social Love */
-#SocialLove {
-	background-image: url(../img/mainpage/social/social-bg-desktop.jpg);
-	background-repeat: no-repeat;
-	background-position: bottom left;
-	background-color: #f4f4f2;
-	text-align: center;
-	background-size: 64.94792vw;
-	padding-top: 3.125vw;
-}
-#SocialLove h2 {
-	font-size: 5.20833vw;
-	margin: 0;
-}
-#SocialLove h2 .fa {
-	color: #fd494e;
-	position: relative;
-	top: -0.20833vw;
-	left: -1.04166vw;
-	font-size: 4.427083vw;
-}
-#SocialLoveWrapper {  /* a HUGE wrapper, contains the CAROUSEL and the TWITTER widget, floating to the right */
-	margin-top: 4.16666vw;
-	float: right;
-}
-#SocialLoveCarouselWrapper {  /* The CAROUSEL. Floating to the left IN THE SocialLoveWrapper */
-	width: 100%;
-	max-width: 31.25vw;
-	margin-top: 7.03125vw;
-	display: inline-block;
-	float: left;
-}
-.TweetText, .TweetText a {
-	color: #353530;
-}
-.TweetText {
-	margin: 0 auto;
-	width: 100%;
-	max-width: 26.0416vw;
-	font-size: 1.5625vw;
-	line-height: 1.875vw;
-}
-.TweetAuthor, .TweetAuthor a {
-	color: #55acee;
-}
-.TweetAuthor {
-	text-align: left;
-	font-weight: 600;
-	font-size: 1.04166vw;
-	margin: 0 auto;
-	margin-top: 2.864583vw;
-	margin-left: 9.89583vw;
-}
-.TweetAuthor .fa-twitter {
-	float: left;
-	font-size: 2.86458vw;
-	margin-right: 0.78125vw;
-}
-.TweetAuthor span {
-	text-transform: uppercase;
-}
-#TweetNavigation { /* Containing the left and right arrows of the carousel (.TweetsPrev, .TweetsNext)*/
-	position: relative;
-	width: 100%;
-	max-width: 32.8125vw;
-	font-size: 3.125vw;
-	top: -14.32291vw;
-}
-#TweetsPrev, #TweetsNext {
-	position: absolute;
-	cursor: pointer;
-}
-#TweetsPrev {
-	left: 0;
-}
-#TweetsNext {
-	right: 0;
-}
-
-@media (max-width: 1000px) { /* Carousel TABLET view. The Twitter widget is turned off from this point */
-#SocialLove {
-	background-image: url(../img/mainpage/social/social-bg-tablet.jpg);
-	background-repeat: no-repeat;
-	background-position: bottom left;
-	text-align: center;
-	background-size: 96.61458vw;
-	padding-top: 10.4166vw;
-}
-#SocialLove h2 {
-	font-size: 13.02083vw;
-}
-#SocialLove h2 .fa {
-	top: -0.52083vw;
-	left: -2.60416vw;
-	font-size: 11.06771vw;
-}
-#SocialLoveCarouselWrapper {
-	max-width: 61.19791vw;
-	margin-bottom: 44.27083vw;
-	margin-right: 3.255208vw;
-}
-.TweetText {
-	max-width: 46.875vw;
-	font-size: 3.38542vw;
-	line-height: 4.16666vw;
-}
-.TweetAuthor {
-	font-size: 2.60416vw;
-	margin-top: 3.90625vw;
-	margin-left: 14.32292vw;
-}
-.TweetAuthor .fa-twitter {
-	font-size: 7.161458vw;
-	margin-right: 1.953125vw;
-}
-.TweetAuthor span {
-	font-size: 2.34375vw;
-}
-#TweetNavigation {
-	max-width: 82.03125vw;
-	font-size: 7.8125vw;
-	top: -28.64583vw;
-}
-}
-
-@media (max-width: 640px) { /* MOBILE view - the background image is removed from this point. The Carousel is now at the center of the section. */
-#SocialLove {
-	background-image: none;
-	padding-top: 9.375vw;
-}
-#SocialLove h2 {
-	font-size: 13.75vw;
-}
-#SocialLove h2 .fa-heart {
-	font-size: 11.875vw;
-	left: -2.5vw;
-	top: -1.5625;
-}
-#SocialLoveWrapper {
-	float: none;
-	margin-top: 14.0625vw;
-	padding-left: 3.125vw;
-	padding-right: 3.125vw;
-}
-#SocialLoveCarouselWrapper {
-	float: none;
-	margin: 0 auto;
-	max-width: 93.75vw;
-}
-.TweetText {
-	max-width: 75vw;
-	font-size: 5.625vw;
-	line-height: 6.25vw;
-}
-.TweetAuthor .fa-twitter {
-	font-size: 17.1875vw;
-	margin-right: 4.6875vw;
-}
-.TweetAuthor {
-	margin-left: 12vw;
-	margin-top: 9.375vw;
-	font-size: 5.625vw;
-}
-.TweetAuthor span {
-	font-size: 5vw;
-}
-#TweetNavigation {
-	max-width: 96.875vw;
-	font-size: 11.25vw;
-	top: -60.9375vw;
-}
-}
-#TwitterWidgetWrapper { /* Floats the TWITTER widget wrapper to the right of the parent wrapper (the SocialLoveWrapper). */
-	display: inline-block;
-	float: right;
-	margin-right: 7.29166vw;
-	margin-left: 3.38542vw;
-}
-#twitter-widget-0 {  /* Override default width of the TWITTER widget. Removing border radius. */
-	width: 100% !important;
-	border-radius: 0px !important;
-}
-.twitter-timeline {
-	height: 26.82292vw;
-}
-#TwitterWidget {
-	height: 29.32291vw;
-	border: 0.41666vw solid #106ab5;
-	background-color: #feffff;
-	color: #feffff;
-}
-#TwitterWidgetHeader {
-	width: 27.0833vw;
-	height: 2.08333vw;
-	padding: 0.52083vw 1.302083vw 0px 1.302083vw;
-	background: #fd494e;
-}
-#TwitterWidgetHeaderText {
-	font-size: 1.09375vw;
-	float: left;
-	font-weight: 600;
-}
-#TwitterWidgetHeader .fa-twitter {
-	font-size: 1.5625vw;
-	float: right;
-}
-#TwitterFollowUsButton { /* The button is in the TWITTER widget wrapper under the widget. Floats the button to the left in the TWITTER widget wrapper. */
-	margin-top: 2.08333vw;
-	margin-bottom: 3.385416vw;
-	float: left;
-	max-width: 15.625vw;
-	height: 3.64583vw;
-	padding-top: 0.260416vw;
-	font-size: 1.25vw;
-}
-
-@media (max-width: 1000px) {
-#TwitterWidgetWrapper {
-	display: none;
-}
-}
-/* END Social Love */
 
 /* Highlights */
 #Highlights {
@@ -1317,13 +1177,36 @@ body {
 #HRTechWoldPartyText {
 	padding-top: 6.77083vw;	
 }
+.TestimonialText {
+	/*padding: 100px 135px 0px 45px;*/
+	padding: 5.20833vw 7.03125vw 0 2.34375vw;
+}
+.Testimonial {/*
+	font-size: 28px;
+	margin-top: 50px;
+	margin-bottom: 45px;*/
+	font-size: 1.45833vw;
+	margin-top: 2.60416vw;
+	margin-bottom: 2.34375vw;
+}
+.TestimonialQuoteSign {
+	width: 2.70833vw;
+	height: auto;
+}
+#TimeWarnerLogo {
+	width:	9.16666vw;
+	height: auto;
+}
+#TestimonialMobileImage { display: none; }
+
+
+
 #HighlightsLoadMoreButton {
 	margin: 3.125vw 0;
 	max-width: 15.625vw;
 	height: 3.64583vw;
-	padding-top: 1vw;
 	font-size: 1.25vw;
-	border: 3px;
+	border: 3px solid #106ab5;
 }
 #HighlightsLoadMoreButton:hover {
 	border: 3px solid #106ab5;
@@ -1401,6 +1284,30 @@ body {
 	#HRTechWoldPartyText {
 		padding-top: 13.02083vw;	
 	}
+	
+	.TestimonialText {
+		/*padding: 100px 135px 0px 45px;*/
+		padding: 10.020825vw 15.578125vw 0 4vw;
+	}
+	.Testimonial {/*
+		font-size: 28px;
+		margin-top: 50px;
+		margin-bottom: 45px;*/
+		font-size: 2.60416vw;
+		margin-top: 5.5104vw;
+		margin-bottom: 4.859375vw;
+	}
+	.TestimonialQuoteSign {
+		width: 6.770825vw;
+		height: auto;
+	}
+	#TimeWarnerLogo {
+		width:	22.91665vw;
+		height: auto;
+	}
+	#TestimonialMobileImage { display: block; }	
+	#TestimonialDesktopImage { display: none; }	
+	
 	#HighlightsLoadMoreButton {
 		margin: 7.8125vw 0;
 		max-width: 39.0625vw;
@@ -1466,6 +1373,28 @@ body {
 	#HRTechWoldPartyText {
 		padding-top: 9.375vw;	
 	}
+	
+	.TestimonialText {
+		/*padding: 100px 135px 0px 45px;*/
+		padding: 5.020825vw 6.578125vw 0 4vw;
+	}
+	.Testimonial {/*
+		font-size: 28px;
+		margin-top: 50px;
+		margin-bottom: 45px;*/
+		font-size: 3.4375vw;
+		margin-top: 3.5104vw;
+		margin-bottom: 2.859375vw;
+	}
+	.TestimonialQuoteSign {
+		width: 6.770825vw;
+		height: auto;
+	}
+	#TimeWarnerLogo {
+		width:	22.91665vw;
+		height: auto;
+	}	
+	
 	#HighlightsLoadMoreButton {
 		margin: 9.375.75vw 0;
 		max-width: 93.75vw;
@@ -1663,7 +1592,7 @@ body {
 	margin: 10px 0 0 0;
 }
 #TicketPastPrice {
-	text-decoration:line-through;
+	
 	-moz-text-decoration-color: red; /* Code for Firefox */
     text-decoration-color: red;
 	-webkit-text-decoration-color: red;
@@ -1939,6 +1868,7 @@ footer h2 {
 	font-size: 6.25vw;
 	margin: 2.34375vw;
 	line-height: 10vw;
+	padding-top: 0vw;
 }
 .Contact .fa {
 	padding-right: 3.125vw;

@@ -34,6 +34,9 @@
 <!-- Include Custom CSS Definitions -->
 <link rel="stylesheet" href="css/tickets.css" />
 
+<!-- Include Footer CSS Definitions -->
+<link rel="stylesheet" href="css/footer.css" />
+
 <!-- Include jQuery -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -54,18 +57,31 @@
 <script src="vendor/reveal/jquery.min.js" type="text/javascript"></script>
 <script src="vendor/reveal/jquery.reveal.js" type="text/javascript"></script>
 
-
 <!-- Thank you modal -->
 <script type="text/javascript">
 $(document).ready(function() {
-if(window.location.href.indexOf('#ThankYouModal') != -1) {
-   jQuery("#ThankYouModal").reveal();
-  }
+	if(window.location.href.indexOf('#ThankYouBrochureModal') != -1) {
+   		jQuery("#ThankYouBrochureModal").reveal();
+  	} 
 });
 </script>
 <!-- END Thank you modal  -->
 
 
+<!-- GOOGLE ANALYTICS TRACKING SCRIPT -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-55976467-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 
 </head>
 <body>
@@ -78,26 +94,25 @@ if(window.location.href.indexOf('#ThankYouModal') != -1) {
 
      <div id="MobileMenuListContainer"> <img id="MobileMenuCloseButton" src="img/menu/mobile-close-button.png" alt="X" onClick='HideMobileMenu()'>
         <ul id="MobileUl">
-            <li><a href="http://hrtechcongress.com#AboutSection" onClick='HideMobileMenu()'>About</a></li>
-            <li><a href="http://hrtechcongress.com#SpeakersSection" onClick='HideMobileMenu()'>Speakers</a></li>
-            <li><a href="http://hrtechcongress.com#SponsorsSection" onClick='HideMobileMenu()'>Sponsors</a></li>
-            <li><a href="http://hrtechcongress.com#HighlightsSection" onClick='HideMobileMenu()'>Highlights</a></li>
-            <li><a href="http://hrtechcongress.com#VenueSection" onClick='HideMobileMenu()'>Venue</a></li>
-            <li><a href="http://hrtechcongress.com#GetInTouchSection" onClick='HideMobileMenu()'>Get In Touch</a></li>
-            <li><a href="tickets" onClick='HideMobileMenu()'><i class="fa fa-ticket"></i> Get Tickets</a></li>
+            <li><a href="http://hrtechcongress.com#AboutSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'About']);" title="About">About</a></li>
+            <li><a href="http://hrtechcongress.com#SpeakersSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);" title="Speakers">Speakers</a></li>
+            <li><a href="http://hrtechcongress.com#SponsorsSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);" title="Sponsors">Sponsors</a></li>
+            <li><a href="http://hrtechcongress.com#HighlightsSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Highlights']);" title="Highlights">Highlights</a></li>
+            <li><a href="http://hrtechcongress.com#VenueSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Venue']);" title="Venue">Venue</a></li>
+            <li><a href="http://hrtechcongress.com#GetInTouchSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Contact']);" title="Get In Touch">Get In Touch</a></li>
+            <li><a href="tickets" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Tickets']);" title="Get Tickets"><i class="fa fa-ticket"></i> Get Tickets</a></li>
         </ul>
-     </div>
-     
+
     <div class="nav-social" style="display:none">
-        <a class="ico-fb no-link" target="blank" href="https://www.facebook.com/hrtecheu"></a>
-        <a class="ico-tw no-link" target="blank" href="https://twitter.com/hrtecheurope"></a>
-        <a class="ico-linkedin no-link" target="blank" href="http://www.linkedin.com/groups/HR-Technology-Europe-Human-Resources-3930182/about"></a>
-        <a class="ico-flickr no-link" target="blank" href="https://www.flickr.com/photos/hrtecheurope/sets/72157648919068765/"></a>
-        <a class="ico-slideshare no-link" target="blank" href="http://www.slideshare.net/hrtecheurope"></a>
+        <a title="Facebook" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Facebook']);" class="ico-fb no-link" target="blank" href="https://www.facebook.com/hrtecheu"></a>
+        <a title="Twitter" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Twitter']);" class="ico-tw no-link" target="blank" href="https://twitter.com/hrtechworld"></a>
+        <a title="Linkedin" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Linkedin']);" class="ico-linkedin no-link" target="blank" href="http://www.linkedin.com/groups/HR-Technology-Europe-Human-Resources-3930182/about"></a>
+        <a title="Flickr" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Flickr']);" class="ico-flickr no-link" target="blank" href="https://www.flickr.com/photos/hrtecheurope/sets/72157648919068765/"></a>
+        <a title="Slideshare" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Slideshare']);" class="ico-slideshare no-link" target="blank" href="http://www.slideshare.net/hrtecheurope"></a>
         
     </div>
 </div>
-
+</div>
   </div>
   </nav>
 
@@ -106,8 +121,8 @@ This section is controlled by the menu.css
 -->
   
   <nav id="SecondStateMainMenuContainer" class="FixedTop">
-    <div id="MenuContainer"><a href="http://hrtechcongress.com"><img src="img/menu/horizontallogo.png" alt="HR Tech Congress Logo"  id="HorizontalLogo"/></a><a class="MainMenuItem" href="http://hrtechcongress.com#AboutSection">ABOUT</a><a class="MainMenuItem"  href="http://hrtechcongress.com#SpeakersSection">SPEAKERS</a><a class="MainMenuItem"  href="http://hrtechcongress.com#SponsorsSection">SPONSORS</a>
-      <a class="MainMenuItem"  href="http://hrtechcongress.com#HighlightsSection">HIGHLIGHTS</a><a class="MainMenuItem"  href="http://hrtechcongress.com#VenueSection">VENUE</a><a class="MainMenuItem"  href="http://hrtechcongress.com#GetInTouchSection">GET IN TOUCH</a> <a class="MainMenuItem" href="#" id="GetTickets"><i class="fa fa-ticket"></i>GET TICKETS</a></div>
+    <div id="MenuContainer"><a href="http://hrtechcongress.com" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'LogoHome']);"><img src="img/menu/horizontallogo.png" alt="HR Tech Congress Logo"  id="HorizontalLogo"/></a><a class="MainMenuItem" href="http://hrtechcongress.com#AboutSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'About']);">ABOUT</a><a class="MainMenuItem"  href="http://hrtechcongress.com#SpeakersSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);">SPEAKERS</a><a class="MainMenuItem"  href="http://hrtechcongress.com#SponsorsSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);">SPONSORS</a>
+      <a class="MainMenuItem"  href="http://hrtechcongress.com#HighlightsSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Highlights']);">HIGHLIGHTS</a><a class="MainMenuItem"  href="http://hrtechcongress.com#VenueSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Venue']);">VENUE</a><a class="MainMenuItem"  href="http://hrtechcongress.com#GetInTouchSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Contact']);">GET IN TOUCH</a> <a class="MainMenuItem" href="#" id="GetTickets" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Tickets']);"><i class="fa fa-ticket"></i>GET TICKETS</a></div>
   </nav>
   
   <!-- END MAIN MENU -->
@@ -115,7 +130,7 @@ This section is controlled by the menu.css
   <header>
   <h1>REGISTRATION</h1>
   <p id="LightParagraph">Your ticket opens a door to a world of curated dinners, parties and events hosted by the world’s leading HR technology brands.</p>
-  <p><strong>Prices increase every two weeks. Next increase is on April 8th!</strong></p>
+  <p><strong>Prices increase every two weeks.</strong></p>
   
   </header>
 <!-- END Header -->
@@ -127,12 +142,12 @@ This section is controlled by the menu.css
  <div id="OneDelegateMainContainer" class="TicketContainer">
   <div class="ContainerShadow">
     <div class="TicketsHeader"><h6>1 DELEGATE</h6></div>
-    <div class="TicketsInfo"><p>Regular tickets are priced at €1,190 per ticket. <span>Current early bird saves you €360.</span> Prices increase every two weeks.
+    <div class="TicketsInfo"><p>Regular tickets are priced at €1,190 per ticket. <span>Current early bird saves you €238.</span> Prices increase every two weeks.
      </p>
     <ul>
       <li>Access to all stages</li>
       <li>Access to the exhibition area</li>
-      <li>Access to the iRecruit expo</li>
+      <li>Access to the iRecruit co-located event</li>
       <li>Access to the disruptHR startup zone</li>
       <li>All parties and side events</li>
       <li>Daily food and beverage refreshments</li>
@@ -140,11 +155,11 @@ This section is controlled by the menu.css
     </ul>
    </div>
    <div class="TicketsPrice">
-     <h4>€830</h4>
-     <img class="Discount" src="img/tickets/save30.png" alt="Save 30%" />
+     <h4>€952</h4>
+     <div class="SavePriceBox"><h5>Save<br>€238</h5></div>
    </div>
    <div class="TicketsButtonContainer">
-     <a href="https://www.eiseverywhere.com/107774?discountcode=P30" target="_blank"><button>GET TICKETS</button></a>
+     <a href="https://www.eiseverywhere.com/ereg/newreg.php?eventid=107774&discountcode=PAR20" target="_blank" onClick="_gaq.push(['_trackEvent', 'TicketsPage', 'ExternalForward', 'OneDelegate']);"><button>GET TICKETS</button></a>
    </div>
    
   </div>
@@ -155,12 +170,12 @@ This section is controlled by the menu.css
  <div id="ThreeDelegateMainContainer" class="TicketContainer">
   <div class="ContainerShadow">
     <div class="TicketsHeader"><h6>3 DELEGATES</h6></div>
-    <div class="TicketsInfo"><p>Regular tickets are priced at €1,190. <span>You can save €475 per ticket if you book at least 3 delegates before April 30th.
+    <div class="TicketsInfo"><p>Regular tickets are priced at €1,190. <span>Save €1,190 if you book 3 delegates before April 30th.
      </span></p>
      <ul>
       <li>Access to all stages</li>
       <li>Access to the exhibition area</li>
-      <li>Access to the iRecruit expo</li>
+      <li>Access to the iRecruit co-located event</li>
       <li>Access to the disruptHR startup zone</li>
       <li>All parties and side events</li>
       <li>Daily food and beverage refreshments</li>
@@ -168,11 +183,11 @@ This section is controlled by the menu.css
     </ul>
    </div>
    <div class="TicketsPrice">
-     <h4>€2140</h4>
-     <img class="Discount" src="img/tickets/save40.png" alt="Save 40%" />
+     <h4>€2,380</h4>
+     <div class="SavePriceBox"><h5>Save<br>€1,190</h5></div>
    </div>
    <div class="TicketsButtonContainer">
-    <a href="https://www.eiseverywhere.com/107774?discountcode=P40" target="_blank"><button>GET TICKETS</button></a>
+    <a href="https://www.eiseverywhere.com/ereg/newreg.php?eventid=107774&discountcode=PAR3FOR2" target="_blank" onClick="_gaq.push(['_trackEvent', 'TicketsPage', 'ExternalForward', 'ThreeDelegates']);"><button>GET TICKETS</button></a>
    </div>
   </div>
  </div>
@@ -187,7 +202,7 @@ This section is controlled by the menu.css
     <ul>
      <li>Access to all stages</li>
      <li>Access to the exhibition area</li>
-     <li>Access to the iRecruit expo</li>
+     <li>Access to the iRecruit co-located event</li>
      <li>Access to the disruptHR startup zone</li>
      <li>All parties and side events</li>
      <li>Daily food and beverage refreshments</li>
@@ -199,7 +214,7 @@ This section is controlled by the menu.css
      <h4>Use Code</h4>
    </div>
    <div class="TicketsButtonContainer">
-     <a href="https://www.etouches.com/ereg/newreg.php?eventid=107774&" target="_blank"><button>GET TICKETS</button></a>
+     <a href="https://www.etouches.com/ereg/newreg.php?eventid=107774&" target="_blank" onClick="_gaq.push(['_trackEvent', 'TicketsPage', 'ExternalForward', 'VIPTickets']);"><button>GET TICKETS</button></a>
    </div>
   </div>
  </div>
@@ -216,25 +231,23 @@ This section is controlled by the menu.css
     <h2 class="Contact FontProximaNova"><i class="fa fa-phone"></i>UK/IE +44 20 34 689 689</h2>
     <h2 class="Contact FontProximaNova"><i class="fa fa-envelope"></i>hrn@hrneurope.com</h2>
     <div id="GetInTouchButtonContainer">
-      <a href="#" data-reveal-id="DownloadBrochureModal"><button class="BlueButton FontRaleway" id="DownloadBrochureButton" >Download Brochure</button></a>
+      <a href="#" data-reveal-id="DownloadBrochureModal" title="Download Brochure" onClick="_gaq.push(['_trackEvent', 'Footer', 'ModalOpen', 'DownloadBrochure']);"><button class="BlueButton FontRaleway" id="DownloadBrochureButton" >Request Brochure</button></a>
     </div>
    </div>
    <div id="FooterRightWrapper">
-   		<!-- FORM HELYE -->
         <form>
         	<h1>SIGN UP FOR NEWSLETTER</h1>
-        	<input type="text"><input type="submit" value="SEND">
+        	<input type="text"><input type="submit" value="SEND" onClick="_gaq.push(['_trackEvent', 'Footer', 'FormSubmission', 'SignUpForNewsletter']);">
         </form>
-        <!-- END FORM HELYE -->
-        <div id="FooterSocialIconsContainer"> <a href="https://twitter.com/hrtecheurope" target="_blank">
+        <div id="FooterSocialIconsContainer"> <a href="https://twitter.com/hrtechworld" target="_blank" title="HR Tech World - Twitter" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Twitter']);">
           <div id="FooterTwitter" class="FooterSocialIcon"></div>
-          </a> <a href="https://www.facebook.com/hrtecheu" target="_blank">
+          </a> <a href="https://www.facebook.com/hrtecheu" target="_blank" title="HR Tech Europe - Facebook" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Facebook']);">
           <div id="FooterFacebook" class="FooterSocialIcon"></div>
-          </a> <a href="http://www.linkedin.com/groups/HR-Technology-Europe-Human-Resources-3930182/about" target="_blank">
+          </a> <a href="http://www.linkedin.com/groups/HR-Technology-Europe-Human-Resources-3930182/about" target="_blank" title="HR Tech Europe - LinkedIn" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'LinkedIn']);">
           <div id="FooterLinkedIn" class="FooterSocialIcon"></div>
-          </a> <a href="http://www.slideshare.net/hrtecheurope" target="_blank">
+          </a> <a href="http://www.slideshare.net/hrtecheurope" target="_blank" title="HR Tech Europe - SlideShare" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'SlideShare']);">
           <div id="FooterSlideShare" class="FooterSocialIcon"></div>
-          </a> <a href="https://www.flickr.com/photos/hrtecheurope/sets/72157648919068765/" target="_blank">
+          </a> <a href="https://www.flickr.com/photos/hrtecheurope/sets/72157648919068765/" target="_blank" title="HR Tech Europe - Flickr" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Flickr']);">
           <div id="FooterFlickr" class="FooterSocialIcon"></div>
           </a> 
        </div>
@@ -244,7 +257,7 @@ This section is controlled by the menu.css
 
  <div id="TransparentFooter">
  	<div id="TransparentFooterInnerContainer">
-        <div id="TransparentFooterImage"><img src="img/tickets/footer-hrtech-logo.png" alt="HR Tech World Congress logo"></div>
+        <div id="TransparentFooterImage"><img src="img/footer/footer-hrtech-logo.png" alt="HR Tech World Congress logo"></div>
         <div id="TransparentFooterTextContainer">
                 <h6 class="TransparentFooterText FontRaleway" id="CopyrightText">Copyright &copy; 2015 HRN Europe. All Rights Reserved.</h6>
                 <h6 class="TransparentFooterText FontRaleway" id="PrivacyText">Privacy Policy | Terms and Conditions</h6>
@@ -261,41 +274,14 @@ This section is controlled by the menu.css
 </a> 
 <!-- END Go to Top Button --> 
 
-
-<!-- Apply for 2 for 1 Tickets Modal -->
-<div id="ApplyFor2For1TicketsModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
-  <h2>APPLY FOR <br>2 FOR 1 TICKETS</h2>
-  <p>Thank you for your interest in 2 for 1 tickets. Please leave your details and we'll be in touch with how to claim your discounted passes.</p>
-  <!-- BEGINING of : APPLY FOR 2 FOR 1 TICKETS FORM -->
-  
-  <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
-    <input type=hidden name="oid" value="00DD0000000nwgk">
-  <input type=hidden name="retURL" value="http://dev.hrtechcongress.com/index.html#ThankYouModal">
-                           
-      <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
-      <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />
-
-        <input required placeholder="Email Address *" id="email" maxlength="80" name="email" size="20" type="text" />
-        <input required placeholder="Phone Number *" id="phone" maxlength="40" name="phone" size="20" type="text" />
-        <input required placeholder="Company *" id="company" maxlength="40" name="company" size="20" type="text" />
-        <input required placeholder="Job Title *" id="title" maxlength="40" name="title" size="20" type="text" />
-        <select  style="display:none;"   id="lead_source" name="lead_source" placeholder="Lead Source">
-          <option selected="selected" value="HRTechParis2015-2for1">HRTechParis2015-2for1</option>
-        </select>
-        <input onClick="_gaq.push(['_trackEvent', 'ApplyFor2For1TicketsForm ', 'FromSubmission', 'InquirySent']);" class="submitbutton" type="submit" name="submit" value="SEND">
-  </form>
-  <!-- END of : APPLY FOR 2 FOR 1 TICKETS FORM -->
-</div>
-<!-- END Apply for 2 for 1 Tickets Modal -->
-
 <!-- Download Brochure Modal -->
 <div id="DownloadBrochureModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
   <h2>Download Brochure</h2>
-  <p>The Paris HR Tech Congress brochure is almost ready. Please leave your details and we'll email it to you as soon as it's available.</p>
+  <p>Thank you for downloading our brochure! Please fill in all the fields below.</p>
   <!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
   <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
     <input type=hidden name="oid" value="00DD0000000nwgk">
-    <!--<input type=hidden name="retURL" value="http://london.hrtecheurope.com/PDF/2015_HR_Tech_London_Delegates.pdf">-->
+    <input type=hidden name="retURL" value="http://hrtechcongress.com/tickets.html#ThankYouBrochureModal">
 
       <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
       <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />
@@ -307,20 +293,18 @@ This section is controlled by the menu.css
         <select  style="display:none;"   id="lead_source" name="lead_source" placeholder="Lead Source">
           <option selected="selected" value="HRTechParis2015-DownloadPDF">HRTechParis2015-DownloadPDF</option>
         </select>
-        <input onClick="_gaq.push(['_trackEvent', 'DownloadPDFForm ', 'FromSubmission', 'InquirySent']);" class="submitbutton" type="submit" name="submit" value="SEND">
+        <input onClick="_gaq.push(['_trackEvent', 'DownloadPDFForm', 'FromSubmission', 'InquirySent']);" class="submitbutton" type="submit" name="submit" value="SEND">
   </form>
   <!-- END of : DOWNLOAD BROCHURE MODAL FORM -->
 </div>
 <!-- END Download Brochure Modal -->
 
-<!-- Download Brochure Modal -->
-<div id="ThankYouModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
+<!-- Thank You Brochure Modal -->
+<div id="ThankYouBrochureModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
   <h2>Thank you!</h2>
-  <p>You have successfully applied for 2 for 1 tickets. Thank you.</p>
-
+   <p>You shall receive an email shortly from one of our team.</p>
 </div>
-<!-- END Download Brochure Modal -->
-
+<!-- END Thank You Modal -->
 
 <!-- SlickMaster Carousel js --> 
 <script type="text/javascript" src="vendor/slick-master/slick/slick.min.js"></script> 
