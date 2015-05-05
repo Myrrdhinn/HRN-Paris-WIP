@@ -28,9 +28,9 @@ require_once('controllers/siteauth.php');
 	
 	<!--Main Wrapper-->
 	<div class="wrapper">
-	  <h1 class="WrapperMainH1">HR Tech Europe - Sales Site | Log in</h1>
+	  <h1 class="WrapperMainH1">HR Tech Europe - World Congress Site <br/ > Log in</h1>
 	  
-	  <p class="WelcomeTexT">Welcome to the Sales Page of <br> HR Tech Europe</p>
+	  <p class="WelcomeTexT">Welcome to the World Congress Admin site of <br> HR Tech Europe</p>
 	<!--Form container-->
 	 <div id="container">
 	  

@@ -1,16 +1,21 @@
 <?php 
 namespace HRNParis\sponsors;
 use HRNParis\config as config;
+use HRNParis\main as main;
 include_once('config.php');	
+include_once('main.php');
 	
 class sponsors_main extends config {
 	 
 	//This is the function what collets all the sponsors to the content multi dimensional array.
   public function sponsors($category) {
+
+          $main = new main\main;	
+	  
 		$content = '';
-		
-		//ORDER BY CASE sdc.sponsor_id WHEN 14 THEN 1 END DESC, rand()    :O  ilyenkor a 14-es id-jú lesz mindig az első a többi pedig random utána 
-		//ha meg fix a sorrend akkor meg ORDER BY sdc.id DESC
+	
+	//ORDER BY CASE sdc.sponsor_id WHEN 14 THEN 1 END DESC, rand()    :O  ilyenkor a 14-es id-jú lesz mindig az első a többi pedig random utána 
+	//ha meg fix a sorrend akkor meg ORDER BY sdc.id DESC
 	
 		//Get basic date about a sponsors
 		                    //Name                 Bio         Category              website         image       image alt       sponsor_id
@@ -57,10 +62,99 @@ class sponsors_main extends config {
 								}//if stype row count end
 								
 								
+				$permission = 0;
+				
+			 if (isset($_SESSION['user_id'])) {	
+				
+					  //Get permission
+					   $name_q = "SELECT id FROM sponsors_user_connection WHERE sponsors_id = :sponsor AND users_id = :user ORDER BY date DESC LIMIT 0,1";
+					   $name = $this->pdo->prepare($name_q);
+					   
+					   $name->bindValue(':sponsor', $sponsors['sponsor_id'], \PDO::PARAM_INT);
+					   $name->bindValue(':user', $_SESSION['user_id'], \PDO::PARAM_INT);
+					   
+					   $name->execute();
+					   
+					   if ($name->rowCount() > 0) {
+						  $permission = 1;
+					   }
+				
+			 }
 								
+		if (isset($_SESSION['sponsors_admin']) && ($permission == 1 || isset($_SESSION['super_admin']))) {
+		   /*
+		  -----------------------------
+		   Admin
+		  --------------------------------- 
+		  */
+		  
+		  $content .='<!-- '.$sponsors['sponsor_name'].' -->
+        <div class="Sponsor">';
+		
+	
+				$content .='<div class="ReturnValue" style="display:none"></div>';
+		       $content .='<div class="SystemIcons">';
+			  if (isset($_SESSION['super_admin'])) {
+				    $content .='<i data-sponsor="'.$sponsors['sponsor_id'].'" class="fa fa-cog SysIcon SysOptions"></i>';
+			   }
+			          
+			        
+				    $content .=' <i data-sponsor="'.$sponsors['sponsor_id'].'" class="fa fa-times SysIcon SysDelete"></i>
+				 </div>';
+		
+             $content .='<div class="SponsorLogo dropzone" data-sponsor="'.$sponsors['sponsor_id'].'" data-sname="'.$sponsors['sponsor_name'].'"><img src="../img/sponsors/logos/'.$sponsors['image_url'].'" alt="'.$sponsors['alt_name'].'"></div>
+            <div class="SponsorDetails">';
+			
+                  //Sponsor name			
+            	$content .='<h2 class="SponsorName Editable" data-type="NameEdit" data-sponsor="'.$sponsors['sponsor_id'].'">'.$sponsors['sponsor_name'].'</h2>';
+				 //Name edit Field
+				  $content .='<input class="NameEdit EditField" data-mainclass="SponsorName" style="display:none;" type="text" value="'.$sponsors['sponsor_name'].'">';
+				 
+				//Sponsor link
+				 $content .='<i class="fa fa-external-link Editable" data-type="LinkEdit" data-sponsor="'.$sponsors['sponsor_id'].'"></i>';
+				  
+				 
+				    //Link edit Field
+				    $content .='<input class="LinkEdit EditField" data-mainclass="fa-external-link" style="display:none;" type="text" value="'.$sponsors['sponsor_link_url'].'">';
+				 
+				
+				 
+				    
+					
+				//Sponsor Bio	
+                $content .='<div class="SponsorDescription" data-type="BioEdit"  data-sponsor="'.$sponsors['sponsor_id'].'">'.$sponsors['sponsor_bio'].'</div>';
+				 $content .='<div class="HelpText"  data-sponsor="'.$sponsors['sponsor_id'].'">Press Esc to exit the editor!</div>';
+                  //Bio Edit field
+				   $content .='<textarea class="BioEdit" data-mainclass="SponsorDescription" style="display:none;">'.$sponsors['sponsor_bio'].'</textarea>';
+				
+				//Social icons
+                 $content .='<div class="SponsorSocialIcons">';
+				 
+
+				$content .='<p><span data-entity_id="'.$sponsors['sponsor_id'].'" data-entity_type="2" class="SocialLinkEdit"><i class="fa fa-comment fa-2x"></i>Social Links</span></p>';
+				
+				$content .=' <select data-entity_id="'.$sponsors['sponsor_id'].'" data-entity_type="2" class="SelectClass" id="Category">';
+		  $content .=
+		   $main->sponsor_categories();
+		$content .='</select>';
+				
+			
+					
+                $content .= '</div>
+            </div>
+        </div>
+        <!-- END '.$sponsors['sponsor_name'].' --> ';
+		  
+			
+		} else {
+		  /*
+		  -----------------------------
+		   Normal user
+		  --------------------------------- 
+		  */
 		$content .='<!-- '.$sponsors['sponsor_name'].' -->
         <div class="Sponsor">
-            <div class="SponsorLogo"><img src="img/sponsors/logos/'.$sponsors['image_url'].'" alt="'.$sponsors['alt_name'].'"></div>
+            <div class="SponsorLogo"><img src="../img/sponsors/logos/'.$sponsors['image_url'].'" alt="'.$sponsors['alt_name'].'"></div>
             <div class="SponsorDetails">
             	<h2 class="SponsorName"><a class="CompanyLink" href="'.$sponsors['sponsor_link_url'].'" target="_blank" title="'.$sponsors['sponsor_name'].'"';
 				
@@ -128,10 +222,12 @@ class sponsors_main extends config {
             </div>
         </div>
         <!-- END '.$sponsors['sponsor_name'].' --> ';
+		
+		}
         	
 
-					} //stat_q fetch
-			}  //stat num row end
+					}//while sponsors fetch  
+			} //if num rows sponsors 
 			
 		return $content;
 }

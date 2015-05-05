@@ -1,9 +1,19 @@
- $(document).ready(function(){
-	 
-	var dropzone =  new Dropzone("#DropDiv")({ 
-    url: "controllers/ajax.php"
-   }); 
-	 
+$(document).ready(function(){
+
+      $(function(){
+          $('#SponsorBio').editable({inlineMode: false,
+		   buttons: [
+        'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'align', 'outdent', 'indent', 'insertOrderedList',
+        'insertUnorderedList', 'insertHTML'
+         ], 
+		 key: 'jgasD7ozD-11ohdnaawcwg1gD1uxu=='
+		  })
+      });
+
+Dropzone.autoDiscover = false;
+	
+	$("div#DropDiv").dropzone({ url: "controllers/ajax.php" });
+
 	 
 	 var returnval = $('#ReturnValue').html();
 	 
@@ -95,6 +105,25 @@
 	   
 	
   })  
+  
+          // Listen to the click event
+        $('#NewSponsorSave').on("click", function(e) {
+          // Make sure the button click doesn't submit the form:
+          // Remove the file preview.
+		    e.preventDefault();
+            e.stopPropagation();
+			
+			if (typeof canGo == "undefined") {
+							    //if stuff is missing
+				window.location.hash = '#ReturnValue';
+				$("#ReturnValue").html('<i class="fa fa-exclamation-triangle"></i> Please, upload a logo!');
+				$("#ReturnValue").css("color","#9B1515");
+				$("#ReturnValue").fadeIn('slow');
+			}
+           
+		 
+        });
+  
 	   
 	   
       });
@@ -104,23 +133,24 @@ function save_check() {
 		  
 		  //get the data
 		  var SponsorName = $('#SponsorName').val();
-		  var SponsorURL = $('#CompanyURL').val();
+		  var SponsorURL = $('#SponsorURL').val();
 		  var SponsorBio = $('#SponsorBio').val();
 		  var Facebook = $('#Facebook').val();
 		  var Twitter = $('#Twitter').val();
 		  var Linkedin = $('#Linkedin').val();
 		  var Flickr = $('#Flickr').val();
 		  var Google = $('#Google').val();
+		  var Category = $('#Category').val();
 		  
-		  
+		 
 		  
 		  
 		  
 		  	   //check if the fields are filled out or not
 			if ((typeof SponsorName != "undefined") && SponsorName != '' && (typeof SponsorURL != "undefined") && SponsorURL != '' 
-			&&  (typeof SponsorBio != "undefined") && SponsorBio != '') {
-				
-            
+			&&  (typeof SponsorBio != "undefined") && SponsorBio != '' &&  (typeof Category != "undefined") && Category != '') {
+	
+            return true;
 				
 			} else {
 		
@@ -150,6 +180,12 @@ function save_check() {
 				} else {
 					$('#SponsorBio').css("border","1px solid #cccccc");
 				}
+
+			    if (typeof Category == "undefined" || Category == '') {
+					$('#Category').css("border","1px solid #9B1515");
+				} else {
+					$('#Category').css("border","1px solid #cccccc");
+				}
 	
                return false;
 			}
@@ -161,9 +197,11 @@ function save_check() {
   // with the value my-dropzone (or myDropzone)
   Dropzone.options.DropDiv = {
 	   sending: function(file, xhr, formData) {    
-        formData.append("SponsorName", $("#SponsorName").val());
+        formData.append("action", "add_new_sponsor");
+		 formData.append("SponsorName", $("#SponsorName").val());
 		formData.append("SponsorURL", $("#SponsorURL").val());
 		formData.append("SponsorBio", $("#SponsorBio").val());
+		formData.append("Category", $("#Category").val());
 		formData.append("Twitter", $("#Twitter").val());
 		formData.append("Facebook", $("#Facebook").val());
 		formData.append("Linkedin", $("#Linkedin").val());
@@ -172,22 +210,23 @@ function save_check() {
     },
     init: function() {
       this.on("addedfile", function(file) {
-
         // Capture the Dropzone instance as closure.
-        var dz = this;
+       var dz = this;
+	   
+	   var canGo = 1;
 
-        // Listen to the click event
-        $('#sponsors').on("submit", function(e) {
+          // Listen to the click event
+        $('#NewSponsorSave').on("click", function(e) {
+			
           // Make sure the button click doesn't submit the form:
           // Remove the file preview.
 		    e.preventDefault();
             e.stopPropagation();
 			
 			var Check = save_check();
-			
+
 			if (Check == true) {
 				   dz.processQueue();
-			       generate_response(0, 0);
 			
           
 			
@@ -195,14 +234,19 @@ function save_check() {
           // If you want to the delete the file on the server as well,
           // you can do the AJAX request here.
 	  
-		  setTimeout(function () {
-        document.location.href="sponsors"; //will redirect to speakers
-            }, 1000); //will call the function after 2 secs.
-			
+
 		 }
 		 
 		 
         });
+		
+	  this.on("success", function(file, response) {
+       		  setTimeout(function () {
+                 document.location.href="sponsors"; //will redirect to speakers
+				
+            }, 1000); //will call the function after 2 secs.
+			
+      });	
 
 
       });

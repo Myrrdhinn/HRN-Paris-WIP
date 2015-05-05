@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* General Definitions*/
+
+.fa-external-link {
+	padding:10px 10px 10px 0;	
+}
+
+.SysIcon {
+  padding: 1vw 1vw 1vw 0;
+  font-size: 20px;
+  cursor:pointer;
+  
+}
+
+.SelectClass {
+	  width: 100%;
+  max-width: 230px;
+  margin: 15px auto 2vw;
+  min-height: 35px;
+  /* background-color: rgba(231, 240, 240, 0.12); */
+  color: #555;
+  padding: 0 5px;
+  border: 1px solid rgba(191, 192, 194, 0.79);
+  border-radius: 4px;
+	
+}
+
+.HelpText {
+	display:none;
+	color:rgba(211,17,21,1.00);
+}

@@ -11,7 +11,7 @@ use HRNParis\NewData as newData;
 <link href="css/admin_general.css" rel="stylesheet">
 <link rel="stylesheet" href="css/admin_edit_general.css" />
 <link rel="stylesheet" href="css/admin_index.css" />
-<script src="js/admin_general.js"></script> 
+ 
 </head>
 <body>
 
@@ -22,32 +22,21 @@ use HRNParis\NewData as newData;
 	  <p class="WelcomeTexT">Welcome to the World Congress site Interface of <br> HR Tech Europe</p>
 	   <p class="WelcomeTexT"> Please select the page where you want go</p>
 	   
-	   <h6 style="text-align:center">This website is using cookies. Please do not disable them!<h6>
 	<!--Form container-->
 	 <div id="container">
       <div id="MenuIconContainer">';
 	  
-	if (isset($_SESSION['user'])) {
-		
+	if (isset($_SESSION['admin'])) {
 
-		 $content .= '<a href="sponsors"><img class="MenuIcon" src="img/icons/new.png" onmouseover="this.src=';
-		 $content .="'img/icons/new_hover.png';";
+		 $content .= '<a href="sponsors"><img class="MenuIcon" src="img/icons/sponsors.png" onmouseover="this.src=';
+		 $content .="'img/icons/sponsors_hover.png';";
 		 $content .='" onmouseout="this.src=';
-		 $content .="'img/icons/new.png';";
-		 $content .='" ></a>';
-	 
-	}
-	 
-	if (isset($_SESSION['speakers_admin'])) {
-		
-		 $content .= '<a href="speakers"><img class="MenuIcon" src="img/admin/speakers.png" onmouseover="this.src=';
-		 $content .="'img/admin/speakers_hover.png';";
-		 $content .='" onmouseout="this.src=';
-		 $content .="'img/admin/speakers.png';";
+		 $content .="'img/icons/sponsors.png';";
 		 $content .='" ></a>';
 	 
 	}
 	
+	/*
 	if (isset($_SESSION['agenda_admin'])) {
 		
 		 $content .= '<a href="agenda"><img class="MenuIcon" src="img/admin/agenda.png" onmouseover="this.src=';
@@ -95,7 +84,7 @@ use HRNParis\NewData as newData;
 	 
 	 
 	}
-	
+	*/
   $content .='</div>
   	   
 	<br /><br /><br />
@@ -121,6 +110,7 @@ use HRNParis\NewData as newData;
     <title>HR Tech Europe - Sales</title>
 <?php
 echo $content;
+
 
 ?> 
 </body>

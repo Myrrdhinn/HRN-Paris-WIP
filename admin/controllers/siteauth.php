@@ -54,23 +54,28 @@ public function login($username, $password) {
 							} //else end
 						   
 						   $_SESSION['user'] = true;
+						   $_SESSION['admin'] = true;
 						   
 						   $_SESSION['user_id'] = $pass['id'];
 						   
-						   /*
-						   include_once ('controllers/rank.php');
 						   
-						  $rank = $this->dbc->query(
-								  sprintf("SELECT rank_id FROM users_rank_connection WHERE users_id = '%s' ORDER BY date DESC",
-									  $this->dbc->real_escape_string($pass['id'])
-								  )
-									 );	
-									  if (mysqli_num_rows($rank)) {
-										  while($uRank = $rank->fetch_assoc()){
-											  if ($uRank['rank_id'] == 1) {
-												 $_SESSION['developer'] = true; 
-											  } //if uRank ends
-											 $permission = ranking($uRank['rank_id']);
+				  //get rank
+				 $rank_q = "SELECT rank FROM users WHERE id = :id";
+				 $rank = $this->pdo->prepare($rank_q);
+				 
+				 $rank->bindValue(':id', $pass['id'], \PDO::PARAM_INT);
+				 
+				 $rank->execute();
+				 
+				 if ($rank->rowCount() > 0) {
+					  include_once ('controllers/rank.php');
+					 
+					  while($uRank = $rank->fetch()){
+						   if ($uRank['rank'] == 1) {
+								 $_SESSION['developer'] = true; 
+							  } //if uRank = 1 (dev :D)
+							  
+							  $permission = ranking($uRank['rank']);
 											 
 											   if (isset($permission)) {
 												   foreach ($permission as $perm) {
@@ -94,14 +99,15 @@ public function login($username, $password) {
 															   $_SESSION['blogsquad_admin'] = true;
 															  break;
 													  }//switch perm
-																											 
-												   }//foreach permission
+												   }
 											   }//if isset permission
+						  
 
-										  } //while uRank fetch assoc end
-								     }  //rank num rows if end
+						   
+				     }//While uRank fetch
+				 }//if rank row count > 0
+	
 									 
-									 */
 									  
 						  $out =  '<p class="LoginResponse"><i class="fa fa-check"></i> Logged in. You will be redirected to the administration page in 3 seconds.</p>';
 						  

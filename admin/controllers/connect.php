@@ -2,6 +2,7 @@
 
 namespace HRNParis\Connection;
 
+
 /**
  * PDOConnection is a singleton implementation.
  * getConnection() returning an instance of PDO connection.
@@ -76,13 +77,14 @@ class PDOConnection {
             
             //TODO: flag to disable errors?
             throw $e;
+		  
             
         }
         catch(Exception $e) {
             
             //TODO: flag to disable errors?
             throw $e;
-            
+           
         }
     }
     

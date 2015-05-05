@@ -133,7 +133,7 @@ if(window.location.href.indexOf('#ThankYouBrochureModal') != -1) {
 <body>
 <nav>
   <div id="MobileMenuContainer">
-    <div id="MobileMenuLogo"></div>
+    <a href="#" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'LogoHome']);"><div id="MobileMenuLogo"></div></a>
     <div id="MobileMenuButton" onClick='ShowMobileMenu()'></div>
 
   <div id="MobileNav" class="sidebar">
@@ -154,7 +154,7 @@ if(window.location.href.indexOf('#ThankYouBrochureModal') != -1) {
         <a title="Facebook" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Facebook']);" class="ico-fb no-link" target="blank" href="https://www.facebook.com/hrtecheu"></a>
         <a title="Twitter" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Twitter']);" class="ico-tw no-link" target="blank" href="https://twitter.com/hrtechworld"></a>
         <a title="Linkedin" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Linkedin']);" class="ico-linkedin no-link" target="blank" href="http://www.linkedin.com/groups/HR-Technology-Europe-Human-Resources-3930182/about"></a>
-        <a title="Flickr" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Flickr']);" class="ico-flickr no-link" target="blank" href="https://www.flickr.com/photos/hrtecheurope/sets/72157648919068765/"></a>
+        <a title="Flickr" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Flickr']);" class="ico-flickr no-link" target="blank" href="https://www.flickr.com/photos/hrtecheurope/sets/72157651210562997/"></a>
         <a title="Slideshare" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Slideshare']);" class="ico-slideshare no-link" target="blank" href="http://www.slideshare.net/hrtecheurope"></a>
         
     </div>
@@ -165,7 +165,8 @@ if(window.location.href.indexOf('#ThankYouBrochureModal') != -1) {
 <!--Hidden video section-->
 <section id="VideoSection" style="display:none">
 <h2 class="InvisibleHeadline">Videos</h2>
-<i id="HRNVideoPause" class="fa fa-pause"></i>
+<div id="HRNVideoPause">&nbsp;</div>
+<i id="HRNVideoClose" class="fa fa-times"></i>
 
 
    <video id="HRNVideo" style="display:none">
@@ -176,9 +177,17 @@ if(window.location.href.indexOf('#ThankYouBrochureModal') != -1) {
     </video>
     
        <video id="HRNVideoTwo" style="display:none">
-       <source src="video/paris.ogv" type='video/ogg; codecs="theora, vorbis"'/>
-       <source src="video/paris.webm" type='video/webm' >
-       <source type="video/mp4" src="video/paris.mp4">
+       <source src="video/hrtech.ogv" type='video/ogg; codecs="theora, vorbis"'/>
+       <source src="video/hrtech.webm" type='video/webm' >
+       <source type="video/mp4" src="video/hrtech.mp4">
+        Your browser does not support the video tag. I suggest you upgrade your browser. 
+    </video>
+    
+       <video id="HRNVideoThree" style="display:none">
+       <source src="video/bruno.ogv" type='video/ogg; codecs="theora, vorbis"'/>
+       <source src="video/bruno.webm" type='video/webm' >
+       <source type="video/mp4" src="video/bruno.mp4">
+       <div id="media-controls"></div>
         Your browser does not support the video tag. I suggest you upgrade your browser. 
     </video>
 
@@ -247,12 +256,12 @@ This section is controlled by the menu.css
   </div>
   <div id="AboutHRTechFadingContentThree">
     <h2>disruptHR</h2>
-    <p>disruptHR is an expo for startups that are changing the way we work. This year's event brings together experienced venture capitalists and young HR companies who will have the chance to pitch for investment in a Dragon's Den style format.</p>
-    <h3>“Chase the vision, not the money; the money will end up following you.”  –Tony Hsieh, Zappos CEO</h3>
+    <p>disruptHR is the evolution of our successful startup competitions, iHR and iTalent. Here’s what some of those involved have said over the last 3 years.</p>
+    <p>We've chosen the most promising young companies, and teamed up with globally acknowledged venture capitalists, consultants and thought leaders who’ll share their insights into the future of HR. The disruptHR Zone will be the happening place where you will get a real sense of what’s really disrupting HR.</p>
   </div>  
   <div id="AboutButtonContainer">
-    <a title="GET 3 FOR 2 TICKETS" onClick="_gaq.push(['_trackEvent', 'AboutSection', 'ModalOpen', 'Register']);" href="#" data-reveal-id="Get3For2TicketsModal"><button id="TwoForOnebutton" class="FontRaleway">GET 3 FOR 2 TICKETS</button></a>
-    <button title="Play Video" onClick="_gaq.push(['_trackEvent', 'AboutSection', 'PlayVideo', 'HRNVideo']);" id="VideoButton" class="FontRaleway">PLAY VIDEO<span id="Arrow">→</span></button>
+    <a title="GET 2 FOR 1 TICKETS" onClick="_gaq.push(['_trackEvent', 'AboutSection', 'ModalOpen', 'Register']);" href="#" data-reveal-id="Get2For1TicketsModal"><button id="TwoForOnebutton" class="FontRaleway">GET 2 FOR 1 TICKETS</button></a>
+    <button title="Play 2014 Video" onClick="_gaq.push(['_trackEvent', 'AboutSection', 'PlayVideo', 'HRNVideo']);" id="VideoButton" class="FontRaleway">PLAY 2014 VIDEO<span id="Arrow">→</span></button>
   </div>
     <div id="AboutButtonContainerTwo">
     <a title="DisruptHR" onClick="_gaq.push(['_trackEvent', 'AboutSection', 'ModalOpen', 'DisruptHRModal']);" href="#" data-reveal-id="DisruptHRModal"><button id="DisruptHRbutton" class="FontRaleway">LEARN MORE</button></a>
@@ -268,10 +277,10 @@ $(document).ready(function(){
 $('#FadeTwo').click(function(e){ 
     var one = $('#FadeOne').attr('class');
 	var three = $('#FadeThree').attr('class');
-	
+	         /*
 	    $('#AboutButtonContainerTwo').fadeOut('slow');
 		$('#AboutButtonContainer').fadeIn('slow');
-	
+	*/
 	if (one == 'ActiveFadingControll') {
 			$('#AboutHRTechFadingContentOne').fadeOut('slow', function(){
 			$('#AboutHRTechFadingContentTwo').fadeIn('slow');
@@ -297,9 +306,10 @@ $('#FadeOne').click(function(e){
     var two = $('#FadeTwo').attr('class');
 	var three = $('#FadeThree').attr('class');
 	
+	        /*
 		$('#AboutButtonContainerTwo').fadeOut('slow');
 		$('#AboutButtonContainer').fadeIn('slow');
-
+        */
 	
   if (two == 'ActiveFadingControll') {
     $('#AboutHRTechFadingContentTwo').fadeOut('slow', function(){
@@ -324,10 +334,10 @@ $('#FadeOne').click(function(e){
 $('#FadeThree').click(function(e){  
     var one = $('#FadeOne').attr('class');
 	var two = $('#FadeTwo').attr('class');
-
+           /*
 	$('#AboutButtonContainer').fadeOut('slow');
 	$('#AboutButtonContainerTwo').fadeIn('slow');
-	
+	*/
   if (one == 'ActiveFadingControll') {
     $('#AboutHRTechFadingContentOne').fadeOut('slow', function(){
         $('#AboutHRTechFadingContentThree').fadeIn('slow');
@@ -587,14 +597,14 @@ $(document).ready(function() {
     <p class="BlueText">Your ticket opens up a door for you to the world of curated dinners, parties and events hosted by the World’s Leading Brands, Tech Companies, Service Providers, Investors and Media.</p>
     <div id="TicketPriceContainer">
     	<div class="TicketPrice">
-        	<h3 id="FutureTicketsTwoForOne">3 FOR 2 TICKETS AVAILABLE</h3>
-            <h3><span class="BlueText TicketSpan">€2,380 </span> <br><span class="EachTicket">save </span><span class="EachTicket" id="TicketPastPrice">€1,190</span></h3>
+        	<h3 id="FutureTicketsTwoForOne">2 FOR 1 TICKETS AVAILABLE</h3>
+            <h3><span class="BlueText TicketSpan">€1,190 </span> <br><span class="EachTicket">save </span><span class="EachTicket" id="TicketPastPrice">€1,190</span></h3>
            
         </div>
         <div style="clear: both;"></div>        
     </div>
     
-    <a title="GET 3 FOR 2 TICKETS" onClick="_gaq.push(['_trackEvent', 'FutureOfWork', 'ModalOpen', 'Register']);" href="#" data-reveal-id="Get3For2TicketsModal"><button class="BlueButton">GET 3 FOR 2 TICKETS</button></a>
+    <a title="GET 2 FOR 1 TICKETS" onClick="_gaq.push(['_trackEvent', 'FutureOfWork', 'ModalOpen', 'Register']);" href="#" data-reveal-id="Get2For1TicketsModal"><button class="BlueButton">GET 2 FOR 1 TICKETS</button></a>
   </div>
 </section>
 <!-- END Future of Work --> 
@@ -612,7 +622,7 @@ The .WordlCongressText in the TransparentFooter is visible only on tablet and de
     <h2 class="Contact FontProximaNova"><i class="fa fa-envelope"></i><a href="mailto:hrn@hrneurope.com">hrn@hrneurope.com</a></h2>
     <div id="GetInTouchButtonContainer">
       <a title="Download Brochure" onClick="_gaq.push(['_trackEvent', 'Contact', 'ModalOpen', 'DownloadBrochure']);" href="#" data-reveal-id="DownloadBrochureModal"><button class="FontRaleway" id="DownloadBrochureButton" >Request Brochure</button></a>
-      <a title="GET 3 FOR 2 TICKETS" onClick="_gaq.push(['_trackEvent', 'Contact', 'ModalOpen', 'Register']);" href="#" data-reveal-id="Get3For2TicketsModal"><button class="FontRaleway" id="RegisterTodayButton">Register Today</button></a>
+      <a title="GET 2 FOR 1 TICKETS" onClick="_gaq.push(['_trackEvent', 'Contact', 'ModalOpen', 'Register']);" href="#" data-reveal-id="Get2For1TicketsModal"><button class="FontRaleway" id="RegisterTodayButton">Register Today</button></a>
     </div>
     <div id="FooterSocialIconsContainer"> <a title="Twitter" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Twitter']);" href="https://twitter.com/hrtechworld" target="_blank">
       <div id="FooterTwitter" class="FooterSocialIcon"></div>
@@ -622,7 +632,7 @@ The .WordlCongressText in the TransparentFooter is visible only on tablet and de
       <div id="FooterLinkedIn" class="FooterSocialIcon"></div>
       </a> <a title="Slideshare" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Slideshare']);" href="http://www.slideshare.net/hrtecheurope" target="_blank">
       <div id="FooterSlideShare" class="FooterSocialIcon"></div>
-      </a> <a title="Flickr" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Flickr']);" href="https://www.flickr.com/photos/hrtecheurope/sets/72157648919068765/" target="_blank">
+      </a> <a title="Flickr" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Flickr']);" href="https://www.flickr.com/photos/hrtecheurope/sets/72157651210562997/" target="_blank">
       <div id="FooterFlickr" class="FooterSocialIcon"></div>
       </a> </div>
   </div>
@@ -649,11 +659,11 @@ The .WordlCongressText in the TransparentFooter is visible only on tablet and de
 </div>
 <!-- END Play Video Modal -->
 
-<!-- Get 3 For 2 Tickets Modal -->
-<div id="Get3For2TicketsModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
-  <h2>GET 3 FOR 2 TICKETS</h2>
-  <p>Thank you for your interest in 3 for 2 tickets. Please leave your details and we'll be in touch with how to claim your discounted passes.</p>
-  <!-- BEGINING of : GET 3 FOR 2 TICKETS FORM -->
+<!-- Get 2 For 1 Tickets Modal -->
+<div id="Get2For1TicketsModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
+  <h2>GET 2 FOR 1 TICKETS</h2>
+  <p>Thank you for your interest in 2 for 1 tickets. Please leave us your details and we'll be in touch with your discount code.</p>
+  <!-- BEGINING of : GET 2 FOR 1 TICKETS FORM -->
   
   <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
     <input type=hidden name="oid" value="00DD0000000nwgk">
@@ -667,13 +677,13 @@ The .WordlCongressText in the TransparentFooter is visible only on tablet and de
         <input required placeholder="Company *" id="company" maxlength="40" name="company" size="20" type="text" />
         <input required placeholder="Job Title *" id="title" maxlength="40" name="title" size="20" type="text" />
         <select  style="display:none;"   id="lead_source" name="lead_source" placeholder="Lead Source">
-          <option selected="selected" value="HRTechParis2015-3for2">HRTechParis2015-3for2</option>
+          <option selected="selected" value="HRTechParis2015-2for1">HRTechParis2015-2for1</option>
         </select>
-        <input onClick="_gaq.push(['_trackEvent', 'Get3For2TicketsForm ', 'FromSubmission', 'InquirySent']);" class="submitbutton" type="submit" name="submit" value="SEND">
+        <input onClick="_gaq.push(['_trackEvent', 'Get2For1TicketsForm ', 'FromSubmission', 'InquirySent']);" class="submitbutton" type="submit" name="submit" value="SEND">
   </form>
-  <!-- END of : GET 3 FOR 2 TICKETS FORM -->
+  <!-- END of : GET 2 FOR 1 TICKETS FORM -->
 </div>
-<!-- END Get 3 For 2 Tickets Modal -->
+<!-- END Get 2 For 1 Tickets Modal -->
 
 
 <!-- DisruptHR Modal -->
@@ -755,7 +765,7 @@ The .WordlCongressText in the TransparentFooter is visible only on tablet and de
 <!-- Thank You Modal -->
 <div id="ThankYouModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
   <h2>Thank you!</h2>
-  <p>You have successfully applied for 3 for 2 tickets. Thank you.</p>
+  <p>You have successfully applied for 2 for 1 tickets. Thank you.</p>
 </div>
 <!-- END Thank You Modal -->
 

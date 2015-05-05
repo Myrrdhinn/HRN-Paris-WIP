@@ -6,8 +6,8 @@ use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
 require_once('SYS/aaa.php');
-require_once('connect.php');
 require_once('vendor/autoload.php');
+require_once('connect.php');
 
  abstract class config extends connect\aaa{
 
@@ -20,17 +20,20 @@ require_once('vendor/autoload.php');
 	protected $charset = 'utf8';
 	protected $pdo;
 	public $log;
+	public $sitedir;
+
 	
   public function __construct() {
 	  	 // create a log channel
      $this->log = new Logger('HRNParis');
-     $this->log->pushHandler(new StreamHandler('controllers/errors/error.log', Logger::WARNING));
+     $this->log->pushHandler(new StreamHandler(__DIR__ .'/errors/error.log', Logger::WARNING));
 	  
 	 try {
 	 $pdo = connection\PDOConnection::instance();
 
-     $this->pdo = $pdo->getConnection( 'mysql:host='.$this->host.';dbname='.$this->database, $this->user, $this->password );
-	 
+     $this->pdo = $pdo->getConnection( 'mysql:host='.$this->host.';dbname='.$this->database, $this->user, $this->password);
+	
+		
 	 } catch (\PDOException $e){
 		  echo 'Database Connection Failed';
 		   $this->log->addError($e->getMessage());
@@ -38,12 +41,7 @@ require_once('vendor/autoload.php');
 		   exit;
 	 }
 	  
-	   
-    
-	  
-	  
-
- 
+    $this->basedir = $_SERVER['DOCUMENT_ROOT'].'/HRNParis/';
 
  
  /*

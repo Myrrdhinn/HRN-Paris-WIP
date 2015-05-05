@@ -135,9 +135,9 @@ body {
 
 .SelectClass {
   width: 100%;
-  max-width: 20vw;
+  max-width: 230px;
   margin: 0 auto 2vw;
-  min-height: 2.5vw;
+  min-height: 35px;
   /* background-color: rgba(231, 240, 240, 0.12); */
   color: #555;
   padding: 0 5px;
@@ -148,7 +148,7 @@ body {
 
 .TextAreaClass {
   width: 99%;
-  margin-bottom: 3vw;
+  margin-bottom: 35px;
   min-height: 7vw;
 	
 }
