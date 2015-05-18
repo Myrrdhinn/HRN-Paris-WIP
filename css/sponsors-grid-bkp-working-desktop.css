@@ -1,0 +1,237 @@
+@charset "utf-8";
+/* These CSS rules will affect the sponsors page.  */
+
+
+/* Header */
+header {
+	/*max-height:552px;*/
+	height:100%;
+	background-image:url(../img/sponsors/sponsors-header-bg-desktop.jpg);
+	background-repeat:no-repeat;
+	background-size: cover;
+	width:100%; 
+	margin:0 auto;
+	margin-top:4vw;
+	text-align:center;
+	color:#fff;
+	padding:0.260416vw 0 0 0;
+}
+header h1 {
+	font-size:5.20833vw;
+	margin-bottom:2.60416vw;
+}
+header p {
+	width: 100%;
+	max-width:23.9583vw;
+	margin:0 auto;	
+	padding-bottom: 2.60416vw;
+	font-size:1.14583vw;
+	line-height: 1.302083vw;
+}
+header a {
+	text-align: center;
+	text-decoration: none;	
+	font-size: 0.9375vw;
+	color:#fff;
+	font-weight: bold;
+	display: block;
+	transition: all 0.3s;
+		max-width: 16vw;
+		margin: 0 auto;
+}
+header a:hover {
+	text-decoration: underline;	
+}
+header button {
+	font-size: 1.14583vw;
+	font-weight: 600;
+	background-color: rgba(255, 255, 255, 0);
+	color: #fff;
+	border: 3px solid #fff;
+	margin-top: 1.97916vw;
+	margin-bottom: 3.64583vw;
+	padding-top: 0;
+	max-width: 15.625vw;
+	height: 3.64583vw;
+	transition: all 0.3s ease-in;
+}
+header button:hover {
+	background-color: #fff;
+	color: #106ab5;
+	border: 3px solid #fff;
+}
+
+@media (max-width: 1366px) {
+	header {
+		background-image:url(../img/sponsors/sponsors-header-bg-desktop-1140.jpg);
+		margin-top:3.90625vw;
+		padding:5px 0 0 0;
+	}
+	header h1 {
+		font-size:100px;
+		margin-bottom:55px;
+	}
+	header p {
+		width: 100%;
+		max-width:460px;
+		margin:0 auto;	
+		padding-bottom: 50px;
+		font-size:22px;
+		line-height: 25px;
+	}
+	header a {
+		font-size: 18px;
+		max-width: 300px;
+	}
+	header button {
+		font-size: 22px;
+		border: 3px solid #fff;
+		margin-top: 38px;
+		margin-bottom: 70px;
+		max-width: 300px;
+		height: 70px;
+	}
+	header button:hover {
+		border: 3px solid #fff;
+	}
+}
+@media (max-width: 1000px) {
+	header {
+		margin-top:13.02083vw;	
+	}
+}
+@media (max-width: 1140px) {
+	header {
+		background-image:url(../img/sponsors/sponsors-header-bg-tablet.jpg);
+		/*margin-top:13.02083vw;*/
+		padding:5px 0 0 0;
+	}
+	header h1 {
+		font-size:100px;
+		margin-top: 90px;
+		margin-bottom:55px;
+	}
+}
+@media (max-width: 640px) {
+	header {
+		background-image:url(../img/sponsors/sponsors-header-bg-mobile.jpg);
+		margin-top:3.90625vw;
+		padding:5px 0 0 0;
+		margin-top:15vw;	
+	}
+	header h1 {
+		font-size:48px;
+		margin-top: 60px;
+		margin-bottom:45px;
+	}
+	header p {
+		max-width:280px;
+		padding-bottom: 50px;
+		font-size:16px;
+		line-height: 20px;
+	}
+	header a {
+		font-size: 16px;
+	}
+	header button {
+		font-size: 21px;
+		margin-top: 38px;
+		margin-bottom: 70px;
+		max-width: 300px;
+		height: 70px;
+	}
+	header button:hover {
+		border: 3px solid #fff;
+	}
+}
+/* END Header */
+	
+/* Sponsors Grid */
+#Sponsors {
+	width: 100%;
+	background-color: #f4f4f2;
+	font-size: 0;
+}
+#Sponsors * {
+	box-sizing: border-box;
+}
+.SponsorHeadline {
+	width: 100%;
+	max-width: 1140px; 
+	background-image: url(../img/sponsors/headline-background-desktop.png); 
+	background-size: cover;
+	background-position: center center; 
+	font-size: 40px;
+	font-weight: 500;
+	text-align: center; 
+	padding: 0px; 
+	margin: 0 auto;
+	margin-top: 65px;
+	margin-bottom: 50px;
+}
+.SponsorHeadline span {
+	margin-left: -0.260416vw;
+}
+.CategoryContainer {
+	width: 100%; 
+	max-width: 1720px; 
+	margin: 0 auto;	
+}
+.Sponsor {
+	width: 285px;
+	height: 205px;
+	display: inline-block;
+	text-align: center; /* aligns the Sponsor logo container divs (.SponsorLogo) to the center */
+	position: relative;
+	
+	padding: 50px 20px 0 20px;
+	
+	background-color: lightgreen;
+	transition: all 0.3s;
+}
+.Sponsor:hover {
+	background-color: #d8e3eb;	
+}
+.Sponsor:hover img{
+	opacity: 1;
+}
+.Sponsor img { /* the small + icon on hover */
+	position: absolute;	
+	left: 17px;
+	top: 17px;
+	width: 25px;
+	height: 25px;
+	opacity: 0;
+	transition: all 0.3s;
+}
+.SponsorLogo {
+	display: inline-block;
+	width: 230px;
+	height: 110px;
+	background-position: center; 
+	background-repeat: no-repeat; 
+	background-size: contain;
+}
+@media (max-width: 767px) {
+	.SponsorHeadline {
+		margin-top: 65px;
+		margin-bottom: 70px;
+
+		font-size: 40px;
+		background-image: url(../img/sponsors/headline-background-desktop-1140.png); 
+		background-size: cover;
+	}
+	.SponsorHeadline span {
+		margin-left: 5px;	
+	}
+}
+
+@media (max-width: 640px) {
+	.SponsorHeadline {
+		font-size: 28px;
+		background-image: url(../img/sponsors/headline-background-mobile.png); 
+		background-size: cover;
+	}
+}
+
+/*End Sponsors Grid */

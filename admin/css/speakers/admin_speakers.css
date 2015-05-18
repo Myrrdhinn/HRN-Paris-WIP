@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* General Definitions*/
+
+.fa-external-link {
+	padding:10px 10px 10px 0;	
+}
+
+#SpeakerPhotoContainer {
+	width:390px;
+	
+}
+
+#CompanyLogo {
+	  margin-top: 3.90625vw;
+	  max-height:100%;
+}
+
+.CompanyWebsiteEdit {
+	margin-bottom:25px !important;	
+}

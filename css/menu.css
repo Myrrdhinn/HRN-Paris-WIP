@@ -14,7 +14,7 @@
 #MenuContainer {
 	margin: 0 auto;
 	width: 85%;
-	height: 8.59375vw;
+	/*height: 8.59375vw;*/
 }
 #MenuLogo {
 	width:11.25vw;
@@ -666,7 +666,7 @@
 #SecondStateMainMenuContainer {
 	width: 100%;
 	margin: 0 auto;
-	height: 4vw;
+	height: 4.1vw;
 	text-align: center;
 	z-index: 500;
 	transition: all 0.5s;

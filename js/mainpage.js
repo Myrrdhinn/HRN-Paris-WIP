@@ -8,33 +8,21 @@ $(document).ready(function() {
 		 $('#VideoSection').fadeIn('slow');
 		 $("html, body").animate({ scrollTop: $('#VideoSection').offset().top }, 1000);
 		 
-		    var slideTwo = $('#FadeTwo').attr('class');
-			var slideOne = $('#FadeOne').attr('class');
-			var slideThree = $('#FadeThree').attr('class');
+		    var slide = $('#FadeTwo').attr('class');
 			
-			if (typeof slideTwo !="undefined" && slideTwo == "ActiveFadingControll") {
+			if (typeof slide !="undefined" && slide == "ActiveFadingControll") {
 				 var myVideo = document.getElementById("HRNVideo");
 				  $('#HRNVideoTwo').css('display','none');
 				  $('#HRNVideo').css('display','block');
-			} 
-			
-			if (typeof slideOne !="undefined" && slideOne == "ActiveFadingControll") {
+			} else {
 				 var myVideo = document.getElementById("HRNVideoTwo"); 
 				 $('#HRNVideo').css('display','none');
 				 $('#HRNVideoTwo').css('display','block');
 			}
-			
-			if (typeof slideThree !="undefined" && slideThree == "ActiveFadingControll") {
-				 var myVideo = document.getElementById("HRNVideoThree"); 
-				 $('#HRNVideo').css('display','none');
-				 $('#HRNVideoTwo').css('display','none');
-				 $('#HRNVideoThree').css('display','block');
-			}
 		   
 		// var myVideo = document.getElementById("HRNVideo"); 
 		 
-         // myVideo.load();
-		  myVideo.controls = true;
+          myVideo.load();
 		  myVideo.play(); 
 	  })
 
@@ -42,71 +30,26 @@ $(document).ready(function() {
 		
 				e.preventDefault();
 		 
-
+		 $('#VideoSection').fadeOut();
+		 $('#FeaturedContentSection').fadeIn('slow');
 		 
-		    var slideTwo = $('#FadeTwo').attr('class');
-			var slideOne = $('#FadeOne').attr('class');
-			var slideThree = $('#FadeThree').attr('class');
+		 	 var slide = $('#FadeTwo').attr('class');
 			
-			if (typeof slideTwo !="undefined" && slideTwo == "ActiveFadingControll") {
+			if (typeof slide !="undefined" && slide == "ActiveFadingControll") {
 				 var myVideo = document.getElementById("HRNVideo"); 
-			} 
-			
-			if (typeof slideOne !="undefined" && slideOne == "ActiveFadingControll") {
+			} else {
 				 var myVideo = document.getElementById("HRNVideoTwo"); 
-			}
-			
-		   if (typeof slideThree !="undefined" && slideThree == "ActiveFadingControll") {
-				 var myVideo = document.getElementById("HRNVideoThree"); 
 			}
 		
 	//var myVideo = document.getElementById("HRNVideo"); 
 		 
 
-           //myVideo.pause(); 
-		   
-		if (myVideo.paused) {
-            myVideo.play(); 
-	    } else {
            myVideo.pause(); 
-       } 
-	   
  
 	   
 	 })
-	 
-
-$('#HRNVideoClose').bind('click', function (e) {
-	
-			 var slideTwo = $('#FadeTwo').attr('class');
-			var slideOne = $('#FadeOne').attr('class');
-			var slideThree = $('#FadeThree').attr('class');
-			
-			if (typeof slideTwo !="undefined" && slideTwo == "ActiveFadingControll") {
-				 var myVideo = document.getElementById("HRNVideo"); 
-			} 
-			
-			if (typeof slideOne !="undefined" && slideOne == "ActiveFadingControll") {
-				 var myVideo = document.getElementById("HRNVideoTwo"); 
-			}
-			
-		   if (typeof slideThree !="undefined" && slideThree == "ActiveFadingControll") {
-				 var myVideo = document.getElementById("HRNVideoThree"); 
-			}
+	 	
 		
-	
-		 
-	 	 $('#VideoSection').fadeOut();
-		 $('#FeaturedContentSection').fadeIn('slow');
-		 myVideo.pause();
-		 myVideo.load();
-		 myVideo.pause();
-		 	
-	
-})
-		 
-		 
-		 	
 });
 
 

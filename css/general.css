@@ -66,6 +66,9 @@ button:hover {
 .FontSourceSansPro {
 	font-family: 'Source Sans Pro', sans-serif;	
 }
+.FontLato {
+	font-family: 'Lato', sans-serif;
+}
 .InvisibleHeadline {   		/*Make sections W3C valid without breaking their layout. */
 	position: absolute;
 	opacity: 0;
@@ -91,3 +94,24 @@ button:hover {
 	color:#1a1a18;
 }
 	
+/* Go to Top button */
+#GoTopImg {
+	background-color: rgba(10, 66, 113, 0.57);
+	width: 54px;
+	height: 54px;
+	bottom: 25px;
+	right: 25px;
+	text-align: center;
+	position: fixed;
+	z-index: 10000;
+	transition: all 0.3s;
+}
+#GoTopImg:hover {
+	background-color: rgba(10, 66, 113, 1);
+}
+#GoTopImg .fa {
+	font-size: 30px;
+	color: #f4f4f2;
+	padding-top: 10px;
+}
+/* END Go to Top button */

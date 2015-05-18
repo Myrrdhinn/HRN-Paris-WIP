@@ -99,7 +99,7 @@ body {
 	
 }
 
-#DropDiv{
+#DropDiv, #DropDivCompany{
 	height:250px;
 	display:block;
 	max-width:760px; 
@@ -150,5 +150,18 @@ body {
   width: 99%;
   margin-bottom: 35px;
   min-height: 7vw;
+	
+}
+
+
+.HelpText {
+	display:none;
+	color:rgba(211,17,21,1.00);
+}
+
+.EditField {
+	  height: 35px;
+  padding-left: 6px;
+  margin-bottom:5px;
 	
 }

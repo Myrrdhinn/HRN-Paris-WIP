@@ -24,20 +24,20 @@ $content = '';
                case 'sponsors':
 					 if (isset($_SESSION['sponsors_admin'])) {
 						  
-						   $content .= '<a href="index"><img class="MenuIcon" src="img/icons/main.png" onmouseover="this.src=';
+						   $content .= '<a href="index" title="Back to Main Page"><img class="MenuIcon" src="img/icons/main.png" onmouseover="this.src=';
 						   $content .="'img/icons/main_hover.png';";
 						   $content .='" onmouseout="this.src=';
 						   $content .="'img/icons/main.png';";
 						   $content .='" ></a>';
 						  
 				  
-						   $content .= '<a href="add_sponsors"><img class="MenuIcon" src="img/icons/new.png" onmouseover="this.src=';
+						   $content .= '<a href="add_sponsors" title="Add a new Sponsor"><img class="MenuIcon" src="img/icons/new.png" onmouseover="this.src=';
 						   $content .="'img/icons/new_hover.png';";
 						   $content .='" onmouseout="this.src=';
 						   $content .="'img/icons/new.png';";
 						   $content .='" ></a>';
 						   
-						   $content .= '<a target="_blank" href="http://127.0.0.1/HRNParis/sponsors" title="Live Sponsors Page"><img class="MenuIcon" src="img/icons/sponsors.png" onmouseover="this.src=';
+						   $content .= '<a target="_blank" href="../sponsors" title="Live Sponsors Page"><img class="MenuIcon" src="img/icons/sponsors.png" onmouseover="this.src=';
 						   $content .="'img/icons/sponsors_hover.png';";
 						   $content .='" onmouseout="this.src=';
 						   $content .="'img/icons/sponsors.png';";
@@ -47,10 +47,56 @@ $content = '';
 			   
       
                   break;
-               case 1:
+               case 'speakers':
+			   
+					 if (isset($_SESSION['speakers_admin'])) {
+						  
+						   $content .= '<a href="index"><img class="MenuIcon" src="img/icons/main.png" onmouseover="this.src=';
+						   $content .="'img/icons/main_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'img/icons/main.png';";
+						   $content .='" ></a>';
+						  
+				  
+						   $content .= '<a href="add_speakers"><img class="MenuIcon" src="img/icons/new.png" onmouseover="this.src=';
+						   $content .="'img/icons/new_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'img/icons/new.png';";
+						   $content .='" ></a>';
+						   
+						   $content .= '<a target="_blank" href="../speakers" title="Live Speakers Page"><img class="MenuIcon" src="img/icons/speakers.png" onmouseover="this.src=';
+						   $content .="'img/icons/speakers_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'img/icons/speakers.png';";
+						   $content .='" ></a>';
+					   
+					  }
 
                   break;
-               case 2:
+               case 'speakers-profile':
+			   
+			   		  if (isset($_SESSION['speakers_admin'])) {
+						  
+						   $content .= '<a href="../speakers"><img class="MenuIcon" src="../img/icons/main.png" onmouseover="this.src=';
+						   $content .="'../img/icons/main_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'../img/icons/main.png';";
+						   $content .='" ></a>';
+						  
+				  
+						   $content .= '<a href="add_speakers"><img class="MenuIcon" src="../img/icons/new.png" onmouseover="this.src=';
+						   $content .="'../img/icons/new_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'../img/icons/new.png';";
+						   $content .='" ></a>';
+						   
+						   $content .= '<a target="_blank" href="../../speakers" title="Live Speakers Page"><img class="MenuIcon" src="../img/icons/speakers.png" onmouseover="this.src=';
+						   $content .="'../img/icons/speakers_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'../img/icons/speakers.png';";
+						   $content .='" ></a>';
+					   
+					  }
 
                  break;
 }
@@ -191,7 +237,7 @@ This section is controlled by the menu.css
 						   $content .="'img/icons/new.png';";
 						   $content .='" ></a>';
 						   
-						   $content .= '<a target="_blank" href="http://127.0.0.1/HRNParis/sponsors" title="Live Sponsors Page"><img class="MenuIcon" src="img/icons/sponsors.png" onmouseover="this.src=';
+						   $content .= '<a target="_blank" href="../sponsors" title="Live Sponsors Page"><img class="MenuIcon" src="img/icons/sponsors.png" onmouseover="this.src=';
 						   $content .="'img/icons/sponsors_hover.png';";
 						   $content .='" onmouseout="this.src=';
 						   $content .="'img/icons/sponsors.png';";
@@ -201,10 +247,56 @@ This section is controlled by the menu.css
 			   
       
                   break;
-               case 1:
+               case 'speakers':
+			   
+					 if (isset($_SESSION['speakers_admin'])) {
+						  
+						   $content .= '<a href="index"><img class="MenuIcon" src="img/icons/main.png" onmouseover="this.src=';
+						   $content .="'img/icons/main_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'img/icons/main.png';";
+						   $content .='" ></a>';
+						  
+				  
+						   $content .= '<a href="add_speakers"><img class="MenuIcon" src="img/icons/new.png" onmouseover="this.src=';
+						   $content .="'img/icons/new_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'img/icons/new.png';";
+						   $content .='" ></a>';
+						   
+						   $content .= '<a target="_blank" href="../speakers" title="Live Speakers Page"><img class="MenuIcon" src="img/icons/speakers.png" onmouseover="this.src=';
+						   $content .="'img/icons/speakers_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'img/icons/speakers.png';";
+						   $content .='" ></a>';
+					   
+					  }
 
                   break;
-               case 2:
+               case 'speakers-profile':
+			   
+			   		  if (isset($_SESSION['speakers_admin'])) {
+						  
+						   $content .= '<a href="../speakers"><img class="MenuIcon" src="../img/icons/main.png" onmouseover="this.src=';
+						   $content .="'../img/icons/main_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'../img/icons/main.png';";
+						   $content .='" ></a>';
+						  
+				  
+						   $content .= '<a href="add_speakers"><img class="MenuIcon" src="../img/icons/new.png" onmouseover="this.src=';
+						   $content .="'../img/icons/new_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'../img/icons/new.png';";
+						   $content .='" ></a>';
+						   
+						   $content .= '<a target="_blank" href="../../speakers" title="Live Speakers Page"><img class="MenuIcon" src="../img/icons/speakers.png" onmouseover="this.src=';
+						   $content .="'../img/icons/speakers_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'../img/icons/speakers.png';";
+						   $content .='" ></a>';
+					   
+					  }
 
                  break;
 }

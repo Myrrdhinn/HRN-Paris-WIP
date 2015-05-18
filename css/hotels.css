@@ -1,0 +1,686 @@
+@charset "utf-8";
+/* These CSS rules will affect the hotels page.  */
+
+/*@media (min-width:1921px) {   /* Define everything with vw to keep the 1920px wide PSD aspect ratio */
+/*	
+}*/
+
+#HotelsWrapper {
+	width: 100%;
+	max-width: 59.375vw;
+	margin: 0 auto;
+	margin-top: 4vw;
+	box-sizing: border-box;	
+}
+#HotelsWrapper * {
+	box-sizing: border-box;	
+}
+#FeaturedHotelWrapper {
+	padding-top: 3.385416vw;	
+	padding-bottom: 0.78125vw;
+	border-bottom: 2px solid #adadad;	
+	margin-bottom: 2.34375vw;
+}
+#FeaturedHotelWrapper p {
+	font-family: 'Lato', sans-serif;
+}
+#FeaturedHotelWrapper h1, #FeaturedHotelWrapper h2 {
+	text-transform: uppercase;
+	text-align: center;	
+}
+#FeaturedHotelWrapper h1 {
+	margin: 0;
+	font-size: 1.875vw;
+	color: #1c3379;
+	font-weight: 700;
+}
+#FeaturedHotelWrapper h2 {
+	margin-top: 1.40625vw;
+	margin-bottom: 0.5208333vw;
+	font-size: 1.5625vw;
+	font-weight: 400;	
+}
+.StarContainer {
+	color: #fcc317;	
+}
+#FeaturedHotelWrapper .StarContainer {
+	text-align: center;
+	font-size: 1.25vw;	
+	margin-bottom: 1.3020833vw;
+}
+
+#BlockA {
+	width: 100%;
+	
+	margin-bottom: 0.3125vw;	
+}
+#BlockA1, #BlockA23, #BlockB1, #BlockB2 {
+	display: inline-block;	
+}
+#BlockA1 {
+	width: 36.3541666666666667vw;
+	height: 25.78125vw;
+	background-size: cover;
+	background-image: url(../img/hotels/le-meridien-etoile-picture-1.jpg);
+}
+#BlockA23 {
+	float: right;
+}
+#BlockA2 {
+	width: 22.5vw;
+	height: 12.6041666666666667vw;
+	background-size: cover;
+	background-image: url(../img/hotels/le-meridien-etoile-picture-2.jpg);
+	margin-bottom: 0.5208333vw;
+}
+#BlockA3 {
+	width: 22.5vw;
+	height: 12.6041666666666667vw;
+	background-size: cover;
+	background-image: url(../img/hotels/le-meridien-etoile-picture-3.jpg);
+}
+#BlockB {
+	width: 100%;
+	margin-bottom: 1.8229166666666667vw;
+}
+#BlockB1 {
+	width: 28.3854166666666667vw;
+	height: 15.9895833333333333vw;
+	background-size: cover;
+	background-image: url(../img/hotels/le-meridien-etoile-picture-4.jpg);
+}
+#BlockB2 {
+	width: 30.46875vw;
+	height: 15.9895833333333333vw;
+	background-size: cover;
+	background-image: url(../img/hotels/le-meridien-etoile-picture-5.jpg);
+	float: right;
+}
+
+#FeaturedHotelTextContainer, #FeaturedHotelAddress {
+	display: inline-block;
+	vertical-align: top;
+}
+#FeaturedHotelTextContainer {
+	width: 100%;
+	max-width: 39.84375vw;
+}
+.FeaturedHotelText {
+	font-size: 0.9375vw;
+	margin-bottom: 1.302083vw;
+	margin-top: 0;
+	color: #484848;
+	line-height: 1.40625vw;
+	text-align: justify;
+}
+#FeaturedHotelAddress {
+	width: 100%;
+	max-width: 14.0625vw;
+	margin-left: 3.125vw;
+}
+.BookNowButton {
+	font-family: 'Lato', sans-serif;
+	width: 9.63541666vw;
+	height: 2.604166vw;
+	background-color: #106ab5;
+	border: 0.15625vw solid #106ab5;
+	color: #fff;
+	text-align: center;
+	font-size: 0.9375vw;
+	padding-top: 0.625vw;
+	font-weight: 600;
+	cursor: pointer;
+	display: inline-block;
+	transition: all 0.3s;
+}
+.BookNowButton:hover {
+	background-color: transparent;
+	color: #106ab5;
+}
+#FeaturedHotelAddress .BookNowButton {
+	margin-bottom: 2.864583vw;
+}
+#FeaturedHotelAddress p, #FeaturedHotelAddress p a {
+	font-size: 0.9375vw;
+	color: #000;
+	font-weight: 600;
+	transition: all 0.3s;
+}
+#FeaturedHotelAddress p a:hover {
+	color: #106ab5;
+}
+#FeaturedHotelAddress p {
+	margin-top: 0;
+	margin-bottom: 0.52083vw;
+}
+#FeaturedHotelAddress .fa-external-link{
+	margin-right: 0.260416vw;
+}
+#FeaturedHotelAddress .fa-phone{
+	margin-right: 0.4166666vw;
+}
+#FeaturedHotelAddress .fa-map-marker{
+	margin-right: 0.625vw;
+}
+
+	
+@media (max-width:1920px) {  /* Swap the units from vw to px */
+	#HotelsWrapper {
+		max-width: 1140px;
+		margin-top: 4vw;
+	}
+	#FeaturedHotelWrapper {
+		padding-top: 65px;	
+		padding-bottom: 15px;
+		border-bottom: 2px solid #adadad;	
+		margin-bottom: 45px;
+	}
+	#FeaturedHotelWrapper h1 {
+		font-size: 36px;
+	}
+	#FeaturedHotelWrapper h2 {
+		margin-top: 27px;
+		margin-bottom: 10px;
+		font-size: 30px;
+	}
+	#FeaturedHotelWrapper .StarContainer {
+		font-size: 24px;	
+		margin-bottom: 25px;
+	}
+
+	#BlockA {
+		margin-bottom: 6px;	
+	}
+	#BlockA1 {
+		width: 698px;
+		height: 495px;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-1.jpg);
+	}
+	#BlockA2 {
+		width: 432px;
+		height: 242px;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-2.jpg);
+		margin-bottom: 10px;
+	}
+	#BlockA3 {
+		width: 432px;
+		height: 242px;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-3.jpg);
+	}
+	#BlockB {
+		margin-bottom: 35px;
+	}
+	#BlockB1 {
+		width: 545px;
+		height: 307px;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-4.jpg);
+	}
+	#BlockB2 {
+		width: 585px;
+		height: 307px;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-5.jpg);
+	}
+
+	#FeaturedHotelTextContainer {
+		max-width: 765px;
+	}
+	.FeaturedHotelText {
+		font-size: 18px;
+		margin-bottom: 25px;
+		line-height: 27px;
+	}
+	#FeaturedHotelAddress {
+		max-width: 270px;
+		margin-left: 60px;
+	}
+	.BookNowButton {
+		width: 185px;
+		height: 50px;
+		font-size: 18px;
+		padding-top: 12px;
+	}
+	#FeaturedHotelAddress .BookNowButton {
+		margin-bottom: 55px;
+	}
+	#FeaturedHotelAddress p, #FeaturedHotelAddress p a {
+		font-size: 18px;
+	}
+	#FeaturedHotelAddress p {
+		margin-bottom: 10px;
+	}
+	#FeaturedHotelAddress .fa-external-link{		margin-right: 5px;	}
+	#FeaturedHotelAddress .fa-phone{		margin-right: 8px;	}
+	#FeaturedHotelAddress .fa-map-marker{		margin-right: 12px;	}	
+}	
+	
+@media (max-width:1279px) { /* Swap to the units to vw again, keeping the aspect ratio of the 1280px wide PSD. */
+	#HotelsWrapper {
+		max-width: 89.0625vw;
+		margin-top: 4vw;
+	}
+	#FeaturedHotelWrapper {
+		padding-top: 5.078125vw;
+		padding-bottom: 1.171875vw;
+		border-bottom: 2px solid #adadad;	
+		margin-bottom: 3.515625vw;
+	}
+	#FeaturedHotelWrapper h1 {
+		font-size: 2.8125vw;
+	}
+	#FeaturedHotelWrapper h2 {
+		margin-top: 2.109375vw;
+		margin-bottom: 0.78125vw;
+		font-size: 2.34375vw;
+	}
+	#FeaturedHotelWrapper .StarContainer {
+		font-size: 1.875vw;	
+		margin-bottom: 1.953125vw;
+	}
+
+	#BlockA {
+		margin-bottom: 0.46875vw;	
+	}
+	#BlockA1 {
+		width: 54.53125vw;
+		height: 38.671875vw;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-1.jpg);
+	}
+	#BlockA2 {
+		width: 33.75vw;
+		height: 18.90625vw;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-2.jpg);
+		margin-bottom: 0.78125vw;
+	}
+	#BlockA3 {
+		width: 33.75vw;
+		height: 18.90625vw;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-3.jpg);
+	}
+	#BlockB {
+		margin-bottom: 2.734375vw;
+	}
+	#BlockB1 {
+		width: 42.578125vw;
+		height: 23.984375vw;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-4.jpg);
+	}
+	#BlockB2 {
+		width: 45.703125vw;
+		height: 23.984375vw;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-5.jpg);
+	}
+
+	#FeaturedHotelTextContainer {
+		max-width: 59.765625vw;
+	}
+	.FeaturedHotelText {
+		font-size: 1.40625vw;
+		margin-bottom: 1.953125vw;
+		line-height: 2.109375vw;
+	}
+	#FeaturedHotelAddress {
+		max-width: 21.09375vw;
+		margin-left: 4.6875vw;
+	}
+	.BookNowButton {
+		width: 14.453125vw;
+		height: 3.90625vw;
+		font-size: 1.40625vw;
+		padding-top: 0.9375vw;
+	}
+	#FeaturedHotelAddress .BookNowButton {
+		margin-bottom: 4.296875vw;
+	}
+	#FeaturedHotelAddress p, #FeaturedHotelAddress p a {
+		font-size: 1.40625vw;
+	}
+	#FeaturedHotelAddress p {
+		margin-bottom: 0.78125vw;
+	}
+	#FeaturedHotelAddress .fa-external-link{		margin-right: 0.390625vw;	}
+	#FeaturedHotelAddress .fa-phone{		margin-right: 0.625vw;	}
+	#FeaturedHotelAddress .fa-map-marker{		margin-right: 0.9375vw;	}	
+}	
+@media (max-width: 1000px) {
+	#HotelsWrapper {
+		margin-top:15.4vw;
+	}
+}
+/*
+@media (max-width:640px ){ /* There is a major layout change here. Create everything keeping in mind that all these below might need to be called from a separated file. Reset everything set previously to its default value, and than add the definitions. *//*
+	#HotelsWrapper {
+		width: 100%;
+		max-width: 100%;
+		padding: 0 20px;
+		margin: 0 auto;
+		margin-top:15.4vw;
+		box-sizing: border-box;	
+	}
+	#HotelsWrapper * {
+		box-sizing: border-box;	
+	}
+	#FeaturedHotelWrapper {
+		padding-top: 50px;	
+		padding-bottom: 20px;
+		border-bottom: 2px solid #adadad;	
+		
+		margin-bottom: 26px;
+	}
+	#FeaturedHotelWrapper p {
+		font-family: 'Lato', sans-serif;
+	}
+	#FeaturedHotelWrapper h1, #FeaturedHotelWrapper h2 {
+		text-transform: uppercase;
+		text-align: center;	
+	}
+	#FeaturedHotelWrapper h1 {
+		margin: 0;
+		font-size: 22px;
+		color: #1c3379;
+		font-weight: 700;
+	}
+	#FeaturedHotelWrapper h2 {
+		margin-top: 20px;
+		margin-bottom: 10px;
+		font-size: 18px;
+		font-weight: 400;	
+	}
+	.StarContainer {
+		color: #fcc317;	
+	}
+	#FeaturedHotelWrapper .StarContainer {
+		text-align: center;
+		font-size: 15px;	
+		margin-bottom: 15px;
+	}
+
+	#BlockA {
+		display: none;	
+	}
+	#BlockB {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	#BlockB1, #BlockB2 {
+		display: inline-block;	
+	}	
+	#BlockB1 {
+		width: 46.21875vw;
+		height: 26.09375vw;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-1-mobile.jpg);
+	}
+	#BlockB2 {
+		width: 46.21875vw;
+		height: 26.09375vw;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-2-mobile.jpg);
+		float: right;
+	}
+
+	#FeaturedHotelTextContainer, #FeaturedHotelAddress {
+		display: block;
+		vertical-align: top;
+	}
+	#FeaturedHotelTextContainer {
+		width: 100%;
+		max-width: 100%;
+	}
+	.FeaturedHotelText {
+		font-size: 14px;
+		margin-bottom: 20px;
+		margin-top: 0;
+		color: #484848;
+		line-height: 20px;
+		text-align: justify;
+	}
+	#FeaturedHotelAddress {
+		width: 100%;
+		max-width: 100%;
+		margin-left: 0;
+	}
+	.BookNowButton {
+		font-family: 'Lato', sans-serif;
+		width: 185px;
+		height: 50px;
+		background-color: #106ab5;
+		border: 3px solid #106ab5;
+		color: #fff;
+		text-align: center;
+		font-size: 18px;
+		padding-top: 12px;
+		font-weight: 600;
+		cursor: pointer;
+		display: inline-block;
+		transition: all 0.3s;
+	}
+	.BookNowButton:hover {
+		background-color: transparent;
+		color: #106ab5;
+	}
+	#FeaturedHotelAddress .BookNowButton {
+		margin-bottom: 20px;
+	}
+	#FeaturedHotelAddress p, #FeaturedHotelAddress p a {
+		font-size: 14px;
+		color: #000;
+		font-weight: 600;
+	}
+	#FeaturedHotelAddress p {
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+	#FeaturedHotelAddress .fa-external-link{
+		margin-right: 5px;
+	}
+	#FeaturedHotelAddress .fa-phone{
+		margin-right: 8px;
+	}
+	#FeaturedHotelAddress .fa-map-marker{
+		margin-right: 12px;
+	}
+}
+
+@media (max-width: 540px) {
+	#BlockB {
+		margin-bottom: 20px;
+	}
+	#BlockB1, #BlockB2 {
+		display: block;	
+	}	
+	#BlockB1 {
+		width: 100%;
+		height: 52.1875vw;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-1-mobile.jpg);
+		margin-bottom: 6px;
+	}
+	#BlockB2 {
+		width: 100%;
+		height: 52.1875vw;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-2-mobile.jpg);
+		float: none;
+	}
+}
+/* END Featured Hotel */
+
+
+
+
+/* Hotels List */
+.Hotel {
+	width: 100%;
+	max-width: 27.083333vw;
+	display: inline-block;
+	height: 33.8541666vw;
+	vertical-align: top;
+}
+.Hotel h2, .Hotel p {
+	font-family: 'Lato', sans-serif;
+}
+.RightHotel {
+	margin-left: 4.6875vw;
+}
+.Hotel h2 {
+	font-size: 1.25vw;
+	text-transform: uppercase;
+	font-weight: 400;
+	margin-top: 0;
+	margin-bottom: 0.4166666vw;
+}
+.Hotel .StarContainer {
+	text-align: left;
+	font-size: 1.25vw;	
+	margin-bottom: 1.0416666vw;
+}
+.Hotel img {
+	width: 100%;
+	max-width: 27.083333vw;
+	height: auto;
+	margin-bottom: 1.0416666vw;
+}
+.Hotel p {
+	font-size: 0.9375vw;
+	font-weight: 600;
+	margin-top: 0;
+	margin-bottom: 0.8854166vw;
+}
+.Hotel .BookNowButton {
+	margin-top: 0.5208333vw;
+}
+.Hotel p.ImportantText {
+	font-weight: 400;
+	margin-top: 1.3020833vw;
+}
+
+@media (max-width:1920px) {  /* Swap the units from vw to px */
+	.Hotel {
+		max-width: 520px;
+		height: 650px;
+	}
+	.RightHotel {
+		margin-left: 90px;
+	}
+	.Hotel h2 {
+		font-size: 24px;
+		margin-bottom: 8px;
+	}
+	.Hotel .StarContainer {
+		font-size: 24px;	
+		margin-bottom: 20px;
+	}
+	.Hotel img {
+		max-width: 520px;
+		margin-bottom: 20px;
+	}
+	.Hotel p {
+		font-size: 18px;
+		margin-bottom: 17px;
+	}
+	.Hotel .BookNowButton {
+		margin-top: 10px;
+	}
+	.Hotel p.ImportantText {
+		margin-top: 25px;
+	}
+}
+
+@media (max-width:1279px) { /* Swap to the units to vw again, keeping the aspect ratio of the 1280px wide PSD. */
+	.Hotel {
+		max-width: 40.625vw;
+		height: 51.78125vw;
+	}
+	.RightHotel {
+		margin-left: 7.03125vw;
+	}
+	.Hotel h2 {
+		font-size: 1.875vw;
+		margin-bottom: 0.625vw;
+	}
+	.Hotel .StarContainer {
+		font-size: 1.875vw;	
+		margin-bottom: 1.5625vw;
+	}
+	.Hotel img {
+		max-width: 40.625vw;
+		margin-bottom: 1.5625vw;
+	}
+	.Hotel p {
+		font-size: 1.40625vw;
+		margin-bottom: 1.328125vw;
+	}
+	.Hotel .BookNowButton {
+		margin-top: 0.78125vw;
+	}
+	.Hotel p.ImportantText {
+		margin-top: 1.953125vw;
+	}
+}
+
+/*
+@media (max-width:640px ){ /* There is a major layout change here. Create everything keeping in mind that all these below might need to be called from a separated file. Reset everything set previously to its default value, and than add the definitions. */
+/*
+	.Hotel {
+		width: 100%;
+		max-width: 100%;
+		display: block;
+		height: auto; /* set the height to auto, because the hotels stack under each other, and no longer needs the fix height *//*
+		margin-bottom: 30px;
+		vertical-align: none;
+	}
+	.Hotel h2, .Hotel p {
+		font-family: 'Lato', sans-serif;
+	}
+	.RightHotel {
+		margin-left: 0px;
+	}
+	.Hotel h2 {
+		font-size: 15px;
+		text-transform: uppercase;
+		font-weight: 600;
+		margin-top: 0;
+		margin-bottom: 3px;
+	}
+	.Hotel .StarContainer {
+		text-align: left;
+		font-size: 15px;	
+		margin-bottom: 15px;
+	}
+	.Hotel img {
+		width: 100%;
+		max-width: 280px;
+		height: auto;
+		margin-bottom: 10px;
+	}
+	.Hotel p {
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 20px;
+		margin-top: 0;
+		margin-bottom: 12px;
+	}
+	.Hotel .BookNowButton {
+		margin-top: 3px;
+		font-size: 14px;
+		max-width: 120px;
+		height: 37px;
+		padding-top: 7px;
+	}
+	.Hotel p.ImportantText {
+		font-weight: 300;
+		margin-top: 15px;
+		line-height: 18px;
+	}
+}
+/* END Hotels List */

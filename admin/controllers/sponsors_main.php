@@ -19,7 +19,7 @@ class sponsors_main extends config {
 	
 		//Get basic date about a sponsors
 		                    //Name                 Bio         Category              website         image       image alt       sponsor_id
-		$stat_q = "SELECT sn.sponsor_name, sb.sponsor_bio, sc.category_id, sl.sponsor_link_url, idb.image_url, idb.alt_name, sdc.sponsor_id FROM sponsors_name as sn, sponsors_bio as sb, sponsors_data_connection as sdc, sponsors_status as ss, sponsors_category as sc, sponsors_links as sl, image_db as idb, image_connection as ic WHERE sdc.sponsor_name_id=sn.id AND sdc.sponsor_bio_id=sb.id AND sdc.sponsor_id=ss.sponsor_id AND ss.status_id='1' AND sdc.sponsor_link_id=sl.id AND ic.entity_type_id='2' AND ic.entity_id=sdc.sponsor_id AND idb.id=ic.image_db_id AND sdc.sponsor_category_id=sc.id AND sc.category_id= :category  ORDER BY rand()";	
+		$stat_q = "SELECT sn.sponsor_name, sb.sponsor_bio, sc.category_id, sl.sponsor_link_url, idb.image_url, idb.alt_name, sdc.sponsor_id FROM sponsors_name as sn, sponsors_bio as sb, sponsors_data_connection as sdc, sponsors_status as ss, sponsors_category as sc, sponsors_links as sl, image_db as idb, image_connection as ic WHERE sdc.sponsor_name_id=sn.id AND sdc.sponsor_bio_id=sb.id AND sdc.sponsor_id=ss.sponsor_id AND ss.status_id='1' AND sdc.sponsor_link_id=sl.id AND ic.entity_type_id='2' AND ic.entity_id=sdc.sponsor_id AND idb.id=ic.image_db_id AND sdc.sponsor_category_id=sc.id AND sc.category_id= :category  ORDER BY sn.sponsor_name ASC";	
 					
 		$stat = $this->pdo->prepare($stat_q);
 		$stat->bindValue(':category', $category, \PDO::PARAM_INT);
@@ -94,6 +94,7 @@ class sponsors_main extends config {
 	
 				$content .='<div class="ReturnValue" style="display:none"></div>';
 		       $content .='<div class="SystemIcons">';
+			   $content .=' <i data-sponsor="'.$sponsors['sponsor_id'].'" class="fa fa-pencil SysIcon SysCategories"></i>';
 			  if (isset($_SESSION['super_admin'])) {
 				    $content .='<i data-sponsor="'.$sponsors['sponsor_id'].'" class="fa fa-cog SysIcon SysOptions"></i>';
 			   }
@@ -232,7 +233,22 @@ class sponsors_main extends config {
 		return $content;
 }
 
+public function list_sub_filters($main_id) {
+	 $content = '';
+				$category_q = "SELECT sfsc.id, sfsc.sub_category FROM sponsors_filter_sub_categories as sfsc, sponsors_filter_category_connection as sfcc WHERE sfcc.filter_sub_id=sfsc.id AND sfcc.filter_main_id= :id";	
+					
+		$category = $this->pdo->prepare($category_q);
+		$category->bindValue(':id', $main_id, \PDO::PARAM_INT);
+		$category->execute();
 
+			if ($category->rowCount() > 0) {
+					while($cat = $category->fetch()){
+						$content .='<li data-category="'.$cat['id'].'"><span>'.$cat['sub_category'].'</span></li>';
+					}
+			}
+	
+	return $content;
+}
  
 
 }

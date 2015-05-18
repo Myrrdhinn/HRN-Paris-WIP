@@ -40,8 +40,8 @@ use HRNParis\main as main;
   
   $content .='</div>
 	<!--Form container-->
-	 <div id="container">';
-	 
+	 <div id="container">
+	  <div id="ReturnValue" style="display:none"></div>';
 	 
 	 	//if (isset($_SESSION['sponsors_admin']) && isset($_SESSION['super_admin'])) {
 			

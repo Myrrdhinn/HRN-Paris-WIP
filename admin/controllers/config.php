@@ -21,12 +21,16 @@ require_once('connect.php');
 	protected $pdo;
 	public $log;
 	public $sitedir;
+	public $eventlog;
 
 	
   public function __construct() {
-	  	 // create a log channel
+	  	 // create a error log channel
      $this->log = new Logger('HRNParis');
      $this->log->pushHandler(new StreamHandler(__DIR__ .'/errors/error.log', Logger::WARNING));
+	 
+	 $this->eventlog = new Logger('HRNParis');
+     $this->eventlog->pushHandler(new StreamHandler(__DIR__ .'/eventlog/events.log', Logger::WARNING));
 	  
 	 try {
 	 $pdo = connection\PDOConnection::instance();
@@ -41,7 +45,7 @@ require_once('connect.php');
 		   exit;
 	 }
 	  
-    $this->basedir = $_SERVER['DOCUMENT_ROOT'].'/HRNParis/';
+    $this->basedir = $_SERVER['DOCUMENT_ROOT'].'/';
 
  
  /*

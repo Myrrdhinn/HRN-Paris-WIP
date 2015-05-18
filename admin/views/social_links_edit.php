@@ -30,13 +30,13 @@
 <body>
   <!--Main Wrapper-->
 	<div class="wrapper">
-	  <h1 class="WrapperMainH1">HR Tech Europe - London2015 | Edit Social Links</h1>
+	  <h1 class="WrapperMainH1">HR Tech Europe - World Congress Site | Edit Social Links</h1>
 	  	        <div id="MenuIconContainer">';
 	
  	if (isset($_SESSION['admin'])) {
 		
 
-		 $content .= '<a href="sponsors" title="Back To Sponsors"><img class="MenuIcon" src="img/icons/main.png" onmouseover="this.src=';
+		 $content .= '<a href="index" title="Back To main"><img class="MenuIcon" src="img/icons/main.png" onmouseover="this.src=';
 		 $content .="'img/icons/main_hover.png';";
 		 $content .='" onmouseout="this.src=';
 		 $content .="'img/icons/main.png';";

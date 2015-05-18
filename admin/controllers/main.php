@@ -198,12 +198,17 @@ public function save_sponsor() {
 		 
 		 
 		 } catch (\PDOException $e) {
-		   $this->log->addError($e->getMessage(), $e->getFile(), $e->getLine());
+			 $contex[0] = $e->getFile();
+			 $contex[1] = $e->getLine();
+			 
+		   $this->log->addError($e->getMessage(), $e->getFile(), $contex);
 	          }
 			  
 			  
 		 catch (\Exception $e) {
-		   $this->log->addError($e->getMessage(), $e->getFile(), $e->getLine());
+			 $contex[0] = $e->getFile();
+			 $contex[1] = $e->getLine();
+		   $this->log->addError($e->getMessage(), $e->getFile(), $contex);
 	          }
 
 	
@@ -374,12 +379,16 @@ public function edit_sponsor() {
 		 
 		 
 		 } catch (\PDOException $e) {
-		   $this->log->addError($e->getMessage(), $e->getFile(), $e->getLine());
+			 $contex[0] = $e->getFile();
+			 $contex[1] = $e->getLine();
+		   $this->log->addError($e->getMessage(), $contex);
 	          }
 			  
 			  
 		 catch (\Exception $e) {
-		   $this->log->addError($e->getMessage(), $e->getFile(), $e->getLine());
+			 $contex[0] = $e->getFile();
+			 $contex[1] = $e->getLine();
+		   $this->log->addError($e->getMessage(), $contex);
 	          }
 
 	
@@ -388,7 +397,7 @@ public function edit_sponsor() {
 
 public function get_sponsors_permissions($sId) {
 		$content = '';
-		
+		$content .= '<table>';
 						 						//Get Sponsor name
 				 $name_q = "SELECT sn.sponsor_name FROM sponsors_name as sn, sponsors_data_connection as sdc WHERE sdc.sponsor_id = :id AND sdc.sponsor_name_id=sn.id";
 				 $name = $this->pdo->prepare($name_q);
@@ -425,18 +434,26 @@ public function get_sponsors_permissions($sId) {
 									 $permission->execute();
 									 
 									 if ($permission->rowCount() > 0) {
-                                             $content .= '<div class="SponsorPermUser">'.$data['username'].': <span class="AccessGranted">Have Access</span></div><div class="PermissionButton PermRemove" data-sponsorpermission-user="'.$data['id'].'">Remove Permission</div> ';
+                                           $checked = 'checked="checked"';   
 									 } else {
-											$content .= '<div class="SponsorPermUser">'.$data['username'].': <span class="AccessDenied">Do NOT Have Access</span></div><div class="PermissionButton PermAdd" data-sponsorpermission-user="'.$data['id'].'">Grant Permission</div>';
+											$checked = '';   
 												}
-						
+												
+									$content .= '<tr>
+									 <td>'.$data['username'].'</td>
+									 <td><input class="PermissionCheckbox" type="checkbox" '.$checked.' data-sponsorpermission-user="'.$data['id'].'" /></td>
+								   </tr>';
+								   												
+						//$content .= '<div class="CheckboxDiv"><label>'.$data['username'].' <input type="checkbox" '.$checked.' data-sponsorpermission-user="'.$data['id'].'" /></label></div>';
+	
 	
 						  
 						  
 						   
 				     }
 				 }
-
+				 $content .= '</table>';
+ $content .= '<div class="PermissionButton PermRemove" data-sponsorid="'.$sId.'">Save</div> ';
 		
 	return $content;	
 }
@@ -486,7 +503,196 @@ function sponsor_permission_add($sId, $user_id) {
 	
 }
 	 
+function get_sponsors_tags_data($sId){
+	$data[0] = '';
+	$data[1] = '';
+						  //Get data
+					   $name_q = "SELECT sn.sponsor_name FROM sponsors_name as sn, sponsors_data_connection as sdc WHERE sdc.sponsor_id = :id AND sdc.sponsor_name_id=sn.id LIMIT 0,1";
+					   $name = $this->pdo->prepare($name_q);
+					   
+					   $name->bindValue(':id', $sId, \PDO::PARAM_INT);
+					  
+					   
+					   $name->execute();
+					   
+					   if ($name->rowCount() > 0) {
+						 $sName = $name->fetch();
+					   }
+					   
+				   $data[0] = $sName['sponsor_name'];
+				   
+				   
+				   						  //Get data
+					   $tag_q = "SELECT filter_sub_id FROM sponsors_filter_connection WHERE sponsor_id = :id  ORDER BY date DESC";
+					   $tag = $this->pdo->prepare($tag_q);
+					   
+					   $tag->bindValue(':id', $sId, \PDO::PARAM_INT);
+					  
+					   
+					   $tag->execute();
+					   
+					   if ($tag->rowCount() > 0) {
+						while($sTags = $tag->fetch()){
+							
+							$data[1].= $sTags['filter_sub_id'].',';
+							
+							
+						}
+						
+					   }
+				   
+				   	   
+					   
+	return $data;
+}
 
+function save_sponsor_tags($sId, $tags) {
+	$i = 0;
+	$delete[0] = 0;
+	$upload[0] = 0;
+	$d = 0;
+	$u = 0;
+	$comp[0] = 0;
+	
+	//if tags is empty, we delete all existing tags
+	 if (!isset($tags) || $tags[0] == '' || $tags[0] == "empty"){
+										//Get data
+			 $tag_q = "SELECT id FROM sponsors_filter_connection WHERE sponsor_id = :id  ORDER BY date DESC";
+			 $tag = $this->pdo->prepare($tag_q);
+			 
+			 $tag->bindValue(':id', $sId, \PDO::PARAM_INT);
+			
+			 
+			 $tag->execute();
+			 
+			 if ($tag->rowCount() > 0) {
+			  while($sTags = $tag->fetch()){
+				  
+			    //Delete tags
+				   $delete_q = "DELETE FROM sponsors_filter_connection WHERE id = :id";
+				   $delete = $this->pdo->prepare($delete_q);
+				   
+				   $delete->bindValue(':id', $sTags['id'], \PDO::PARAM_INT);
+				   $delete->execute();
+
+			  }
+			  $this->eventlog->addError('admin: '.$_SESSION['user_id'].' , deleted all of the tags from this sponsor: '.$_SESSION['Filter_Edit_SP_Name']);
+			 }
+		 
+		 
+		 
+	 } else {//not isset tags end
+	 
+	//if not, we check every one of them and there is no match, we upload the new one, if there's a tag in the db but not in the tags array, we delete that tag
+											//Get data
+			 $tag_q = "SELECT id, filter_sub_id FROM sponsors_filter_connection WHERE sponsor_id = :id  ORDER BY date DESC";
+			 $tag = $this->pdo->prepare($tag_q);
+			 
+			 $tag->bindValue(':id', $sId, \PDO::PARAM_INT);
+			
+			 
+			 $tag->execute();
+			 
+			 if ($tag->rowCount() > 0) {
+			  while($sTags = $tag->fetch()){
+				    //for delete, we need this two dimensional array
+				      $data[$i][0] = $sTags['id'];  
+                      $data[$i][1] = $sTags['filter_sub_id'];
+					  $comp[$i] = $sTags['filter_sub_id'];
+					  
+					  $i++;
+			  }
+			  
+			 }
+			 
+			 
+  //check if the sponsor have any previous filters
+  if (isset($data) && $data[0] != '') {
+	  
+		  //Get what needs to be deleted  
+		 foreach ($data as $vals) {
+			  
+			  if(in_array($vals[1],$tags)){
+				  
+			  } else {
+				$delete[$d] = $vals[0];
+				$dellog[$d] = $vals[1]; 
+				$d++; 
+			  }
+	 
+			 
+		 } //foreach data ends
+		 
+		 
+       //Get what needs to be uploaded
+	     foreach ($tags as $vals) {
+			  
+			  if(in_array($vals,$comp)){
+				  
+			  } else {
+				$upload[$u] = $vals; 
+				$u++; 
+			  }
+	 
+			 
+		 } //foreach data ends
+	   
+	   
+	   //Delete the unused tags
+	   
+	  if (isset($delete) && $delete[0] != '') {
+	      $dd = 0;
+	    foreach ($delete as $del) {
+			 
+		   			    //Delete tags
+				   $delete_q = "DELETE FROM sponsors_filter_connection WHERE id = :id";
+				   $delete = $this->pdo->prepare($delete_q);
+				   
+				   $delete->bindValue(':id', $del, \PDO::PARAM_INT);
+				   $delete->execute();
+				  
+	       if (isset($dellog[$dd])) {
+			 $this->eventlog->addError('admin: '.$_SESSION['user_id'].' , deleted tag: '.$dellog[$dd].' sponsor: '.$_SESSION['Filter_Edit_SP_Name']);
+			 $dd++;
+		    }//if isset dellog
+			
+		} //foreach delete
+		
+	  } //if isset delete
+	   
+		//upload the new ones 
+		
+		foreach ($upload as $up) {
+						    //Delete tags
+				   $insert_q = "INSERT INTO sponsors_filter_connection SET sponsor_id = :id, filter_sub_id = :filter_id";
+				   $insert = $this->pdo->prepare($insert_q);
+				   
+				   $insert->bindValue(':id', $sId, \PDO::PARAM_INT);
+				   $insert->bindValue(':filter_id', $up, \PDO::PARAM_INT);
+				   $insert->execute();
+
+			
+		}
+
+     } else { //check if data have any previous filters 
+	 		foreach ($tags as $up) {
+						    //Delete tags
+				   $insert_q = "INSERT INTO sponsors_filter_connection SET sponsor_id = :id, filter_sub_id = :filter_id";
+				   $insert = $this->pdo->prepare($insert_q);
+				   
+				   $insert->bindValue(':id', $sId, \PDO::PARAM_INT);
+				   $insert->bindValue(':filter_id', $up, \PDO::PARAM_INT);
+				   $insert->execute();
+
+			
+		   } //foreach tags end
+	 
+	 } //if data have any previous filters else end
+   
+ } //if tags have elements (else) end
+	
+	
+}
 
 
 function file_upload($location, $name){
@@ -531,7 +737,10 @@ function file_upload($location, $name){
 	  } catch (\Exception $e) {
 		  // Fail!
 		  $errors = $file->getErrors();
-		  $this->log->addError($e->getMessage(), $e->getFile(), $e->getLine());
+
+			 $contex[0] = $e->getFile();
+			 $contex[1] = $e->getLine();
+		  $this->log->addError($e->getMessage(), $contex);
 	  }
 	
 }
@@ -710,6 +919,21 @@ public function get_entity_name($sId, $type_raw) {
       
                   break;
                case 1:
+			   			 $name_q = "SELECT sn.id, sn.speaker_name FROM speakers_name as sn, speakers_data_connection as sdc WHERE sdc.speaker_id = :speaker AND sdc.speaker_name_id = sn.id LIMIT 0,1";
+						 $name = $this->pdo->prepare($name_q);
+						   
+						 $name->bindValue(':speaker', $sId, \PDO::PARAM_INT);
+		  
+						 $name->execute();
+						   
+						   if ($name->rowCount() > 0) {
+								while($sName = $name->fetch()){
+		  
+									   $content .= '<h1 data-socialLinkType="'.$type.'" data-socialLinkId="'.$sId.'" id="Name">'.$sName['speaker_name'].'</h1>';
+									 
+							   }
+						   }
+			   
 
                   break;
                case 2:
@@ -782,6 +1006,580 @@ public function get_socials($sId, $type_raw) {
 	return $content;	
 }
 
+
+public function save_speaker() {
+   //$_SESSION['SpeakerCompanyId']
+
+	$date = date("j F Y");
+	   try {
+	      $this->pdo->beginTransaction();
+		  
+  		  if (isset($_POST['SpeakerName'])){
+			   //Speaker
+			   $speaker_q = "INSERT INTO speakers SET original_name = :name";
+			   $speaker = $this->pdo->prepare($speaker_q);
+			   
+			   $speaker->bindValue(':name', $_POST['SpeakerName'], \PDO::PARAM_STR);	
+			   
+				   
+			   $speaker->execute();
+			   $speaker_id = $this->pdo->lastInsertId(); 
+			   
+			   
+						   //speaker Name
+			   $name_q = "INSERT INTO speakers_name SET speaker_name = :speaker_name, speaker_id = :id";
+			   $name = $this->pdo->prepare($name_q);
+			   
+			   $name->bindValue(':speaker_name', $_POST['SpeakerName'], \PDO::PARAM_STR);
+			   $name->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+			   $name->execute();
+	  
+				  $name_id = $this->pdo->lastInsertId();
+				  
+				  $sTag = explode(" ", $_POST['SpeakerName']); 
+				   if(isset($sTag[1])) {
+					   $speaker_tag = ucfirst($sTag[1]).ucfirst($sTag[0][0]);
+				   } else {
+					   $speaker_tag = ucfirst($_POST['SpeakerName']); 
+				   }
+				  
+				  
+				  						   //speaker tag
+			   $tag_q = "INSERT INTO speakers_tag SET speaker_tag = :speaker_tag, speaker_id = :id";
+			   $tag = $this->pdo->prepare($tag_q);
+			   
+			   $tag->bindValue(':speaker_tag', $speaker_tag, \PDO::PARAM_STR);
+			   $tag->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+			   $tag->execute();
+	  
+				  $tag_id = $this->pdo->lastInsertId();
+			
+			
+			   
+		  } else {
+			throw new Exception('Speaker name is not set in the speaker upload by:'.$_SESSION['user_id']);  
+		  }
+
+
+		
+		if (isset($_POST['SpeakerBio'])){	
+		
+			  //speaker Bio	
+			   $bio_q = "INSERT INTO speakers_bio SET speaker_bio = :bio, speaker_id = :id";
+			   $bio = $this->pdo->prepare($bio_q);
+			   
+			  
+			   $bio->bindValue(':bio', $_POST['SpeakerBio'], \PDO::PARAM_STR);
+	  
+			   $bio->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+			   
+			   $bio->execute();
+			   
+				  $bio_id = $this->pdo->lastInsertId();
+			
+		  }else {
+			throw new Exception('Speaker Bio is not set in the speaker upload by:'.$_SESSION['user_id']);  
+		  }
+		  
+		if (isset($_POST['SpeakerTitle'])){	
+		
+			
+				//Sponsor URL	
+				 $title_q = "INSERT INTO speakers_title SET title = :title, speaker_id = :id";
+				 $title = $this->pdo->prepare($title_q);
+				 
+				 $title->bindValue(':title', $_POST['SpeakerTitle'], \PDO::PARAM_STR);
+				 $title->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+				 
+				 $title->execute();
+				 
+					$title_id = $this->pdo->lastInsertId();
+		
+		  }else {
+			throw new Exception('Speakers Title is not set in the speaker upload by:'.$_SESSION['user_id']);  
+		  }
+		  
+	//-----------------
+	   //Company Data	 
+		 
+		 if (isset($_POST['CompanyName'])){	
+		  
+			   //Speaker
+			   $company_q = "INSERT INTO speakers_company SET original_company_name = :name";
+			   $company = $this->pdo->prepare($company_q);
+			   
+			   $company->bindValue(':name', $_POST['CompanyName'], \PDO::PARAM_STR);	
+			   
+				   
+			   $company->execute();
+			   $company_id = $this->pdo->lastInsertId(); 
+			   
+			   
+			   
+						 //company Name
+			 $company_name_q = "INSERT INTO speakers_company_name SET company_name = :company_name, speaker_company_id = :id";
+			 $company_name = $this->pdo->prepare($company_name_q);
+			 
+			 $company_name->bindValue(':company_name', $_POST['CompanyName'], \PDO::PARAM_STR);
+			 $company_name->bindValue(':id', $company_id, \PDO::PARAM_INT);
+			 $company_name->execute();
+	
+				$company_name_id = $this->pdo->lastInsertId();
+				  
+			
+			
+		 }else {
+			throw new Exception('Company name is not set in the speaker upload by:'.$_SESSION['user_id']);  
+		  }
+		  
+
+		  
+		  		if (isset($_POST['CompanyWebsite'])){	
+				
+						  if (strpos($_POST['CompanyWebsite'], 'http') === FALSE && $_POST['CompanyWebsite'] != '') {
+							  $url = 'http://'.$_POST['CompanyWebsite'];
+						  } else {
+							  $url = $_POST['CompanyWebsite'];
+						  }
+		  
+							  //compamy websote
+					   $website_q = "INSERT INTO speakers_company_website SET company_website = :website, speaker_company_id = :id";
+					   $website = $this->pdo->prepare($website_q);
+					   
+					   $website->bindValue(':website', $url, \PDO::PARAM_STR);
+					   $website->bindValue(':id', $company_id, \PDO::PARAM_INT);
+					   
+					   $website->execute();
+					   
+						  $website_id = $this->pdo->lastInsertId(); 	
+			
+			
+		          }
+				  
+				  
+			 if (isset($company_id) && isset($company_name_id)){	
+		 
+				 //Sponsor date connection
+				 $connection_q = "INSERT INTO speakers_company_data_connection SET speaker_company_id = :id, speaker_company_name_id = :name";
+				   if (isset($website_id)) {
+					   $connection_q .= ", speaker_company_website_id= :website";
+				   }
+				  
+				 $connection = $this->pdo->prepare($connection_q);
+				 
+				 $connection->bindValue(':id', $company_id, \PDO::PARAM_INT);
+				 $connection->bindValue(':name', $company_name_id, \PDO::PARAM_INT);
+				   if (isset($website_id)) {
+					   $connection->bindValue(':website', $website_id, \PDO::PARAM_INT);
+				   }
+				 
+				 $connection->execute();
+				 
+					$company_connection_id = $this->pdo->lastInsertId();
+
+		 }else {
+			throw new Exception('Something is not set in the company connection query by:'.$_SESSION['user_id']);  
+		  }
+				  
+		  
+		  //---------------
+		    //End Company Data
+				
+			
+				//speaker Status
+		 $status_q = "INSERT INTO speakers_status SET speaker_status_id = '1', speaker_id = :id";
+		 $status = $this->pdo->prepare($status_q);
+
+		 $status->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+		 
+		 $status->execute();
+		 
+		 
+		 // ORDER
+		 				//speaker Status
+		 $order_q = "SELECT COUNT(id) as num FROM speakers_order";
+		 $order = $this->pdo->prepare($order_q);
+		 
+		 $order->execute();
+		 
+		 if ($order->rowCount() > 0) {
+			 $order_num = $order->fetch();
+			 $num = (int)$order_num[0];
+			 $num++;
+									//speaker order
+				 $ordernew_q = "INSERT INTO speakers_order SET order_id = :order, speaker_id = :id";
+				 $ordernew = $this->pdo->prepare($ordernew_q);
+		
+				 $ordernew->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+				 $ordernew->bindValue(':order', $num, \PDO::PARAM_INT);
+				 
+				 $ordernew->execute();
+			 
+			 
+		 }
+		 
+		 
+		 		
+	   if (isset($speaker_id) && isset($bio_id) && isset($name_id) && isset($title_id) && isset($company_id) && isset($tag_id)){	
+		 
+				 //Sponsor date connection
+				 $connection_q = "INSERT INTO speakers_data_connection SET speaker_id = :id, speaker_bio_id = :bio, speaker_name_id = :name, speaker_title_id = :title, speaker_company_id = :company, speaker_tag_id= :tag";
+				 $connection = $this->pdo->prepare($connection_q);
+				 
+				 $connection->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+				 $connection->bindValue(':bio', $bio_id, \PDO::PARAM_INT);
+				 $connection->bindValue(':name', $name_id, \PDO::PARAM_INT);
+				 $connection->bindValue(':title', $title_id, \PDO::PARAM_INT);
+				 $connection->bindValue(':company', $company_id, \PDO::PARAM_INT);
+				 $connection->bindValue(':tag', $tag_id, \PDO::PARAM_INT);
+				 
+				 $connection->execute();
+				 
+					$connection_id = $this->pdo->lastInsertId();
+
+		 }else {
+			throw new Exception('Something is not set in the speaker data connection query by:'.$_SESSION['user_id']);  
+		  }
+
+		 
+		 $this->pdo->commit();
+		 
+		 if (isset($connection_id)){
+			 
+			 //upload the logo if the database queries are done
+			 $file_info = $this->file_upload('speakers/SpeakerPhotos/', $_POST['SpeakerName']);
+			 
+			 //upload the name of the file to the database
+			 $this->pic_upload(1, $speaker_id, $file_info['name'], $_POST['SpeakerName']);
+			 
+			 //And now the social links:
+			 if(isset($_POST['Facebook']) && $_POST['Facebook'] != ''){
+				 $this->social_link_upload(1, $speaker_id, 1, $_POST['Facebook']);
+			 }
+
+			 if(isset($_POST['Twitter']) && $_POST['Twitter'] != ''){
+				 $this->social_link_upload(1, $speaker_id, 2, $_POST['Twitter']);
+			 }
+			 
+			 if(isset($_POST['Linkedin']) && $_POST['Linkedin'] != ''){
+				 $this->social_link_upload(1, $speaker_id, 3, $_POST['Linkedin']);
+			 }
+			 
+			 if(isset($_POST['Flickr']) && $_POST['Flickr'] != ''){
+				 $this->social_link_upload(1, $speaker_id, 4, $_POST['Flickr']);
+			 }
+			     
+			 if(isset($_POST['Google']) && $_POST['Google'] != ''){
+				 $this->social_link_upload(1, $speaker_id, 5, $_POST['Google']);
+			 } 
+			 
+			
+			//Save the company id for the logo upload
+			 if (isset($company_connection_id)) {
+				 $_SESSION['SpeakerCompanyId'] = $company_id;
+			  }
+			 
+			  return $connection_id;
+			
+		 } else {
+			throw new Exception('speakers_data_connection is not uploaded, by:'.$_SESSION['user_id']);   
+		 }
+		 
+		 
+		 
+		 } catch (\PDOException $e) {
+			 $contex[0] = $e->getFile();
+			 $contex[1] = $e->getLine();
+		   $this->log->addError($e->getMessage(), $contex);
+	          }
+			  
+			  
+		 catch (\Exception $e) {
+			 $contex[0] = $e->getFile();
+			 $contex[1] = $e->getLine();
+		   $this->log->addError($e->getMessage(), $contex);
+	          }
+			  
+
+	
+}
+
+
+public function edit_speaker() {
+
+    $speaker_id = $_POST['sId'];
+	
+	$date = date("j F Y");
+	   try {
+          if($_POST['edit_type'] == 'NameEdit'){
+			   //speaker Name
+			   $name_q = "INSERT INTO speakers_name SET speaker_name = :speaker_name, speaker_id = :id";
+			   $name = $this->pdo->prepare($name_q);
+			   
+			   $name->bindValue(':speaker_name', $_POST['new_data'], \PDO::PARAM_STR);
+			   $name->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+			   $name->execute();
+	  
+				  $name_id = $this->pdo->lastInsertId();
+				  
+				  
+				  $sTag = explode(" ", $_POST['new_data']); 
+				   if(isset($sTag[1])) {
+					   $speaker_tag = ucfirst($sTag[1]).ucfirst($sTag[0][0]);
+				   } else {
+					   $speaker_tag = ucfirst($_POST['new_data']); 
+				   }
+				  
+				  
+				  						   //speaker tag
+			   $tag_q = "INSERT INTO speakers_tag SET speaker_tag = :speaker_tag, speaker_id = :id";
+			   $tag = $this->pdo->prepare($tag_q);
+			   
+			   $tag->bindValue(':speaker_tag', $speaker_tag, \PDO::PARAM_STR);
+			   $tag->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+			   $tag->execute();
+	  
+				  $tag_id = $this->pdo->lastInsertId();
+		 }
+		
+		
+		if ($_POST['edit_type'] == 'BioEdit'){	
+		
+			  //speaker Bio	
+			   $bio_q = "INSERT INTO speakers_bio SET speaker_bio = :bio, speaker_id = :id";
+			   $bio = $this->pdo->prepare($bio_q);
+			   
+			  
+			   $bio->bindValue(':bio', $_POST['body'], \PDO::PARAM_STR);
+	  
+			   $bio->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+			   
+			   $bio->execute();
+			   
+				  $bio_id = $this->pdo->lastInsertId();
+			
+		  }
+		  
+		  
+		if ($_POST['edit_type'] == 'TitleEdit'){	
+
+			
+				//speaker URL	
+				 $link_q = "INSERT INTO speakers_title SET title = :title, speaker_id = :id";
+				 $link = $this->pdo->prepare($link_q);
+				 
+				 $link->bindValue(':title', $_POST['new_data'], \PDO::PARAM_STR);
+				 $link->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+				 
+				 $link->execute();
+				 
+					$title_id = $this->pdo->lastInsertId();
+		
+		  }
+		  
+		  
+		  	//-----------------
+	   //Company Data	 
+		 
+		 if ($_POST['edit_type'] == 'CompanyNameEdit'){	
+		  
+
+			   
+						 //company Name
+			 $company_name_q = "INSERT INTO speakers_company_name SET company_name = :company_name, speaker_company_id = :id";
+			 $company_name = $this->pdo->prepare($company_name_q);
+			 
+			 $company_name->bindValue(':company_name', $_POST['new_data'], \PDO::PARAM_STR);
+			 $company_name->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+			 $company_name->execute();
+	
+				$company_name_id = $this->pdo->lastInsertId();
+				  
+			
+			
+		 }
+		  
+
+		  
+		  	 if ($_POST['edit_type'] == 'CompanyWebsiteEdit'){		
+				
+						  if (strpos($_POST['new_data'], 'http') === FALSE && $_POST['new_data'] != '') {
+							  $url = 'http://'.$_POST['new_data'];
+						  } else {
+							  $url = $_POST['new_data'];
+						  }
+		  
+							  //compamy websote
+					   $website_q = "INSERT INTO speakers_company_website SET company_website = :website, speaker_company_id = :id";
+					   $website = $this->pdo->prepare($website_q);
+					   
+					   $website->bindValue(':website', $url, \PDO::PARAM_STR);
+					   $website->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+					   
+					   $website->execute();
+					   
+						  $website_id = $this->pdo->lastInsertId(); 	
+			
+			
+		          }
+				  
+				  
+			 if (isset($company_name_id) || isset($website_id)){
+				 
+				 $CurrentPHPTimeStamp = date('Y-m-d G:i:s');
+				 	
+		 
+				 //Sponsor date connection
+				$connection_q = "UPDATE speakers_company_data_connection SET date = :new_date";
+	
+				  
+				 if (isset($company_name_id)) {
+					   $connection_q .=", speaker_company_name_id = :nameid";
+				 }
+				 
+				 if (isset($website_id)){
+					   $connection_q .=", speaker_company_website_id = :website";
+				 }
+				 
+
+				 
+				 
+				$connection_q .= " WHERE speaker_company_id = :id";
+				
+				 $connection = $this->pdo->prepare($connection_q);
+				 
+				 $connection->bindValue(':new_date', $CurrentPHPTimeStamp, \PDO::PARAM_STR);
+				 
+				  if (isset($company_name_id)) {
+				     $connection->bindValue(':nameid', $company_name_id, \PDO::PARAM_INT);
+				  }
+				  
+				  if (isset($website_id)){
+				     $connection->bindValue(':website', $website_id, \PDO::PARAM_INT);
+				  }
+				  
+
+				 $connection->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+				 
+				 $connection->execute();
+				 
+					$company_connection_id = $this->pdo->lastInsertId();
+
+		 }
+				  
+		  
+		  //---------------
+		    //End Company Data
+		  
+
+		 
+		  if ($_POST['edit_type'] == 'StatusEdit'){
+			
+					  //speaker Status
+			   $status_q = "UPDATE speakers_status SET speaker_status_id = '0' WHERE speaker_id = :id";
+			   $status = $this->pdo->prepare($status_q);
+	  
+			   $status->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+			   
+			   $status->execute();
+			   
+			   $text = "Deleted";
+			   
+			   return $text;
+		 
+		  }
+		 		
+		if (isset($bio_id) || isset($name_id) || isset($title_id) || isset($tag_id)){	
+		
+		$CurrentPHPTimeStamp = date('Y-m-d G:i:s');
+		 
+				 //speaker date connection
+				$connection_q = "UPDATE speakers_data_connection SET date = :new_date";
+				 
+				 if (isset($bio_id)) {
+					   $connection_q .=", speaker_bio_id = :bio";
+
+				 }
+				 
+				 if (isset($name_id)){
+					   $connection_q .=", speaker_name_id = :name";
+					   $connection_q .=", speaker_tag_id = :tag";
+				 }
+				 
+				 
+				 if (isset($title_id)){
+					   $connection_q .=", speaker_title_id = :title";
+				 }
+				 
+				 
+				$connection_q .= " WHERE speaker_id = :id";
+				
+				 $connection = $this->pdo->prepare($connection_q);
+				 
+				 $connection->bindValue(':new_date', $CurrentPHPTimeStamp, \PDO::PARAM_STR);
+				 
+				  if (isset($bio_id)) {
+				     $connection->bindValue(':bio', $bio_id, \PDO::PARAM_INT);
+				  }
+				  
+				  if (isset($name_id)){
+				     $connection->bindValue(':name', $name_id, \PDO::PARAM_INT);
+					 $connection->bindValue(':tag', $tag_id, \PDO::PARAM_INT);
+					   
+				  }
+				  
+				  
+				  if (isset($title_id)){
+				     $connection->bindValue(':title', $title_id, \PDO::PARAM_INT);
+				  }
+				 
+				 $connection->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+				 
+				 $connection->execute();
+				 
+					$connection_id = $speaker_id;
+
+		  }
+		 
+		 if (isset($connection_id)){
+			 
+			 
+			  return $connection_id;
+			
+		 } else {
+			throw new Exception('speakers_data_connection is not uploaded, by:'.$_SESSION['user_id']);   
+		 }
+		 
+		 
+		 
+		 } catch (\PDOException $e) {
+			 $contex[0] = $e->getFile();
+			 $contex[1] = $e->getLine();
+		   $this->log->addError($e->getMessage(), $contex);
+	          }
+			  
+			  
+		 catch (\Exception $e) {
+			 $contex[0] = $e->getFile();
+			 $contex[1] = $e->getLine();
+		   $this->log->addError($e->getMessage(), $contex);
+	          }
+
+	
+}
+
+public function speaker_order($speaker, $order) {
+	
+						  //speaker Status
+			   $status_q = "UPDATE speakers_order SET order_id = :order WHERE speaker_id = :id";
+			   $status = $this->pdo->prepare($status_q);
+	  
+	           $status->bindValue(':order', $order, \PDO::PARAM_INT);
+			   $status->bindValue(':id', $speaker, \PDO::PARAM_INT);
+			   
+			   $status->execute();
+	
+}
 
 }
 ?>

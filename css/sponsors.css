@@ -151,6 +151,14 @@ header button:hover {
 	width: 100%;
 	background-color: #f4f4f2;
 }
+
+/*sponsor anchor*/
+.anchorclass{
+	display: block; 
+	position: relative; 
+	top: -75px; 
+	visibility: hidden;
+}
 #SponsorsInnerContainer {
 	width: 100%;
 	max-width: 68.489583vw;

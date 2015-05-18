@@ -1,0 +1,6 @@
+[2015-04-07 11:22:27] HRNParis.WARNING: Foo [] []
+[2015-04-07 11:22:27] HRNParis.ERROR: Bar [] []
+[2015-04-23 11:34:24] HRNParis.ERROR: SQLSTATE[HY000] [1045] Access denied for user 'hrdb'@'localhost' (using password: YES) [] []
+[2015-04-23 11:35:55] HRNParis.ERROR: SQLSTATE[HY000] [1045] Access denied for user 'hrdb'@'localhost' (using password: YES) [] []
+[2015-04-23 11:51:58] HRNParis.ERROR: Division by zero. [] []
+[2015-04-27 16:23:38] HRNParis.ERROR: SQLSTATE[HY000] [1045] Access denied for user 'hrdb'@'localhost' (using password: YES) [] []

@@ -6,3 +6,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php
 
+# perform redirect if speaker profile
+RewriteRule    ^speaker-profile/[a-zA-Z]   speaker-profile.php    [NC,L]
+
+
+
+

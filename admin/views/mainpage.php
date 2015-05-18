@@ -33,6 +33,12 @@ use HRNParis\NewData as newData;
 		 $content .='" onmouseout="this.src=';
 		 $content .="'img/icons/sponsors.png';";
 		 $content .='" ></a>';
+		 
+		  $content .= '<a href="speakers"><img class="MenuIcon" src="img/icons/speakers.png" onmouseover="this.src=';
+		 $content .="'img/icons/speakers_hover.png';";
+		 $content .='" onmouseout="this.src=';
+		 $content .="'img/icons/speakers.png';";
+		 $content .='" ></a>';
 	 
 	}
 	

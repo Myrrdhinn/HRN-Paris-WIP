@@ -274,6 +274,35 @@ var original = {};
   })
     
 	
+	  	/*-----------------------
+		Sponsor filter tags
+	------------------------	*/
+
+		//Hide the element and show the input field associated with the element + focus the input box
+    $('.SysCategories').bind('click', function () {
+		
+		//get the id of the activated element
+		var sId = $(this).data('sponsor');
+		
+
+	  $.ajax({
+                url: 'controllers/ajax.php',
+                type: 'POST',
+                data: {action:"sponsor_tag_request", sId:sId},
+                success: function(data) {
+				    setTimeout(function () {
+                         window.location.replace("sponsors_tags");
+                      }, 200); //will call the function after 1 secs.
+					
+                   }
+            });
+			  
+          
+      
+
+  })
+    
+	
   	/*-----------------------
 		Social Link edit
 	------------------------	*/
