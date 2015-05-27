@@ -4,7 +4,7 @@ $(document).ready(function(){
           $('#SponsorBio').editable({inlineMode: false,
 		   buttons: [
         'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'align', 'outdent', 'indent', 'insertOrderedList',
-        'insertUnorderedList', 'insertHTML'
+        'insertUnorderedList', 'insertHTML', 'createLink'
          ], 
 		 key: 'jgasD7ozD-11ohdnaawcwg1gD1uxu=='
 		  })
@@ -37,6 +37,23 @@ Dropzone.autoDiscover = false;
 		   if (content !== '' && typeof content != 'undefined') {
 			   $(this).css("border","1px solid #cccccc");
 		   }
+	   
+	   
+	     }) 
+		 
+		 
+		 	       //alacarte checkbox
+	   $('#Alacarte').bind('click', function () {
+		   
+           var check = $(this).prop('checked');
+					
+				if (check == true) {
+					$("#AlaCarteField").fadeIn();
+				} else {
+					
+					$("#AlaCarteField").fadeOut();
+				}
+				
 	   
 	   
 	     }) 
@@ -142,8 +159,25 @@ function save_check() {
 		  var Google = $('#Google').val();
 		  var Category = $('#Category').val();
 		  
+		  var AlacarteText = $('#AlaCarteText').val();
+		      if (typeof AlacarteText == "undefined"){
+				$('#AlaCarteText').val('');
+			  }
 		 
-		  
+		        var check = $('#Alacarte').prop('checked');
+					
+				if (check == true) {
+					Alacarte = 1;
+				} else {
+					
+					Alacarte = 0;
+				}
+			
+			 var OnlyCarte = $('#OnlyAlacarte').prop('checked');	
+			 
+			 	if (OnlyCarte == true) {
+					Category = 20;
+				} 
 		  
 		  
 		  	   //check if the fields are filled out or not
@@ -207,6 +241,20 @@ function save_check() {
 		formData.append("Linkedin", $("#Linkedin").val());
 		formData.append("Flickr", $("#Flickr").val());
 		formData.append("Google", $("#Google").val());
+		formData.append("AlaCarteText", $('#AlaCarteText').val());
+		
+			var check = $('#Alacarte').prop('checked');
+					
+				if (check == true) {
+					Alacarte = 1;
+				} else {
+					
+					Alacarte = 0;
+				}
+				
+		
+		formData.append("AlaCarte", Alacarte);
+		
     },
     init: function() {
       this.on("addedfile", function(file) {

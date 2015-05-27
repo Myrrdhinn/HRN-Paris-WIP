@@ -845,3 +845,25 @@ header {
 }
 /* END Speakers Grid */
 /* END Speakers */
+
+
+/*Modal*/
+.SpeakerModal {
+	padding: 0;
+	position: fixed;
+	top: 0 !important;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow-y: scroll;
+}
+.SpeakerModal * {
+	text-align: left !important;	
+}
+
+/*End Modal*/
+
+.SpeakerListAnchor {
+	position:absolute;
+	margin-top:-5vw;
+}

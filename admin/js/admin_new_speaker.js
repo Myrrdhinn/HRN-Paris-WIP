@@ -4,7 +4,7 @@ $(document).ready(function(){
           $('#SpeakerBio').editable({inlineMode: false,
 		   buttons: [
         'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'align', 'outdent', 'indent', 'insertOrderedList',
-        'insertUnorderedList', 'insertHTML'
+        'insertUnorderedList', 'insertHTML', 'createLink'
          ], 
 		 key: 'jgasD7ozD-11ohdnaawcwg1gD1uxu=='
 		  })

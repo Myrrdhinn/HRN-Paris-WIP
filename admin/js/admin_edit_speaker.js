@@ -144,7 +144,7 @@ $(document).ready(function(){
 		        inlineMode: false,
 				   buttons: [
 				'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'align', 'outdent', 'indent', 'insertOrderedList',
-				'insertUnorderedList', 'save'
+				'insertUnorderedList','createLink', 'save'
 				 ],
 				 saveParams: {action: 'edit_speakers', edit_type:edit_type, sId:sId},
 				 saveURL: "../controllers/ajax.php",

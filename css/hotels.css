@@ -5,6 +5,10 @@
 /*	
 }*/
 
+a:hover {
+	color: #106ab5;
+}
+
 #HotelsWrapper {
 	width: 100%;
 	max-width: 59.375vw;
@@ -140,26 +144,26 @@
 #FeaturedHotelAddress .BookNowButton {
 	margin-bottom: 2.864583vw;
 }
-#FeaturedHotelAddress p, #FeaturedHotelAddress p a {
+#FeaturedHotelAddress p, #FeaturedHotelAddress p a, .HotelAddress p, .HotelAddress p a {
 	font-size: 0.9375vw;
 	color: #000;
 	font-weight: 600;
 	transition: all 0.3s;
 }
-#FeaturedHotelAddress p a:hover {
+#FeaturedHotelAddress p a:hover, .HotelAddress p a:hover {
 	color: #106ab5;
 }
-#FeaturedHotelAddress p {
+#FeaturedHotelAddress p, .HotelAddress p{
 	margin-top: 0;
 	margin-bottom: 0.52083vw;
 }
-#FeaturedHotelAddress .fa-external-link{
+#FeaturedHotelAddress .fa-external-link, .HotelAddress .fa-external-link{
 	margin-right: 0.260416vw;
 }
-#FeaturedHotelAddress .fa-phone{
+#FeaturedHotelAddress .fa-phone, .HotelAddress .fa-phone{
 	margin-right: 0.4166666vw;
 }
-#FeaturedHotelAddress .fa-map-marker{
+#FeaturedHotelAddress .fa-map-marker, .HotelAddress .fa-map-marker {
 	margin-right: 0.625vw;
 }
 

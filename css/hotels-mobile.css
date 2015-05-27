@@ -1,0 +1,217 @@
+@charset "utf-8";
+/* These CSS rules will affect the hotels page.  */
+
+@media (max-width:640px ){ /* There is a major layout change here. Create everything keeping in mind that all these below might need to be called from a separated file. Reset everything set previously to its default value, and than add the definitions. */
+	#HotelsWrapper {
+		width: 100%;
+		max-width: 100%;
+		padding: 0 20px;
+		margin: 0 auto;
+		margin-top:15.4vw;
+		box-sizing: border-box;	
+	}
+	#HotelsWrapper * {
+		box-sizing: border-box;	
+	}
+	#FeaturedHotelWrapper {
+		padding-top: 50px;	
+		padding-bottom: 20px;
+		border-bottom: 2px solid #adadad;	
+		
+		margin-bottom: 26px;
+	}
+	#FeaturedHotelWrapper p {
+		font-family: 'Lato', sans-serif;
+	}
+	#FeaturedHotelWrapper h1, #FeaturedHotelWrapper h2 {
+		text-transform: uppercase;
+		text-align: center;	
+	}
+	#FeaturedHotelWrapper h1 {
+		margin: 0;
+		font-size: 22px;
+		color: #1c3379;
+		font-weight: 700;
+	}
+	#FeaturedHotelWrapper h2 {
+		margin-top: 20px;
+		margin-bottom: 10px;
+		font-size: 18px;
+		font-weight: 400;	
+	}
+	.StarContainer {
+		color: #fcc317;	
+	}
+	#FeaturedHotelWrapper .StarContainer {
+		text-align: center;
+		font-size: 15px;	
+		margin-bottom: 15px;
+	}
+
+	#BlockA {
+		display: none;	
+	}
+	#BlockB {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	#BlockB1, #BlockB2 {
+		display: inline-block;	
+	}	
+	#BlockB1 {
+		width: 46.21875vw;
+		height: 26.09375vw;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-1-mobile.jpg);
+	}
+	#BlockB2 {
+		width: 46.21875vw;
+		height: 26.09375vw;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-2-mobile.jpg);
+		float: right;
+	}
+
+	#FeaturedHotelTextContainer, #FeaturedHotelAddress {
+		display: block;
+		vertical-align: top;
+	}
+	#FeaturedHotelTextContainer {
+		width: 100%;
+		max-width: 100%;
+	}
+	.FeaturedHotelText {
+		font-size: 14px;
+		margin-bottom: 20px;
+		margin-top: 0;
+		color: #484848;
+		line-height: 20px;
+		text-align: justify;
+	}
+	#FeaturedHotelAddress {
+		width: 100%;
+		max-width: 100%;
+		margin-left: 0;
+	}
+	.BookNowButton {
+		font-family: 'Lato', sans-serif;
+		width: 185px;
+		height: 50px;
+		background-color: #106ab5;
+		border: 3px solid #106ab5;
+		color: #fff;
+		text-align: center;
+		font-size: 18px;
+		padding-top: 12px;
+		font-weight: 600;
+		cursor: pointer;
+		display: inline-block;
+		transition: all 0.3s;
+	}
+	.BookNowButton:hover {
+		background-color: transparent;
+		color: #106ab5;
+	}
+	#FeaturedHotelAddress .BookNowButton {
+		margin-bottom: 20px;
+	}
+	#FeaturedHotelAddress p, #FeaturedHotelAddress p a, .HotelAddress p, .HotelAddress p a {
+		font-size: 14px;
+		color: #000;
+		font-weight: 600;
+	}
+	#FeaturedHotelAddress p, .HotelAddress p {
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+	#FeaturedHotelAddress .fa-external-link, .HotelAddress .fa-external-link{
+		margin-right: 5px;
+	}
+	#FeaturedHotelAddress .fa-phone, .HotelAddress .fa-phone{
+		margin-right: 8px;
+	}
+	#FeaturedHotelAddress .fa-map-marker, .HotelAddress .fa-map-marker{
+		margin-right: 12px;
+	}
+}
+
+@media (max-width: 540px) {
+	#BlockB {
+		margin-bottom: 20px;
+	}
+	#BlockB1, #BlockB2 {
+		display: block;	
+	}	
+	#BlockB1 {
+		width: 100%;
+		height: 52.1875vw;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-1-mobile.jpg);
+		margin-bottom: 6px;
+	}
+	#BlockB2 {
+		
+		width: 100%;
+		height: 52.1875vw;
+		background-size: cover;
+		background-image: url(../img/hotels/le-meridien-etoile-picture-2-mobile.jpg);
+		float: none;
+	}
+}
+/* END Featured Hotel */
+
+/* Hotels List */
+@media (max-width:640px ){ /* There is a major layout change here. Create everything keeping in mind that all these below might need to be called from a separated file. Reset everything set previously to its default value, and than add the definitions. */
+	.Hotel h2, .Hotel p {
+		font-family: 'Lato', sans-serif;
+	}	
+	.Hotel {
+		width: 100%;
+		max-width: 100%;
+		display: block;
+		height: auto; /* set the height to auto, because the hotels stack under each other, and no longer needs the fix height */
+		margin-bottom: 30px;
+		vertical-align: none;
+	}
+	.RightHotel {
+		margin-left: 0px;
+	}
+	.Hotel h2 {
+		font-size: 15px;
+		text-transform: uppercase;
+		font-weight: 600;
+		margin-top: 0;
+		margin-bottom: 3px;
+	}
+	.Hotel .StarContainer {
+		text-align: left;
+		font-size: 15px;	
+		margin-bottom: 15px;
+	}
+	.Hotel img {
+		width: 100%;
+		max-width: 280px;
+		height: auto;
+		margin-bottom: 10px;
+	}
+	.Hotel p {
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 20px;
+		margin-top: 0;
+		margin-bottom: 12px;
+	}
+	.Hotel .BookNowButton {
+		margin-top: 3px;
+		font-size: 14px;
+		max-width: 120px;
+		height: 37px;
+		padding-top: 7px;
+	}
+	.Hotel p.ImportantText {
+		font-weight: 300;
+		margin-top: 15px;
+		line-height: 18px;
+	}
+}
+/* END Hotels List */

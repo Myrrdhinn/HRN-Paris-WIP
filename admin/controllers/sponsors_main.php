@@ -6,6 +6,20 @@ include_once('config.php');
 include_once('main.php');
 	
 class sponsors_main extends config {
+	
+			 //strip strings from special characters
+ public function clean_str($string) {
+
+    $specialis_karekterek = array('Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A', 'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I', 'Ï'=>'I', 'Ñ'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ő'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U', 'Û'=>'U', 'Ü'=>'U', 'Ű'=>'U', 'Ý'=>'Y', 'Þ'=>'B', 'ß'=>'ss','à'=>'a', 'á'=>'a', 'â'=>'a', 'ã'=>'a', 'ä'=>'a', 'å'=>'a', 'æ'=>'a', 'ç'=>'c', 'è'=>'e', 'é'=>'e', 'ê'=>'e', 'ë'=>'e', 'ì'=>'i', 'í'=>'i', 'î'=>'i', 'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ő'=>'o', 'ø'=>'o', 'ù'=>'u', 'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ű'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f');
+    $string = strtolower(strtr($string, $specialis_karekterek));
+    $string = preg_replace("/[^a-z0-9-_\.]/i", '', trim($string));
+    if (strlen($string) == 0 || $string == '.' || $string == '..') {
+    	$string = 'Invalid name';
+    }
+    return $string;
+}
+	
+	
 	 
 	//This is the function what collets all the sponsors to the content multi dimensional array.
   public function sponsors($category) {
@@ -88,9 +102,12 @@ class sponsors_main extends config {
 		  --------------------------------- 
 		  */
 		  
+		  
+		  $achor = $this->clean_str($sponsors['sponsor_name']);
+		  
 		  $content .='<!-- '.$sponsors['sponsor_name'].' -->
         <div class="Sponsor">';
-		
+		 $content .='<a id="'.$achor.'" class="anchorclass"></a>';
 	
 				$content .='<div class="ReturnValue" style="display:none"></div>';
 		       $content .='<div class="SystemIcons">';
@@ -132,14 +149,21 @@ class sponsors_main extends config {
                  $content .='<div class="SponsorSocialIcons">';
 				 
 
-				$content .='<p><span data-entity_id="'.$sponsors['sponsor_id'].'" data-entity_type="2" class="SocialLinkEdit"><i class="fa fa-comment fa-2x"></i>Social Links</span></p>';
+				$content .='<p><span data-pasturl="sponsors#'.$achor.'" data-entity_id="'.$sponsors['sponsor_id'].'" data-entity_type="2" class="SocialLinkEdit"><i class="fa fa-comment fa-2x"></i>Social Links</span></p>';
 				
 				$content .=' <select data-entity_id="'.$sponsors['sponsor_id'].'" data-entity_type="2" class="SelectClass" id="Category">';
 		  $content .=
 		   $main->sponsor_categories();
 		$content .='</select>';
 				
-			
+				$content .='
+				<div class="alacarteReturnValue" style="display:none"></div>
+				<br /><label><input type="checkbox" class="AddAlaCarteChekbox">New A La Carte For This Sponsor</label>
+				 <div class="AlaCarteContainer">
+				    <input data-sponsor="'.$sponsors['sponsor_id'].'" class="AlaCarteText AdminInputField" type="text" / >
+				 </div>
+				';
+				
 					
                 $content .= '</div>
             </div>
@@ -250,6 +274,79 @@ public function list_sub_filters($main_id) {
 	return $content;
 }
  
+
+  public function sponsors_grid_alacarte() {
+		$content = '';
+		$taglist = '';
+		//ORDER BY CASE sdc.sponsor_id WHEN 14 THEN 1 END DESC, rand()    :O  ilyenkor a 14-es id-jú lesz mindig az első a többi pedig random utána 
+		//ha meg fix a sorrend akkor meg ORDER BY sdc.id DESC
+	
+		//Get basic date about a sponsors
+		                    
+		$stat_q = "SELECT sn.sponsor_name, idb.image_url, idb.alt_name, sdc.sponsor_id, sa.id as alacarte_id, sat.text FROM sponsors_name as sn, sponsors_data_connection as sdc, sponsors_status as ss, image_db as idb, image_connection as ic, sponsors_alacarte as sa, sponsors_alacarte_text as sat WHERE sdc.sponsor_name_id=sn.id AND sdc.sponsor_id=ss.sponsor_id AND ss.status_id='1' AND ic.entity_type_id='2' AND ic.entity_id=sdc.sponsor_id AND idb.id=ic.image_db_id AND sdc.sponsor_id=sa.sponsor_id AND sat.sponsors_alacarte_id=sa.id ORDER BY sn.sponsor_name ASC";	
+					
+		$stat = $this->pdo->prepare($stat_q);
+		$stat->execute();
+
+			if ($stat->rowCount() > 0) {
+					while($sponsors = $stat->fetch()){
+						
+	                                  $taglist = '';
+									  
+									  		 
+								      $tags_q = "SELECT filter_sub_id FROM sponsors_filter_connection WHERE sponsor_id = :id";	
+												  
+									  $tags = $this->pdo->prepare($tags_q);
+									  $tags->bindValue(':id', $sponsors['sponsor_id'], \PDO::PARAM_INT);
+									  $tags->execute();
+									  
+										if ($tags->rowCount() > 0) {	
+											while($tagArray = $tags->fetch()){
+												$taglist .= $tagArray['filter_sub_id'].',';
+											}
+											
+										}
+										
+					if ($taglist != '') {
+						$tag = 'data-sponsortag="'.$taglist.'"';
+					} else {
+					   $tag = '';	
+					}
+						
+				  		
+											 
+			$achor = $this->clean_str($sponsors['sponsor_name']);
+							 
+			 $content .=' <!-- '.$sponsors['sponsor_name'].' -->
+            <div class="Sponsor" data-sponsornum="'.$sponsors['sponsor_id'].'" '.$tag.'>';
+			
+			$content .='<i data-sponsor="'.$sponsors['alacarte_id'].'" class="fa fa-times SysIcon SysDelete"></i>';		
+			
+                $content .='<div class="SponsorLogo" style="background-image: url(../img/sponsors/logos/'.$sponsors['image_url'].');"></div>
+                ';
+				
+				$content .='<p class="ALaCarteTextContainer Editable" data-type="CarteTextEdit" data-sponsor="'.$sponsors['sponsor_id'].'">'.$sponsors['text'].'</p>';
+				
+				$content .='<input class="CarteTextEdit EditField" data-mainclass="ALaCarteTextContainer" style="display:none;" type="text" value="'.$sponsors['text'].'">';
+				
+           $content .=' </div>
+            
+            <!-- END '.$sponsors['sponsor_name'].' --> ';		
+									 
+						/*		
+		$content .='<!-- '.$sponsors['sponsor_name'].' -->
+        <div class="Sponsor">
+            <div class="SponsorLogo" data-sponsortag="'.$taglist.'"><img src="img/sponsors/logos/'.$sponsors['image_url'].'" alt="'.$sponsors['alt_name'].'"></div>
+
+        </div>
+        <!-- END '.$sponsors['sponsor_name'].' --> ';
+        	*/
+
+					} //stat_q fetch
+			}  //stat num row end
+			
+		return $content;
+}
 
 }
 ?>	

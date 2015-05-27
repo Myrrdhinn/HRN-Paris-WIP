@@ -968,7 +968,7 @@ function start_search() {
 
 			});  //end of test each 
 
-			   
+			  $(".ALaCarteTextContainer").css("display","none"); 
           $('#SponsorGrid').css("display","none");
 	   
 	   

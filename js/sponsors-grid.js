@@ -129,7 +129,7 @@ $(document).ready(function() {
 	  	 
 								 $.each(filters.data, function(ind, selectedTag) {
 									
-                                              $("#SelectedFiltersList").append('<li class="SelectedFilterTag" data-filterid="'+selectedTag[0]+'" onClick="remove_filter(this)"><img src="img/sponsors/selected-filter-x-hover.png" alt="X">'+selectedTag[1]+'</li>');
+                                              $("#SelectedFiltersList").append('<li class="SelectedFilterTag" data-filterid="'+selectedTag[0]+'" onClick="remove_filter(this)" onMouseOver="ChangeHoverImage(this, 1)" onMouseOut="ChangeHoverImage(this, 2)"><img src="img/sponsors/selected-filter-x.png" alt="X">'+selectedTag[1]+'</li>');
 	
 									  });  //end of filters
 
@@ -214,6 +214,8 @@ Apply the category filter
                   
 
 			});  //end of finallist each 
+			
+			 $(".ALaCarteTextContainer").css("display","none");
               
 			  //check if there's actually a match for the filters
               if (displayed > 0) {
@@ -245,6 +247,7 @@ $('#ClearFilters').on("click", function(e) {
 	
 			   //clear out the filter grid
 			 $("#FilteredGrid .CategoryContainer").empty();
+			 $(".ALaCarteTextContainer").css("display","block");
 			 
 			  $('#SponsorGrid').css("display","block");
 			   $("#FiltersWrapper").css("right", "-100vw");
@@ -325,11 +328,21 @@ function remove_filter(elem) {
 	  	 
 					 $.each(filters.data, function(ind, selectedTag) {
 						
-								  $("#SelectedFiltersList").append('<li data-filterid="'+selectedTag[0]+'" onClick="remove_filter(this)"><img src="img/sponsors/selected-filter-x-hover.png" alt="X">'+selectedTag[1]+'</li>');
+								  $("#SelectedFiltersList").append('<li data-filterid="'+selectedTag[0]+'" onClick="remove_filter(this)" onMouseOver="ChangeHoverImage(this, 1)" onMouseOut="ChangeHoverImage(this, 2)"><img src="img/sponsors/selected-filter-x.png" alt="X">'+selectedTag[1]+'</li>');
 
 						  });  //end of filters
 						  
 				  }
 	
 	
+}
+
+function ChangeHoverImage(elem, id) {
+   if (id == 1){
+      $(elem).children('img').attr('src', 'img/sponsors/selected-filter-x-hover.png');
+   
+   } else {
+     $(elem).children('img').attr('src', 'img/sponsors/selected-filter-x.png');
+   }
+
 }

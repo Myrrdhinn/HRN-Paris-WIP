@@ -28,8 +28,22 @@ $sponsors = new sponsors_main;
 <!--Include Font Awesome -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-<!-- Favicon setting -->
-<link rel="shortcut icon" href="favicon.png">
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png">
+<link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="img/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="favicon.ico">
 
 <!-- Include General CSS Definitions -->
 <link rel="stylesheet" href="css/general.css" />
@@ -102,11 +116,11 @@ $(document).ready(function() {
      <div id="MobileMenuListContainer"> <img id="MobileMenuCloseButton" src="img/menu/mobile-close-button.png" alt="X" onClick='HideMobileMenu()'>
         <ul id="MobileUl">
             <li><a title="About" href="http://hrtechcongress.com#AboutSection" onClick="HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'About']);">About</a></li>
-            <li><a title="Speakers" href="http://hrtechcongress.com#SpeakersSection" onClick=" HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);">Speakers</a></li>
-            <li><a title="Sponsors" href="http://hrtechcongress.com#SponsorsSection" onClick="HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);">Sponsors</a></li>
+            <li><a title="Speakers" href="speakers" onClick=" HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);">Speakers</a></li>
+            <li><a title="SponsorLists" href="sponsors" onClick="HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'SponsorLists']);">SponsorLists</a></li>
             <li><a title="Highlights" href="http://hrtechcongress.com#HighlightsSection" onClick="HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Highlights']);">Highlights</a></li>
             <li><a title="Venue" href="http://hrtechcongress.com#VenueSection" onClick="HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Venue']);">Venue</a></li>
-            <li><a title="Contacts" href="http://hrtechcongress.com#GetInTouchSection" onClick="HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Contact']);">Get In Touch</a></li>
+            <li><a title="Contacts" href="contact" onClick="HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Contact']);">Get In Touch</a></li>
             <li><a title="Tickets" href="tickets" onClick="HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Tickets']);"><i class="fa fa-ticket"></i> Get Tickets</a></li>
         </ul>
 
@@ -128,27 +142,30 @@ This section is controlled by the menu.css
 -->
   
   <nav id="SecondStateMainMenuContainer" class="FixedTop">
-    <div id="MenuContainer"><a href="http://hrtechcongress.com" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'LogoHome']);"><img src="img/menu/horizontallogo.png" alt="HR Tech Congress Logo"  id="HorizontalLogo"/></a><a class="MainMenuItem" href="http://hrtechcongress.com#AboutSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'About']);">ABOUT</a><a class="MainMenuItem"  href="http://hrtechcongress.com#SpeakersSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);">SPEAKERS</a><a class="MainMenuItem"  href="http://hrtechcongress.com#SponsorsSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);">SPONSORS</a>
-      <a class="MainMenuItem"  href="http://hrtechcongress.com#HighlightsSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Highlights']);">HIGHLIGHTS</a><a class="MainMenuItem"  href="http://hrtechcongress.com#VenueSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Venue']);">VENUE</a><a class="MainMenuItem"  href="http://hrtechcongress.com#GetInTouchSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Contact']);">GET IN TOUCH</a> <a class="MainMenuItem" href="tickets" id="GetTickets" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Tickets']);"><i class="fa fa-ticket"></i>GET TICKETS</a></div>
+    <div id="MenuContainer"><a href="http://hrtechcongress.com" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'LogoHome']);"><img src="img/menu/horizontallogo.png" alt="HR Tech Congress Logo"  id="HorizontalLogo"/></a><a class="MainMenuItem" href="http://hrtechcongress.com#AboutSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'About']);">ABOUT</a><a class="MainMenuItem"  href="speakers" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);">SPEAKERS</a><a class="MainMenuItem"  href="sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'SponsorLists']);">SPONSORS</a>
+      <a class="MainMenuItem"  href="http://hrtechcongress.com#HighlightsSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Highlights']);">HIGHLIGHTS</a><a class="MainMenuItem"  href="http://hrtechcongress.com#VenueSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Venue']);">VENUE</a><a class="MainMenuItem"  href="contact" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Contact']);">GET IN TOUCH</a> <a class="MainMenuItem" href="tickets" id="GetTickets" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Tickets']);"><i class="fa fa-ticket"></i>GET TICKETS</a></div>
   </nav>
   
   <!-- END MAIN MENU -->
 <!-- Header -->
 <header>
   <h1>SPONSORS</h1>
-  <p class="FontProximaNova">Our sponsors comprise a Who's Who of HR software leaders who will showcase the best solutions, services and products on the market.</p>
-  <a href="#" data-reveal-id="BecomeASponsorModal" title="Become a Sponsor" onClick="_gaq.push(['_trackEvent', 'SponsorsPage', 'ModalOpen', 'BecomeASponsor']);"><button>Become a Sponsor</button></a>
+  <p class="FontProximaNova">A Who's Who of HR Software, Service and Solution leaders offer the best solutions, services and products in the World for you to Optimise, Enable & Unleash Your People!</p>
+  
+  <span data-reveal-id="BecomeASponsorListModal" onClick="_gaq.push(['_trackEvent', 'SponsorListsPage', 'ModalOpen', 'BecomeASponsorList']);"><button class="FontRaleway">Become a SponsorList</button></span>
+  <img id="HeaderWhosWhoLogo" src="img/sponsors/whos-who-logo-white.png" alt="Who's Who in HR">
 </header>
 <!-- END Header -->
-<!-- Sponsors -->
-<section id="Sponsors">
-	<!-- Sponsors List -->
-	<div id="SponsorsInnerContainer">
+
+<!-- SponsorLists -->
+<section id="SponsorLists">
+	<!-- SponsorLists List -->
+	<div id="SponsorListsInnerContainer">
     	<div id="WhosWhoAndDiamondImageContainer">
             <img id="PoweredByWhosWhoLogo" src="img/sponsors/powered-by-whos-who.png" alt="Powered by Who's Who in HR">
-        	<h2 class="SponsorHeadline FontRaleway"><span>Diamond Sponsors</span></h2>
+        	<h2 class="SponsorListHeadline FontRaleway"><span>Diamond SponsorLists</span></h2>
     	</div>
-<!-- Diamond Sponsors -->
+<!-- Diamond SponsorLists -->
 
 <?php 
 
@@ -159,10 +176,10 @@ This section is controlled by the menu.css
 ?>
        
  
-<!-- END Diamond Sponsors -->
+<!-- END Diamond SponsorLists -->
 
-<!-- Emerald Sponsors -->
-		<h2 class="SponsorHeadline FontRaleway"><span>Emerald Sponsors</span></h2>  
+<!-- Emerald SponsorLists -->
+		<h2 class="SponsorListHeadline FontRaleway"><span>Emerald SponsorLists</span></h2>  
         
 <?php 
 
@@ -173,10 +190,10 @@ This section is controlled by the menu.css
 ?>      
               
      
-<!-- END Emerald Sponsors -->  
+<!-- END Emerald SponsorLists -->  
 
-<!-- Platinum Sponsors --> 
-		<h2 class="SponsorHeadline FontRaleway"><span>Platinum Sponsors</span></h2>
+<!-- Platinum SponsorLists --> 
+		<h2 class="SponsorListHeadline FontRaleway"><span>Platinum SponsorLists</span></h2>
        <?php 
 
   $content = $sponsors->sponsors(3); 
@@ -184,10 +201,10 @@ This section is controlled by the menu.css
 
   
 ?> 
-<!-- END Platinum Sponsors -->  
+<!-- END Platinum SponsorLists -->  
 
-<!-- Gold Sponsors --> 
-		<h2 class="SponsorHeadline FontRaleway"><span>Gold Sponsors</span></h2>  
+<!-- Gold SponsorLists --> 
+		<h2 class="SponsorListHeadline FontRaleway"><span>Gold SponsorLists</span></h2>  
 <?php 
 
   $content = $sponsors->sponsors(4); 
@@ -196,10 +213,10 @@ This section is controlled by the menu.css
   
 ?> 
         
-<!-- END Gold Sponsors -->  
+<!-- END Gold SponsorLists -->  
 
-<!-- Silver Sponsors --> 
-		<h2 class="SponsorHeadline FontRaleway"><span>Silver Sponsors</span></h2>  
+<!-- Silver SponsorLists --> 
+		<h2 class="SponsorListHeadline FontRaleway"><span>Silver SponsorLists</span></h2>  
      <?php 
 
   $content = $sponsors->sponsors(5); 
@@ -209,10 +226,10 @@ This section is controlled by the menu.css
 ?> 
         
                
-<!-- END Silver Sponsors --> 
+<!-- END Silver SponsorLists --> 
 
 <!-- Exhibitors --> 
-		<h2 class="SponsorHeadline FontRaleway"><span>Exhibitor Sponsors</span></h2>
+		<h2 class="SponsorListHeadline FontRaleway"><span>Exhibitor SponsorLists</span></h2>
      <?php 
 
   $content = $sponsors->sponsors(6); 
@@ -223,10 +240,10 @@ This section is controlled by the menu.css
                
 <!-- END Exhibitors -->                                                   
     </div>         
-    <!-- END Sponsors List -->
+    <!-- END SponsorLists List -->
 
 </section>
-<!--END Sponsors --> 
+<!--END SponsorLists --> 
 <!-- FOOTER -->
 <footer>
  <div id="FooterWrapper">
@@ -307,9 +324,9 @@ This section is controlled by the menu.css
 
 
 
-<!-- Become a Sponsor Modal -->
-<div id="BecomeASponsorModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
-  <h2>Apply for Sponsorship</h2>
+<!-- Become a SponsorList Modal -->
+<div id="BecomeASponsorListModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
+  <h2>Apply for SponsorListship</h2>
   <p>Gain direct access to more than 4,000 enterprise HR decision makers.</p>
   <!-- BEGINING of : BECOME A SPONSOR MODAL FORM -->
   <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
@@ -324,13 +341,13 @@ This section is controlled by the menu.css
         <input required placeholder="Company *" id="company" maxlength="40" name="company" size="20" type="text" />
         <input required placeholder="Job Title *" id="title" maxlength="40" name="title" size="20" type="text" />
         <select  style="display:none;"   id="lead_source" name="lead_source" placeholder="Lead Source">
-          <option selected="selected" value="HRTechParis2015-BecomeASponsor">HRTechParis2015-BecomeASponsor</option>
+          <option selected="selected" value="HRTechParis2015-BecomeASponsorList">HRTechParis2015-BecomeASponsorList</option>
         </select>
-        <input onClick="_gaq.push(['_trackEvent', 'BecomeASponsorForm', 'FromSubmission', 'InquirySent']);" class="submitbutton" type="submit" name="submit" value="SEND">
+        <input onClick="_gaq.push(['_trackEvent', 'BecomeASponsorListForm', 'FromSubmission', 'InquirySent']);" class="submitbutton" type="submit" name="submit" value="SEND">
   </form>
   <!-- END of : BECOME A SPONSOR MODAL FORM -->
 </div>
-<!-- END Become a Sponsor Modal -->
+<!-- END Become a SponsorList Modal -->
 
 <!-- Thank You For Apply Modal -->
 <div id="ThankYouForApplyModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>

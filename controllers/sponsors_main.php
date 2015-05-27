@@ -26,7 +26,7 @@ class sponsors_main extends config {
 	
 		//Get basic date about a sponsors
 		                    //Name                 Bio         Category              website         image       image alt       sponsor_id
-		$stat_q = "SELECT sn.sponsor_name, sb.sponsor_bio, sc.category_id, sl.sponsor_link_url, idb.image_url, idb.alt_name, sdc.sponsor_id FROM sponsors_name as sn, sponsors_bio as sb, sponsors_data_connection as sdc, sponsors_status as ss, sponsors_category as sc, sponsors_links as sl, image_db as idb, image_connection as ic WHERE sdc.sponsor_name_id=sn.id AND sdc.sponsor_bio_id=sb.id AND sdc.sponsor_id=ss.sponsor_id AND ss.status_id='1' AND sdc.sponsor_link_id=sl.id AND ic.entity_type_id='2' AND ic.entity_id=sdc.sponsor_id AND idb.id=ic.image_db_id AND sdc.sponsor_category_id=sc.id AND sc.category_id= :category  ORDER BY rand()";	
+		$stat_q = "SELECT sn.sponsor_name, sb.sponsor_bio, sc.category_id, sl.sponsor_link_url, idb.image_url, idb.alt_name, sdc.sponsor_id FROM sponsors_name as sn, sponsors_bio as sb, sponsors_data_connection as sdc, sponsors_status as ss, sponsors_category as sc, sponsors_links as sl, image_db as idb, image_connection as ic WHERE sdc.sponsor_name_id=sn.id AND sdc.sponsor_bio_id=sb.id AND sdc.sponsor_id=ss.sponsor_id AND ss.status_id='1' AND sdc.sponsor_link_id=sl.id AND ic.entity_type_id='2' AND ic.entity_id=sdc.sponsor_id AND idb.id=ic.image_db_id AND sdc.sponsor_category_id=sc.id AND sc.category_id= :category  ORDER BY sn.sponsor_name ASC";	
 					
 		$stat = $this->pdo->prepare($stat_q);
 		$stat->bindValue(':category', $category, \PDO::PARAM_INT);
@@ -71,33 +71,23 @@ class sponsors_main extends config {
 				$achor = $this->clean_str($sponsors['sponsor_name']);				
 								
 		$content .='<!-- '.$sponsors['sponsor_name'].' -->
-        <div class="Sponsor">
+        <div class="SponsorList">
 		   <a id="'.$achor.'" class="anchorclass"></a>
-            <div class="SponsorLogo"><img src="img/sponsors/logos/'.$sponsors['image_url'].'" alt="'.$sponsors['alt_name'].'"></div>
-            <div class="SponsorDetails">
-            	<h2 class="SponsorName"><a class="CompanyLink" href="'.$sponsors['sponsor_link_url'].'" target="_blank" title="'.$sponsors['sponsor_name'].'"';
-				
-				    $content .=' onClick="_gaq.push([';
-				
-				    $content .="'_trackEvent', 'SponsorCompanySite', 'ExternalForward', '".$sponsors['sponsor_name']."']);";
-				
-					$content .='">';
-					
-					$content .= $sponsors['sponsor_name'].' <i class="fa fa-external-link"></i></a></h2>
-                <div class="SponsorDescription">'.$sponsors['sponsor_bio'].'</div>
-                
-                <div class="SponsorSocialIcons">';
+            <div class="SponsorListLogo"><img src="img/sponsors/logos/'.$sponsors['image_url'].'" alt="'.$sponsors['alt_name'].'"></div>
+            <div class="SponsorListDetails">';
+
+                $content .='<div class="SponsorListSocialIcons">';
 				
 				 if ($data[10] !='') {
 					$content .= '<a href="'.$data[10].'" target="_blank" title="'.$sponsors['sponsor_name'].' - Facebook"'; 
 					
 					$content .=' onClick="_gaq.push([';
 				
-				    $content .="'_trackEvent', 'SponsorSocialSite', 'ExternalForward', 'Facebook-".$sponsors['sponsor_name']."']);";
+				    $content .="'_trackEvent', 'SponsorListSocialSite', 'ExternalForward', 'Facebook-".$sponsors['sponsor_name']."']);";
 				
 					$content .='">';
 
-					$content .='<div class="SponsorSocialIcon SponsorFacebookIcon"></div></a>';
+					$content .='<div class="SponsorListSocialIcon SponsorListFacebookIcon"></div></a>';
 				}
 				
 				if ($data[11] !='') {
@@ -105,12 +95,12 @@ class sponsors_main extends config {
 					
 					$content .=' onClick="_gaq.push([';
 				
-				    $content .="'_trackEvent', 'SponsorSocialSite', 'ExternalForward', 'Twitter-".$sponsors['sponsor_name']."']);";
+				    $content .="'_trackEvent', 'SponsorListSocialSite', 'ExternalForward', 'Twitter-".$sponsors['sponsor_name']."']);";
 				
 					$content .='">';
 					
 					
-					$content .= '<div class="SponsorSocialIcon SponsorTwitterIcon"></div></a>';
+					$content .= '<div class="SponsorListSocialIcon SponsorListTwitterIcon"></div></a>';
 				}
 				
 				if ($data[12] !='') {
@@ -118,28 +108,188 @@ class sponsors_main extends config {
 					
 					$content .=' onClick="_gaq.push([';
 				
-				    $content .="'_trackEvent', 'SponsorSocialSite', 'ExternalForward', 'Linkedin-".$sponsors['sponsor_name']."']);";
+				    $content .="'_trackEvent', 'SponsorListSocialSite', 'ExternalForward', 'Linkedin-".$sponsors['sponsor_name']."']);";
 				
 					$content .='">';
-					$content .= '<div class="SponsorSocialIcon SponsorLinkedinIcon"></div></a>';
+					$content .= '<div class="SponsorListSocialIcon SponsorListLinkedinIcon"></div></a>';
 				}
-
+				
+				     $content .= '<a class="CompanyLink" href="'.$sponsors['sponsor_link_url'].'" target="_blank" title="'.$sponsors['sponsor_name'].'"';
+				
+				    $content .=' onClick="_gaq.push([';
+				
+				    $content .="'_trackEvent', 'SponsorListCompanySite', 'ExternalForward', '".$sponsors['sponsor_name']."']);";
+				
+					$content .='">';
+					
+					$content .= ' <div class="SponsorListSocialIcon SponsorListLinkIcon"></div></a>';
+					
 /*
 				if ($data[13] !='') {
 					$content .= '<a href="'.$data[13].'" target="_blank" title="'.$sponsors['sponsor_name'].' - Flickr"'; 
 					
 					$content .=' onClick="_gaq.push([';
 				
-				    $content .="'_trackEvent', 'SponsorSocialSite', 'ExternalForward', 'Flickr-".$sponsors['sponsor_name']."']);";
+				    $content .="'_trackEvent', 'SponsorListSocialSite', 'ExternalForward', 'Flickr-".$sponsors['sponsor_name']."']);";
 				
 					$content .='">';
-					$content .= '<div class="SponsorSocialIcon SponsorFlickrinIcon"></div></a>';
+					$content .= '<div class="SponsorListSocialIcon SponsorListFlickrinIcon"></div></a>';
 				}
 				*/	
 					
-                $content .= '</div>
-            </div>
+                $content .= '</div>';
+
+                $content .= '<div class="SponsorListDescription">'.$sponsors['sponsor_bio'].'</div>';
+                
+                
+					
+               
+            $content .= '</div>
         </div>
+        <!-- END '.$sponsors['sponsor_name'].' --> ';
+        	
+
+					} //stat_q fetch
+			}  //stat num row end
+			
+		return $content;
+}
+
+
+
+	//This is the function what collets all the sponsors to the content multi dimensional array.
+  public function sponsors_modal_list() {
+		$content = '';
+		
+		//ORDER BY CASE sdc.sponsor_id WHEN 14 THEN 1 END DESC, rand()    :O  ilyenkor a 14-es id-jú lesz mindig az első a többi pedig random utána 
+		//ha meg fix a sorrend akkor meg ORDER BY sdc.id DESC
+	
+		//Get basic date about a sponsors
+		                    //Name                 Bio         Category              website         image       image alt       sponsor_id
+		$stat_q = "SELECT sn.sponsor_name, sb.sponsor_bio, sc.category_id, sl.sponsor_link_url, idb.image_url, idb.alt_name, sdc.sponsor_id FROM sponsors_name as sn, sponsors_bio as sb, sponsors_data_connection as sdc, sponsors_status as ss, sponsors_category as sc, sponsors_links as sl, image_db as idb, image_connection as ic WHERE sdc.sponsor_name_id=sn.id AND sdc.sponsor_bio_id=sb.id AND sdc.sponsor_id=ss.sponsor_id AND ss.status_id='1' AND sdc.sponsor_link_id=sl.id AND ic.entity_type_id='2' AND ic.entity_id=sdc.sponsor_id AND idb.id=ic.image_db_id AND sdc.sponsor_category_id=sc.id ORDER BY sn.sponsor_name ASC";	
+					
+		$stat = $this->pdo->prepare($stat_q);
+		$stat->execute();
+
+			if ($stat->rowCount() > 0) {
+					while($sponsors = $stat->fetch()){
+
+						
+		//Get the social link types
+		$s = 10;
+				
+			               $social_type_q = "SELECT id, type FROM social_link_types";	
+										  
+							  $stype = $this->pdo->prepare($social_type_q);
+							  $stype->execute();
+							  
+								if ($stype->rowCount() > 0) {	
+									while($link_type = $stype->fetch()){ //facebook
+									 
+											  $social_q = "SELECT sl.social_link_url FROM social_links as sl, social_links_connection as slc WHERE slc.entity_type_id='2' AND slc.entity_id= :id AND slc.link_id=sl.id AND slc.social_link_type_id= :type ORDER BY slc.date DESC LIMIT 0,1";	
+												  
+									  $socials = $this->pdo->prepare($social_q);
+									  $socials->bindValue(':id', $sponsors['sponsor_id'], \PDO::PARAM_INT);
+									  $socials->bindValue(':type', $link_type['id'], \PDO::PARAM_INT);
+									  $socials->execute();
+									  
+										if ($socials->rowCount() > 0) {	
+											$link = $socials->fetch(); //facebook
+											 
+											 $data[$s] = $link['social_link_url'];
+											 $s++;
+										}else {
+											 $data[$s] = '';
+											 $s++;
+										}
+											 
+									 
+									}//link type fetch ends
+								}//if stype row count end
+								
+				$achor = $this->clean_str($sponsors['sponsor_name']);	
+				
+			
+		$content .='<!-- '.$sponsors['sponsor_name'].' -->
+		<div id="'.$achor.'Modal" class="reveal-modal SponsorModal" data-reveal> <a class="close-reveal-modal">&#215;</a>
+		
+		
+		
+        <div class="SponsorModalInnerContainer">
+            <div class="SponsorModalLogo"><img src="img/sponsors/logos/'.$sponsors['image_url'].'" alt="'.$sponsors['alt_name'].'"></div>
+            <div class="SponsorModalDetails">';
+
+                $content .='<div class="SponsorModalSocialIcons">';
+				
+				 if ($data[10] !='') {
+					$content .= '<a href="'.$data[10].'" target="_blank" title="'.$sponsors['sponsor_name'].' - Facebook"'; 
+					
+					$content .=' onClick="_gaq.push([';
+				
+				    $content .="'_trackEvent', 'SponsorModalSocialSite', 'ExternalForward', 'Facebook-".$sponsors['sponsor_name']."']);";
+				
+					$content .='">';
+
+					$content .='<div class="SponsorModalSocialIcon SponsorModalFacebookIcon"></div></a>';
+				}
+				
+				if ($data[11] !='') {
+					$content .= '<a href="'.$data[11].'" target="_blank" title="'.$sponsors['sponsor_name'].' - Twitter"'; 
+					
+					$content .=' onClick="_gaq.push([';
+				
+				    $content .="'_trackEvent', 'SponsorModalSocialSite', 'ExternalForward', 'Twitter-".$sponsors['sponsor_name']."']);";
+				
+					$content .='">';
+					
+					
+					$content .= '<div class="SponsorModalSocialIcon SponsorModalTwitterIcon"></div></a>';
+				}
+				
+				if ($data[12] !='') {
+					$content .= '<a href="'.$data[12].'" target="_blank" title="'.$sponsors['sponsor_name'].' - Linkedin"'; 
+					
+					$content .=' onClick="_gaq.push([';
+				
+				    $content .="'_trackEvent', 'SponsorModalSocialSite', 'ExternalForward', 'Linkedin-".$sponsors['sponsor_name']."']);";
+				
+					$content .='">';
+					$content .= '<div class="SponsorModalSocialIcon SponsorModalLinkedinIcon"></div></a>';
+				}
+				
+				     $content .= '<a class="CompanyLink" href="'.$sponsors['sponsor_link_url'].'" target="_blank" title="'.$sponsors['sponsor_name'].'"';
+				
+				    $content .=' onClick="_gaq.push([';
+				
+				    $content .="'_trackEvent', 'SponsorModalCompanySite', 'ExternalForward', '".$sponsors['sponsor_name']."']);";
+				
+					$content .='">';
+					
+					$content .= ' <div class="SponsorModalSocialIcon SponsorModalLinkIcon"></div></a>';
+					
+/*
+				if ($data[13] !='') {
+					$content .= '<a href="'.$data[13].'" target="_blank" title="'.$sponsors['sponsor_name'].' - Flickr"'; 
+					
+					$content .=' onClick="_gaq.push([';
+				
+				    $content .="'_trackEvent', 'SponsorModalSocialSite', 'ExternalForward', 'Flickr-".$sponsors['sponsor_name']."']);";
+				
+					$content .='">';
+					$content .= '<div class="SponsorModalSocialIcon SponsorModalFlickrinIcon"></div></a>';
+				}
+				*/	
+					
+                $content .= '</div>';
+
+                $content .= '<div class="SponsorModalDescription">'.$sponsors['sponsor_bio'].'</div>';
+                
+                
+					
+               
+            $content .= '</div>
+        </div>		
+	</div>
         <!-- END '.$sponsors['sponsor_name'].' --> ';
         	
 
@@ -193,7 +343,7 @@ class sponsors_main extends config {
 					
 					//# ez után kell egy url anchor tag
 			 $content .=' <!-- '.$sponsors['sponsor_name'].' -->
-            <a href="sponsors-list#'.$achor.'"><div class="Sponsor" data-sponsornum="'.$sponsors['sponsor_id'].'" '.$tag.'>
+            <a href="#'.$achor.'" class="SponsorGridAnchor" data-sponsornametag="'.$achor.'"><div class="Sponsor" data-sponsornum="'.$sponsors['sponsor_id'].'" '.$tag.'>
                 <div class="SponsorLogo" style="background-image: url(img/sponsors/logos/'.$sponsors['image_url'].');"></div>
                 <img src="img/sponsors/sponsor-hover-plus-icon.png" alt="+">
             </div>
@@ -256,11 +406,12 @@ class sponsors_main extends config {
 					   $tag = '';	
 					}
 											 
+			$achor = $this->clean_str($sponsors['sponsor_name']);
 									 
 			 $content .=' <!-- '.$sponsors['sponsor_name'].' -->
-            <a href="sponsors-list#CornerstoneOnDemand"><div class="Sponsor" data-sponsornum="'.$sponsors['sponsor_id'].'" '.$tag.'>
+            <a href="sponsors-list#'.$achor.'" target="_blank"><div class="Sponsor" data-sponsornum="'.$sponsors['sponsor_id'].'" '.$tag.'>
                 <div class="SponsorLogo" style="background-image: url(img/sponsors/logos/'.$sponsors['image_url'].');"></div>
-                <span class="BlueText FontProximaNova">+</span>
+                <img src="img/sponsors/sponsor-hover-plus-icon.png" alt="+">
 				<p class="ALaCarteTextContainer">'.$sponsors['text'].'</p>
             </div>
             </a>

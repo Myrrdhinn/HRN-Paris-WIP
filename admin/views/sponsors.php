@@ -38,7 +38,7 @@ $sponsors = new sponsors_main;
 <link rel="stylesheet" href="../css/menu.css" />
 
 <!-- Include Custom CSS Definitions -->
-<link rel="stylesheet" href="../css/sponsors.css" />
+<link rel="stylesheet" href="css/sponsors.css" />
 
 <!-- Include Footer CSS Definitions -->
 <link rel="stylesheet" href="../css/footer.css" />

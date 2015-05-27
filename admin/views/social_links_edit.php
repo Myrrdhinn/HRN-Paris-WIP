@@ -34,9 +34,13 @@
 	  	        <div id="MenuIconContainer">';
 	
  	if (isset($_SESSION['admin'])) {
-		
+		if (isset($_SESSION['SocialLinkPrevUrl'])) {
+		 $back = $_SESSION['SocialLinkPrevUrl'];	
+		} else {
+		 $back = 'index';	
+		}
 
-		 $content .= '<a href="index" title="Back To main"><img class="MenuIcon" src="img/icons/main.png" onmouseover="this.src=';
+		 $content .= '<a href="'.$back.'" title="Back To main"><img class="MenuIcon" src="img/icons/main.png" onmouseover="this.src=';
 		 $content .="'img/icons/main_hover.png';";
 		 $content .='" onmouseout="this.src=';
 		 $content .="'img/icons/main.png';";

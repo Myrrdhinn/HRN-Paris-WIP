@@ -66,6 +66,48 @@ Edit Sponsor Data
 }// new sponsor
 
 /*///////////// 
+Edit Sponsor Data
+///////////////*/
+
+
+ if(isset($_POST['action']) && $_POST['action'] == 'add_alacarte_for_sponsor'){
+	$the_main = new main\main;
+	
+   if(isset($_POST['sId']) && isset($_POST['text'])){
+	    $result = $the_main->alacarte_for_sponsor();
+ 
+  
+	if (isset($result)) {
+	  $_SESSION['Result'] =  'Success';
+	  echo 'Success';	
+	}
+	
+  }
+
+}// new sponsor
+
+/*///////////// 
+Edit Sponsor Data
+///////////////*/
+
+
+ if(isset($_POST['action']) && $_POST['action'] == 'delete_alacarte'){
+	$the_main = new main\main;
+	
+   if(isset($_POST['sId'])){
+	    $result = $the_main->delete_alacarte();
+ 
+  
+	if (isset($result)) {
+	  $_SESSION['Result'] =  'Success';
+	  echo 'Success';	
+	}
+	
+  }
+
+}// new sponsor
+
+/*///////////// 
 Sponsor Permission Request
 ///////////////*/
 
@@ -117,7 +159,11 @@ Social Link Edit Request
 	  $_SESSION['SocialLinkEntityId'] =  $_POST['sId'];
 	  $_SESSION['SocialLinkEntityType'] =  $_POST['type'];
 	}
-
+   
+   if (isset($_POST['prev_url'])) {
+	   $_SESSION['SocialLinkPrevUrl'] =  $_POST['prev_url'];
+	   
+   }
 
 }// new sponsor
 

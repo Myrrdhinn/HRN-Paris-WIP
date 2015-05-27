@@ -90,6 +90,12 @@ use HRNParis\main as main;
 		  $content .=
 		   $main->sponsor_categories();
 		$content .='</select>
+		
+	  <br /><br /><label><input type="checkbox" id="Alacarte"> A La Carte Sponsor</label>
+	  <div id="AlaCarteField" style="display:none">
+	    <input class="AdminInputField" id="AlaCarteText" type="text" placeholder="A La Carte text" />
+		<label><input type="checkbox" id="OnlyAlacarte">A La Carte Sponsor ONLY!</label>
+	  </div>
      </fieldset>';
 	 
 	 $content .='

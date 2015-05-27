@@ -116,7 +116,6 @@ $(document).ready(function() {
 					  filters.data[filters.i] = new Array;
 					  filters.data[filters.i].push(id);
 					  filters.data[filters.i].push(content);
-					  getDistinctArray(filters.data);
 					  filters.i++;
 					  
 				  } else {
@@ -146,7 +145,6 @@ $(document).ready(function() {
 												filters.data[filters.i] = new Array;
 												filters.data[filters.i].push(allId);
 												filters.data[filters.i].push(allContent);
-												getDistinctArray(filters.data);
 												filters.i++;
 												ForSelectClass.html('<span class="SelectAllFiltersDesktop">Clear All</span>');
 										} 

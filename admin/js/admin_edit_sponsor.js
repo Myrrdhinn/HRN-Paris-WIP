@@ -178,7 +178,7 @@ var original = {};
 		        inlineMode: false,
 				   buttons: [
 				'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'align', 'outdent', 'indent', 'insertOrderedList',
-				'insertUnorderedList', 'save'
+				'insertUnorderedList', 'createLink', 'save'
 				 ],
 				 saveParams: {action: 'edit_sponsor', edit_type:edit_type, sId:sId},
 				 saveURL: "controllers/ajax.php",
@@ -274,6 +274,63 @@ var original = {};
   })
     
 	
+			 	       //alacarte checkbox
+	   $('.AddAlaCarteChekbox').bind('click', function () {
+		   
+           var check = $(this).prop('checked');
+					
+				if (check == true) {
+					$(this).parent("label").siblings(".AlaCarteContainer").fadeIn();
+				} else {
+					
+					$(this).parent("label").siblings(".AlaCarteContainer").fadeOut();
+				}
+				
+	   
+	   
+	     }) 
+		 
+		 
+		   $('.AlaCarteText').keypress(function(event) {
+               if (event.keyCode == 13) {
+					  //if the save button pressed
+                      var text = $(this).val();
+					  
+					  var sId =  $(this).data('sponsor');
+					  
+					  var thisclass = $(this);
+					
+					 
+					  if (typeof text != "undefined" && text != '' && typeof sId != "undefined" && sId != '') {
+						  
+							$.ajax({
+								url: 'controllers/ajax.php',
+								type: 'POST',
+								data: {action:"add_alacarte_for_sponsor", sId:sId, text:text},
+								success: function(data) {
+									
+										$(".AlaCarteContainer").fadeOut();
+										  thisclass.parent(".AlaCarteContainer").siblings(".alacarteReturnValue").html('<i class="fa fa-check-circle"></i> The data have been saved!');
+										 thisclass.parent(".AlaCarteContainer").siblings(".alacarteReturnValue").css("color","#0FB323");
+										 thisclass.parent(".AlaCarteContainer").siblings(".alacarteReturnValue").fadeIn('slow');
+										
+									  setTimeout(function () {
+		                                           thisclass.parent(".AlaCarteContainer").siblings(".alacarteReturnValue").fadeOut('slow');
+                                          } , 2000); //set timeout function end
+										  
+		                             $('.AddAlaCarteChekbox').prop('checked', false); // Unchecks it
+									$('.AlaCarteText').val('');
+
+								}
+							});
+										  
+
+					  }
+					  
+			   }
+        })		 
+		 
+	
 	  	/*-----------------------
 		Sponsor filter tags
 	------------------------	*/
@@ -313,11 +370,12 @@ var original = {};
 		//get the id of the activated element
 		var sId = $(this).data('entity_id');
 		var type = $(this).data('entity_type');
-
+        var prev_url = $(this).data('pasturl');
+		 
 	  $.ajax({
                 url: 'controllers/ajax.php',
                 type: 'POST',
-                data: {action:"social_link_edit_request", sId:sId, type:type},
+                data: {action:"social_link_edit_request", sId:sId, type:type, prev_url:prev_url},
                 success: function(data) {
 				    setTimeout(function () {
                          window.location.replace("social_links_edit");

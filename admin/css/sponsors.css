@@ -1,376 +1,433 @@
-/*General defs of the Sponsors page*/
-body {
-  line-height: normal;
-}
-p {
-  margin: 0;
-  padding: 0;
-  line-height: normal;
-  font-size: inherit;
-}
-a {
-  color: #000;
-}
-a:hover, a:focus {
-  color: #000;
-  text-decoration: none;
-}
-
-/*End General defs of the Sponsors page*/
-
-/* Sponsors */
-#SponsorsHeaderContainer {
-  width: 100%;
-  background-image: url(../img/sponsors/sponsors-header.jpg);
-  background-position: top;
-  background-size: cover;
-  height: 285px;
-  margin-top: 85px;
-}
-#SponsorsHeaderInnerContainer {
-	width: 100%;
-	max-width: 940px;
-	text-align: center;
-	margin: 0 auto;
-}
-#SponsorsHeaderInnerContainer * { 
-	color: #fff; 
-	font-weight: 400;
-	padding-left: 15px;
-	padding-right: 15px;
-}
-#SponsorsHeaderInnerContainer h1 {
-	font-family: 'Oswald', sans-serif;
-	font-size: 48px;
-	padding-top: 55px;
-	padding-bottom: 40px;
-}
-#SponsorsHeaderInnerContainer p {
-	font-size: 24px;
-	line-height: 30px;
-	padding-bottom: 40px;
-}
-
-/* Sponsor Delete X sign */
-.SponsorDelete, .SponsorPermission {
-  text-align: left;
-  width: 30px;
-  /*height: 20px;*/
-  padding: 6px 6px 6px 7px;
-  background-color: #ddd;
-  border-radius: 150px;
-  float:left;
-}
-.SponsorDelete:hover, .SponsorPermission:hover {
-  background-color: #FF8686;
-  cursor: pointer;
-}
-.SponsorDelete:hover p, .SponsorPermission:hover p {
-  color: #fff;
-}
-.SponsorDelete p, .SponsorPermission p {
-  padding-left: 7px;
-  padding-top: 3px;
-  font-weight: bold;
-}
+@charset "utf-8";
+/* These CSS rules will affect the sponsors page.  */
 
 
-#NewAlaCarteButton {
-	padding:40px;	
-}
-
-#NewAlaCarteButton h1 {
-	padding:30px;	
-}
-
-#NewAlaCarteButton h1:hover {
-	cursor:pointer;	
-}
-/* End Sponsor Delete X sign */
-
-@media (min-width:1921px){
-	#SponsorsHeaderContainer {
-	  background-image: url(../img/sponsors/sponsors-header-4k.jpg);
-	}
-}
-@media (max-width: 718px) {
-	#SponsorsHeaderContainer {
-	 margin-top: 20px;
-	}
-}
-@media (max-width: 580px){
-	#SponsorsHeaderInnerContainer h1 {
-		padding-top: 35px;
-		padding-bottom: 30px;
-	}
-	#SponsorsHeaderInnerContainer p {
-		font-size: 17px;
-		line-height: 24px;
-	}
-}
-/* End Sponsors */
-
-
-
-/* Colors */
-.colored-stripe {
-	float: left;
-}
-/* End Colors */
-
-#HeaderGetTicketsButton  {
-	top:2px;
-	padding-top:9px;
-	}	
-	
-#Sponsors {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding-top: 20px;
-  padding-bottom: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  
-  display: -webkit-flex;
-  -webkit-flex-wrap: wrap;
-  -webkit-justify-content: center;
-  
-  display: -moz-flex;
-  -moz-flex-wrap: wrap;
-  -moz-justify-content: center;
-  
-  clear: both;
-}
-
-
-
-
-
-
-.SponsorSection {
-	width:100%;	
-	padding: 50px 15px 0 15px;
-}
-.SponsorsTypeDiv {
-	margin: 0 auto;
-	display: flex; display: -moz-flex; display: -webkit-flex;
-	justify-content: center; -moz-justify-content: center; -webkit-justify-content: center;
-	flex-wrap: wrap; -moz-flex-wrap: wrap; -webkit-flex-wrap: wrap;
-}
-
-
-.SponsorSection h1 {
+/* Header */
+header {
+	/*max-height:552px;*/
+	height:100%;
+	background-image:url(../img/sponsors/sponsors-header-bg-desktop.jpg);
+	background-repeat:no-repeat;
+	background-size: cover;
+	width:100%; 
+	margin:0 auto;
+	margin-top:4vw;
 	text-align:center;
-	text-transform: uppercase;
-        font-size: 36px;
-        padding-bottom: 5px;
-        font-family: 'Oswald', sans-serif;
+	color:#fff;
+	padding:0.260416vw 0 0 0;
 }
-.SponsorMain {
+header h1 {
+	font-size:5.20833vw;
+	margin-bottom:2.60416vw;
+}
+header p {
+	width: 100%;
+	max-width:23.9583vw;
+	margin:0 auto;	
+	padding-bottom: 2.60416vw;
+	font-size:1.14583vw;
+	line-height: 1.302083vw;
+}
+header a {
 	text-align: center;
+	text-decoration: none;	
+	font-size: 0.9375vw;
+	color:#fff;
+	font-weight: bold;
+	display: block;
+	transition: all 0.3s;
+		max-width: 16vw;
+		margin: 0 auto;
+}
+header a:hover {
+	text-decoration: underline;	
+}
+header button {
+	font-size: 1.14583vw;
+	font-weight: 600;
+	background-color: rgba(255, 255, 255, 0);
+	color: #fff;
+	border: 3px solid #fff;
+	margin-top: 1.97916vw;
+	margin-bottom: 3.64583vw;
+	padding-top: 0;
+	max-width: 15.625vw;
+	height: 3.64583vw;
+	transition: all 0.3s ease-in;
+}
+header button:hover {
+	background-color: #fff;
+	color: #106ab5;
+	border: 3px solid #fff;
 }
 
-.Sponsor {
-  width: 145px;
-  margin: 10px;
+@media (max-width: 1366px) {
+	header {
+		background-image:url(../img/sponsors/sponsors-header-bg-desktop-1140.jpg);
+		margin-top:3.90625vw;
+		padding:5px 0 0 0;
+	}
+	header h1 {
+		font-size:100px;
+		margin-bottom:55px;
+	}
+	header p {
+		width: 100%;
+		max-width:460px;
+		margin:0 auto;	
+		padding-bottom: 50px;
+		font-size:22px;
+		line-height: 25px;
+	}
+	header a {
+		font-size: 18px;
+		max-width: 300px;
+	}
+	header button {
+		font-size: 22px;
+		border: 3px solid #fff;
+		margin-top: 38px;
+		margin-bottom: 70px;
+		max-width: 300px;
+		height: 70px;
+	}
+	header button:hover {
+		border: 3px solid #fff;
+	}
 }
-.SponsorLogo{
-  width: 145px;
-  height: 145px;
-  background-size: cover;
-  border: 1px solid #000;
+@media (max-width: 1000px) {
+	header {
+		margin-top:13.02083vw;	
+	}
+}
+@media (max-width: 1140px) {
+	header {
+		background-image:url(../img/sponsors/sponsors-header-bg-tablet.jpg);
+		/*margin-top:13.02083vw;*/
+		padding:5px 0 0 0;
+	}
+	header h1 {
+		font-size:100px;
+		margin-top: 90px;
+		margin-bottom:55px;
+	}
+}
+@media (max-width: 640px) {
+	header {
+		background-image:url(../img/sponsors/sponsors-header-bg-mobile.jpg);
+		margin-top:3.90625vw;
+		padding:5px 0 0 0;
+		margin-top:15vw;	
+	}
+	header h1 {
+		font-size:48px;
+		margin-top: 60px;
+		margin-bottom:45px;
+	}
+	header p {
+		max-width:280px;
+		padding-bottom: 50px;
+		font-size:16px;
+		line-height: 20px;
+	}
+	header a {
+		font-size: 16px;
+	}
+	header button {
+		font-size: 21px;
+		margin-top: 38px;
+		margin-bottom: 70px;
+		max-width: 300px;
+		height: 70px;
+	}
+	header button:hover {
+		border: 3px solid #fff;
+	}
+}
+/* END Header */
+	
+/* Sponsors */
+#Sponsors {
+	width: 100%;
+	background-color: #f4f4f2;
+}
+
+/*sponsor anchor*/
+.anchorclass{
+	display: block; 
+	position: relative; 
+	top: -100px; 
+	visibility: hidden;
+}
+@media (max-width: 1000px) {
+	.anchorclass{	
+		top: -150px; 
+	}
+}
+@media (max-width: 480px) {
+	.anchorclass{	
+		top: -100px; 
+	}
+}
+#SponsorsInnerContainer {
+	width: 100%;
+	max-width: 68.489583vw;
+	margin: 0 auto;
+	text-align: center;
+}
+#PoweredByWhosWhoLogo {
+	margin-top: 2.0833vw;
+}
+.SponsorHeadline {
+	width: 100%; 
+	text-align: center; 
+	background-image: url(../img/sponsors/headline-background-desktop.png); 
+	padding: 0px; 
+	background-position: center center; 
+	font-size: 40px;
+	background-size: cover;
+	font-weight: 500;
+	margin-top: 65px;
+	margin-bottom: 65px;
+}
+.SponsorHeadline span {
+	margin-left: -0.260416vw;
+}
+.Sponsor {
+	margin-bottom: 55px;	
+	padding-left: 2.60416vw;
+	text-align: left;
+}
+.SponsorLogo, .SponsorDetails {
+	display: inline-block;
+	vertical-align: top;
+}	
+.SponsorLogo {
+	width: 200px;
+	text-align: center;
+	padding-top: 90px;	
+}
+.SponsorLogo img {
+	width: auto;
+	max-width: 200px;
+	height: auto;
+	max-height: 100px;
+}
+.SponsorDetails {
+	width: 100%;
+	max-width: 650px;
+	margin-left: 3.90625vw;
+	font-size: 1.04166vw;
+	color: #322f2f;
 }
 .SponsorName {
-  line-height: 12px;
+	font-size: 25px;
+	margin-top: 0;
+	margin-bottom: -5px;
+	line-height: 150%;
+	color: #322f2f;
 }
-.SponsorViewProfile{
-	margin-top: 40px;
-	color: #00a8c6;
+.SponsorName a {
+	color: #322f2f;
+	transition: all 0.3s;
 }
-.SponsorLogoHoverInfo {
-  visibility: hidden;
-  opacity: 0;
-  background-color: #040404;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 12px;
-  text-align: center;
-  color: #fff;
-  -webkit-font-smoothing: antialiased;
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-
+.SponsorName a:hover {
+	color: #106ab5;
+	text-decoration: none;
 }
-.Sponsor .SponsorLogo:hover .SponsorLogoHoverInfo{
-	/*visibility: visible;*/
-	visibility: hidden;
-	opacity: 1;
-	-moz-opacity: 1;
-	-webkit-opacity: 1;
-	-webkit-transform: scale(1.2, 1.2);
-	-moz-transform: scale(1.2, 1.2);
- 	transform: scale(1.2, 1.2);
+.SponsorName .fa-external-link {
+	font-size: 1.14583vw;
+	padding-left: 0.260416vw;
+	color: #106ab5;	
 }
-.ALaCarte {
+.SponsorDescription {
+	margin-bottom: 25px;
 	font-size: 17px;
-	color: #16aae1;
 	width: 100%;
-	max-width: 145px;
+	max-width: 650px;
+	line-height: 150%;
+}
+.SponsorSocialIcons {
+	display: inline-block;
+}
+.SponsorSocialIcon {
+	display: inline-block;	
+	background-repeat: no-repeat;
+	width: 2.60416vw;
+	height: 2.65625vw;
+	margin-right: 0.78125vw;
+}
+.SponsorFacebookIcon {
+	background-image: url(../img/sponsors/facebook-icon.png);
+	background-size: cover;
+}
+.SponsorTwitterIcon {
+	background-image: url(../img/sponsors/twitter-icon.png);
+	background-size: cover;
+}
+.SponsorLinkedinIcon {
+	background-image: url(../img/sponsors/linkedin-icon.png);
+	background-size: cover;
+}
+.SponsorBlogIcon {
+	background-image: url(../img/sponsors/blog-icon.png);
+	background-size: cover;
+}
+@media (max-width: 1920px) {
+	.SponsorDetails {
+		font-size: 20px;
+	}
+	.SponsorName .fa-external-link {
+		font-size: 22px;
+	}
+	.SponsorSocialIcon {
+		width: 45px;
+		height: 46px;
+	}
+	
+}
+@media (max-width: 1390px) {
+	#SponsorsInnerContainer {
+		max-width: 90%;	
+	}
+}
+@media (max-width: 1022px) {
+	.SponsorLogo {
+		text-align: center;	
+		padding-top: 0;
+		width: 100%;
+	}
+	.SponsorName {	
+		text-align:center;
+	}	
+}
+@media (max-width: 1000px) {
+	#SponsorsInnerContainer {
+		max-width: 100%;
+		margin: 0 auto;
+	}
+	#PoweredByWhosWhoLogo {
+		margin-top: 40px;
+	}
+	.SponsorHeadline {
+		width: 95%;
+		margin: 0 auto;
+		margin-top: 65px;
+		margin-bottom: 70px;
+
+		font-size: 40px;
+		background-image: url(../img/sponsors/headline-background-desktop-1140.png); 
+		background-size: cover;
+	}
+	.SponsorHeadline span {
+		margin-left: 5px;	
+	}
+	.Sponsor {	
+		padding-left: 30px;
+		padding-right: 30px;
+		margin-bottom: 65px;
+	}
+	.SponsorLogo, .SponsorDetails {
+		display: block;
+		margin: 0 auto;
+	}	
+	.SponsorDetails {
+		width: 100%;
+		max-width: 650px;
+		margin: 0 auto;
+		font-size: 17px;	
+	}
+	.SponsorName {
+		font-size: 25px;
+		margin-top: 15px;
+	}
+	.SponsorName .fa-external-link {
+		font-size: 22px;
+		padding-left: 5px;	
+	}
+	.SponsorSocialIcon {
+		width: 45px;
+		height: 46px;
+		margin-right: 17px;
+	}
+}
+
+@media (max-width: 640px) {
+	.Sponsor {	
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	#SponsorsInnerContainer {
+		background: none;	
+		padding-top: 0;
+		margin-top: 0;
+	}
+	#WhosWhoAndDiamondImageContainer {
+		width: 100%;
+		max-width: 320px;
+		margin: 0 auto;	
+	}
+	#PoweredByWhosWhoLogo {
+		width: 280px;
+		height: auto;
+	}
+	.SponsorHeadline {
+		
+		width: 90%;
+		font-size: 28px;
+		background-image: url(../img/sponsors/headline-background-mobile.png); 
+		background-size: cover;
+	}
+	.SponsorDetails {
+		padding-left: 10px;
+		padding-right: 5px;
+		box-sizing: border-box;
+	}
+	.SponsorName {
+		margin-bottom: 15px;	
+	}
+	.SponsorName .fa-external-link {
+		font-size: 20px;
+		padding-left: 5px;	
+	}	
+	.SponsorDescription {
+		font-size:13px;
+	}
+	.SponsorSocialIcons {
+		float: none;
+		display: block;	
+		margin-top: 30px;
+	}
+	.SponsorSocialIcon {
+		margin-left: 0; 
+		margin-right: 15px;	
+		width: 41px;
+		height: 42px;
+	}
+}
+
+/*End Sponsors */
+
+
+
+/* Go to Top button */
+#GoTopImg {
+	background-color: rgba(10, 66, 113, 0.57);
+	width: 54px;
+	height: 54px;
+	bottom: 25px;
+	right: 25px;
+	text-align: center;
+	position: fixed;
+	z-index: 10000;
+	transition: all 0.3s;
+}
+#GoTopImg:hover {
+	background-color: rgba(10, 66, 113, 1);
+}
+#GoTopImg .fa {
+	font-size: 30px;
+	color: #f4f4f2;
 	padding-top: 10px;
 }
-@media (max-width: 359px){
-	.Sponsor {
-		width: 120px;
-	}
-	.SponsorLogo{
-  		width: 120px;
-  		height: 120px;
-  	}
-  	.SponsorViewProfile{
-		margin-top: 35px;
-	}
-	.SponsorLogoHoverInfo{
-		font-size: 12px;
-	}
-	.Sponsor .SponsorLogo:hover .SponsorLogoHoverInfo{
-	  	visibility: hidden;
-  		opacity: 0;
-	}
-}
-@media (max-width:580px){
-	#Sponsors {
-		padding-top: 0px;
-	}
-	.SponsorSection {
-		padding-top: 30px;
-		padding-bottom: 20px;
-	}
-}
-
-
-/*-----MODAL DEFINITIONS------*/
-.modal-dialog  {margin-top: 60px;}
-.modal-content {border-radius: 0;}
-.modal-body    {background-color: #fff;}
-
-.close, .close:hover {
-  opacity: 1;
-  position: relative;
-  top: -40px;
-  right: -40px;
-}
-.ModalSponsorPhoto {
-  margin: 0 auto;
-  width: 220px;
-  height: 220px;
-  background-size: cover;
-}
-.ModalSponsorBioContainer {
-  text-align: center;
-  color: #323232;
-}
-.ModalSponsorName {
-  font-size: 35px;
-  font-weight: 700;
-  font-family: 'Roboto', sans-serif;
-  color: #323232;
-  padding-top: 15px;
-  padding-bottom: 10px;
-}
-
-.ModalSponsorCompanyLink {
-  font-size: 1.8em;
-  font-weight: 400;
-  color: #00a8c6;
-}
-.ModalSponsorCompanyLink:hover {
-  color: #35B0E3;
-}
-.ModalDivider {
-  border-top: 1px solid #b3b3b3;
-  height: 1px;
-  margin: 20px auto 20px auto;
-  width: 40px;
-}
-.SocialIcons {display:inline;}
-.SocialIcons .fa {
-  font-size: 14px;
-  color: #fff;
-  background: #323232;
-  padding: 7px;
-  border-radius: 900px;
-  margin: 0 2px;
-}
-.SocialIcons .fa-facebook { padding: 7px 10px; }
-.SocialIcons .fa-facebook:hover {background: #3b5998;}
-.SocialIcons .fa-twitter:hover  {background: #4099ff;}
-.SocialIcons .fa-linkedin:hover {background: #0e76a8;}
-.SocialIcons .fa-google { padding: 8px 8px 6px 8px; }
-.SocialIcons .fa-google:hover {background: #1F48A9;}
-.SocialIcons .fa-flickr:hover {background: #FF0084;}
-.SocialIcons .fa-rss:hover {background: #C52C02;}
-
-.ModalSponsorBio {
-  font-size: 1.7em;
-  line-height: 1.7em;
-  font-weight: 300;
-  text-align: left;
-  padding: 25px;
-}
-.ModalSponsorBioHighlight {
-  font-size: 1.2em;
-  font-weight: 400;
-}
-.ModalSponsorBioHighlight:after {
-  content: ' ';
-  clear: right;
-  display: block;
-}
-@media(max-width:767px){
-  .modal-dialog {
-    margin: 0;
-    width: 100%;
-  }
-  .close, .close:hover {
-    top: 0px;
-    right: 0px;
-  }
-  .ModalSponsorBio {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-}
-
-
-@media(max-width:380px){
-  .close img {
-    width: 35px;
-    height: 35px;
-  }
-}
-/*----- END MODAL DEFINITIONS------*/
-
-
-/*FOOTER ALIGNMENTS (because Foundation and Bootstrap uses the same ".row" named class..) */
-#blackfooter .row, #greyfooter-container .row {
-  max-width: 1480px;
-  margin-left: auto; margin-right: auto;
-}
-/*END FOOTER ALIGNMENTS*/
-
-/*Mobile menu margin for the content*/
-@media (max-width:640px){
-#Sponsors {
-	margin-top:0;
-	}	  
-}
-/*Mobile menu fa-bars button alignment*/
-.fa-bars {
-  position: relative;
-  top: -7px;
-}
-/*end Mobile menu fa-bars button alignment*/
+/* END Go to Top button */

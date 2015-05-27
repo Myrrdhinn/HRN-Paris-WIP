@@ -122,6 +122,44 @@ public function save_sponsor() {
 		  }
 		  	
 			
+			
+			//AlaCarte
+		 if (isset($_POST['AlaCarte']) && $_POST['AlaCarte'] == 1){	
+	  
+					//Sponsor alacarte
+			 $alacarte_q = "INSERT INTO sponsors_alacarte SET sponsor_id = :id";
+			 $alacarte = $this->pdo->prepare($alacarte_q);
+			 
+			 $alacarte->bindValue(':id', $sponsor_id, \PDO::PARAM_INT);
+			 
+			 $alacarte->execute();
+			 
+			$alacarte_id = $this->pdo->lastInsertId(); 	
+			
+			
+			 if (isset($_POST['AlaCarteText']) && $_POST['AlaCarteText'] != ''){
+				 	
+										  //Sponsor alacarte text
+					   $alacarte_text_q = "INSERT INTO sponsors_alacarte_text SET sponsors_alacarte_id = :id, text = :text";
+					   $alacarte_text = $this->pdo->prepare($alacarte_text_q);
+					   
+					   $alacarte_text->bindValue(':id', $alacarte_id, \PDO::PARAM_INT);
+					   $alacarte_text->bindValue(':text', $_POST['AlaCarteText'], \PDO::PARAM_STR);
+					   
+					   $alacarte_text->execute();
+					   
+					
+			 
+			 }
+			
+			
+			
+			
+		 }
+			
+			
+			
+			
 				//Sponsor Status
 		 $status_q = "INSERT INTO sponsors_status SET status_id = '1', sponsor_id = :id";
 		 $status = $this->pdo->prepare($status_q);
@@ -201,14 +239,14 @@ public function save_sponsor() {
 			 $contex[0] = $e->getFile();
 			 $contex[1] = $e->getLine();
 			 
-		   $this->log->addError($e->getMessage(), $e->getFile(), $contex);
+		   $this->log->addError($e->getMessage(), $contex);
 	          }
 			  
 			  
 		 catch (\Exception $e) {
 			 $contex[0] = $e->getFile();
 			 $contex[1] = $e->getLine();
-		   $this->log->addError($e->getMessage(), $e->getFile(), $contex);
+		   $this->log->addError($e->getMessage(), $contex);
 	          }
 
 	
@@ -247,6 +285,41 @@ public function edit_sponsor() {
 			   $bio->execute();
 			   
 				  $bio_id = $this->pdo->lastInsertId();
+			
+		  }
+		  
+		  
+		  		if ($_POST['edit_type'] == 'CarteTextEdit'){
+					
+									 						//Get Sponsor Category id
+				 $alacartetext_q = "SELECT saat.id FROM sponsors_alacarte_text as saat, sponsors_alacarte as sa WHERE sa.sponsor_id = :id AND sa.id=saat.sponsors_alacarte_id LIMIT 0,1";
+				 $alacartetext = $this->pdo->prepare($alacartetext_q);
+				 
+				 $alacartetext->bindValue(':id', $sponsor_id, \PDO::PARAM_INT);
+				 
+				 $alacartetext->execute();
+				 
+				 if ($alacartetext->rowCount() > 0) {
+                     		while($sName = $alacartetext->fetch()){
+								  //Sponsor Bio	
+						   $alacartetext_update_q = "UPDATE sponsors_alacarte_text SET text = :text WHERE id = :id";
+						   $alacartetext_update = $this->pdo->prepare($alacartetext_update_q);
+						   
+						  
+						   $alacartetext_update->bindValue(':text', $_POST['new_data'], \PDO::PARAM_STR);
+				  
+						   $alacartetext_update->bindValue(':id', $sName['id'], \PDO::PARAM_INT);
+						   
+						   $alacartetext_update->execute();
+						   
+							  
+									  
+									 
+					   }
+				 }
+						
+		
+
 			
 		  }
 		  
@@ -394,7 +467,71 @@ public function edit_sponsor() {
 	
 }
 
+public function alacarte_for_sponsor() {
+	
+						//Sponsor alacarte
+			 $alacarte_q = "INSERT INTO sponsors_alacarte SET sponsor_id = :id";
+			 $alacarte = $this->pdo->prepare($alacarte_q);
+			 
+			 $alacarte->bindValue(':id', $_POST['sId'], \PDO::PARAM_INT);
+			 
+			 $alacarte->execute();
+			 
+			$alacarte_id = $this->pdo->lastInsertId(); 	
+			
+			
+			 if (isset($_POST['text']) && $_POST['text'] != ''){
+				 	
+										  //Sponsor alacarte text
+					   $alacarte_text_q = "INSERT INTO sponsors_alacarte_text SET sponsors_alacarte_id = :id, text = :text";
+					   $alacarte_text = $this->pdo->prepare($alacarte_text_q);
+					   
+					   $alacarte_text->bindValue(':id', $alacarte_id, \PDO::PARAM_INT);
+					   $alacarte_text->bindValue(':text', $_POST['text'], \PDO::PARAM_STR);
+					   
+					   $alacarte_text->execute();
+					   
+					
+			 
+			 }
+	
+	
+	
+}
 
+
+public function delete_alacarte() {
+	
+			 $tag_q = "SELECT id FROM sponsors_alacarte_text WHERE sponsors_alacarte_id = :id  ORDER BY date DESC LIMIT 0,1";
+			 $tag = $this->pdo->prepare($tag_q);
+			 
+			 $tag->bindValue(':id', $_POST['sId'], \PDO::PARAM_INT);
+			
+			 
+			 $tag->execute();
+			 
+			 if ($tag->rowCount() > 0) {
+			  while($sTags = $tag->fetch()){
+				  
+			    //Delete alacarte text
+				   $delete_q = "DELETE FROM sponsors_alacarte_text WHERE id = :id";
+				   $delete = $this->pdo->prepare($delete_q);
+				   
+				   $delete->bindValue(':id', $sTags['id'], \PDO::PARAM_INT);
+				   $delete->execute();
+
+			  }
+			  $this->eventlog->addError('admin: '.$_SESSION['user_id'].' , deleted an A La Carte Element');
+			 }	
+			 
+						    //Delete alacarte
+				   $delete_q = "DELETE FROM sponsors_alacarte WHERE id = :id";
+				   $delete = $this->pdo->prepare($delete_q);
+				   
+				   $delete->bindValue(':id', $_POST['sId'], \PDO::PARAM_INT);
+				   $delete->execute(); 
+	
+}
 public function get_sponsors_permissions($sId) {
 		$content = '';
 		$content .= '<table>';
@@ -714,7 +851,7 @@ function file_upload($location, $name){
 		  //new \Upload\Validation\Mimetype(array('image/png', 'image/gif'))
 	  
 		  // Ensure file is no larger than 5M (use "B", "K", M", or "G")
-		  new \Upload\Validation\Size('5M')
+		  new \Upload\Validation\Size('15M')
 	  ));
 	  
 	  // Access data about the file that has been uploaded

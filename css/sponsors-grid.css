@@ -4,147 +4,64 @@
 
 /* Header */
 header {
-	/*max-height:552px;*/
-	height:100%;
-	background-image:url(../img/sponsors/sponsors-header-bg-desktop.jpg);
+	background-image:url(../img/sponsors/sponsors-header-background.jpg);
 	background-repeat:no-repeat;
-	background-size: cover;
+	background-size: contain;
 	width:100%; 
-	margin:0 auto;
-	margin-top:4vw;
-	text-align:center;
 	color:#fff;
-	padding:0.260416vw 0 0 0;
+	padding-left: 10.41666vw;
+	padding-top: 3.125vw;
+	padding-bottom: 3.3854166vw;
+	margin-top: 4.0625vw;
 }
 header h1 {
 	font-size:5.20833vw;
-	margin-bottom:2.60416vw;
+	margin-top: 0;
+	margin-bottom:0.2604166vw;
 }
 header p {
 	width: 100%;
-	max-width:23.9583vw;
-	margin:0 auto;	
-	padding-bottom: 2.60416vw;
-	font-size:1.14583vw;
-	line-height: 1.302083vw;
-}
-header a {
-	text-align: center;
-	text-decoration: none;	
-	font-size: 0.9375vw;
-	color:#fff;
-	font-weight: bold;
-	display: block;
-	transition: all 0.3s;
-		max-width: 16vw;
-		margin: 0 auto;
-}
-header a:hover {
-	text-decoration: underline;	
+	max-width:30.46875vw;
+	font-size:1.25vw;
+	line-height: 1.875vw;
 }
 header button {
-	font-size: 1.14583vw;
+	font-size: 1.041666vw;
 	font-weight: 600;
 	background-color: rgba(255, 255, 255, 0);
 	color: #fff;
-	border: 3px solid #fff;
-	margin-top: 1.97916vw;
-	margin-bottom: 3.64583vw;
-	padding-top: 0;
-	max-width: 15.625vw;
-	height: 3.64583vw;
+	border: 2px solid #fff;
+	padding: 0;
+	max-width: 13.28125vw;
+	height: 3.125vw;
+	vertical-align: bottom;
 	transition: all 0.3s ease-in;
 }
 header button:hover {
-	background-color: #fff;
-	color: #106ab5;
-	border: 3px solid #fff;
+	background-color: #106ab5;
+	border: 2px solid #106ab5;
 }
-
-@media (max-width: 1366px) {
-	header {
-		background-image:url(../img/sponsors/sponsors-header-bg-desktop-1140.jpg);
-		margin-top:3.90625vw;
-		padding:5px 0 0 0;
-	}
-	header h1 {
-		font-size:100px;
-		margin-bottom:55px;
-	}
-	header p {
-		width: 100%;
-		max-width:460px;
-		margin:0 auto;	
-		padding-bottom: 50px;
-		font-size:22px;
-		line-height: 25px;
-	}
-	header a {
-		font-size: 18px;
-		max-width: 300px;
-	}
-	header button {
-		font-size: 22px;
-		border: 3px solid #fff;
-		margin-top: 38px;
-		margin-bottom: 70px;
-		max-width: 300px;
-		height: 70px;
-	}
-	header button:hover {
-		border: 3px solid #fff;
-	}
+#HeaderWhosWhoLogo {
+	width: 9.895833vw;
+	height: 3.802083vw;
+	margin-left: 2.864583vw;
 }
 @media (max-width: 1000px) {
 	header {
-		margin-top:13.02083vw;	
+		margin-top: 15.1vw;	
 	}
 }
-@media (max-width: 1140px) {
+@media (max-width: 767px) {
+	/* hide the full-width header at 767px and below. Add margin to the #Sponsors section to separate it from the menu. */
 	header {
-		background-image:url(../img/sponsors/sponsors-header-bg-tablet.jpg);
-		/*margin-top:13.02083vw;*/
-		padding:5px 0 0 0;
+		display: none;	
 	}
-	header h1 {
-		font-size:100px;
-		margin-top: 90px;
-		margin-bottom:55px;
-	}
-}
-@media (max-width: 640px) {
-	header {
-		background-image:url(../img/sponsors/sponsors-header-bg-mobile.jpg);
-		margin-top:3.90625vw;
-		padding:5px 0 0 0;
-		margin-top:15vw;	
-	}
-	header h1 {
-		font-size:48px;
-		margin-top: 60px;
-		margin-bottom:45px;
-	}
-	header p {
-		max-width:280px;
-		padding-bottom: 50px;
-		font-size:16px;
-		line-height: 20px;
-	}
-	header a {
-		font-size: 16px;
-	}
-	header button {
-		font-size: 21px;
-		margin-top: 38px;
-		margin-bottom: 70px;
-		max-width: 300px;
-		height: 70px;
-	}
-	header button:hover {
-		border: 3px solid #fff;
+	#Sponsors {
+		margin-top: 23vw;		
 	}
 }
 /* END Header */
+
 
 
 
@@ -311,18 +228,15 @@ header button:hover {
 		border: 1px solid #106ab5;
 		border-radius: 4.6875vw;
 		color: #fff !important;
-		/*padding:0.052083vw 0.208333vw;*/
-		  padding: 10px;
-		margin-left: -0.260416vw;
+		padding: 10px;
 		cursor: pointer;
-		/*margin: 0.2vw;*/
 		text-align:center;
 	}
 	.SelectAllFilters {
 		color: #000;
 		cursor: pointer;
 	}
-	/* Filters List */
+	/* END Filters List */
 	/* Selected Filters */
 	#FiltersSelectedListContainer {
 		width: 100%;
@@ -394,7 +308,7 @@ header button:hover {
 		width: 0.46875vw;
 		height: 0.46875vw;
 	}
-/* END Selected Filters */
+	/* END Selected Filters */
 @media (max-width: 1920px) {
 	/* Search Bar */ 
 	#SearchBarWrapper {
@@ -421,7 +335,7 @@ header button:hover {
 		top: 13px;
 		width: 15px;
 		height: 19px;
-		z-index:800
+		z-index:490
 	}
 	#SearchBarContainer input {
 		width: 317px;
@@ -472,15 +386,11 @@ header button:hover {
 	.Filters ul li {
 		font-size: 16px;
 		margin-bottom: 25px;
-		padding-right: 5px;
 	}
-	
 	.Filters ul li span:hover {
 		border-radius: 90px;
-		padding:1px 4px;
-		margin-left: -5px;
 	}
-	/* Filters List */
+	/* END Filters List */
 	/* Selected Filters */
 	#FiltersSelectedListContainer {
 		padding-top: 25px;
@@ -604,10 +514,8 @@ header button:hover {
 	
 	.Filters ul li span:hover {
 		border-radius: 7.03125vw;
-		padding:0.078125vw 0.3125vw;
-		margin-left: -0.390625vw;
 	}
-	/* Filters List */
+	/* END Filters List */
 	/* Selected Filters */
 	#FiltersSelectedListContainer {
 		padding-top: 1.953125vw;

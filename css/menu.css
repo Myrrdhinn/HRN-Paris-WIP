@@ -11,6 +11,7 @@
 	z-index: 500;
 	transition: all 0.5s;
 }
+
 #MenuContainer {
 	margin: 0 auto;
 	width: 85%;
@@ -46,12 +47,6 @@
 .StaticPos {
 	position: static !important;
 	top: 0;
-}
-.FixedTop {
-	position: fixed;
-	top: 0;
-	background: #f4f4f2;
-	margin-top: 4.6875vw;
 }
 	#SpeakersSection, #SponsorsSection, #HighlightsSection, #VenueSection, #GetInTouchSection {
 		position: relative; 
@@ -663,35 +658,18 @@
 
 
 /* Second State of the menu */
+
 #SecondStateMainMenuContainer {
+	position: fixed;
+	top: 0;
 	width: 100%;
-	margin: 0 auto;
 	height: 4.1vw;
 	text-align: center;
+	background: #f4f4f2;
+	border-bottom:1px solid #c0c0c0;
 	z-index: 500;
 	transition: all 0.5s;
-	border-bottom:1px solid #c0c0c0;
-	}
-/*
-@media (min-width: 1400px) {
-#HorizontalLogo {
-	margin-top:0.6vw;
-	}
 }
-
-@media (max-width: 1361px) {
-#HorizontalLogo {
-	margin-top:0.9vw;
-	}
-}
-
-	
-@media (max-width: 1110px) {
-#HorizontalLogo {
-	margin-top:0.7vw;
-	}
-}
-*/
 	
 #SecondStateMainMenuContainer #HorizontalLogo {
 	margin-top: 0.44vw;
@@ -700,7 +678,7 @@
 #SecondStateMainMenuContainer {
 	display:none;
 	}
-	}	
+}	
 	
 #SecondStateMainMenuContainer .MainMenuItem {
 	margin: 0 1.125vw;

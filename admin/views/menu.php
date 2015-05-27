@@ -37,6 +37,12 @@ $content = '';
 						   $content .="'img/icons/new.png';";
 						   $content .='" ></a>';
 						   
+						   $content .= '<a href="sponsors_alacarte" title="Edit A La Carte Sponsors"><img class="MenuIcon" src="img/icons/alacarte.png" onmouseover="this.src=';
+						   $content .="'img/icons/alacarte_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'img/icons/alacarte.png';";
+						   $content .='" ></a>';
+						   
 						   $content .= '<a target="_blank" href="../sponsors" title="Live Sponsors Page"><img class="MenuIcon" src="img/icons/sponsors.png" onmouseover="this.src=';
 						   $content .="'img/icons/sponsors_hover.png';";
 						   $content .='" onmouseout="this.src=';
@@ -69,6 +75,22 @@ $content = '';
 						   $content .='" onmouseout="this.src=';
 						   $content .="'img/icons/speakers.png';";
 						   $content .='" ></a>';
+					   
+					  }
+
+                  break;
+				  
+				  
+			  case 'alacarte':
+			   
+					 if (isset($_SESSION['sponsors_admin'])) {
+						  
+						   $content .= '<a href="sponsors"><img class="MenuIcon" src="img/icons/main.png" onmouseover="this.src=';
+						   $content .="'img/icons/main_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'img/icons/main.png';";
+						   $content .='" ></a>';
+						
 					   
 					  }
 
@@ -237,6 +259,14 @@ This section is controlled by the menu.css
 						   $content .="'img/icons/new.png';";
 						   $content .='" ></a>';
 						   
+						   
+						   $content .= '<a href="sponsors_alacarte" title="Edit A La Carte Sponsors"><img class="MenuIcon" src="img/icons/alacarte.png" onmouseover="this.src=';
+						   $content .="'img/icons/alacarte_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'img/icons/alacarte.png';";
+						   $content .='" ></a>';
+						   
+						   
 						   $content .= '<a target="_blank" href="../sponsors" title="Live Sponsors Page"><img class="MenuIcon" src="img/icons/sponsors.png" onmouseover="this.src=';
 						   $content .="'img/icons/sponsors_hover.png';";
 						   $content .='" onmouseout="this.src=';
@@ -273,6 +303,23 @@ This section is controlled by the menu.css
 					  }
 
                   break;
+				  
+				  
+			  case 'alacarte':
+			   
+					 if (isset($_SESSION['sponsors_admin'])) {
+						  
+						   $content .= '<a href="sponsors"><img class="MenuIcon" src="img/icons/main.png" onmouseover="this.src=';
+						   $content .="'img/icons/main_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'img/icons/main.png';";
+						   $content .='" ></a>';
+						
+					   
+					  }
+
+                  break;
+				  
                case 'speakers-profile':
 			   
 			   		  if (isset($_SESSION['speakers_admin'])) {

@@ -1,0 +1,257 @@
+/* CSS definitions of the CONTACT page */
+
+body * {
+	box-sizing: border-box;	
+}
+
+/* Header */
+header {
+	width:100%;
+	margin-top: 4.0625vw;
+	background-image: url(../img/contact/header-bg.jpg);
+	background-size: cover;
+	background-position: center;
+	text-align:center;
+	padding-top: 105px;
+	padding-bottom: 105px;
+}	
+#HeaderInnerContainer {
+	width: 100%;
+	max-width: 440px;
+	margin: 0 auto;	
+	color: #fff;
+}
+#HeaderInnerContainer h1 {
+	font-size:60px;
+	color:#fff;	
+	margin-bottom:55px;
+	margin-top: 0;
+}	
+#HeaderInnerContainer p {
+	width: 100%;
+	max-width:700px;
+	margin:0 auto;
+	font-size:24px;
+	line-height:30px;
+	color:#fff;
+}
+@media (max-width: 1000px) {
+	header {
+		margin-top: 10.4166vw;	
+	}
+}
+@media (max-width: 480px) {
+	#HeaderInnerContainer {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	#HeaderInnerContainer h1 {
+		font-size:42px;
+	}	
+	#HeaderInnerContainer p {
+		font-size:18px;
+		line-height:30px;
+	}
+}
+/*
+@media (max-width: 380px) {
+	#HeaderInnerContainer h1 {
+		margin-bottom: 20px;
+	}
+	#HeaderInnerContainer p {
+		font-size: 22px;
+	}	
+}*/
+/* END Header */
+
+
+
+
+/* Contact Members */
+#PeterFile, #SteveMic, #ViktoriaCog, #MarcPeople, #ClaireBadge {
+	padding: 40px 50px 10px 50px;
+	background-repeat:no-repeat;
+}
+#PeterFile { 	background-image:url(../img/contact/file.png); 			}
+#SteveMic {		background-image:url(../img/contact/microphone.png);	}
+#ViktoriaCog {	background-image:url(../img/contact/cog.png);			}
+#MarcPeople {	background-image:url(../img/contact/humans.png);		}
+#ClaireBadge {	background-image:url(../img/contact/badge.png);			}
+
+#SteveTitle {		color:#fc354c;	}
+#PeterTitle {		color:#ff8e2d;	}
+#ViktoriaTitle {	color:#8fbe00;	}
+#MarcTitle {		color:#56aecf;	}
+#ClaireTitle {		color:#fc354c;	}
+
+#ContactMembersContainer {
+    text-align: center;
+	margin: 75px 0 75px 0;
+}
+.ContactMember {
+	display:inline-block;
+	margin:10px;
+}
+.ContactMember p {
+	width: 100%;
+    max-width: 205px;
+    margin: 0 auto;
+	margin-bottom: 7px;
+    text-align: left;
+	font-size: 18px;
+}
+/* END Contact Members */
+
+
+
+/* HRN Contact Info */
+#ContactFormSection {
+    width:100%;
+    padding: 50px;
+    background-image:url(../img/contact/formBg.jpg);
+}
+@media (max-width: 768px) {
+	#ContactFormSection {
+		padding-left: 15px;
+		padding-right: 15px;	
+	}
+}
+#ContactInfoContainer{
+	width: 100%;
+	max-width: 910px;
+	padding-left: 15px;
+	margin: 0 auto;	
+}
+@media (max-width: 550px) {
+	#ContactInfoContainer{
+		max-width: 280px;
+	}
+}
+#ContactAddress, #ContactGen, #ContactMail {
+	width:100%;
+	display: inline-block;
+	float:left;
+}
+#ContactAddress {	max-width: 340px;	} /* different container sizes to align the boxes to the " */
+#ContactGen 	{	max-width: 320px;	} 
+#ContactMail 	{	max-width: 220px;	}
+@media (max-width: 1000px) {
+	#ContactAddress, #ContactGen, #ContactMail {
+		max-width: 33%;
+	}		
+}
+@media (max-width: 745px) {
+	#ContactAddress, #ContactGen, #ContactMail {
+		max-width: 200px;
+		float: none;
+		margin: 0 auto;
+	}
+}
+@media (max-width: 640px) {
+	#ContactAddress, #ContactGen, #ContactMail {
+		max-width: 250px;	
+	}
+}
+
+.ContactIcon{
+	width:26px;
+	height:26px;	
+	background-color:#16aae1;
+    border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px;
+	margin-right: 10px;
+	float:left;
+}
+.ContactText {
+	color: #fff;
+	font-size: 18px;
+	line-height: 30px;
+	margin: 2px 0 40px 5px;
+	display: inline-block;
+	vertical-align: top;	
+}
+.ContactIcon .fa {
+	display:block;
+}
+.ContactIcon .fa-pencil, .ContactIcon .fa-phone {
+	font-size:20px;
+	margin-left: 20%;
+	margin-top: 10%;
+}
+.ContactIcon .fa-envelope{
+	font-size: 18px;
+  	margin-left: 17%;
+  	margin-top: 14%;
+}
+/* HRN Contact Info */
+
+/* Contact Form Container */
+#ContactFormContainer {
+	width: 100%;
+	max-width: 860px;
+    background-image:url(../img/contact/formBg.jpg);
+	margin: 0 auto;
+}
+@media(max-width:1024px){
+	#ContactFormContainer {
+		 width:100%;
+	}
+}
+#ContactFormContainer * {
+	font-size:18px;	
+}
+#ContactFormContainer input {
+	height:56px;
+}
+#ContactFormContainer input[placeholder], #ContactFormContainer textarea[placeholder] {
+	color: #b0b0b0;	
+		padding: 15px;
+}
+#first_name, #last_name {
+	width: 100%;	
+}
+#LeftInputFields {
+	width: 100%;
+	max-width: 410px;
+	display: inline-block;	
+}
+#RightInputFields {
+	width: 100%;
+	max-width: 410px;
+	display: inline-block;
+	vertical-align: top;
+	float: right;
+}
+#ContactFormContainer textarea {
+    width: 100%;
+    height: 410px;
+	border: none;
+	box-sizing: border-box;
+}
+#ContactFormContainer input[type="submit"] {
+	width:100%;
+	height:56px;
+	font-size:24px;
+	font-weight: 600;
+	text-transform:uppercase;
+	color:#fff;
+	background:#16aae1;
+	border: none;
+	transition: all 0.3s;
+}	
+#ContactFormContainer input[type="submit"]:hover {
+	background: #fc354c;
+	cursor:pointer;
+}
+@media (max-width: 970px) {
+	#LeftInputFields, #RightInputFields {
+		max-width: 100%;	
+		float: none;
+		display: block;
+	}
+	#ContactFormContainer input[type="submit"] {
+		margin-top: 15px;	
+	}
+	
+}
+
+/* END Contact Form Container */
