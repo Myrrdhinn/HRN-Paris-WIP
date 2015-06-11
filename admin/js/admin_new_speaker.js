@@ -4,7 +4,17 @@ $(document).ready(function(){
           $('#SpeakerBio').editable({inlineMode: false,
 		   buttons: [
         'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'align', 'outdent', 'indent', 'insertOrderedList',
-        'insertUnorderedList', 'insertHTML', 'createLink'
+        'insertUnorderedList', 'insertHTML'
+         ], 
+		 key: 'jgasD7ozD-11ohdnaawcwg1gD1uxu=='
+		  })
+      });
+	  
+	     $(function(){
+          $('#SpeakerMPBio').editable({inlineMode: false,
+		   buttons: [
+        'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'align', 'outdent', 'indent', 'insertOrderedList',
+        'insertUnorderedList', 'insertHTML'
          ], 
 		 key: 'jgasD7ozD-11ohdnaawcwg1gD1uxu=='
 		  })
@@ -93,8 +103,8 @@ function save_check() {
 		  var Linkedin = $('#Linkedin').val();
 		  var Flickr = $('#Flickr').val();
 		  var Google = $('#Google').val();
-		  
-		  
+		  var MainPage = $('#MainCheckbox').prop('checked');
+		  var SpeakerMPBio = $('#SpeakerMPBio').val();
 		  
 		  
 		  
@@ -102,7 +112,35 @@ function save_check() {
 			if ((typeof SpeakerName != "undefined") && SpeakerName != '' && (typeof SpeakerTitle != "undefined") && SpeakerTitle != '' 
 			&&  (typeof SpeakerBio != "undefined") && SpeakerBio != '' &&  (typeof CompanyName != "undefined") && CompanyName != '') {
 				
-             return true;
+				if (MainPage == true && typeof SpeakerMPBio != "undefined" && SpeakerMPBio != ''){
+					 return true;
+				} else {
+				   if (MainPage == false) {
+						 return true;
+					} else {
+						
+						window.location.hash = '#ReturnValue';
+						$("#ReturnValue").html('<i class="fa fa-exclamation-triangle"></i> Please, fill out the missing fields!');
+						$("#ReturnValue").css("color","#9B1515");
+						$("#ReturnValue").fadeIn('slow');
+							  
+					  if (typeof SpeakerMPBio == "undefined" || SpeakerMPBio == '') {
+						  $('#SpeakerMPBio').css("border","1px solid #9B1515");
+					  } else {
+						  $('#SpeakerMPBio').css("border","1px solid #cccccc");
+					  }
+						
+						
+						
+						
+					}
+					
+					
+
+				}
+				
+				
+            
 				
 			} else {
 		
@@ -181,6 +219,16 @@ function save_check() {
 		formData.append("Linkedin", $("#Linkedin").val());
 		formData.append("Flickr", $("#Flickr").val());
 		formData.append("Google", $("#Google").val());
+		
+		var MainPage = $('#MainCheckbox').prop('checked');
+		if (MainPage == true) {
+		  formData.append("MainPage", 1);
+		} else {
+		  formData.append("MainPage", 0);
+		}
+		
+		formData.append("MainPageBio", $('#SpeakerMPBio').val());
+		
     },
     init: function() {
       this.on("addedfile", function(file) {

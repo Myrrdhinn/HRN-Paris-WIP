@@ -78,8 +78,7 @@ if(isset($_SESSION['admin'])){
 }
 ?>
 
-<!-- Mainpage JS -->
-<script src="../js/mainpage.js"></script>
+
 
 
 <!-- Include Reveal Modal -->

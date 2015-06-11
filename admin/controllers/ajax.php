@@ -333,7 +333,7 @@ Change company image
 }// company image
 
 /*///////////// 
-Add new Sponsor
+Speaker order
 ///////////////*/
 
 
@@ -353,6 +353,55 @@ Add new Sponsor
  */
 
 
-}// new sponsor
+}// speaker order
+
+/*///////////// 
+Speaker mainpage order
+///////////////*/
+
+
+ if(isset($_POST['action']) && $_POST['action'] == 'speaker_mainpage_order'){
+	$the_main = new main\main;
+	
+          foreach ($_POST['order'] as $order) {
+			 $the_main->speaker_mainpage_order($order[0], $order[1]);
+			  
+		  }
+
+	/*
+	if (isset($result)) {
+	  $_SESSION['Result'] =  'Success';
+	  echo 'Success';	
+	}
+ */
+
+
+}// speaker order
+
+
+/*///////////// 
+Speaker mainpage order
+///////////////*/
+
+
+ if(isset($_POST['action']) && $_POST['action'] == 'edit_mainpage_speaker_bio'){
+	$the_main = new main\main;
+
+			 $the_main->speaker_mainpage_bio();
+
+
+}// speaker order
+
+ /*///////////// 
+Main page display
+///////////////*/
+ 
+
+ if(isset($_POST['action']) && $_POST['action'] == 'speakers_mainpage' && isset($_POST['sId']) && isset($_POST['val'])){
+	$the_main = new main\main;
+    $the_main->speakers_mainpage($_POST['sId'], $_POST['val']);
+	
+
+}// delete sponsors permission 
 
 ?>

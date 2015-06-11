@@ -46,6 +46,58 @@ class speakers_main extends config {
 }
 
 
+  public function speakers_mainpage() {
+	  // The ribbon above the pictures
+	   // <!--<div class="SelectedSpeakerColor FutureOfWorkforceLearningColor" style="width: 100%;"></div>-->
+	  
+		$content = '';
+		
+			  $mainpage_q = "SELECT sm.speaker_id FROM speakers_mainpage as sm, speakers_mainpage_order as smo WHERE smo.speaker_id=sm.speaker_id ORDER BY smo.order_id ASC";	
+					  
+		  $mainpage = $this->pdo->prepare($mainpage_q);
+		  $mainpage->execute();
+		  
+			if ($mainpage->rowCount() > 0) {	
+				while($main_id = $mainpage->fetch()){ 	
+		
+		                    
+		$stat_q = "SELECT sn.speaker_name, st.title, scn.company_name, idb.image_url, idb.alt_name, sdc.speaker_id, sdc.speaker_company_id, stag.speaker_tag FROM speakers_name as sn, speakers_data_connection as sdc, speakers_status as ss, speakers_title as st, speakers_company_name as scn, speakers_company_data_connection as scdc, image_db as idb, image_connection as ic, speakers_tag as stag, speakers_order as soo WHERE sdc.speaker_name_id=sn.id AND sdc.speaker_id=ss.speaker_id AND ss.speaker_status_id='1' AND ic.entity_type_id='1' AND ic.entity_id=sdc.speaker_id AND idb.id=ic.image_db_id AND sdc.speaker_company_id=scdc.speaker_company_id AND scdc.speaker_company_name_id=scn.id AND sdc.speaker_title_id=st.id AND stag.id=sdc.speaker_tag_id AND sdc.speaker_id=soo.speaker_id AND sdc.speaker_id= :id ORDER BY soo.order_id ASC";	
+					
+		$stat = $this->pdo->prepare($stat_q);
+		$stat->bindValue(':id', $main_id[0], \PDO::PARAM_INT);
+		$stat->execute();
+
+			if ($stat->rowCount() > 0) {
+					while($speakers = $stat->fetch()){
+			
+						 $content.='<!-- '.$speakers['speaker_name'].' -->
+						  <div class="Speaker" data-speaker="'.$speakers['speaker_id'].'">
+							 <a href="speaker-profile/'.$speakers['speaker_tag'].'">
+							  <div class="SpeakerPhoto" style="background-image: url(../img/speakers/SpeakerPhotos/'.$speakers['image_url'].');">
+							  </div>
+							 
+							  <div class="SpeakerInfo">
+								  <h6 class="SpeakerName BlueText FontRaleway">'.$speakers['speaker_name'].'</h6>
+								  <p class="Jobtitle">'.$speakers['title'].'</p>
+								  <p class="CompanyName">'.$speakers['company_name'].'</p>
+							</div>
+							</a>
+						  </div>
+						  <!-- END '.$speakers['speaker_name'].' -->';
+											  
+
+        	
+
+					} //stat_q fetch
+			}  //stat num row end
+			
+			
+				}//While fetch mainpage 
+} // if mainpage isset
+			
+		return $content;
+}
+
 
 public function speaker($tag) {
 	$content = "";
@@ -74,6 +126,34 @@ public function speaker($tag) {
 								$CompanyLogo = $logo->fetch();
 						}
 								
+					//Mainpage
+					$mainpage_q = "SELECT id FROM speakers_mainpage WHERE speaker_id = :id";	
+			
+					$mainpage = $this->pdo->prepare($mainpage_q);
+					$mainpage->bindValue(':id', $data['speaker_id'], \PDO::PARAM_INT);
+					$mainpage->execute();
+			
+						if ($mainpage->rowCount() > 0) {
+								$mainpage_id = $mainpage->fetch();
+								$checkmp = 'checked="checked"';
+						} else {
+							$checkmp = '';
+						}
+						
+											//Mainpage
+					$mpbio_q = "SELECT text FROM speakers_mainpage_bio WHERE speaker_id = :id";	
+			
+					$mpbio = $this->pdo->prepare($mpbio_q);
+					$mpbio->bindValue(':id', $data['speaker_id'], \PDO::PARAM_INT);
+					$mpbio->execute();
+			
+						if ($mpbio->rowCount() > 0) {
+								$mpbio_text = $mpbio->fetch();
+								
+						} else {
+							$mpbio_text[0] = '';
+						}
+						
 						  
 			         //Website
 					 $website_q = "SELECT scw.company_website FROM speakers_company_website as scw, speakers_company_data_connection as scdc WHERE scdc.speaker_company_id= :id AND scdc.speaker_company_website_id=scw.id";	
@@ -137,8 +217,14 @@ public function speaker($tag) {
 		
 				
 				$content .='<section id="SpeakerProfileContainer">
-    <div id="SpeakerProfile">
+    <div id="SpeakerProfile" on>
 	<div class="SysDelete" data-speaker="'.$data['speaker_id'].'">Delete Speaker</div>
+	<label><input type="checkbox" id="MainCheckbox" '.$checkmp.'" data-speaker="'.$data['speaker_id'].'"> Display on Main Page</label>
+	<br />
+	<p id="MPBioTextClick" data-speaker="'.$data['speaker_id'].'">Main Page Bio</p>
+	<div id="MPBioText" style="display:none">
+	  <label>Mainpage bio text: <br /><textarea id="MPBioTextArea">'.$mpbio_text[0].'</textarea></label>
+	</div>
 	     <div id="ReturnValue" style="display:none"></div>
             <!-- Main Speaker Info: it will get 20px/vw padding AND #f4f4f2 background-color on mobile -->
             <div id="MainSpeakerInfo">

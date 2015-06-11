@@ -116,7 +116,47 @@ $(document).ready(function(){
         })
 		
 
+	       	/*-----------------------
+		 Bio editor
+	    ------------------------	*/
+      $('#MPBioTextClick').bind('click', function (e) {
+		  var sId = $(this).data('speaker');
+		  
+    $('#MPBioText').fadeIn();
+  $('#MPBioTextArea').editable({
+		        inlineMode: false,
+				   buttons: [
+				'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'align', 'outdent', 'indent', 'insertOrderedList',
+				'insertUnorderedList', 'createLink', 'save'
+				 ],
+				 saveParams: {action: 'edit_mainpage_speaker_bio', sId:sId},
+				 saveURL: "../controllers/ajax.php",
+				 key: 'jgasD7ozD-11ohdnaawcwg1gD1uxu=='
+		    })
+						
+			 editor.instance = $('#MPBioTextArea');
+			 
+			 
+		 $('#MPBioTextArea').on('editable.afterSave', function (e, editor, data) {
+			 
+			  $('#ReturnValue').html('<i class="fa fa-check-circle"></i> The data have been saved!');
+										 $('#ReturnValue').css("color","#0FB323");
+										 $('#ReturnValue').fadeIn('slow');
+										
 
+										
+									  setTimeout(function () {
+		                                          $('#ReturnValue').fadeOut('slow');
+                                          } , 2000); //set timeout function end
+										  
+									 setTimeout(function () {
+		                                         location.reload();
+                                          } , 1000); //set timeout function end
+
+                  });	
+
+      })  
+	  
 		
 	       	/*-----------------------
 		 Bio editor
@@ -144,7 +184,7 @@ $(document).ready(function(){
 		        inlineMode: false,
 				   buttons: [
 				'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'align', 'outdent', 'indent', 'insertOrderedList',
-				'insertUnorderedList','createLink', 'save'
+				'insertUnorderedList', 'createLink', 'save'
 				 ],
 				 saveParams: {action: 'edit_speakers', edit_type:edit_type, sId:sId},
 				 saveURL: "../controllers/ajax.php",
@@ -324,7 +364,53 @@ $(document).ready(function(){
 
   })
   
-	   
+	 
+	 
+	/*-----------------------
+		Main page checkbox
+	------------------------	*/
+
+		//Hide the element and show the input field associated with the element + focus the input box
+    $('#MainCheckbox').bind('click', function () {
+		
+		//get the id of the activated element
+		var sId = $(this).data('speaker');
+		var check = $(this).prop('checked');
+		var val = 0;
+		 
+		 if (check == true) {
+			 val = 1;
+		 }
+		
+		
+
+
+	  $.ajax({
+                url: '../controllers/ajax.php',
+                type: 'POST',
+                data: {action:"speakers_mainpage", sId:sId, val:val},
+                success: function(data) {
+					
+						$('#ReturnValue').html('<i class="fa fa-check-circle"></i> The data have been saved!');
+							 $('#ReturnValue').css("color","#0FB323");
+							 $('#ReturnValue').fadeIn('slow');
+							
+
+							
+						  setTimeout(function () {
+									  $('#ReturnValue').fadeOut('slow');
+							  } , 2000); //set timeout function end
+							  
+				  
+				
+					
+                   }
+            });
+			  
+          
+
+
+  })	   
 	 
 
 	   

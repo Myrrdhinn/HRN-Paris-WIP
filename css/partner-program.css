@@ -1,0 +1,329 @@
+@charset "utf-8";
+/* These CSS rules will affect the tickets page page.  */
+
+
+/* Header */
+header {
+	margin-top:4vw;
+	text-align:center;
+}
+header * {
+	box-sizing: border-box;	
+}
+#IntroImageBackground {
+	width: 100%;
+	height: 34.8958333vw;
+	background: url(../img/partner-program/intro-bg.jpg) no-repeat center;
+	background-size: cover;
+}
+#IntroImageBackground h1 {
+	font-size: 4.6875vw;
+	margin-top: 0;
+	margin-bottom: 3.7vw;
+	color: #fff;
+	padding-top: 5.9895833vw;
+}
+#IntroImageBackground h2 {
+	font-size: 1.40625vw;
+	line-height: 1.71875vw;
+	color: #fff;
+	font-weight: 400;
+	width: 100%;
+	max-width: 71.875vw;
+	margin: 0 auto;
+}
+#IntroImageBackground p {
+	font-size: 1.40625vw;
+	line-height: 1.71875vw;
+	width: 100%;
+	max-width: 58.854166vw;
+	margin: 0 auto;	
+	padding-top: 4.16666vw;
+	color: #fff;
+}
+#IntroContact {
+	width: 100%;
+	background-color: #106ab5;
+	padding: 3.515625vw 0;
+}
+#IntroContact h2 {
+	color: #fff;
+	width: 100%;
+	max-width: 49.5vw;
+	margin: 0 auto;
+	font-size: 1.1065vw;
+	line-height: 1.5625vw;
+	text-transform: uppercase;
+}
+#IntroContact h2 a {
+	color: #fff;
+}
+/* END Header */
+
+@media (max-width: 1280px) {
+	#IntroImageBackground {
+		width: 100%;
+		height: auto;
+		background: url(../img/partner-program/intro-bg.jpg) no-repeat center;
+		background-size: cover;
+	}
+	#IntroImageBackground h1 {
+		font-size: 60px;
+		margin-bottom: 51px;
+		padding-top: 76px;
+	}
+	#IntroImageBackground h2 {
+		font-size: 18px;
+		line-height: 22px;
+		max-width: 920px;
+	}
+	#IntroImageBackground p {
+		font-size: 18px;
+		line-height: 22px;
+		max-width: 753px;
+		padding-top: 53px;
+		padding-bottom: 100px;
+	}
+}
+@media (max-width: 1000px) {
+	header {
+		margin-top: 15.5vw;
+	}
+	#IntroImageBackground {
+		padding: 0 40px;
+	}
+	#IntroContact {
+		padding: 5.46875vw 0;
+	}
+	#IntroContact h2 {
+		max-width: 70.3125vw;
+		font-size: 2.1875vw;
+		line-height: 3.125vw;
+	}	
+}
+@media (max-width: 640px) {
+	#IntroImageBackground {
+		padding: 0 3.125vw;
+	}
+	#IntroImageBackground h1 {
+		font-size: 11.25vw;
+		padding-top: 10.9375vw;
+		margin-bottom: 9.375vw;
+	}
+	#IntroImageBackground h2 {
+		font-size: 4.375vw;
+		line-height: 6.25vw;
+	}
+	#IntroImageBackground p {
+		font-size: 4.375vw;
+		line-height: 6.25vw;
+		padding-top: 11.25vw;
+		padding-bottom: 15.625vw;
+	}
+	#IntroContact {
+		padding: 7.8125vw 0;
+	}
+	#IntroContact h2 {
+		max-width: 89.0625vw;
+		font-size: 4.375vw;
+		line-height: 6.25vw;
+	}		
+}
+
+/* Partner Program */
+.PartnerContainer * {
+	box-sizing: border-box;	
+}
+.PartnerContainer {
+	margin-top: 0.234375vw;
+}
+.PartnerMobile {
+	display: none;	
+}
+.PartnerDescription {
+	width: 100%;
+	font-size: 0;
+}
+.PartnerTextContainer {
+	display: inline-block;
+	/*width: 100%;
+	max-width: 32.8125vw;*/
+	
+	width: 35%;
+	
+	height:100%;
+	padding-top: 3.90625vw;
+	padding-left: 4.6875vw;	
+	vertical-align: top;
+}
+.PartnerTextContainer h2 {
+	margin: 0;	
+	margin-bottom: 3.125vw;
+	font-size: 2.03125vw;
+}
+.PartnerTextContainer p {
+	margin: 0;	
+	width: 100%;
+	max-width: 30.859375vw;
+	margin-bottom: 1.171875vw;
+	font-size: 1.015625vw;
+}
+.GreyText {
+	color: #454546;
+}
+.GreyBackground {
+	background-color: #1c2126;
+}
+.PartnerImageContainer {
+	display: inline-block;
+	width: 65%;
+	text-align: right;
+}
+.PartnerImageContainer img {
+	width: 55.20833vw;
+	height: 40.3645833vw;
+}
+.ClearFix {
+	clear: both;	
+}
+@media (max-width: 1000px) {
+	.PartnerContainer {
+		margin-top: 0.46875vw;
+	}
+	.PartnerMobile {
+		display: block;
+		width: 100%;
+		height: 30vw;
+		margin-bottom: 0.46875vw;
+	}
+	#SaintgermainMobile {
+		background: url(../img/partner-program/saintgermain-tablet.jpg) center center no-repeat;
+		background-size: cover;	
+	}
+	#WineMobile {
+		background: url(../img/partner-program/wine-tablet.jpg) center center no-repeat;
+		background-size: cover;	
+	}
+	#VersaillesMobile {
+		background: url(../img/partner-program/versailles-tablet.jpg) center center no-repeat;
+		background-size: cover;	
+	}	
+	#LouvreMobile {
+		background: url(../img/partner-program/louvre-tablet.jpg) center center no-repeat;
+		background-size: cover;	
+	}	
+	#MontmartreMobile {
+		background: url(../img/partner-program/montmartre-tablet.jpg) center center no-repeat;
+		background-size: cover;	
+	}	
+	.PartnerMobile h2 {
+		text-align: center;
+		font-size: 2.8125vw;
+		margin: 0;
+		padding-top: 16.40625vw;
+	}
+	#WineMobile h2 { /* This headline is only in 1 row, it needs unique aligment */
+		padding-top: 20.625vw;	
+	}
+	
+	.PartnerDescription {
+		position: static;
+		background-color: #1c2126;
+	}
+	.PartnerTextContainer {
+		display: block;
+		width: 100%;
+		height:auto;
+		padding-top: 4.6875vw;
+		padding-bottom: 5.46875vw;
+		padding-left: 0;	
+		vertical-align: none;
+	}
+	.PartnerTextContainer h2 {
+		display: none;
+	}
+	.PartnerTextContainer p {
+		margin: 0 auto;	
+		margin-bottom: 3.90625vw;
+		max-width: 76.5625vw;
+		font-size: 2.1875vw;
+		line-height: 2.96875vw;
+		text-align: center;
+		color: #fff;
+	}
+	.PartnerTextContainer p strong {
+		font-weight: 400;
+	}	
+	.GreyText {
+		color: #fff;
+	}
+	.GreyBackground {
+		background-color: #1c2126;
+	}
+	.PartnerImageContainer {
+		display: none;
+	}
+	.ClearFix {
+		display: none;	
+	}
+}
+@media (max-width: 640px) {
+	.PartnerContainer {
+		margin-top: 0.9375vw;
+	}
+	.PartnerMobile {
+		width: 100%;
+		height: 72.8125vw;
+		margin-bottom: 0.9375vw;
+	}
+	#SaintgermainMobile {
+		background: url(../img/partner-program/saintgermain-mobile.jpg) center center no-repeat;
+		background-size: cover;	
+	}
+	#WineMobile {
+		background: url(../img/partner-program/wine-mobile.jpg) center center no-repeat;
+		background-size: cover;	
+	}
+	#VersaillesMobile {
+		background: url(../img/partner-program/versailles-mobile.jpg) center center no-repeat;
+		background-size: cover;	
+	}	
+	#LouvreMobile {
+		background: url(../img/partner-program/louvre-mobile.jpg) center center no-repeat;
+		background-size: cover;	
+	}	
+	#MontmartreMobile {
+		background: url(../img/partner-program/montmartre-mobile.jpg) center center no-repeat;
+		background-size: cover;	
+	}	
+	.PartnerMobile h2 {
+		font-size: 5.625vw;
+		padding-top: 50vw;
+		width: 100%;
+		max-width: 93.75vw;
+		margin: 0 auto;
+	}
+	#WineMobile h2 { /* This headline is only in 1 row, it needs unique aligment */
+		padding-top: 56.875vw;	
+	}
+	#SaintgermainMobile h2 { /* This headline is only in 1 row, it needs unique aligment */
+		padding-top: 45.3125vw;
+		max-width: 81.25vw;	
+	}
+	.PartnerTextContainer {
+		padding-top: 7.8125vw;
+		padding-bottom: 3.125vw;
+		padding-left: 3.125vw;
+		padding-right: 3.125vw;
+		box-sizing: border-box;
+	}
+	.PartnerTextContainer * {
+		box-sizing: border-box;
+	}	
+	.PartnerTextContainer p {
+		margin-bottom: 7.8125vw;
+		max-width: 100%;
+		font-size: 4.375vw;
+		line-height: 5.9375vw;
+	}
+}

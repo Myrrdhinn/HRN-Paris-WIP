@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* CSS Document of the HR Tech London 2015 Sponsor Appendencies page */
+/* CSS Document of the HR Tech London 2015 Sponsor Appendices page */
 
 body {
 	/*background-color: #fff;	*/
@@ -27,6 +27,12 @@ table {
 	background: none repeat scroll 0 0 #f3d3d6;	
 	color: #353535;
 }
+
+/* Menu */
+#DesktopMenu {
+	font-family: 'Raleway', sans-serif;
+}
+/* END Menu */
 
 /* Header */
 #ImageHeader {

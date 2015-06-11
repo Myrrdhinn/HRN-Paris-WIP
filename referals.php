@@ -10,6 +10,16 @@
 <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 <title>HR Tech World Congress | Referals</title>
 
+<!-- Open Graph data -->
+<meta property="og:site_name" content="HR Tech World Congress"/>
+<meta property="og:title" content="HR Tech World Congress | Referals"/>
+<meta property="og:description" content="The fastest growing HR event in the world! Paris October 24 - 25"/>
+<meta property="og:url" content="http://hrtechcongress.com/referals">
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="http://hrtechcongress.com/img/preview-images/preview-image-1.jpg" />
+<meta property="og:image" content="http://hrtechcongress.com/img/preview-images/preview-image-2.jpg" />
+<meta property="og:image" content="http://hrtechcongress.com/img/preview-images/preview-image-3.jpg" />
+
 <!-- Favicon -->
 <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-touch-icon-60x60.png">

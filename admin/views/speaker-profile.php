@@ -56,8 +56,6 @@ $speakers = new speakers_main;
 <!-- Scroll to top JS -->
 <script src="../../js/gotopscroll.js"></script>
 
-<!-- Mainpage JS -->
-<script src="../../js/mainpage.js"></script>
 
 <?php 
 if(isset($_SESSION['admin'])){
@@ -163,12 +161,12 @@ include_once('views/menu.php');
 <?php 
 $link = explode("/",$_SERVER['REQUEST_URI']);
 
- if(isset($link[3])){
-  $content = $speakers->speaker($link[3]); 
+ if(isset($link[4])){
+  $content = $speakers->speaker($link[4]); 
       if ($content != FALSE){
 		  echo $content;	
 	  } else {
-		  if ($link[3] == "index"){
+		  if ($link[4] == "index"){
 			  //if the back to index button pressed
 			 $content = '';
 			 $content .= '

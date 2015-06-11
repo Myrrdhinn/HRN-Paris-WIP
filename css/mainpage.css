@@ -4,712 +4,583 @@
 
 body {
 	overflow-x: hidden;
+	background-color: #fff;
 }
-/* Menu.css overrides: to animate the menu on the main page only */
-#SecondStateMainMenuContainer {
-	margin-top: -4.166666vw;
-}
-#SecondStateMainMenuContainer .MainMenuItem {
-	top: -2vw;
-}
-/* END Menu.css overrides */
 
-/* Featured Content Section */
-#FeaturedContentSection {
-	width: 100%;
-	margin: 0 auto;
-	/*padding-top: 4.1666666vw;*/
-	padding-top: 0;
-	transition: all 0.5s;
-	background: #000;
-	height: 39.58vw;
-	vertical-align: top;
+/*Social Widget */
+#SocialWidgetWrapper {
+	position:fixed;
+	top:20vw;
+	float:left;
+	z-index:9000;
+	}
+#SocialWidgetWrapper div {
+	height:3vw;
+	width:3vw;
+	min-height:45px;
+	min-width:45px;
+	color:#fff;
+	font-size:xx-large;
+	transition: all 0.2s;
+	text-align:right;
+	padding:0.5vw 1vw 0 0;
+	}
+#SocialWidgetWrapper div:hover {	
+width:4vw;
+min-width:55px;
 }
-#FeaturedParisMobileBG {
-	display: none;
-}
-#FeaturedRichardBG {
-	width: 49%;
-	height: 38.5vw;
-	display: inline-block;
-	background: url(../img/mainpage/featuredcontent/RichardB.jpg) no-repeat;
-	background-size: 100%;
-	transition: all 0.5s;
-	margin: 0.5vw 0.5vw 0.5vw 0vw;
-	overflow: hidden;
-}
-#FeaturedRichardBG:hover {
-	background-size: 105%;
-	transition: all 0.5s;
-}
-#FeaturedRichardText {
-	width: 100%;
-	height: 100%;
-	background: url(../img/mainpage/featuredcontent/RichardB-text.png) no-repeat;
+
+#FacebookShare {
+	background:#3b5998;
+	}
+
+#TwitterShare{
+	background:#4099ff;
+	}
+#LinkedInShare {
+	background:#007bb6;
+	
+	}	
+/*END Social Widget */
+
+/* Video Header */
+#VideoHeader {
+	max-width: 100vw;
+	max-height: 100vh;
 	background-size: contain;
-}
-#FeaturedLeftContainer {
-	display: inline-block;
-	width: 49.25%;
-	height: 38.5vw;
-	margin: 0.5vw 0.25vw 0.5vw 0.5vw;
-	vertical-align: top;
-}
-#FeaturedParisBG {
-	float: left;
-	width: 49.2%;
-	height: 100%;
-	background: url(../img/mainpage/featuredcontent/paris.jpg) no-repeat;
-	background-size: 100%;
-	transition: all 0.5s;
-	overflow: hidden;
-	text-align: center;
-	position: relative;
-	/*margin: 0 0.25vw 0 0;*/
-	margin: 0;
-}
-#FeaturedParisBG:hover {
-	background-size: 105%;
-	transition: all 0.5s;
-}
-#FeaturedParisBG img {
-	margin-top: 2.5vw;
-	width: 15.07vw;
-}
-#FeaturedParisText {
-	position: absolute;
-	bottom: 3vw;
-	text-align: center;
+	background-position: center center;	
+	background-repeat: no-repeat;
+	position: relative; 
 	color: #fff;
+}
+#VideoHeader video {
 	width: 100%;
+	max-width: 100vw;
+	max-height: auto;
 }
-#FeaturedParisText .BlueButton {
-	font-size: 1.25vw;
-	width: 11.97916vw;
-	max-width: 15.625vw;
-	height: 3.645vw;
-	line-height: 1.4vw;
-	text-align: center;
-	font-weight: bold;
-	margin: 0 auto;
-	padding: 0;
+#HeaderContainer {
+	position: absolute; 
+	bottom: 0; 
+	left: 0; 
+	width: 100vw; 
+	height: 21.5vw; 
+	text-align: center; 
+	/*padding-top: 20.6979166vw;*/
 }
-#FeaturedParisText h2 {
-	text-transform: uppercase;
-	font-size: 3.125vw;
-	letter-spacing: 0.3vw;
+#HeaderContainer h1 {
+	font-size: 3.125vw; 
 	margin-bottom: 0;
-	line-height: 0;
+	position: relative;	
+	/*padding-top: 8.5vw;*/
+	bottom: 0vw;
 }
-#FeaturedParisText p {
-	text-transform: uppercase;
-	font-size: 1.45vw;
-	margin-bottom: 0.5vw;
+#HeaderContainer h2 {
+	font-size: 1.354166vw; 
+	font-weight: 600;
+	margin-top:1.35vw;
 }
-#FeaturediRecruitBG {
-	width: 24.25vw;
-	height: 19vw;
-	float: right;
-	background-size: 100%;
-	transition: all 0.5s;
-	margin: 0 0 0 0;
-}
-#FeaturediRecruitBG:hover {
-	background-size: 105%;
-	transition: all 0.5s;
-}
-#FeaturediRecruitText {
-	width: 100%;
-	height: 100%;
-	background-size: contain;
-}
-#FeaturediRecruitText a {
-	position: absolute;
+#VideoHeaderDownloadBrochureButton {
+	font-size: 0.9375vw; 
+	max-width: 12.5vw; 
+	height: 2.604166vw; 
+	padding:0;
+	margin-top: 0.5vw;
+	margin-bottom: 2.64583333vw;	
 	color: #fff;
-	font-weight: bold;
-	font-size: 1.25vw;
-	margin: 15% 0% 0% 3%;
-}
-#FeaturediRecruitText a span {
-	font-weight: bold;
-	position: relative;
-	top: -2px;
-	margin-left: 0px;
+	background-color: #106ab5;
+	border: 3px solid #106ab5;
 	transition: all 0.3s;
 }
-#FeaturediRecruitText a:hover #Arrow {
-	margin-left: 15px;
-}
-#FeaturedCoderDojoBG {
-	width: 24.25vw;
-	height: 19vw;
-	float: right;
-	background-size: 100%;
-	transition: all 0.5s;
-	margin: 0.5vw 0 0 0;
-}
-#FeaturedCoderDojoBG:hover {
-	background-size: 105%;
-	transition: all 0.5s;
-}
-#FeaturedCoderDojoText {
-	width: 100%;
-	height: 100%;
-	background-size: contain;
-}
-.FeaturedDojoClass {
-	background: url(../img/mainpage/featuredcontent/coderdojo.jpg);
-}
-.FeaturedDojoTextClass {
-	background: url(../img/mainpage/featuredcontent/coderdojotext.png);
-}
-.FeaturedIrecruitClass {
-	background: url(../img/mainpage/featuredcontent/irecruit.jpg);
-}
-.FeaturedIrecruitTextClass {
-	background: url(../img/mainpage/featuredcontent/irecruit-text.png) no-repeat;
-}
-.FeaturedShingyClass {
-	background: url(../img/mainpage/featuredcontent/shingy.jpg);
-}
-.FeaturedShingyTextClass {
-	background: url(../img/mainpage/featuredcontent/shingtext.png) no-repeat;
-}
-.FeaturedDistruptClass {
-	background: url(../img/mainpage/featuredcontent/disrupthr.jpg);
-}
-.FeaturedDistruptTextClass {
-	background: url(../img/mainpage/featuredcontent/disrupthr.png) no-repeat;
+#VideoHeaderDownloadBrochureButton:hover {
+	background-color: rgba(255,255,255,0);
 }
 
-/* Temporary CSS */
-
+#SponsorLogos {
+	display: block;
+	margin: 0 auto;
+	width: 73.489583333vw;
+	height: 5.15625vw;
+}
 @media (max-width: 1000px) {
-#FeaturedContentSection {
-	margin-top: 11.71875vw;
-	padding-top: 15.5vw;
+	#VideoHeader {
+		width: 100%;
+		margin-top: 15.4vw;
+		height: 43.359375vw;
+	}
+	#VideoHeader video {
+		display: none;	
+	}
+	#HeaderContainer {
+		position: static;
+		background-image: url(../img/mainpage/videoheader/video-header-tablet-bg.jpg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		height: 43.359375vw;	
+		padding-top: 6vw;
+	}
+	#HeaderContainer h1 {
+		font-size: 2.734375vw;	
+	}
+	#HeaderContainer h2 {
+		font-size: 1.4322916vw;
+		margin-top: 1.5vw;
+		margin-bottom: 2.5vw;
+	}
+	#VideoHeaderDownloadBrochureButton {
+		font-size: 1.38020833vw; 
+		max-width: 18.22916vw; 
+		height: 3.90625vw; 
+		margin-bottom: 12vw;
+	}	
+	#SponsorLogos {
+		margin: 0 auto;
+		width: 85.8072916vw;
+		height: 5.9895833vw;
+	}
 }
-}
-
-@media (max-width: 810px) {
-#FeaturedRichardBG {
-	width: 48.75%;
-	height: 38.5vw;
-	display: inline-block;
-	background: url(../img/mainpage/featuredcontent/RichardB.jpg) no-repeat;
-	background-size: 100%;
-	transition: all 0.5s;
-	margin: 0.5vw 0.5vw 0.5vw 0vw;
-	overflow: hidden;
-}
-}
-
-/* Tablet and Mobile Only */
-
 @media (max-width: 640px) {
-#FeaturedContentSection {
-	width: 100%;
-	margin: 0 auto;
-	margin-top: 12.5vw;
-	background: #000;
-	height: auto;
-	vertical-align: top;
-	padding-bottom: 2.5vw;
-	padding-top: 2.5vw;
+	#VideoHeader {
+		width: 100%;
+		height: 132.1875vw;
+	}
+	#VideoHeader video {
+		display: none;	
+	}
+	#HeaderContainer {
+		background-image: url(../img/mainpage/videoheader/video-header-mobile-bg.jpg);
+		background-size: contain;
+		height: 132.1875vw;	
+		padding-top: 20vw;
+	}
+	#HeaderContainer h1 {
+		font-size: 6.5625vw;
+	}
+	#HeaderContainer h2 {
+		font-size: 4.6875vw;	
+		margin-top: 5.125vw;
+		margin-bottom: 5vw;	
+	}
+	#VideoHeaderDownloadBrochureButton {
+		font-size: 4.0625vw; 
+		max-width: 54.6875vw; 
+		height: 9.375vw; 
+		margin-bottom: 28.125vw;
+	}
+	#SponsorLogos {
+		display: none;
+	}		
 }
-#FeaturedLeftContainer {
-	display: none;
-}
-#FeaturedParisMobileBG {
-	display: block;
-	width: 92vw;
-	height: 100%;
-	background: url(../img/mainpage/featuredcontent/paris.jpg) no-repeat;
-	background-size: 100%;
-	overflow: hidden;
-	text-align: center;
-	margin: 5vw 0vw 2vw 4.375vw;
-}
-#FeaturedParisMobileBG img {
-	margin-top: 9.375vw;
-	width: 71.875vw;
-	height: auto;
-	margin-bottom: 25vw;
-}
-#FeaturedParisMobileText {
-	position: static;
-	bottom: 3vw;
-	text-align: center;
-	color: #fff;
-	width: 100%;
-	height: auto;
-}
-#FeaturedParisMobileText .BlueButton {
-	font-size: 4vw;
-	width: 46.875vw;
-	height: 12.5vw;
-	line-height: auto;
-	text-align: center;
-	font-weight: bold;
-	margin: 0 auto;
-	margin-bottom: 9.375vw;
-	padding-bottom: 0;/*z-index: 10;*/
-}
-#FeaturedParisMobileText h2 {
-	text-transform: uppercase;
-	font-size: 15vw;
-	letter-spacing: 1.71875vw;
-	margin-bottom: 0;
-	line-height: 0;
-}
-#FeaturedParisMobileText p {
-	text-transform: uppercase;
-	font-size: 6.875vw;
-	margin-top: 8vw;
-	margin-bottom: 3vw;
-}
-#FeaturedRichardBG {
-	width: 92vw;
-	height: 116.25vw;
-	display: block;
-	background: url(../img/mainpage/featuredcontent/RichardB-mobile-bg.jpg) no-repeat;
-	background-size: 100%;
-	margin: 5vw 0vw 0vw 4.375vw;
-	overflow: hidden;
-}
-#FeaturedRichardText {
-	display: none;
-}
-#FeaturedRichardBG:hover {
-	background-size: 100%;
-	transition: none;
-}
-#atedrop1-drop {
-	margin-top: -140px;
-}
-}
-/* END Featured Content Section */	
-
-/*Video section*/
-
-#HRNVideoPause {
-	position: absolute;
-	/*top: 46vw;*/
-  /*left: 50%;*/
-	z-index: 500;
-	cursor: pointer;
-	width: 100%;
-	margin-top: 55vw;
-	/* padding-bottom: 10vw;*/	
-	padding-left: 50%;
-}
-#HRNVideoClose {
-	position: absolute;
-	z-index: 750;
-	margin-left: 90%;
-	margin-top: 3vw;
-	padding: 2vw;
-	cursor: default;
-	color: white;
-	font-size: 50px;
-}
-
-@media (max-width: 1000px) {
-#HRNVideoClose {
-	margin-left: 85%;
-	margin-top: 14vw;
-}
-}
-
-@media (max-width: 600px) {
-#HRNVideoClose {
-	margin-left: 85%;
-	margin-top: 12vw;
-}
-}
-#HRNVideo, #HRNVideoTwo, #HRNVideoThree {
-	width: 100%;
-}
-
-.SlideContentContainer {
-	position:absolute;	
-	width:100%;
-	background-color:rgba(10,0,0,0.60);
-	padding-bottom: 20vw;
-}
-
-/*END Video section*/
-
+/* END Video Header */
 
 /* About HR Tech World / iRecruit */
-#AboutHRTechiRecruit {
+#AboutHRTechiRecruit { 
 	width: 100%;
-	margin: 0 auto;
+	background-color: #000;
+	background-size: cover;
+	margin-top: 0vw;
+	padding: 0;
 	position: relative;
 	color: #fff;
 	transition: all 0.5s;
-	min-height: 43vw;
+	height: 30.72916vw;
 }
-#HRNCloudLogo, #HRTechSlideContainer, #iRecruitSlideContainer, #iRecruitLogo, #disruptHRSlideContainer, #disruptHRLogo {
-	display: inline-block;
-}
-#HRNCloudLogo {
-	margin-left: 10vw;
-	width: 27vw;
-	margin-top: 5vw;
-}
-#HRTechSlideContainer {
-	margin-left: 4vw;
-	margin-top: 10vw;
-}
-#HRTechSlideContainer p {
+#HRTechSlideContainer {  /* HR Tech SLIDE (1st) */
+	width: 100%;
+	max-width: 46.875vw;
 	margin: 0 auto;
-	text-align: justify;
-	max-width: 51.041vw;
-	font-size: 1.2vw;
-	line-height: 2vw;
-}
-#iRecruitSlideContainer {
-	margin: 10vw 0 10vw 5vw;
-}
-#iRecruitLogo {
-	margin-left: 18vw;
-	margin-bottom: -5vw;
-}
-#iRecruitSlideContainer p {
-	font-size: 1vw;
-	line-height: 1.7vw;
-	position: absolute;
-	max-width: 45.041vw;
-}
-#disruptHRSlideContainer {
-	margin-left: 4vw;
-	margin-top: 2vw;
-}
-#disruptHRLogo {
-	margin-left: 5vw;
-	margin-bottom: 5vw;
-}
-#disruptHRSlideContainer p {
-	margin: 0 auto;
-	text-align: justify;
-	max-width: 43.041vw;
-	font-size: 0.9vw;
-	line-height: 2vw;
-}
-
-
-#SliderArrowLeft, #SliderArrowRight {
-  display:block;
-  position: absolute;
-  top: 26vw;
-  cursor:pointer;	
-  z-index:600;
-}
-
-#SliderArrowLeft {
-  left: 1vw;
-
-}
-
-#SliderArrowRight {
-
-  left: 97.5%;
-
-}
-
-@media (max-width: 1700px) {
-#HRTechSlideContainer {
-	margin-left: 2vw;
-}
-}
-
-@media (max-width: 1500px) {
-#iRecruitSlideContainer p {
-	max-width: 36.041vw;
-}
-
-#disruptHRLogo {
- max-width: 30vw;
-}
- 
-
+	padding-top: 6.510416vw;
+	padding-bottom: 2.604166vw;
+	background-image: none;
+	transition: all 0.1s linear;
 }
 #HRTechSlideContainer h1 {
-	font-weight: 500;
+	font-size: 1.822916vw;
+	margin-bottom: 2.604166vw;
+	margin-top: 0;
+	font-weight: 700;	
+}
+#HRTechSlideContainer p {
+	font-size: 0.833333vw;
+	line-height: 1.4583333vw;
+	margin-bottom: 2.864583vw;
+}
+.ShownTextOnMobile {
+	display: none;	
+}
+#iRecruitSlideContainer { /*iRecruit SLIDE (2nd) */
+	margin: 0vw 0 10vw 8.33333vw;
+	padding-top: 2.864583vw;
+	width: 45.3125vw;
+}
+#iRecruitLogo {
+	width: 13.75vw;
+	height: 5.15625vw;	
+}
+.VenueAndDate {
+	font-size: 1.25vw;
+	line-height: 1.666666vw;
+	display: inline-block;
+	margin-left: 1.822916vw;
+	margin-bottom: 0.2604166vw;
+	vertical-align: bottom;
+}
+#iRecruitSlideContainer h2 {
+	font-size: 1.979166vw;
+	font-weight: 700;
+	margin-top: 1.66666vw;	
+}
+#iRecruitSlideContainer p {
+	line-height: 1.458333vw;	
+	margin-bottom: 2.604166vw;
+	font-size: 0.833333vw;
+}
+#disruptHRSlideContainer { /*disruptHR SLIDE (3rd) */
+	margin-left: 8.33333vw;
+	padding-top: 1.8229166vw;
+	width: 39.0625vw;
+}
+#disruptHRLogo {
+	width: 17.4479166vw;
+	height: 5.572916vw;
+}
+#disruptHRSlideContainer .VenueAndDate {
+	margin-left: 0.78125vw;
+}
+#disruptHRSlideContainer h2 {
+	font-size: 1.66666vw;
+	font-weight: 700;
+	margin-top: 1.041666vw;
+	margin-bottom: 1.041666vw;	
+}
+#disruptHRSlideContainer p {
+	margin-bottom: 1.822916vw;
+	font-size: 0.833333vw;
+	line-height: 1.25vw;	
 }
 #AboutHRTechFadingContentOne {
-	/*padding: 0 1.041vw;*/
+	padding: 0 1.041vw;
 	display: block;
 }
 #AboutHRTechFadingContentTwo {
+	padding: 0 1.041vw;
 	display: none;
 }
 #AboutHRTechFadingContentThree {
+	padding: 0 1.041vw;
 	display: none;
 }
-#AboutHRTechiRecruit h2 {
-	font-size: 3.25vw;
-	text-align: justify;
-	margin-bottom: 0;
+.AboutButtonContainer { /* CONTROLS */
+	text-align: left;	
 }
-#AboutHRTechiRecruit h1, #AboutHRTechiRecruit h4 {
-	font-size: 1.47083vw;
-	text-align: justify;
-}
-#iRecruitSlideContainer h4 {
-	margin-bottom: 1.5vw;
-}
-#AboutButtonContainer {
-	margin: 0 auto;
-	margin-top: -20.2vw;
-	width: 100%;
-	position:absolute;
-	text-align: center;
-}
-#AboutButtonContainerTwo {
-	display: none;
-	margin: 0 auto;
-	margin-top: 5.2vw;
-	width: 40.88541vw;
-	text-align: center;
-}
-#AboutButtonContainer button, #AboutLearnMoreButtonContainer button, #AboutButtonContainerTwo button {
-	font-size: 1vw;
+.AboutButtonContainer button {
+	font-size: 0.885416vw;
 	font-weight: bold;
-	border: 3px solid #fff;
 	display: inline-block;
-	margin: 0 0.625vw;
-	width: 46vw;
-	max-width: 15.625vw;
-	height: 3.64583vw;
-}
-#TwoForOnebutton, #DisruptHRbutton {
-	color: #0a4271;
-	background-color: #fff;
+	margin-right: 0.78125vw;
+	padding: 0;
+	color: #fff;
+	width: 100%;
+	max-width: 12.65625vw;
+	height: 2.864583vw;
 	transition: all 0.3s;
 }
-#TwoForOnebutton:hover, #DisruptHRbutton:hover {
+.SlideDownloadBrochureButton {
+	background-color: #fd494e;
+	border: 3px solid #fd494e;
+}
+.SlideDownloadBrochureButton:hover {
+	background-color: transparent;
+	border: 3px solid #fff;
+}
+.SlidePlayVideoButton {
 	color: #fff;
 	background: transparent;
+	border: 3px solid #fff;
 }
-#VideoButton {
-	color: #fff;
-	background: transparent;
-}
-#VideoButton #Arrow {
+.SlidePlayVideoButton .Arrow {
 	margin-left: 0.5208vw;
 	transition: all 0.3s;
 }
-#VideoButton:hover #Arrow {
-	margin-left: 30px;
+.SlidePlayVideoButton:hover .Arrow {
+	margin-left: 1.5625vw;
 }
 #FadingControlls {
-	width: 100%;
-	margin: -12vw auto 0 auto;
+	width: 10.41666vw;
 	text-align: center;
-	position:absolute;
+	position: absolute;
+	bottom: 2.864583vw;
+	left: 46.875vw;
 }
 #FadingControlls div {
 	border: 3px solid #fff;
-	display:inline-block;
+	float: left;
 	margin: 0 1vw;
-	width: 1.5625vw;
-	height: 0.625vw;
+	width: 1.25vw;
+	height: 0.46875vw;
+	box-sizing: border-box;
 }
 #FadingControlls div:hover, .ActiveFadingControll {
 	cursor: pointer;
 	background: #fff;
 }
-#AboutHRTechFadingContentThree {
-	text-align: center;
-}
-#AboutHRTechFadingContentThree h2 {
-	padding-top: 2vw;
-}
-#AboutHRTechFadingContentThree p {
-	padding-bottom: 3vw;
-}
-#AboutHRTechFadingContentThree h3 {
-	font-size: 1vw;
-}
-
-@media (max-width: 1000px) {
-#AboutHRTechFadingContentOne {
-	padding: 0 2.60416vw;
-	padding-top: 6.5104166vw;
-	display: block;
-}
 #SliderArrowLeft, #SliderArrowRight {
-	display:none;	
+	display:none;
+	position: absolute;
+	top: 14vw;
+	width: 1.1979166vw;
+	height: 2.1875vw;
+	cursor:pointer;	
 }
-#HRNCloudLogo {
-	margin: 0 auto;
-	width: 45vw;
-	display: block;
+#SliderArrowLeft {
+	left: 1vw;
 }
-#disruptHRLogo {
-  width: 65vw;
-  margin-top: 8vw;
-  max-width:65vw;
+#SliderArrowRight {
+	left: 97.5%;
 }
-#HRTechSlideContainer {
-	margin-top: 6vw;
+@media (max-width: 1000px) {
+	#AboutHRTechiRecruit { 
+		height: 58.59375vw;
+		background-color: #000;
+	}	
+	#HRTechSlideContainer {  /* HR Tech SLIDE (1st) */
+		max-width: 78.125vw;
+		margin: 0 auto;
+		padding-top: 18.229166vw;
+	}
+	#HRTechSlideContainer h1 {
+		font-size: 2.99479166vw;
+		margin-bottom: 3.25520833vw;	
+	}
+	#HRTechSlideContainer p {
+		font-size: 1.43229166vw;
+		line-height: 2.4739583vw;
+		margin-bottom: 4.55729166vw;
+	}	
+	#iRecruitSlideContainer { /*iRecruit SLIDE (2nd) */
+		margin: 0vw 0 10vw 10.41666vw;
+		padding-top: 9.114583vw;
+		width: 61.1979166vw;
+	}
+	#iRecruitLogo {
+		width: 22.7864583vw;
+		height: 8.59375vw;	
+	}
+	.VenueAndDate {
+		font-size: 2.083333vw;
+		line-height: 2.8645833vw;
+		margin-left: 3.2552083vw;
+		margin-bottom: 1.302083vw;
+	}
+	#iRecruitSlideContainer h2 {
+		font-size: 3.2552083vw;
+		font-weight: 700;
+		margin-top: 3.2552083vw;
+		margin-bottom: 1.302083vw;	
+	}
+	#iRecruitSlideContainer p {
+		line-height: 2.473958vw;	
+		margin-bottom: 2.604166vw;
+		font-size: 1.4322916vw;
+	}	
+	#disruptHRSlideContainer { /*disruptHR SLIDE (3rd) */
+		margin-left: 10.4166vw;
+		padding-top: 7.1614583vw;
+		width: 66.40625vw;
+	}
+	#disruptHRLogo {
+		width: 29.036458vw;
+		height: 9.375vw;
+	}
+	#disruptHRSlideContainer .VenueAndDate {
+		margin-left: 1.302083vw;
+	}
+	#disruptHRSlideContainer h2 {
+		font-size: 2.734375vw;
+		margin-top: 1.302083vw;
+		margin-bottom: 1.302083vw;	
+	}
+	#disruptHRSlideContainer p {
+		margin-bottom: 3.2552083vw;
+		font-size: 1.4322916vw;
+		line-height: 2.083333vw;	
+	}
+	#AboutHRTechFadingContentOne, #AboutHRTechFadingContentTwo, #AboutHRTechFadingContentThree {
+		padding: 0 1.041vw;
+	}
+	.AboutButtonContainer button { /* CONTROLS */
+		font-size: 1.5625vw;
+		margin-right: 1.3020833vw;
+		max-width: 21.484375vw;
+		height: 4.8177083vw;
+	}
+	.SlidePlayVideoButton .Arrow {
+		font-size: 1.953125vw;
+	}
+	.SlidePlayVideoButton:hover .Arrow {
+		margin-left: 2.604166vw;
+	}
+	#FadingControlls {
+		bottom: 4.5572916vw;
+		left: 42.96875vw;
+		width: 13.02083vw;
+	}
+	#FadingControlls div {
+		border: 2px solid #fff;
+		margin: 0 1vw;
+		width: 2.08333vw;
+		height: 0.78125vw;
+	}
+	#SliderArrowLeft, #SliderArrowRight {
+		top: 30vw;
+		width: 1.953125vw;
+		height: 3.645833vw;
+	}
+	#SliderArrowLeft {
+		left: 2vw;
+	}
+	#SliderArrowRight {
+		left: 95vw;
+	}
 }
-#iRecruitSlideContainer p {
-	position: inherit;
-}
-#iRecruitLogo {
-	margin: 0 auto;
-	display: block;
-	margin-bottom: -5vw;
-	width: 45vw;
-}
-#iRecruitSlideContainer {
-	margin: 10vw 0 1vw 5vw;
-}
-#AboutHRTechFadingContentTwo {
-	padding: 0 2.60416vw;
-	padding-top: 10.53125vw;
-	display: none;
-}
-
-#AboutHRTechFadingContentThree h3 {
-	font-size: 3vw;
-}
-#AboutHRTechiRecruit h2 {
-	font-size: 7.33594vw;
-	margin-bottom: -2.60416vw;
-}
-#AboutHRTechiRecruit h1, #AboutHRTechiRecruit h4 {
-	font-size: 3.125vw;
-	/*max-width: 69.661458vw;*/
-	margin: 0 auto;
-	margin-top: 6.114583vw;
-	margin-bottom: 6.114583vw;
-}
-#AboutHRTechiRecruit p {
-	max-width: 87.890625vw;
-	font-size: 2.60416vw;
-	line-height: 3.90625vw;
-}
-#AboutButtonContainer {
-	margin-top: 12.369792vw;
-	width: 100%;
-}
-#AboutButtonContainer button {
-	border: 3px solid #fff;
-	font-size: 3.125vw;
-	max-width: 48.17708vw;
-	height: 9.114583vw;
-	margin-left: 1.302083vw;
-	margin-right: 1.302083vw;
-}
-#FadingControlls {
-	width: 25vw;
-	padding-top: 8.4635416vw;
-	padding-bottom: 5.859375vw;
-	padding-left: 1.953125vw;
-	text-align: center;
-}
-#FadingControlls div {
-	border: 1px solid #fff;
-	float: left;
-	margin: 0 1.5625vw;
-	width: 3.90625vw;
-	height: 1.5625vw;
-}
-#AboutButtonContainerTwo button {
-	font-size: 2vw;
-	max-width: 20.625vw;
-	height: 4.64583vw;
-}
-}
-
 @media (max-width: 640px) {
-#AboutHRTechFadingContentOne {
-	padding: 6.25vw 0 0 0;
-	display: block;
-}
-#HRTechSlideContainer {
-	max-width: 88vw;
-}
-#HRNCloudLogo {
-	width: 60vw;
-}
-
-#disruptHRSlideContainer {
-	margin-left: 0;
-	margin-top: 2vw;
-}
-
-#AboutHRTechFadingContentTwo {
-	padding: 6.25vw 0 0 0;
-	display: none;
-}
-
-#AboutHRTechFadingContentThree h3 {
-	font-size: 5vw;
-}
-#AboutHRTechiRecruit h2 {
-	font-size: 7.5vw;
-	margin-bottom: -6.25vw;
-}
-#AboutHRTechiRecruit h1, #AboutHRTechiRecruit h4 {
-	font-size: 5.625vw;
-	line-height: 8.125vw;
-	/*max-width: 84.375vw;*/
-	margin-top: 10.25vw;
-	margin-bottom: 5.25vw;
-	font-family: 'Raleway', sans-serif;
-}
-#AboutHRTechiRecruit p {
-	max-width: 90.875vw;
-	font-size: 5vw;
-	line-height: 7.8125vw;
-}
-#AboutButtonContainer {
-	margin-top: 14.0625vw;
-	margin-bottom: 14.0625vw;
-	width: 100%;
-}
-#AboutButtonContainer button {
-	border: 0.9375vw solid #fff;
-	font-size: 6.25vw;
-	width: 94vw;
-	max-width: 100%;
-	height: 18.75vw;
-	display: block;
-	margin: 0 auto;
-	margin-bottom: 7.5vw;
-}
-#FadingControlls {
-	padding-bottom: 14.0625vw;
-	width: 70vw;
-	padding-top: 0;
-	text-align: center;
-	margin: 0 auto;
-}
-#FadingControlls div {
-	border: 0.625vw solid #fff;
-	float: left;
-	margin: 0 6vw;
-	width: 10vw;
-	height: 3.75vw;
-}
-#AboutButtonContainerTwo button {
-	font-size: 4vw;
-	margin: 0 0 8vw -1vw;
-	max-width: 46vw;
-	height: 13.64583vw;
-}
+	#AboutHRTechiRecruit { 
+		height: 150.625vw;
+		background-color: #000;
+	}
+	#HRTechSlideContainer {  /* HR Tech SLIDE (1st) */
+		max-width: 100%;
+		padding-top: 10.9375vw;
+	}
+	.SlideInnerContainer {
+		padding: 0 15vw;	
+	}
+	#HRTechSlideContainer h1 {
+		font-size: 5.625vw;
+		line-height: 7.8125vw;
+		margin-bottom: 6.25vw;
+	}
+	#HRTechSlideContainer p {		
+		font-size: 4.0625vw;
+		line-height: 7.5vw;
+		margin-bottom: 10.9375vw;
+	}
+	#iRecruitSlideContainer { /*iRecruit SLIDE (2nd) */
+		margin: 0vw 0 10vw 0px;
+		padding-top: 7vw;
+		width: 100%;
+	}
+	#iRecruitLogo {
+		width: 44.6875vw;
+		height: 16.875vw;	
+	}
+	.VenueAndDate {
+		font-size: 4.0625vw;
+		line-height: 6.25vw;
+		margin-left: 0;
+		margin-bottom: 0;
+		margin-top: 1.5vw;
+		display: block;
+	}
+	#iRecruitSlideContainer h2 {
+		font-size: 4.375vw;
+		font-weight: 700;
+		margin-top: 6.8125vw;
+		margin-bottom: 3.125vw;
+	}
+	#iRecruitSlideContainer p {
+		line-height: 5.9375vw;
+		margin-bottom: 9.375vw;
+		font-size: 4.0625vw;
+	}	
+	.HiddenTextOnMobile {
+		display: none;	
+	}
+	.ShownTextOnMobile {
+		display: inline;	
+	}
+	#disruptHRSlideContainer { /*disruptHR SLIDE (3rd) */
+		margin-left: 0px;
+		padding-top: 7.8125vw;
+		width: 100%;
+	}
+	#disruptHRLogo {
+		width: 59.0625vw;
+		height: 19.0625vw;
+	}
+	#disruptHRSlideContainer .VenueAndDate {
+		margin-left: 0;
+		margin-top: 0;
+	}
+	#disruptHRSlideContainer h2 {
+		font-size: 4.375vw;
+		margin-top: 10.0625vw;
+		margin-bottom: 5vw;	
+	}
+	#disruptHRSlideContainer p {
+		margin-bottom: 12.5vw;
+		font-size: 4.0625vw;
+		line-height: 6.25vw;	
+	}
+	#AboutHRTechFadingContentOne, #AboutHRTechFadingContentTwo, #AboutHRTechFadingContentThree {
+		padding: 0;
+	}
+	
+	
+	.AboutButtonContainer { /* CONTROLS */
+		box-sizing: border-box;
+		position: absolute;
+		bottom: 20vw;
+		left: 21.875vw;
+	}
+	.AboutButtonContainer button {
+		font-size: 4.0625vw;
+		margin-right: 0px;
+		margin-left: 0;
+		width: 56.25vw;
+		max-width: 56.25vw;
+		height: 13.125vw;
+		box-sizing: border-box;	
+		border: 2px solid #fff;
+	}
+	.AboutButtonContainer .SlideDownloadBrochureButton {
+		border: 2px solid #fd494e;
+		margin-bottom: 2.8125vw;
+	}
+	.AboutButtonContainer .SlideDownloadBrochureButton:hover {
+		border: 2px solid #fff;
+	}	
+	.AboutButtonContainer .SlidePlayVideoButton {
+		padding-bottom: 0.9375vw;
+	}
+	.SlidePlayVideoButton .Arrow {
+		font-size: 4.6875vw;
+	}
+	.SlidePlayVideoButton:hover .Arrow {
+		margin-left: 3.125vw;
+	}
+	#FadingControlls {
+		width: 31.25vw;
+		bottom: 11vw;
+		left: 36vw;
+	}
+	#FadingControlls div {
+		border: 2px solid #fff;
+		margin: 0 2.1875vw;
+		width: 5vw;
+		height: 1.875vw;
+	}
+	#SliderArrowLeft, #SliderArrowRight {
+		display: none;
+	}
 }
 /* END About HR Tech World / iRecruit */
+
 /*Speakers */
 #Speakers {
 	font-size: 0.5208vw;
 	color: #fff;
 	margin: 0 1% 1% 0;
+	background-color: #fff;
 }
 #Speakers h2 {
 	font-size: 5.20833vw;
@@ -721,12 +592,39 @@ body {
 	padding: 0;
 	text-align: center;
 }
+.SpeakerOverlay{
+	  display: block;
+  position: absolute;
+  margin-top: 17vw;
+  height: 7.2vw;
+  background-color: rgba(0, 0, 0, 0.62);
+  width: 24.2vw;
+}
+
+.SpeakerOverlay h1{
+  font-size: 2vw;
+  text-align: left;
+  padding-left: 1vw;
+  margin-bottom:0;
+  padding-bottom:0;
+}
+
+.SpeakerOverlay h3{
+  font-size: 1.3vw;
+  text-align: left;
+  padding-left: 1vw;
+  margin-top:0;
+  padding-top:0;
+  font-weight:200;
+}
+
 #SpeakersContainer ul {
 	list-style: none;
 	padding-left: 0;
 }
 #SpeakersContainer ul li {
-	float: left;
+	/*float: left;*/
+	display:inline-block;
 }
 .SpeakersImageContainer {
 	margin: 0.25vw;
@@ -766,11 +664,9 @@ body {
 	color: #FFF;
 }
 #CallForSpeakers {
-	/*font-size: 30px;*/
 	font-size: 1.5625vw;
 	font-weight: 400;
 	line-height: 300%;
-	/*margin-bottom: 10px;*/
 	margin-bottom: 0.520833vw;
 }
 #BecomeASpeakerButton {
@@ -791,6 +687,11 @@ body {
 	width: 24vw;
 	height: 24vw; /* match width for a 1:1 aspect ratio *//*margin: 0.25vw;*/
 }
+
+.SpeakerOverlay{
+  height: 7vw;
+  width: 23.93vw;
+}
 }
 
 @media (max-width: 1000px) {
@@ -807,6 +708,30 @@ body {
 	width: 47.60vw;
 	height: 49vw; /* match width for a 1:1 aspect ratio *//*margin: 0.5vw;*/
 }
+
+.SpeakerOverlay{
+  margin-top: 35vw;
+  height: 14vw;
+  width: 47.5vw;
+}
+
+.SpeakerOverlay h1{
+  font-size: 4vw;
+  text-align: left;
+  padding-left: 1vw;
+  margin-bottom:0;
+padding-bottom:0;
+}
+
+.SpeakerOverlay h3{
+  font-size: 2.6vw;
+  text-align: left;
+  padding-left: 1vw;
+  margin-top:0;
+  padding-top:0;
+  font-weight:100;
+}
+
 .SpeakersImageContainer {
 	margin: 0.5vw;
 }
@@ -830,9 +755,7 @@ body {
 	margin-left: 1vw
 }
 #CallForSpeakers {
-	/*font-size: 30px;*/
 	font-size: 3.90625vw;
-	/*margin-bottom: 10px;*/
 	margin-bottom: 1.2499992vw;
 }
 #BecomeASpeakerButton {
@@ -859,6 +782,28 @@ body {
 	height: 95vw; /* match width for a 1:1 aspect ratio */
 	margin: 0 2vw 2vw 2vw;
 }
+
+.SpeakerOverlay{
+  margin-top: 72vw;
+  height: 23vw;
+  width: 94vw;
+  margin-left: 2vw;
+}
+
+.SpeakerOverlay h1{
+  font-size: 8vw;
+  text-align: left;
+  padding: 0 0 0 3vw;
+  margin-bottom: 0;
+  margin-top: 3vw;
+}
+
+.SpeakerOverlay h3{
+  font-size: 4.8vw;
+  text-align: left;
+  padding-left: 3.6vw;
+}
+
 .SpeakerName {
 	font-size: 8.125vw;
 	margin: 6vw 0 0 4.8vw;
@@ -883,9 +828,7 @@ body {
 	overflow: hidden;
 }
 #CallForSpeakers {
-	/*font-size: 30px;*/
 	font-size: 6vw;
-	/*margin-bottom: 10px;*/
 	margin-bottom: 3vw;
 }
 #BecomeASpeakerButton {
@@ -900,7 +843,6 @@ body {
 
 /*Marketing Messages*/
 #MarketingMSG {
-	clear: both;
 	background-image: url(../img/mainpage/marketingmsg/marketing-bg.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -935,1138 +877,280 @@ body {
 }
 /*END Marketing Messages*/
 
-/*Sponsors*/
-#Sponsors {
-	width: 100%;
-	min-height: 71.8vw;
-	margin: 0 auto;
-	background-image: url(../img/mainpage/sponsors/sponsors-bg.jpg);
-	background-size: cover;
-	background-repeat: repeat;
-	background-attachment: fixed;
-	text-align: center;
-	padding: 0.052083vw 0;
-}
-#Sponsors h2 {
-	font-size: 3.20833vw;
-	margin: 70px 0 5px 0;
-}
-#Sponsors h5 {
-	padding-top: 15px;
-	font-size: 1.58333vw;
-	font-weight: 500;
-	margin-bottom: 3vw;
-	clear: both;
-}
-.SponsorsWrapper {
-	margin: 0 auto;
-	max-width: 72vw;
-	width: 100%;
-}
-.SponsorSquare {
-	float: left;
-	position: relative;
-	width: 17.8vw;
-	padding-bottom : 16%; /* match width for a 1:1 aspect ratio */
-	/*margin: 2%;*/
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: contain;
-	position: relative;
-	overflow: hidden;
-	transition: all 0.3s;/*border-bottom: #322e2e solid 1px;
-    border-right: #322e2e solid 1px;*/
-}
-.SponsorSquare:hover {
-	/*transform: scale(1.1, 1.1);*/
-	cursor: pointer;
-}
-.SponsorBorder {
-	position: relative;
-}
-#ADP, .SquareWithNoBorder, #GloboForce, .EmptySquareSpecial {
-	border-right: none;
-}
-#Sponsors .BlueButton {
-	padding: 0;
-}
-#ViewAllSponsorsButton {
-	margin: 3vw 0 2.864583vw 0;
-	max-width: 15.625vw;
-	height: 3.64583vw;
-	padding-top: 0vw;
-	padding-left: 0;
-	padding-right: 0;
-	padding-bottom: 0;
-	font-size: 1.25vw;
-	border: 3px solid #106ab5;
-}
-#ViewAllSponsorsButton:hover {
-	border: 3px solid #fff;
-	color: #fff;
-	background-color: rgba(255,255,255,0);
+/* Social Love */
+#SocialWrapper {
+	max-height:35vw;
+	overflow:hidden;
+	width:100%;
+	margin:0 auto;
 }
 
-@media (max-width: 1280px) {
-#Sponsors {
-	min-height: 74.45vw;
-}
-}
-
-@media (max-width: 1000px) {
-#Sponsors {
-	height: auto;
-	min-height: 252.2083vw;
-}
-#Sponsors h2 {
-	margin-top: 8.463542vw;
-	margin-bottom: 0;
-	font-size: 13.02083vw;
-}
-#Sponsors h5 {
-	font-size: 5.20833vw;
-	margin-top: 5.20833vw;
-	margin-bottom: 0;
-}
-.SponsorsWrapper, #DiamondSponsorsWrapper {
-	max-width: 100%;
-	padding-left: 0;
-}
-.SponsorSquare {
-	width: 49%;
-	padding-bottom : 29%; /* match width for a 1:1 aspect ratio */
-	margin: 0 auto;
-}
-.EmptySquare {
-	display: none;
-}
-#CornerStone, #Haufe, #GloboForce, #Careerbuilder, #SpecialSquare {
-	border-right: none;
-}
-#ViewAllSponsorsButton {
-	margin: 0 0 7.1614575vw 0;
-	max-width: 39.0625vw;
-	height: 9.114575vw;
-	font-size: 3.125vw;
-}
-}
-
-@media (max-width: 640px) {
-#Sponsors {
-	height: auto;
-	min-height: 530.75vw;
-}
-#Sponsors h2 {
-	margin-top: 12.5vw;
-	margin-bottom: 0;
-	font-size: 13.75vw;
-}
-#Sponsors h5 {
-	font-size: 10.625vw;
-	margin-top: 12.5vw;
-	margin-bottom: 0;
-}
-.SponsorsWrapper {
-	max-width: 100%;
-}
-.SponsorSquare {
-	width: 100%;
-	padding-bottom : 46%; /* match width for a 1:1 aspect ratio */
-	margin: -6vw auto;
-}
-.EmptySquare, .EmptySquareSpecial, #SpecialSquare {
-	display: none;
-}
-#ViewAllSponsorsButton {
-	margin: 8vw 0 13.187498vw 0;
-	max-width: 93.75vw;
-	height: 21.87498vw;
-	font-size: 7.5vw;
-}
-}  /*Messed up hover effect disabled by the will of God */
-#IBM {
-	background-image: url(../img/mainpage/sponsors/bw/ibm-bw-logo.png);
-}
-/*#IBM:hover {
-	background-image: url(../img/mainpage/sponsors/ibm-logo.png);
-}*/
-#Workday {
-	background-image: url(../img/mainpage/sponsors/bw/workday-bw-logo.png);
-}
-/*#Workday:hover {
-	background-image: url(../img/mainpage/sponsors/workday-logo.png);
-}*/
-#CornerStone {
-	background-image: url(../img/mainpage/sponsors/bw/cornerstone-bw-logo.png);
-}
-/*#CornerStone:hover {
-	background-image: url(../img/mainpage/sponsors/cornerstone-logo.png);
-}*/
-#SF {
-	background-image: url(../img/mainpage/sponsors/bw/sf-bw-logo.png);
-}
-/*#SF:hover {
-	background-image: url(../img/mainpage/sponsors/sf-logo.png);
-}*/
-#ADP {
-	background-image: url(../img/mainpage/sponsors/bw/adp-bw-logo.png);
-}
-/*#ADP:hover {
-	background-image: url(../img/mainpage/sponsors/adp-logo.png);
-}*/
-#AppLearn {
-	background-image: url(../img/mainpage/sponsors/bw/applearn-bw-logo.png);
-}
-/*#AppLearn:hover {
-	background-image: url(../img/mainpage/sponsors/applearn-logo.png);
-}*/
-
-#CrossKnowledge {
-	background-image: url(../img/mainpage/sponsors/bw/crossknowledge-bw-logo.png);
-}
-#Infor {
-	background-image: url(../img/mainpage/sponsors/bw/infor-bw-logo.png);
-}
-#Careerbuilder {
-	background-image: url(../img/mainpage/sponsors/bw/careerbuilder-bw-logo.png);
-}
-#CEB {
-	background-image: url(../img/mainpage/sponsors/bw/ceb-bw-logo.png);
-}
-#Haufe {
-	background-image: url(../img/mainpage/sponsors/bw/hauffe-bw-logo.png);
-}
-/*#Haufe:hover {
-	background-image: url(../img/mainpage/sponsors/hauffe-logo.png);
-}*/
-#NGA {
-	background-image: url(../img/mainpage/sponsors/bw/nga-bw-logo.png);
-}
-/*#NGA:hover {
-	background-image: url(../img/mainpage/sponsors/nga-logo.png);
-}*/
-#GloboForce {
-	background-image: url(../img/mainpage/sponsors/bw/globoforce-bw-logo.png);
-}
-/*#GloboForce:hover {
-	background-image: url(../img/mainpage/sponsors/globoforce-logo.png);
-}*/
-#Indeed {
-	background-image: url(../img/mainpage/sponsors/bw/indeed-bw-logo.png);
-}
-/*#Indeed:hover {
-	background-image: url(../img/mainpage/sponsors/indeed-logo.png);
-}*/
-/*END Sponsors*/
-
-/* Highlights */
-
-/*Twitter Widget Section */
-iframe {
-	width: 100% !important;
-	border-radius: 0 !important;
-	background: #fff !important;
-}
-iframe * {
-	border-radius: 0 !important;
-}
-.twitter-timeline {
-	border-radius: 0 !important;
-	width: 100% !important;
-	height: 18.14375vw !important;
-}
-.stream {
-	border-radius: 0 !important;
-}
-#TwitterWidgetMainWrapper {
-	background: #002b49 !important;
-	padding: 5px !important;
-	width: 49% !important;
-	height: 24.3735vw !important;
-}
-
-@media (max-width:1000px) {
-#TwitterWidgetMainWrapper {
-	width: 100% !important;
-}
-}
-#TwitterWidgetHeader {
-	background: #106ab5;
-	color: white;
-	padding: 10px 20px;
-	height: 30px;
-	font-weight: 400;
-	font-size: 22px;
-	text-align: left;
-}
-#TwitterWidgetHeader img {
-	float: right !important;
-	margin-top: 5px;
-}
-#TwitterContainerHeader {
-	background: #002b49;
-	color: white;
-	height: 25px;
-	padding: 10px 20px;
-	text-align: left;
-	font-weight: bold;
-}
-#TwitterContainerHeader img {
-	float: right !important;
-	position: relative;
-	top: -5px;
-}
-#Highlights {
+#SocialLove {
 	text-align: center;
 	width: 100%;
 	margin: 0 auto;
-	background-color: #f4f4f2;
+	background-color: #fff;
 }
-#Highlights h2 {
-	font-size: 5.2083vw;
-	margin: 2vw auto;
+#SocialLove h2 {
+	display:inline-block;
+	font-size: 4.6875vw;
+	margin-top: 3.125vw;
+	margin-bottom: 1.5625vw;
 }
-.HighlightSmallWrapper, .HighlightVideo {
-	width: 50%;
-	display: inline-block;
-	float: left;
+#SocialLove h2 img {
+	width: 3.645833vw;
+	height: 3.333333vw;
+	padding-bottom: 0.260416vw;
+	margin-left: -0.3vw;
 }
-.HighlightBox { /*The smallest, 25% x 25% box in the grid*/
-	text-align: left;
-}
-.HighlightBox, .TwitterImage, .DescriptionImage {
-	width: 50%;
-	height: 25vw;
-	float: left;
-}
-.ResponsiveHighlightImage {
-	width: 100%;
-	height: 25vw;
-}
-.TwitterTextContainer, .DescriptionContainer {
-	height: 25vw;
-}
-.TwitterTextContainer {
-	color: #1a1a18;
-	background-color: #e8e8e8;
-}
-.TwitterText {
-	padding: 6.770833vw 2.60416vw 0 2.08333vw;
-}
-.TweetTitle {
-	font-size: 1.354166vw;
-	line-height: 1.66666vw;
-	margin-bottom: 0.260416vw;
-	font-weight: 300;
-	clear: both;
-}
-.TwitterIcon {
-	width: 2.60416vw;
-	height: 2.60416vw;
-	float: left;
-}
-.TweetHeadline {
-	float: left;
-	margin: 0.260416vw 0 2.08333vw 0.78125vw;
+#SocialLove h3 {
+	display:inline-block;
 	font-size: 1.04166vw;
+	color: #010101;
+	margin-bottom: 1.3020833vw;
+	font-weight: 400;
+	position:relative;
+	top:-1vw;
+	left:1vw;
 }
-.TweetDate {
-	font-size: 0.833333vw;
+#SocialLove #SuccessFactorsLogo {
+	width: 18.90625vw;
+	height: 3.59375vw;	
+	margin-bottom: 2.604166vw;
+	position:relative;
+	top:2vw;
+	left:1.4vw;
 }
-.TweetLink {
-	font-size: 1.354166vw;
-	margin-top: 1.041666vw;
-	color: #00b0ed;
-}
-.embed-container {
-	position: relative;
-	padding-bottom: 56.25%;
-	height: 0;
-	overflow: hidden;
-	max-width: 100%;
-}
-.embed-container iframe, .embed-container-modal iframe {
-	border: 0px;
-}
-.embed-container iframe, .embed-container object, .embed-container embed {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-.HighlightVideo, .embed-container, .embed-container iframe, .embed-container object, .embed-container embed {
-	height: 100%;
-	max-height: 25vw;
-}
-.DescriptionContainer {
-	background-color: #106ab5;
-	color: #fff;
-}
-.DescriptionText {
-	padding: 8.59375vw 2.60416vw 0 2.08333vw;
-}
-.DescriptionHeadline {
-	width: 100%;
-	max-width: 17.70833vw;
-	font-size: 1.45833vw;
-	line-height: 1.875vw;
-	font-weight: 600;
-	margin-top: 0;
-}
-.Description {
-	font-size: 1.25vw;
-	line-height: 1.45833vw;
-	padding-right: 2.08333vw;
-}
-/*Richard Branson*/
-#DescriptionTextRichardBranson {
-	padding-top: 6.25vw;
-}
-#DescriptionTextRichardBranson .Description {
-	padding-bottom: 1.04166vw;
-}
-#DescriptionTextRichardBranson .DescriptionHeadline {
-	max-width: 100%;
-}
-/*HR Tech World Party*/
-#HRTechWoldPartyText {
-	padding-top: 6.77083vw;
-}
-.TestimonialText {
-	/*padding: 100px 135px 0px 45px;*/
-	padding: 5.20833vw 7.03125vw 0 2.34375vw;
-}
-.Testimonial {/*
-	font-size: 28px;
-	margin-top: 50px;
-	margin-bottom: 45px;*/
-	font-size: 1.45833vw;
-	margin-top: 2.60416vw;
-	margin-bottom: 2.34375vw;
-}
-.TestimonialQuoteSign {
-	width: 2.70833vw;
-	height: auto;
-}
-#TimeWarnerLogo {
-	width: 9.16666vw;
-	height: auto;
-}
-#TestimonialMobileImage {
-	display: none;
-}
-#HighlightsLoadMoreButton {
+#SocialLoveLoadMoreButton {
 	margin: 3.125vw 0;
 	max-width: 15.625vw;
 	height: 3.64583vw;
 	font-size: 1.25vw;
 	border: 3px solid #106ab5;
 }
-#HighlightsLoadMoreButton:hover {
+#SocialLoveLoadMoreButton:hover {
 	border: 3px solid #106ab5;
 	background-color: rgba(0, 255, 255, 0)
 }
 
 @media (max-width: 1000px) {
-#Highlights h2 {
-	font-size: 13.02083vw;
-	margin-top: 7.1614583vw;
-	margin-bottom: 7.1614583vw;
+	#SocialLove h2 {
+		font-size: 9vw;
+		margin-top: 6vw;
+		margin-bottom: 3vw;
+	}
+	#SocialLove h2 img {
+		width: 7vw;
+		height: 6.4vw;
+		padding-bottom: 0.5vw;
+	}
+	#SocialLove h3 {
+		font-size: 2vw;
+		color: #010101;
+		margin-bottom: 2.5vw;
+		font-weight: 400;
+	}
+	#SocialLove #SuccessFactorsLogo {
+		width: 36.3vw;
+		height: 6.9vw;	
+		margin-bottom: 5vw;
+	}
+	
+	#SocialLoveLoadMoreButton {
+		margin: 7.8125vw 0;
+		max-width: 39.0625vw;
+		height: 9.114575vw;
+		padding-top: 0.65104vw;
+		font-size: 3.125vw;
+	}
 }
-.HighlightSmallWrapper, .HighlightVideo {
-	width: 100%;
-	display: block;
-}
-.HighlightBox, .TwitterImage, .DescriptionImage {
-	height: 50vw;
-}
-.ResponsiveHighlightImage {
-	height: 50vw;
-}
-.TwitterTextContainer, .DescriptionContainer {
-	height: 50vw;
-}
-.HighlightVideo, .embed-container, .embed-container iframe, .embed-container object, .embed-container embed {
-	max-height: 50vw;
-}
-.TwitterText {
-	padding: 6.770833vw 2.60416vw 0 3.2552083vw;
-}
-.TweetTitle {
-	font-size: 2.86458vw;
-	line-height: 3.56665vw;
-	margin-bottom: 0.65104vw;
-	padding-right: 2vw;
-	font-weight: light;
-	clear: both;
-}
-.TwitterIcon {
-	width: 6.5104vw;
-	height: 6.5104vw;
-}
-.TweetHeadline {
-	float: left;
-	margin: 0.65104vw 0 5.208325vw 1.953125vw;
-	font-size: 2.60415vw;
-}
-.TweetDate {
-	font-size: 2.0833325vw;
-}
-.TweetLink {
-	font-size: 2.86458vw;
-	margin-top: 2.604165vw;
-	color: #00b0ed;
-}
-.DescriptionText {
-	padding: 16.927083vw 1.30208vw 0 4.208325vw;
-}
-.DescriptionHeadline {
-	width: 100%;
-	max-width: 36.45825vw;
-	font-size: 3.125vw;
-	line-height: 4vw;
-	font-weight: 600;
-	margin-top: 0;
-}
-.Description {
-	font-size: 2.60416vw;
-	line-height: 3.125vw;
-	padding-right: 5.208325vw;
-}
-#DescriptionTextRichardBranson {
-	padding-top: 10.25vw;
-}
-#HRTechWoldPartyText {
-	padding-top: 13.02083vw;
-}
-.TestimonialText {
-	/*padding: 100px 135px 0px 45px;*/
-	padding: 10.020825vw 15.578125vw 0 4vw;
-}
-.Testimonial {/*
-		font-size: 28px;
-		margin-top: 50px;
-		margin-bottom: 45px;*/
-	font-size: 2.60416vw;
-	margin-top: 5.5104vw;
-	margin-bottom: 4.859375vw;
-}
-.TestimonialQuoteSign {
-	width: 6.770825vw;
-	height: auto;
-}
-#TimeWarnerLogo {
-	width: 22.91665vw;
-	height: auto;
-}
-#TestimonialMobileImage {
-	display: block;
-}
-#TestimonialDesktopImage {
-	display: none;
-}
-#HighlightsLoadMoreButton {
-	margin: 7.8125vw 0;
-	max-width: 39.0625vw;
-	height: 9.114575vw;
-	padding-top: 0.65104vw;
-	font-size: 3.125vw;
-}
-}
-
 @media (max-width: 640px) {
-#Highlights h2 {
-	font-size: 13.75vw;
-	margin-top: 11.25vw;
-	margin-bottom: 11.25vw;
+	#SocialLove h2 {
+		font-size: 11.25vw;
+		margin-top: 7.8125vw;
+		margin-bottom: 4.6875vw;
+	}
+	#SocialLove h2 img {
+		width: 7.8125vw;
+		height: 7.1875vw;
+		padding-bottom: 0.625vw;
+		margin-left: -1.5625vw;
+	}
+	#SocialLove h3 {
+		font-size: 4.0625vw;
+		margin-bottom: 4.6875vw;
+	}
+	#SocialLove #SuccessFactorsLogo {
+		width: 72.1875vw;
+		height: 13.75vw;	
+		margin-bottom: 9.375vw;
+	}
+	#SocialLoveLoadMoreButton {
+		margin: 9.375.75vw 0;
+		max-width: 93.75vw;
+		height: 21.87498vw;
+		padding-top: 1.562496vw;
+		font-size: 7.5vw;
+	}
 }
-.TwitterText {
-	padding: 3.125vw 0px 0px 3.125vw;
-}
-.TwitterIcon {
-	width: 9.375vw;
-	height: 9.375vw;
-}
-.TweetHeadline {
-	float: left;
-	margin: 0px 0 3.125vw 3.125vw;
-	font-size: 3.75vw;
-}
-.TweetDate {
-	font-size: 3.4375vw;
-}
-.TweetTitle {
-	font-size: 3.4375vw;
-	line-height: 5vw;
-	margin-bottom: 0;
-	font-weight: light;
-	clear: both;
-}
-.TweetLink {
-	font-size: 3.4375vw;
-	line-height: 5vw;
-	margin-top: 1.5625vw;
-	color: #00b0ed;
-}
-.DescriptionText {
-	padding: 15.625vw 1.50208vw 0 4.208325vw;
-}
-.DescriptionHeadline {
-	width: 100%;
-	max-width: 100%;
-	font-size: 3.4375vw;
-	line-height: 4.375vw;
-	font-weight: 600;
-	margin-top: 0;
-}
-.Description {
-	font-size: 3.4375vw;
-	line-height: 3.75vw;
-	padding-right: 10.5vw;
-}
-#DescriptionTextRichardBranson {
-	padding-top: 3.125vw;
-}
-#HRTechWoldPartyText {
-	padding-top: 9.375vw;
-}
-.TestimonialText {
-	/*padding: 100px 135px 0px 45px;*/
-	padding: 5.020825vw 6.578125vw 0 4vw;
-}
-.Testimonial {/*
-		font-size: 28px;
-		margin-top: 50px;
-		margin-bottom: 45px;*/
-	font-size: 3.4375vw;
-	margin-top: 3.5104vw;
-	margin-bottom: 2.859375vw;
-}
-.TestimonialQuoteSign {
-	width: 6.770825vw;
-	height: auto;
-}
-#TimeWarnerLogo {
-	width: 22.91665vw;
-	height: auto;
-}
-#HighlightsLoadMoreButton {
-	margin: 9.375.75vw 0;
-	max-width: 93.75vw;
-	height: 21.87498vw;
-	padding-top: 1.562496vw;
-	font-size: 7.5vw;
-}
-}
-#HighlightsMore {
-	display: none;
-}
-/* END Highlights */
+/* END Social Love */
 
 /* Venue */
 #Venue {
+	width: 100%;	
+}
+#VenueHeadline {
+	font-size: 5.20833vw;
+	text-align: center;
+	margin: 2vw auto;
+	text-transform:uppercase;
+}
+#VenueInnerContainer {
 	background-image: url(../img/mainpage/venue/venue-bg.jpg);
 	background-size: cover;
 	background-position: top center;
 	text-align: center;
-	padding: 3.6458vw 1.8229vw 5.9895vw 1.8229vw;
-	box-sizing: border-box; /* if it is turned off (default: content-box) the [#Venue p] center alignment (margin: 0 auto) won't work */
-}
-#Venue h2 {
-	font-size: 5.2083vw;
-	margin: 0 0 2.34375vw 0;
-}
-#Venue h5 {
-	font-size: 2.0833vw;
-	line-height: 2.9166vw;
-	text-transform: uppercase;
+	box-sizing: border-box;
 	width: 100%;
-	margin: 0 auto;
+	height: 28.6458333333333333vw;
+	padding-top: 13.0208333333333333vw;
 }
-#Venue p {
-	width: 100%;
-	max-width: 39.0625vw;
-	margin: 4.6875vw auto 7.2916vw auto;
-	font-size: 1.25vw;
-	line-height: 1.8229vw;
+#Pin {
+	width: 2.7083333vw;
+	height: 3.6458333vw;	
+	position: absolute;
+	left: 8.333333vw;
+	top: -4.9479166vw;
 }
-#Venue .fa-map-marker {
-	font-size: 3.64583vw;
-	color: #f3f3f2;
-	opacity: 0.8;
-	transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	-ms-transition: all 0.3s;
+@keyframes PinBounce {
+	0%, 20%, 50%, 75%, 100% { margin-top: 0; }
+	40% { margin-top: -30px; }
+	60% { margin-top: -15px; }
 }
-#Venue h6 {
-	font-size: 1.25vw;
-	font-weight: bold;
-	margin-top: 1.5625vw;
-	margin-bottom: 0;
-	transition: all 0.3s;
+@-webkit-keyframes PinBounce {
+	0%, 20%, 50%, 75%, 100% { margin-top: 0; }
+	40% { margin-top: -30px; }
+	60% { margin-top: -15px; }
 }
-#GetDirections {
-	display: block;
+@-moz-keyframes PinBounce {
+	0%, 20%, 50%, 75%, 100% { margin-top: 0; }
+	40% { margin-top: -30px; }
+	60% { margin-top: -15px; }
 }
-#GetDirections:hover h6 {
-	color: #fff;
-}
-#GetDirections:hover .fa-map-marker {
-	opacity: 1;
+.PinAnimation {
+	animation: PinBounce 2s linear infinite;
+	-webkit-animation: PinBounce 2s linear infinite;
+	-moz-animation: PinBounce 2s linear infinite;
 }
 
-@media (max-width: 1000px) { /* TABLET view */
-#Venue {
-	padding: 6.51041vw 4.55729vw 15.625vw 4.55729vw;
-}
-#Venue h2 {
-	font-size: 13.02083vw;
-	margin: 0 0 5.859375vw 0;
-}
-#Venue h5 {
-	font-size: 5.20833vw;
-	line-height: 7.29166vw;
-	max-width: 48.828125vw;
-}
-#Venue p {
-	max-width: 91.14583vw;
-	margin: 11.71875vw auto 18.22916vw auto;
-	font-size: 3.125vw;
-	line-height: 4.55729vw;
-}
-#Venue .fa-map-marker {
-	font-size: 9.11458vw;
-}
-#Venue h6 {
-	font-size: 3.125vw;
-	margin-top: 3.90625vw;
-}
-}
-
-@media (max-width: 640px) { /* MOBILE view  */
-#Venue {
-	padding: 15.625vw 7.8125vw 18.75vw 7.8125vw;
-}
-#Venue h2 {
-	font-size: 13.75vw;
-}
-#Venue h5 {
-	font-size: 9.375vw;
-	line-height: 17.1875vw;
-	max-width: 87.5vw;
-}
-#Venue p {
-	margin: 18.75vw auto 21.875vw auto;
-	font-size: 6.25vw;
-	line-height: 10.9375vw;
-}
-#Venue .fa-map-marker {
-	font-size: 21.875vw;
-}
-#Venue h6 {
-	font-size: 7.5vw;
-	margin-top: 9.375vw;
-}
-}
-/* END Venue */
-
-/* Future of Work */
-#FutureOfWork {
-	background-color: #f4f4f2;
-	background-image: url(../img/mainpage/futureofwork/fow-bg.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	text-align: center;
-	padding-top: 75px;
-	padding-bottom: 80px;
-}
-#FutureOfWorkWrapper {
+#VenueInfo {
 	width: 100%;
-	max-width: 78vw;
-	margin: 0 auto;
-}
-#FutureOfWorkWrapper h2 {
-	font-size: 60px;
-	font-weight: 700;
-	margin: 0 0 70px 0;
-	text-transform: uppercase;
-}
-#FutureOfWorkWrapper > p {
-	font-size: 24px;
-	line-height: 36px;
-	width: 100%;
-	max-width: 52vw;
-	margin: 0 auto;
-	padding: 0;
-}
-#TicketPriceContainer {
-	width: 100%;
-	max-width: 765px;
-	margin: 0 auto;
-	margin-top: 65px;
-	margin-bottom: 40px;
-}
-#FutureTicketsTwoForOne {
-	padding-bottom: 2vw;
-}
-
-@media (max-width: 800px) {
-#TicketPriceContainer {
-	max-width: 700px;
-}
-}
-.TicketPrice {
-	width: 100%;
-	max-width: 45vw;
-	display: inline-block;
-}
-.TicketSpan {
-	padding: 0 1vw;
-}
-#OneDelegate {
-	float: left;
-}
-#Group {
-	float: right;
-}
-.TicketPrice h3 {
-	font-size: 36px;
-	margin: 0;
-	font-weight: 700;
-	line-height: 30px;
-}
-.TicketPrice h3 .EachTicket {
-	font-size: 18px;
-}
-.TicketPrice p {
-	font-size: 20px;
-	margin: 10px 0 0 0;
-}
-#TicketPastPrice {
-	-moz-text-decoration-color: red; /* Code for Firefox */
-	text-decoration-color: red;
-	-webkit-text-decoration-color: red;
-}
-#FutureOfWork button {
-	max-width: 330px;
-	height: 70px;
-	margin: 0 25px;
-	font-size: 24px;
-	color: #106ab5;
-	background-color: rgba(255, 255, 255, 0);
-	border: 3px solid #106ab5;
-	transition: all 0.3s ease-in;
-}
-#FutureOfWork button:hover {
-	background-color: #106ab5;
-	color: #fff;
-	border: 3px solid #106ab5;
-}
-
-@media (max-width: 640px) {
-#FutureOfWork {
-	padding-top: 23.4375vw;
-	padding-bottom: 15.625vw;
-}
-#FutureOfWorkWrapper h2 {
-	font-size: 11.25vw;
-	margin: 0 0 15.625vw 0;
-}
-#FutureOfWorkWrapper > p {
-	font-size: 6.25vw;
-	line-height: 10.9375vw;
-	max-width: 84.375vw;
-}
-#TicketPriceContainer {
-	max-width: 100%;
-	margin-top: 14.0625vw;
-	margin-bottom: 15.625vw;
-}
-.TicketPrice {
-	width: 100%;
-	max-width: 93.75vw;
-	margin: 0 auto;
-}
-#OneDelegate {
-	float: none;
-	margin-bottom: 9.375vw;
-}
-#Group {
-	float: none;
-}
-.TicketPrice h3 {
-	font-size: 7.5vw;
-}
-.TicketPrice h3 .EachTicket {
-	font-size: 4.375vw
-}
-.TicketPrice p {
-	font-size: 5.625vw;
-	margin: 1.5625vw 0 0 0;
-}
-#FutureOfWork button {
-	max-width: 93.75vw;
-	height: 21.875vw;
-	margin: 0 auto;
-	font-size: 7.5vw;
-	border: 0.9375vw solid #106ab5;
-}
-#FutureTicketsTwoForOne {
-	padding-bottom: 5vw;
-}
-}
-/* END Future of Work */
-
-/* FOOTER */
-footer {
-	background-color: #106ab5;
-	text-align: center;
-	color: #feffff;
-}
-footer h2 {
-	font-size: 3.125vw;
-	margin: 0;
-	padding-top: 3.385416vw;
-	/*margin-bottom: 45px;*/
-	margin-bottom: 2.34375vw;
-	font-weight: 700;
-}
-.Contact { 			/* telephone numbers and email address in the Get in Touch section */
-	display: inline-block;
-	font-size: 1.25vw;
-	margin: 0.9375vw;
-	color: #feffff;
-}
-.Contact .fa {
-	padding-right: 0.520833vw;
-}
-#GetInTouchButtonContainer {  /* A wrapper to the DOWNLOAD BROCHURE and REGISTER TODAY buttons */
-	/*padding-top: 60px;
-	padding-bottom: 90px;*/
-	padding-top: 3.125vw;
-	padding-bottom: 4.6875vw;
-}
-#GetInTouchButtonContainer button {
-	max-width: 17.1875vw;
-	height: 3.645833vw;
-	margin: 0 1.302083vw;
-	font-size: 1.25vw;
-	color: #fff;
-	background-color: rgba(255, 255, 255, 0);
-	border: 0.15625vw solid #fff;
-	transition: all 0.3s ease-in;
-}
-#GetInTouchButtonContainer button:hover {
+	max-width: 19.0104166vw;
 	background-color: #fff;
-	color: #106ab5;
-	border: 0.15625vw solid #fff;
-}
-#FooterSocialIconsContainer { /* Wrapper for the twitter, facebook, linkedin, slideshare, flickr icons. 1100px wide. */
-	width: 100%;
-	max-width: 57.29166vw;
+	border: 1px solid #d9d9d9;
 	margin: 0 auto;
-	padding-bottom: 5.20833vw;
+	padding-top: 0.78125vw;
+	margin-bottom: 1.5625vw;
+	position: relative;
 }
-.FooterSocialIcon {  /* Defines a social icon: the icon itself is a DIV element with a background image */
-	display: inline-block;
-	background-size: cover;
-	width: 4.427083vw;
-	height: 4.427083vw;
-	margin-left: 3.125vw;
-	margin-right: 3.125vw;
-}
-#FooterTwitter {
-	background-image: url(../img/mainpage/getintouch/twitter-icon.png);
-}
-#FooterTwitter:hover {
-	background-image: url(../img/mainpage/getintouch/twitter-icon-hover.png);
-}
-#FooterFacebook {
-	background-image: url(../img/mainpage/getintouch/facebook-icon.png);
-}
-#FooterFacebook:hover {
-	background-image: url(../img/mainpage/getintouch/facebook-icon-hover.png);
-}
-#FooterLinkedIn {
-	background-image: url(../img/mainpage/getintouch/linkedin-icon.png);
-}
-#FooterLinkedIn:hover {
-	background-image: url(../img/mainpage/getintouch/linkedin-icon-hover.png);
-}
-#FooterSlideShare {
-	background-image: url(../img/mainpage/getintouch/slideshare-icon.png);
-}
-#FooterSlideShare:hover {
-	background-image: url(../img/mainpage/getintouch/slideshare-icon-hover.png);
-}
-#FooterFlickr {
-	background-image: url(../img/mainpage/getintouch/flickr-icon.png);
-}
-#FooterFlickr:hover {
-	background-image: url(../img/mainpage/getintouch/flickr-icon-hover.png);
-}
-/* From this point you can find the definitions of the most bottom, transparent part of the footer 
-   It contains the following texts:
-   - HR Tech World Congress
-   - Copyright © 2015 HRN Europe. All Rights Reserved.
-   - Privacy Policy | Terms and Conditions 
-*/
-#TransparentFooter {
-	width: 100%;
-	padding-top: 1.822916vw;
-	padding-bottom: 1.822916vw;
-	background-color: #002b49;
-}
-.TransparentFooterText {
-	display: inline-block;
-	margin: 0 1.5625vw;
-}
-.WorldCongressText {
+#VenueInfo h3 {
 	font-size: 1.25vw;
-}
-#WorldCongressTextMobile {
-	display: none;
-}
-#CopyrightText, #PrivacyText {
-	font-size: 0.83333vw;
-	color: #f4f4f2;
-	font-weight: 400;
-}
-.Contact a {
-	color: white;
-}
-
-@media (max-width: 1000px) { /* TABLET view */
-footer h2 {
-	font-size: 7.8125vw;
+	font-weight: 800;	
 	margin: 0;
-	padding-top: 8.463542vw;
-	/*margin-bottom: 45px;*/
-	margin-bottom: 5.859375vw;
+	margin-bottom: 0.2604166vw;
 }
-.Contact {
-	font-size: 2.60416vw;
-	margin: 2.34375vw;
+#VenueInfo p {
+	font-size: 0.729166vw;
+	font-weight: 300;
+	margin: 0;	
+	margin-bottom: 1.04166vw;
 }
-.Contact .fa {
-	padding-right: 1.302083vw;
+#ViewInGoogleMapsButton {
+	max-width: 12.1875vw;
+	height: 2.34375vw;	
+	font-size: 0.9375vw;
+	padding: 0; 
 }
-#GetInTouchButtonContainer {  /* A wrapper to the DOWNLOAD BROCHURE and REGISTER TODAY buttons */
-	padding-top: 7.8125vw;
-	padding-bottom: 11.71875vw;
+@media (max-width: 1920px) {
+	#VenueInnerContainer {
+		height: 550px;
+		padding-top: 250px;
+	}
+	#VenueHeadline {
+		font-size: 100px;
+		margin: 39px auto;
+	}
+	#Pin {
+		width: 52px;
+		height: 70px;	
+		left: 160px;
+		top: -95px;
+	}
+	#VenueInfo {
+		max-width: 365px;
+		padding-top: 15px;
+		margin-bottom: 30px;
+	}
+	#VenueInfo h3 {
+		font-size: 24px;
+		margin-bottom: 5px;
+	}
+	#VenueInfo p {
+		font-size: 14px;
+		margin-bottom: 20px;
+	}
+	#ViewInGoogleMapsButton {
+		max-width: 234px;
+		height: 45px;	
+		font-size: 18px;
+	}	
 }
-#GetInTouchButtonContainer button {
-	max-width: 42.96875vw;
-	margin: 1vw 3.255208vw;
-	height: 9.11458vw;
-	font-size: 3.125vw;
-	border: 0.390625vw solid #fff;
+@media (max-width: 1000px) {
+	#VenueHeadline {
+		font-size: 13.0208vw;
+		margin: 9.375vw auto;	
+	}
 }
-#GetInTouchButtonContainer button:hover {
-	border: 0.390625vw solid #fff;
-}
-#FooterSocialIconsContainer { /* Wrapper for the twitter, facebook, linkedin, slideshare, flickr icons. 1100px wide. */
+@media (max-width: 640px) {
+#VenueInnerContainer {
+	background-image: url(../img/mainpage/venue/venue-mobile-bg.jpg);
+	background-size: cover;
 	width: 100%;
-	max-width: 93.75vw;
-	margin: 0 auto;
-	padding-bottom: 13.02083vw;
+	height: 118.125vw;
+	padding-top: 53.75vw;
 }
-.FooterSocialIcon {  /* Defines a social icon: the icon itself is a DIV element with a background image */
-	width: 11.06771vw;
-	height: 11.06771vw;
-	margin-left: 3.255208vw;
-	margin-right: 3.255208vw;
+#VenueHeadline {
+	font-size: 13.75vw;
+	margin: 9.375vw;
 }
-#TransparentFooter {
-	padding-top: 3.255208vw;
-	padding-bottom: 2.60416vw;
+#Pin {
+	width: 11.25vw;
+	height: 15vw;	
+	top: -21.875vw;
+	left: 32.8125vw;
 }
-.TransparentFooterText {
-	margin: 0 3.90625vw;
+#VenueInfo {
+	width: 100%;
+	max-width: 78.125vw;
+	padding-top: 3.125vw;
+	margin-bottom: 6.25vw;
 }
-.WorldCongressText {
+#VenueInfo h3 {
+	font-size: 5.15625vw;
+	margin-bottom: 1.5625vw;
+}
+#VenueInfo p {
 	font-size: 3.125vw;
+	margin-bottom: 4.6875vw;
 }
-#CopyrightText, #PrivacyText {
-	font-size: 2.0833vw;
-}
-#PrivacyText {			/* The Privacy text is exactly under the Copyright text with a lot of left whitespace (STRICTLY following the mockup) */
-	margin-left: 31.9010416vw;
-	margin-top: 1.953125vw;
-}
-}
-
-@media (max-width: 640px) { /* mobile view: font-size and whitespace changes. The phone numbers and email address stack beneath eachother */
-footer h2 {
-	font-size: 11.25vw;
-	padding-top: 14.0625vw;
-	margin-bottom: 13.1875vw;
-}
-.Contact {
-	display: block;
-	margin: 1.5625vw;
-	font-size: 6.25vw;
-	margin: 2.34375vw;
-	line-height: 10vw;
-	padding-top: 0vw;
-}
-.Contact .fa {
-	padding-right: 3.125vw;
-}
-#GetInTouchButtonContainer {
-	padding-top: 14.0625vw;
-	padding-bottom: 12.5vw;
-}
-#GetInTouchButtonContainer button { /* Turning the inline-block button to block element then centering them vertically */
-	display: block;
-	margin: 0 auto;
-	max-width: 93.75vw;
-	font-size: 6.25vw;
-	height: 21.875vw;
-	border: 0.9375vw solid #fff;
-}
-#GetInTouchButtonContainer button:hover {
-	border: 0.9375vw solid #fff;
-}
-#GetInTouchButtonContainer #DownloadBrochureButton { /* Add a little whitespace between the buttons */
-	margin-bottom: 7.8125vw;
-}
-#FooterSocialIconsContainer {
-	padding-bottom: 14.0625vw;
-}
-.FooterSocialIcon {
-	width: 12.5vw;
-	height: 12.5vw;
-	margin-left: 2.5vw;
-	margin-right: 2.5vw;
-}
-#TransparentFooter {
-	padding-top: 6.25vw;
-	padding-bottom: 6.25vw;
-}
-.WorldCongressText {  /* Hide the "HR Tech World Congress" text in the transparent part of the footer */
-	display: none;
-}
-#WorldCongressTextMobile { /* Show the "HR Tech World Congress text above the transparent part of the footer */
-	display: block;
-	margin-top: 0;
-	margin-bottom: 10.9375vw;
-	font-size: 5.9375vw;
-}
-#CopyrightText, #PrivacyText {
+	
+#ViewInGoogleMapsButton {
+	max-width: 51.875vw;
+	height: 9.6875vw;	
 	font-size: 4.0625vw;
 }
-#CopyrightText {
-	margin: 0 auto;
-	display: block;
-	width: 100%;
-	max-width: 59.375vw;
-	line-height: 8.4375vw;
 }
-#PrivacyText {
-	margin-top: 0px;
-	margin-left: 0px;
-}
-}
-/* END FOOTER */
+
+
+/* END Venue */
+

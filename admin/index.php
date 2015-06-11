@@ -1,13 +1,15 @@
 <?php
-namespace HRNSales;
+namespace HRNParis;
 if(!isset($_SESSION)) {
+	$lifetime=3600;
+    session_set_cookie_params($lifetime);
 	session_start();
 }
   $params = explode("/", $_SERVER['REQUEST_URI']);
   
      
 if (!isset($params[3]) || $params[3] == '') {
- 	include_once('views\mainpage.php');
+ 	include_once('views/mainpage.php');
 } else {
 	$extensions = array('.php'=>'','.html'=>'');
 	$class = strtr($params[3], $extensions);
@@ -26,6 +28,5 @@ if (!isset($params[3]) || $params[3] == '') {
  }
 	
 }
-
 
 ?>

@@ -14,7 +14,18 @@ $sponsors = new sponsors_main;
 <meta name="developer" content="Developed by: TesseracT - bottyan.tamas@web-developer.hu">
 <meta charset="utf-8" />
 <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-<title>HR Tech World Congress</title>
+<title>HR Tech World Congress | Sponsors</title>
+
+<!-- Open Graph data -->
+<meta property="og:site_name" content="HR Tech World Congress"/>
+<meta property="og:title" content="HR Tech World Congress | Sponsors"/>
+<meta property="og:description" content="The fastest growing HR event in the world! Paris October 24 - 25"/>
+<meta property="og:url" content="http://hrtechcongress.com/sponsors-list">
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="http://hrtechcongress.com/img/preview-images/preview-image-1.jpg" />
+<meta property="og:image" content="http://hrtechcongress.com/img/preview-images/preview-image-2.jpg" />
+<meta property="og:image" content="http://hrtechcongress.com/img/preview-images/preview-image-3.jpg" />
+
 <!--Include Raleway Google Font -->
 <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
 
@@ -107,65 +118,67 @@ $(document).ready(function() {
 </head>
 <body>
 <nav>
-  <div id="MobileMenuContainer">
+  <div id="MobileMenuContainer"> <a href="http://hrtechcongress.com" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'LogoHome']);">
     <div id="MobileMenuLogo"></div>
+    </a>
     <div id="MobileMenuButton" onClick='ShowMobileMenu()'></div>
-
-  <div id="MobileNav" class="sidebar">
-
-     <div id="MobileMenuListContainer"> <img id="MobileMenuCloseButton" src="img/menu/mobile-close-button.png" alt="X" onClick='HideMobileMenu()'>
+    <div id="MobileNav" class="sidebar">
+      <div id="MobileMenuListContainer"> <img id="MobileMenuCloseButton" src="img/menu/mobile-close-button.png" alt="X" onClick='HideMobileMenu()'>
         <ul id="MobileUl">
-            <li><a title="About" href="http://hrtechcongress.com#AboutSection" onClick="HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'About']);">About</a></li>
-            <li><a title="Speakers" href="speakers" onClick=" HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);">Speakers</a></li>
-            <li><a title="SponsorLists" href="sponsors" onClick="HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'SponsorLists']);">SponsorLists</a></li>
-            <li><a title="Highlights" href="http://hrtechcongress.com#HighlightsSection" onClick="HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Highlights']);">Highlights</a></li>
-            <li><a title="Venue" href="http://hrtechcongress.com#VenueSection" onClick="HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Venue']);">Venue</a></li>
-            <li><a title="Contacts" href="contact" onClick="HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Contact']);">Get In Touch</a></li>
-            <li><a title="Tickets" href="tickets" onClick="HideMobileMenu(); _gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Tickets']);"><i class="fa fa-ticket"></i> Get Tickets</a></li>
+          <li><a href="http://hrtechcongress.com#AboutSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'About']);" title="About">About</a></li>
+          <li><a href="speakers" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);" title="Speakers">Speakers</a></li>
+          <li><a href="sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);" title="Sponsors">Sponsors</a></li>
+          <li><a href="hotels" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Hotels']);" title="Hotels">Hotels</a></li>
+          <li><a href="http://blog.hrtecheurope.com/" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Blog']);" title="Blog">Blog</a></li>
+          <li><a href="contact" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Contact']);" title="Get In Touch">Get In Touch</a></li>
+          <li><a href="tickets" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Tickets']);" title="Get Tickets"><i class="fa fa-ticket"></i> Get Tickets</a></li>
         </ul>
-
-    <div class="nav-social" style="display:none">
-        <a title="Facebook" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Facebook']);" class="ico-fb no-link" target="blank" href="https://www.facebook.com/hrtecheu"></a>
-        <a title="Twitter" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Twitter']);" class="ico-tw no-link" target="blank" href="https://twitter.com/hrtechworld"></a>
-        <a title="Linkedin" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Linkedin']);" class="ico-linkedin no-link" target="blank" href="http://www.linkedin.com/groups/HR-Technology-Europe-Human-Resources-3930182/about"></a>
-        <a title="Flickr" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Flickr']);" class="ico-flickr no-link" target="blank" href="https://www.flickr.com/photos/hrtecheurope/sets/72157648919068765/"></a>
-        <a title="Slideshare" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Slideshare']);" class="ico-slideshare no-link" target="blank" href="http://www.slideshare.net/hrtecheurope"></a>
-        
+      </div>
     </div>
-</div>
-</div>
   </div>
-  </nav>
+</nav>
 
-  <!-- MAIN MENU 
-This section is controlled by the menu.css 
--->
-  
-  <nav id="SecondStateMainMenuContainer" class="FixedTop">
-    <div id="MenuContainer"><a href="http://hrtechcongress.com" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'LogoHome']);"><img src="img/menu/horizontallogo.png" alt="HR Tech Congress Logo"  id="HorizontalLogo"/></a><a class="MainMenuItem" href="http://hrtechcongress.com#AboutSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'About']);">ABOUT</a><a class="MainMenuItem"  href="speakers" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);">SPEAKERS</a><a class="MainMenuItem"  href="sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'SponsorLists']);">SPONSORS</a>
-      <a class="MainMenuItem"  href="http://hrtechcongress.com#HighlightsSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Highlights']);">HIGHLIGHTS</a><a class="MainMenuItem"  href="http://hrtechcongress.com#VenueSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Venue']);">VENUE</a><a class="MainMenuItem"  href="contact" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Contact']);">GET IN TOUCH</a> <a class="MainMenuItem" href="tickets" id="GetTickets" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Tickets']);"><i class="fa fa-ticket"></i>GET TICKETS</a></div>
-  </nav>
-  
-  <!-- END MAIN MENU -->
+<!-- MAIN MENU -->
+<nav id="DesktopMenu">
+	<a href="http://hrtechcongress.com" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'LogoHome']);"><div id="HRTechDesktopLogo">   </div></a>
+	<ul id="DesktopMenuList">
+    	<a href="http://hrtechcongress.com#AboutSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'About']);" title="About"><li class="DesktopMenuItem" id="MenuItemAbout">ABOUT</li></a>
+        <a href="speakers" title="Speakers" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);"><li class="DesktopMenuItem" id="MenuItemSpeakers">SPEAKERS</li></a>
+        <a href="sponsors" title="Sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);"><li class="DesktopMenuItem" id="MenuItemSponsors">SPONSORS</li></a>
+        <a href="hotels" title="Hotels" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Hotels']);"><li class="DesktopMenuItem" id="MenuItemHighlights">HOTELS</li></a>
+        <a target="_blank"  href="http://blog.hrtecheurope.com/" title="Blog" onClick="_gaq.push(['_trackEvent', 'Navigation', ExternalForward', 'Blog']);"><li class="DesktopMenuItem" id="MenuItemVenue">BLOG</li></a>
+        <a href="contact" title="Get in Touch" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Contact']);"><li class="DesktopMenuItem" id="MenuItemGetInTouch">GET IN TOUCH</li></a>
+        <a href="tickets" title="Get Tickets" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Tickets']);"><li class="DesktopMenuItem" id="DesktopGetTickets"><i class="fa fa-ticket"></i> GET TICKETS</li></a>
+    </ul>
+    <div id="DesktopMenuSocialIcons">
+    	<a href="https://twitter.com/hrtechworld" target="_blank" title="Twitter" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Twitter']);"><div id="DesktopMenuTwitterIcon" class="DesktopMenuSocialIcon"></div></a>
+        <a href="https://www.linkedin.com/grp/home?gid=1909337" target="_blank" title="LinkedIn" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'LinkedIn']);"><div id="DesktopMenuLinkedInIcon" class="DesktopMenuSocialIcon"></div></a>
+        <a href="https://www.facebook.com/worldhrtech?ref=hl" target="_blank" title="Facebook" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Facebook']);"><div id="DesktopMenuFacebookIcon" class="DesktopMenuSocialIcon"></div></a>
+        <a href="http://www.slideshare.net/hrtecheurope/presentations" target="_blank" title="Slideshare" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Slideshare']);"><div id="DesktopMenuSlideShareIcon" class="DesktopMenuSocialIcon"></div></a>
+        <a href="https://www.flickr.com/photos/hrtecheurope/sets/with/72157651210562997" target="_blank" title="Flickr" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Flickr']);"><div id="DesktopMenuFlickrIcon" class="DesktopMenuSocialIcon"></div></a>
+    </div>
+</nav>
+<!-- END MAIN MENU -->
+
 <!-- Header -->
 <header>
   <h1>SPONSORS</h1>
   <p class="FontProximaNova">A Who's Who of HR Software, Service and Solution leaders offer the best solutions, services and products in the World for you to Optimise, Enable & Unleash Your People!</p>
   
-  <span data-reveal-id="BecomeASponsorListModal" onClick="_gaq.push(['_trackEvent', 'SponsorListsPage', 'ModalOpen', 'BecomeASponsorList']);"><button class="FontRaleway">Become a SponsorList</button></span>
+  <span data-reveal-id="BecomeASponsorModal" onClick="_gaq.push(['_trackEvent', 'SponsorsPage', 'ModalOpen', 'BecomeASponsor']);"><button class="FontRaleway">Become a Sponsor</button></span>
   <img id="HeaderWhosWhoLogo" src="img/sponsors/whos-who-logo-white.png" alt="Who's Who in HR">
 </header>
 <!-- END Header -->
 
-<!-- SponsorLists -->
-<section id="SponsorLists">
-	<!-- SponsorLists List -->
-	<div id="SponsorListsInnerContainer">
+<!-- Sponsors -->
+<section id="Sponsors">
+	<!-- Sponsors List -->
+	<div id="SponsorsInnerContainer">
     	<div id="WhosWhoAndDiamondImageContainer">
             <img id="PoweredByWhosWhoLogo" src="img/sponsors/powered-by-whos-who.png" alt="Powered by Who's Who in HR">
-        	<h2 class="SponsorListHeadline FontRaleway"><span>Diamond SponsorLists</span></h2>
+        	<h2 class="SponsorHeadline FontRaleway"><span>Diamond Sponsors</span></h2>
     	</div>
-<!-- Diamond SponsorLists -->
+<!-- Diamond Sponsors -->
 
 <?php 
 
@@ -176,10 +189,10 @@ This section is controlled by the menu.css
 ?>
        
  
-<!-- END Diamond SponsorLists -->
+<!-- END Diamond Sponsors -->
 
-<!-- Emerald SponsorLists -->
-		<h2 class="SponsorListHeadline FontRaleway"><span>Emerald SponsorLists</span></h2>  
+<!-- Emerald Sponsors -->
+		<h2 class="SponsorHeadline FontRaleway"><span>Emerald Sponsors</span></h2>  
         
 <?php 
 
@@ -190,10 +203,10 @@ This section is controlled by the menu.css
 ?>      
               
      
-<!-- END Emerald SponsorLists -->  
+<!-- END Emerald Sponsors -->  
 
-<!-- Platinum SponsorLists --> 
-		<h2 class="SponsorListHeadline FontRaleway"><span>Platinum SponsorLists</span></h2>
+<!-- Platinum Sponsors --> 
+		<h2 class="SponsorHeadline FontRaleway"><span>Platinum Sponsors</span></h2>
        <?php 
 
   $content = $sponsors->sponsors(3); 
@@ -201,10 +214,10 @@ This section is controlled by the menu.css
 
   
 ?> 
-<!-- END Platinum SponsorLists -->  
+<!-- END Platinum Sponsors -->  
 
-<!-- Gold SponsorLists --> 
-		<h2 class="SponsorListHeadline FontRaleway"><span>Gold SponsorLists</span></h2>  
+<!-- Gold Sponsors --> 
+		<h2 class="SponsorHeadline FontRaleway"><span>Gold Sponsors</span></h2>  
 <?php 
 
   $content = $sponsors->sponsors(4); 
@@ -213,10 +226,10 @@ This section is controlled by the menu.css
   
 ?> 
         
-<!-- END Gold SponsorLists -->  
+<!-- END Gold Sponsors -->  
 
-<!-- Silver SponsorLists --> 
-		<h2 class="SponsorListHeadline FontRaleway"><span>Silver SponsorLists</span></h2>  
+<!-- Silver Sponsors --> 
+		<h2 class="SponsorHeadline FontRaleway"><span>Silver Sponsors</span></h2>  
      <?php 
 
   $content = $sponsors->sponsors(5); 
@@ -226,10 +239,10 @@ This section is controlled by the menu.css
 ?> 
         
                
-<!-- END Silver SponsorLists --> 
+<!-- END Silver Sponsors --> 
 
 <!-- Exhibitors --> 
-		<h2 class="SponsorListHeadline FontRaleway"><span>Exhibitor SponsorLists</span></h2>
+		<h2 class="SponsorHeadline FontRaleway"><span>Exhibitor Sponsors</span></h2>
      <?php 
 
   $content = $sponsors->sponsors(6); 
@@ -240,10 +253,10 @@ This section is controlled by the menu.css
                
 <!-- END Exhibitors -->                                                   
     </div>         
-    <!-- END SponsorLists List -->
+    <!-- END Sponsors List -->
 
 </section>
-<!--END SponsorLists --> 
+<!--END Sponsors --> 
 <!-- FOOTER -->
 <footer>
  <div id="FooterWrapper">
@@ -263,11 +276,11 @@ This section is controlled by the menu.css
         </form>
         <div id="FooterSocialIconsContainer"> <a href="https://twitter.com/hrtechworld" target="_blank" title="HR Tech World - Twitter" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Twitter']);">
           <div id="FooterTwitter" class="FooterSocialIcon"></div>
-          </a> <a href="https://www.facebook.com/hrtecheu" target="_blank" title="HR Tech Europe - Facebook" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Facebook']);">
+          </a> <a href="https://www.facebook.com/worldhrtech?ref=hl" target="_blank" title="HR Tech Europe - Facebook" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Facebook']);">
           <div id="FooterFacebook" class="FooterSocialIcon"></div>
-          </a> <a href="http://www.linkedin.com/groups/HR-Technology-Europe-Human-Resources-3930182/about" target="_blank" title="HR Tech Europe - LinkedIn" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'LinkedIn']);">
+          </a> <a href="https://www.linkedin.com/grp/home?gid=1909337" target="_blank" title="HR Tech Europe - LinkedIn" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'LinkedIn']);">
           <div id="FooterLinkedIn" class="FooterSocialIcon"></div>
-          </a> <a href="http://www.slideshare.net/hrtecheurope" target="_blank" title="HR Tech Europe - SlideShare" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'SlideShare']);">
+          </a> <a href="http://www.slideshare.net/hrtecheurope/presentations" target="_blank" title="HR Tech Europe - SlideShare" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'SlideShare']);">
           <div id="FooterSlideShare" class="FooterSocialIcon"></div>
           </a> <a href="https://www.flickr.com/photos/hrtecheurope/sets/72157648919068765/" target="_blank" title="HR Tech Europe - Flickr" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Flickr']);">
           <div id="FooterFlickr" class="FooterSocialIcon"></div>
@@ -324,9 +337,9 @@ This section is controlled by the menu.css
 
 
 
-<!-- Become a SponsorList Modal -->
-<div id="BecomeASponsorListModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
-  <h2>Apply for SponsorListship</h2>
+<!-- Become a Sponsor Modal -->
+<div id="BecomeASponsorModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
+  <h2>Apply for Sponsorship</h2>
   <p>Gain direct access to more than 4,000 enterprise HR decision makers.</p>
   <!-- BEGINING of : BECOME A SPONSOR MODAL FORM -->
   <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
@@ -341,13 +354,13 @@ This section is controlled by the menu.css
         <input required placeholder="Company *" id="company" maxlength="40" name="company" size="20" type="text" />
         <input required placeholder="Job Title *" id="title" maxlength="40" name="title" size="20" type="text" />
         <select  style="display:none;"   id="lead_source" name="lead_source" placeholder="Lead Source">
-          <option selected="selected" value="HRTechParis2015-BecomeASponsorList">HRTechParis2015-BecomeASponsorList</option>
+          <option selected="selected" value="HRTechParis2015-BecomeASponsor">HRTechParis2015-BecomeASponsor</option>
         </select>
-        <input onClick="_gaq.push(['_trackEvent', 'BecomeASponsorListForm', 'FromSubmission', 'InquirySent']);" class="submitbutton" type="submit" name="submit" value="SEND">
+        <input onClick="_gaq.push(['_trackEvent', 'BecomeASponsorForm', 'FromSubmission', 'InquirySent']);" class="submitbutton" type="submit" name="submit" value="SEND">
   </form>
   <!-- END of : BECOME A SPONSOR MODAL FORM -->
 </div>
-<!-- END Become a SponsorList Modal -->
+<!-- END Become a Sponsor Modal -->
 
 <!-- Thank You For Apply Modal -->
 <div id="ThankYouForApplyModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>

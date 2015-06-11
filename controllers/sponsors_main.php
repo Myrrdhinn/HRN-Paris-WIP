@@ -341,10 +341,15 @@ class sponsors_main extends config {
 					
 					$achor = $this->clean_str($sponsors['sponsor_name']);
 					
+					
+						$tempId = 'id="'.$achor.'Sponsor"';
+						$tempIdTwo = 'id="'.$achor.'SponsorBox"';
+					
+					
 					//# ez után kell egy url anchor tag
 			 $content .=' <!-- '.$sponsors['sponsor_name'].' -->
-            <a href="#'.$achor.'" class="SponsorGridAnchor" data-sponsornametag="'.$achor.'"><div class="Sponsor" data-sponsornum="'.$sponsors['sponsor_id'].'" '.$tag.'>
-                <div class="SponsorLogo" style="background-image: url(img/sponsors/logos/'.$sponsors['image_url'].');"></div>
+            <a href="#'.$achor.'" class="SponsorGridAnchor" data-sponsornametag="'.$achor.'"><div class="Sponsor" '.$tempId.' data-sponsornum="'.$sponsors['sponsor_id'].'" '.$tag.'>
+                <div '.$tempIdTwo.' class="SponsorLogo" style="background-image: url(img/sponsors/logos/'.$sponsors['image_url'].');"></div>
                 <img src="img/sponsors/sponsor-hover-plus-icon.png" alt="+">
             </div>
             </a>

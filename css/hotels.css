@@ -4,6 +4,9 @@
 /*@media (min-width:1921px) {   /* Define everything with vw to keep the 1920px wide PSD aspect ratio */
 /*	
 }*/
+a {
+	color:#010101;
+	}
 
 a:hover {
 	color: #106ab5;
@@ -24,6 +27,17 @@ a:hover {
 	padding-bottom: 0.78125vw;
 	border-bottom: 2px solid #adadad;	
 	margin-bottom: 2.34375vw;
+	text-align:center;
+}
+#FeaturedHotelWrapper h3 {
+	font-family: "Raleway",sans-serif;
+	font-weight:400;
+	color: #545454;
+	font-size:20px;
+	max-width:800px;
+	line-height:36px;
+	margin:0 auto;
+	margin-bottom:60px;
 }
 #FeaturedHotelWrapper p {
 	font-family: 'Lato', sans-serif;
@@ -262,7 +276,7 @@ a:hover {
 	#FeaturedHotelAddress .fa-map-marker{		margin-right: 12px;	}	
 }	
 	
-@media (max-width:1279px) { /* Swap to the units to vw again, keeping the aspect ratio of the 1280px wide PSD. */
+@media (max-width:1280px) { /* Swap to the units to vw again, keeping the aspect ratio of the 1280px wide PSD. */
 	#HotelsWrapper {
 		max-width: 89.0625vw;
 		margin-top: 4vw;

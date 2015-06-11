@@ -114,6 +114,14 @@ use HRNParis\main as main;
 		 $content .='<div class="dropzone" id="DropDiv"></div><br />
 		 <input type="file" name="file" style="display:none" />
      </fieldset>';
+	 
+	 
+   	  $content .='
+	  <fieldset>';
+	      $content .="<legend>Main Page</legend>";
+       $content .='<label><input type="checkbox" id="MainCheckbox"> Display on Main Page</label><br /><br />
+	     <textarea class="MainPageBio" id="SpeakerMPBio" placeholder="Main Page Bio"></textarea><br />
+     </fieldset>';
 
     $content .= '<button class="AdminSubmitButton" name="NewSpeakerSave" id="NewSpeakerSave" type="Submit">Save</button>';
 	

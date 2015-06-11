@@ -17,7 +17,7 @@ require_once('controllers/siteauth.php');
 	}
 	
 	$content = '
-	<title>HR Tech Europe - Sales Site</title>
+	<title>HR Tech Europe - HR Tech Congress</title>
 	<!--Include Admin styles-->
 	  <link href="css/admin_general.css" rel="stylesheet">
 	  <link href="css/admin_login.css" rel="stylesheet">

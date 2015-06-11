@@ -592,7 +592,7 @@ header button:hover {
 .SponsorHeadline {
 	width: 100%;
 	max-width: 59.375vw; 
-	background-image: url(../img/sponsors/headline-background-desktop.png); 
+	/*background-image: url(../img/sponsors/headline-background-desktop.png); */
 	background-size: cover;
 	background-position: center center; 
 	font-size: 1.875vw;
@@ -607,12 +607,20 @@ header button:hover {
 	margin-left: -0.260416vw;
 }
 .CategoryContainer {
+	/*
 	width: 100%; 
 	max-width: 89.5833333vw; 
-	margin: 0 auto;	
+	margin: 0 auto;
+	*/
+	
+  width: 100%;
+  max-width: 89.5833333vw;
+  margin: 0 auto;
+  text-align: center;	
+  	
 }
 .Sponsor {
-	width: 14.84375vw;
+	width: 10.84375vw;
 	height: 10.677083vw;
 	display: inline-block;
 	text-align: center; /* aligns the Sponsor logo container divs (.SponsorLogo) to the center */
@@ -637,7 +645,7 @@ header button:hover {
 }
 .SponsorLogo {
 	display: inline-block;
-	width: 11.979166vw;
+	width: 7.979166vw;
 	height: 5.7291666vw;
 	background-position: center; 
 	background-repeat: no-repeat; 
@@ -676,7 +684,7 @@ header button:hover {
 	.CategoryContainer {
 		max-width: 80vw; 
 	}
-	.Sponsor {
+	.Sponsor, #crossknowledgeSponsor, #adpSponsor, #inforSponsor {
 		/*width: 153px;
 		height: 110px;
 		padding: 25px 10px 0 10px;*/
@@ -694,7 +702,7 @@ header button:hover {
 		width: 1.953125vw;
 		height: 1.953125vw;
 	}	
-	.SponsorLogo {
+	.SponsorLogo, #crossknowledgeSponsorBox {
 		/*width: 120px;
 		height: 60px;*/
 		width: 15.625vw;
@@ -721,7 +729,7 @@ header button:hover {
 	#SponsorHeadlineAlaCarte {
 		background-image: none; 
 	}
-	.Sponsor {
+	.Sponsor, #crossknowledgeSponsor, #adpSponsor, #inforSponsor {
 		width: 39.7vw;
 		height: 28.4172vw;
 		padding-top: 6vw;
@@ -732,7 +740,7 @@ header button:hover {
 		width: 3.90625vw;
 		height: 3.90625vw;
 	}
-	.SponsorLogo {
+	.SponsorLogo, #crossknowledgeSponsorBox {
 		width: 30vw;
 		height: 17.1875vw;
 	}

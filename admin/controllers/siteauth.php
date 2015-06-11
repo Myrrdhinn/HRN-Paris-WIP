@@ -48,8 +48,12 @@ public function login($username, $password) {
 							if (isset($_SESSION)){ //if there is already a session
 								 session_unset();
 	                             session_destroy();
+								 $lifetime=3600;
+                                 session_set_cookie_params($lifetime);
 								 session_start();
 							} else {  //if there's no session
+							    $lifetime=3600;
+                                session_set_cookie_params($lifetime);
 								session_start();
 							} //else end
 						   

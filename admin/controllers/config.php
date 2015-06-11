@@ -45,8 +45,7 @@ require_once('connect.php');
 		   exit;
 	 }
 	  
-    //$this->basedir = $_SERVER['DOCUMENT_ROOT'].'/';    - Live
-	 $this->basedir = $_SERVER['DOCUMENT_ROOT'].'/HRNParis/';
+    $this->basedir = $_SERVER['DOCUMENT_ROOT'].'/HRNParis/';
 
  
  /*

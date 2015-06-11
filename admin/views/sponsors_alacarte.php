@@ -56,8 +56,7 @@ $sponsors = new sponsors_main;
 <script src="../js/gotopscroll.js"></script>
 
 
-<!-- Mainpage JS -->
-<script src="../js/mainpage.js"></script>
+
 
 <?php 
 if(isset($_SESSION['admin'])){

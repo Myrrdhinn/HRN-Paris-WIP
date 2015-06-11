@@ -1,0 +1,169 @@
+@charset "utf-8";
+/* CSS Document for the Desktop Menu */
+
+body {
+	font-family: 'Raleway', sans-serif;	
+	padding: 0;
+}
+a {
+	text-decoration: none;	
+}
+
+/* Desktop Menu */
+#DesktopMenu {
+	width: 100%;
+	height: 4.0625vw;
+	background-color: #fff;
+	border-bottom: 1px solid #bfbfbf;	
+	position: fixed;
+	top: 0;
+	box-sizing: border-box;
+	font-size: 0;
+	z-index: 5000;
+}
+@media (max-width: 1000px) {
+	#DesktopMenu {
+		display: none;	
+	}
+}
+#DesktopMenu * {
+	box-sizing: border-box;
+}
+#HRTechDesktopLogo {
+	display: inline-block;	
+	width: 10.2604166666666667vw;
+	height: 2.5vw;
+	margin-top: 0.720833vw;
+	margin-left: 2.8645833vw;
+	margin-right: 6.33333vw;
+	background-image: url(../img/menu/horizontallogo.png);
+	background-size: cover;
+}
+
+#DesktopMenuList {
+	display: inline-block;
+	list-style-type: none;
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	font-family: 'Raleway', sans-serif;
+}
+#DesktopMenuList a {
+	color: none;
+}
+.DesktopMenuItem {
+	display: inline-block;
+	font-size: 1.25vw;
+	color: #707070;
+	padding: 1.25vw 0.9375vw 1.302083vw 0.9375vw;
+	height: 100%;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.DesktopMenuItem:hover {
+	background-color: #106ab5;
+	color: #fff;	
+}
+.DesktopMenuItem > a{
+	color: #707070;
+}
+.DesktopMenuItem:hover > a {
+	color: #fff;	
+}
+#DesktopMenuList #DesktopGetTickets {
+	color: #106ab5;
+	font-weight: 700;
+}
+#DesktopMenuList #DesktopGetTickets:hover {
+	color: #fff;
+}
+#DesktopGetTickets .fa-ticket{
+	margin-right: 0.520833vw;
+}
+#DesktopMenuSocialIcons {
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 1.2vw;	
+	position: absolute;
+	right: 2.34375vw;
+}
+.DesktopMenuSocialIcon {
+	margin-right: 0.260416vw;	
+	width: 1.71875vw;
+	height: 1.71875vw;
+	display: inline-block;
+}
+#DesktopMenuTwitterIcon {
+	background-image: url(../img/menu/twitter.png);
+	background-size: cover;
+}
+#DesktopMenuFacebookIcon {
+	background-image: url(../img/menu/facebook.png);
+	background-size: cover;
+}
+#DesktopMenuLinkedInIcon {
+	background-image: url(../img/menu/linkedin.png);
+	background-size: cover;
+}
+#DesktopMenuSlideShareIcon {
+	background-image: url(../img/menu/slideshare.png);
+	background-size: cover;
+}
+#DesktopMenuFlickrIcon {
+	background-image: url(../img/menu/flickr.png);
+	background-size: cover;
+}
+
+
+
+/* Dropdowns */
+#PartnersMenu, #VenueMenu  {
+	display: none;
+	opacity: 0;
+	position: absolute;	
+	top: 2.083333vw;
+	text-align: center;
+	transition: all 0.3s;
+}
+#PartnersMenu {
+	width: 10.15625vw; /* delete this if you want exactly as wide dropdown as the PARTNERS menuitem */
+	left: -0.8854166vw;	/* set this to 0vw if fixed width is deleted */
+}
+#VenueMenu {
+	left: 0vw;
+}
+#PartnersDD:hover #PartnersMenu, #VenueDD:hover #VenueMenu {
+	display: inline-block;	
+	opacity: 1;
+}
+.Dropdown {
+	margin-top: 0;
+	padding: 0.885416vw 1.041666vw 0.052083vw 1.041666vw;
+	background-color: #0a2841;
+	border-top: 0.416666vw solid #4899dd;
+	list-style-type: none;
+	font-size: 0.9375vw;
+	text-align: left;
+}
+.Dropdown a {
+	color: 	rgba(255,255,255, 0.8);
+}
+.Dropdown a:hover {
+	color: #fff;
+}
+.Dropdown li {
+	margin-bottom: 0.83333vw;
+}
+.ArrowUp {
+	display: inline-block;
+	width: 0; 
+	height: 0; 
+	border-left: 0.364583vw solid transparent;
+	border-right: 0.364583vw solid transparent;
+	
+	border-bottom: 0.364583vw solid #4899dd;
+	margin-bottom: -0.3125vw;
+}
+/* END Dropdowns */
+

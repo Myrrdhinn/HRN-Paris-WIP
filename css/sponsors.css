@@ -103,7 +103,7 @@ header button:hover {
 .SponsorListHeadline {
 	width: 60%; 
 	text-align: center; 
-	background-image: url(../img/sponsors/headline-background-desktop.png); 
+	/*background-image: url(../img/sponsors/headline-background-desktop.png); */
 	padding: 0px; 
 	background-position: center center; 
 	font-size: 40px;

@@ -75,6 +75,12 @@ $content = '';
 						   $content .='" onmouseout="this.src=';
 						   $content .="'img/icons/speakers.png';";
 						   $content .='" ></a>';
+						   
+						   $content .= '<a target="_blank" href="speakers_mainpage" title="Speakers Mainpage Order"><img class="MenuIcon" src="img/icons/speakers_mainpage.png" onmouseover="this.src=';
+						   $content .="'img/icons/speakers_mainpage_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'img/icons/speakers_mainpage.png';";
+						   $content .='" ></a>';
 					   
 					  }
 
@@ -116,6 +122,12 @@ $content = '';
 						   $content .="'../img/icons/speakers_hover.png';";
 						   $content .='" onmouseout="this.src=';
 						   $content .="'../img/icons/speakers.png';";
+						   $content .='" ></a>';
+						   
+						   $content .= '<a target="_blank" href="../speakers_mainpage" title="Speakers Mainpage Order"><img class="MenuIcon" src="../img/icons/speakers_mainpage.png" onmouseover="this.src=';
+						   $content .="'../img/icons/speakers_mainpage_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'../img/icons/speakers_mainpage.png';";
 						   $content .='" ></a>';
 					   
 					  }
@@ -299,6 +311,12 @@ This section is controlled by the menu.css
 						   $content .='" onmouseout="this.src=';
 						   $content .="'img/icons/speakers.png';";
 						   $content .='" ></a>';
+						   
+						   $content .= '<a target="_blank" href="speakers_mainpage" title="Speakers Mainpage Order"><img class="MenuIcon" src="img/icons/speakers_mainpage.png" onmouseover="this.src=';
+						   $content .="'img/icons/speakers_mainpage_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'img/icons/speakers_mainpage.png';";
+						   $content .='" ></a>';
 					   
 					  }
 
@@ -341,6 +359,12 @@ This section is controlled by the menu.css
 						   $content .="'../img/icons/speakers_hover.png';";
 						   $content .='" onmouseout="this.src=';
 						   $content .="'../img/icons/speakers.png';";
+						   $content .='" ></a>';
+						   
+						   $content .= '<a target="_blank" href="../speakers_mainpage" title="Speakers Mainpage Order"><img class="MenuIcon" src="../img/icons/speakers_mainpage.png" onmouseover="this.src=';
+						   $content .="'../img/icons/speakers_mainpage_hover.png';";
+						   $content .='" onmouseout="this.src=';
+						   $content .="'../img/icons/speakers_mainpage.png';";
 						   $content .='" ></a>';
 					   
 					  }

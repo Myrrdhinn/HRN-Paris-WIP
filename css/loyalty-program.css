@@ -1,0 +1,590 @@
+@charset "utf-8";
+/* These CSS rules will affect the tickets page page.  */
+
+
+/* Header */
+header, #PricingTables {
+	background-color: #ebebeb;	
+}
+#header *, #PricingTables *, #FAQ * {
+	box-sizing: border-box;	
+}
+header {
+	margin-top:4vw;
+	padding-top: 3.125vw;
+	padding-bottom: 7.03125vw;
+	text-align:center;
+}
+header h1 {
+	font-size: 3.515625vw;
+	font-weight: 800;
+	margin: 0;	
+	color: #60bbd5;
+	font-family: 'Lato', sans-serif;
+}
+header p {
+	margin-top: 2.734375vw;
+	margin-bottom: 1.796875vw;
+	font-family: 'Lato', sans-serif;
+	color: #1c2126;
+	font-size: 1.09375vw;
+	font-weight: 600;
+}
+header h2 {
+	font-size: 1.25vw;
+	width: 100%;
+	max-width: 58.203125vw;
+	margin: 0 auto;
+	text-transform: uppercase;
+	font-weight: 800;
+	color: #1c2126;
+	font-family: 'Lato', sans-serif;
+}
+/* END Header */
+@media (max-width: 1280px) {
+	header {
+		margin-top:4vw;
+		padding-top: 40px;
+		padding-bottom: 90px;
+	}
+	header h1 {
+		font-size: 45px;
+	}
+	header p {
+		margin-top: 35px;
+		margin-bottom: 23px;
+		font-size: 14px;
+	}
+	header h2 {
+		font-size: 16px;
+		max-width: 745px;
+	}
+}
+@media (max-width: 1024px) {
+	header {
+		padding-top: 3.90625vw;
+		padding-bottom: 8.7890625vw;
+	}
+	header h1 {
+		font-size: 4.39453125vw;
+	}
+	header p {
+		margin-top: 3.41796875vw;
+		margin-bottom: 2.24609375vw;
+		font-size: 1.3671875vw;
+	}
+	header h2 {
+		font-size: 1.5625vw;
+		max-width: 72.75390625vw;
+	}
+}
+@media (max-width: 1000px) {
+	header {
+		margin-top: 15.5vw;
+	}
+}
+@media (max-width: 700px) {
+	header {
+		padding-top: 9.375vw;
+		padding-bottom: 12.5vw;
+	}
+	header h1 {
+		font-size: 11.25vw;
+	}
+	header p {
+		width: 100%;
+		max-width: 76.5625vw;
+		margin: 0 auto;
+		margin-top: 3.125vw;
+		margin-bottom: 3.125vw;
+		font-size: 4.375vw;
+		font-weight: 400;
+	}
+	header h2 {
+		font-size: 4.375vw;
+		max-width: 89.0625vw;
+	}
+}
+
+/* Pricing Tables */
+#PricingTables {
+	text-align: center;	
+	font-size: 0;
+}
+.Table {
+	display: inline-block;
+	width: 100%;
+	max-width: 22.265625vw;
+	vertical-align: top;
+	margin: 0 1.25vw;
+	margin-bottom: 3.90625vw;
+}
+.Category {
+	font-size: 1.875vw;
+	font-weight: 800;
+	font-family: 'Lato', sans-serif;
+	background-color: #86c4e6;	
+	color: #fff;
+	margin: 0;
+	padding: 0.546875vw 0;
+}
+#Diamond {
+	position: relative;
+}
+#MostPopular {
+	position: absolute;
+	width: 22.265625vw;
+	top: -3.359375vw;	
+	background-color: #1c2126;
+	color: #fff;
+}
+.Details {
+	background-color: #1c2126;
+	color: #fff;
+	padding-top: 1.5625vw;
+	padding-bottom: 3.90625vw;
+}
+.Details .fa-ticket {
+	font-size: 2.96875vw;	
+	margin-bottom: 0.78125vw;
+}
+.Price {
+	font-family: 'Lato', sans-serif;
+	margin: 0;
+	font-size: 2.5vw;
+	font-weight: 800;
+}
+.OldPrice {
+	color: #c72030;
+	margin-top: 0.78125vw;
+	position: relative;
+}
+.OldPrice::after {
+    border-bottom: 0.15625vw solid #fff;
+    content: "";
+    left: 5.078125vw;
+    position: absolute;
+    top: 45%;
+	width: 12.03125vw;
+}
+.NewPrice {
+	color: #60bbd5;
+	margin-top: 1.171875vw;
+}
+.Details p {
+	font-family: 'Lato', sans-serif;
+	margin: 0;	
+	font-size: 1.09375vw;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+.Benefits {
+	list-style-type: none;
+	padding: 0;
+	padding-bottom: 0.78125vw;
+	margin: 0;
+	background-color: #fff;
+	font-family: 'Lato', sans-serif;
+	font-size: 1.0484375vw;
+}
+.Benefits li {
+	padding: 1.5625vw 0 0.859375vw 0;	
+}
+#ContactUs {
+	margin: 2.5vw 0 0 0;	
+}
+#ContactUs h3 {
+	background-color: #60bbd5;
+}
+#ContactUs .Details {
+	padding: 0.625vw 0;	
+	text-align: left;
+	padding-left: 5.46875vw;
+}
+#ContactUs p {
+	margin: 0;
+	margin-bottom: 0.234375vw;
+	color: #fff;
+	font-size: 0.82265625vw;
+}
+#ContactUs p .fa {
+	font-size: 1.171875vw;
+	margin-right: 0.78125vw;
+}
+#ContactUs p a {
+	color: #fff;
+}
+#ContactUs p img {
+	margin-right: 0.78125vw;
+}
+.PhoneIcon {
+	width: 1.015625vw;
+	height: 1.09375vw;	
+}
+#EnvelopeIcon {
+	width: 1.171875vw;
+	height: 0.703125vw;	
+}
+#ContactUs #PhoneHungary {
+	margin-bottom: 0;	
+}
+
+@media (max-width: 1280px) {
+	.Table {
+		max-width: 285px;
+		margin: 0 16px;
+		margin-bottom: 50px;
+	}
+	.Category {
+		font-size: 24px;
+		padding: 7px 0;
+	}
+	#MostPopular {
+		width: 285px;
+		top: -41px;	
+	}
+	.Details {
+		padding-top: 20px;
+		padding-bottom: 50px;
+	}
+	.Details .fa-ticket {
+		font-size: 38px;	
+		margin-bottom: 10px;
+	}
+	.Price {
+		font-size: 32px;
+	}
+	.OldPrice {
+		margin-top: 10px;
+	}
+	.OldPrice::after {
+		border-bottom: 2px solid #fff;
+		content: "";
+		left: 65px;
+		position: absolute;
+		top: 45%;
+		width: 154px;
+	}
+	.NewPrice {
+		margin-top: 15px;
+	}
+	.Details p {
+		font-size: 14px;
+	}
+	.Benefits {
+		padding-bottom: 10px;
+		font-size: 13.42px;
+	}
+	.Benefits li {
+		padding: 20px 0 11px 0;	
+	}
+	#ContactUs {
+		margin: 32px 0 0 0;	
+	}
+	#ContactUs .Details {
+		padding-top: 8px;
+		padding-bottom: 8px;
+		padding-left: 70px;
+	}
+	#ContactUs p {
+		margin-bottom: 3px;
+		font-size: 10.53px;
+	}
+	#ContactUs p img {
+		margin-right: 10px;
+	}
+	.PhoneIcon {
+		width: 13px;
+		height: 14px;	
+	}
+	#EnvelopeIcon {
+		width: 15px;
+		height: 9px;	
+	}
+}
+@media (max-width: 1024px) {
+	.Table {
+		max-width: 27.83203125vw;
+		margin: 0 1.5625vw;
+		margin-bottom: 4.8828125vw;
+	}
+	.Category {
+		font-size: 2.34375vw;
+		padding: 0.68359375vw 0;
+	}
+	#MostPopular {
+		width: 27.83203125vw;
+		top: -3.9vw;	
+	}
+	.Details {
+		padding-top: 1.953125vw;
+		padding-bottom: 4.8828125vw;
+	}
+	.Details .fa-ticket {
+		font-size: 3.7109375vw;	
+		margin-bottom: 0.9765625vw;
+	}
+	.Price {
+		font-size: 3.125vw;
+	}
+	.OldPrice {
+		margin-top: 0.9765625vw;
+	}
+	.OldPrice::after {
+		border-bottom: 0.1953125vw solid #fff;
+		content: "";
+		left: 6.34765625vw;
+		position: absolute;
+		top: 45%;
+		width: 15.0390625vw;
+	}
+	.NewPrice {
+		margin-top: 1.46484375vw;
+	}
+	.Details p {
+		font-size: 1.3671875vw;
+	}
+	.Benefits {
+		padding-bottom: 0.9765625vw;
+		font-size: 1.310546875vw;
+	}
+	.Benefits li {
+		padding: 1.953125vw 0 1.07421875vw 0;	
+	}
+	#ContactUs {
+		margin: 3.125vw 0 0 0;	
+	}
+	#ContactUs .Details {
+		padding-top: 0.78125vw;
+		padding-bottom: 0.78125vw;
+		padding-left: 6.8359375vw;
+	}
+	#ContactUs p {
+		margin-bottom: 0.29296875vw;
+		font-size: 1.0283203125vw;
+	}
+	#ContactUs p img {
+		margin-right: 0.9765625vw;
+	}
+	.PhoneIcon {
+		width: 1.26953125vw;
+		height: 1.3671875vw;	
+	}
+	#EnvelopeIcon {
+		width: 1.46484375vw;
+		height: 0.87890625vw;	
+	}
+}
+@media (max-width: 700px) {
+	.Table {
+		max-width: 89.0625vw;
+		margin-bottom: 15.625vw;
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 12.5vw;
+	}
+	.Category {
+		font-size: 7.5vw;
+		padding: 2.1875vw 0;
+	}
+	#Diamond {
+		margin-top: 25vw;	
+	}
+	#MostPopular {
+		width: 89.0625vw;
+		top: -13vw;	
+	}
+	.Details {
+		padding-top: 6.25vw;
+		padding-bottom: 15.625vw;
+	}
+	.Details .fa-ticket {
+		font-size: 11.875vw;	
+		margin-bottom: 3.125vw;
+	}
+	.Price {
+		font-size: 10vw;
+	}
+	.OldPrice {
+		margin-top: 3.125vw;
+	}
+	.OldPrice::after {
+		border-bottom: 0.625vw solid #fff;
+		content: "";
+		left: 20.3125vw;
+		position: absolute;
+		top: 45%;
+		width: 48.125vw;
+	}
+	.NewPrice {
+		margin-top: 4.6875vw;
+	}
+	.Details p {
+		font-size: 4.375vw;
+	}
+	.Benefits {
+		padding-bottom: 3.125vw;
+		font-size: 4.19375vw;
+	}
+	.Benefits li {
+		padding: 6.25vw 0 3.4375vw 0;	
+	}
+	#ContactUs {
+		margin: 10vw 0 0 0;	
+	}
+	#ContactUs .Details {
+		padding-top: 2.5vw;
+		padding-bottom: 2.5vw;
+		padding-left: 21.875vw;
+	}
+	#ContactUs p {
+		margin-bottom: 0.9375vw;
+		font-size: 3.290625vw;
+	}
+	#ContactUs p img {
+		margin-right: 3.125vw;
+	}
+	.PhoneIcon {
+		width: 4.0625vw;
+		height: 4.375vw;	
+	}
+	#EnvelopeIcon {
+		width: 4.6875vw;
+		height: 2.8125vw;	
+	}
+}
+/* END Pricing Tables */
+
+/* FAQ */
+#FAQ {
+	width: 100%;
+	background-color: #fff;	
+}
+#FAQ h2 {
+	color: #60bbd5;
+	background-color: #1c2126;
+	font-family: 'Lato', sans-serif;
+	font-weight: 800;
+	font-size: 3.515625vw;	
+	text-align: center;
+	margin: 0;
+	padding: 3.125vw 0;
+}
+#FAQ h3 {
+	font-family: 'Lato', sans-serif;
+	font-size: 1.25vw;	
+	text-align: center;	
+	text-transform: uppercase;
+	margin-top: 2.734375vw;
+	margin-bottom: 3.125vw;
+	font-weight: 800;
+}
+#FAQList {
+	list-style-position: inside;
+	font-weight: 600;
+	font-family: 'Lato', sans-serif;
+	font-size: 1.25vw;
+	margin: 0;
+	padding: 0;
+	padding-left: 10.15625vw;
+	width: 100%;
+	
+	-moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+}
+#FAQList li {
+	margin-bottom: 1.953125vw;
+	width: 100%;
+	max-width: 29.6875vw;
+}
+#FAQList li:before {
+	font-weight: 800;
+}
+#FAQList li strong {
+	font-weight: 800;
+	text-transform: uppercase;
+}
+#FAQList li span {
+	font-weight: 400;
+	display: block;
+}
+@media (max-width: 1280px) {
+	#FAQ h2 {
+		font-size: 45px;	
+		padding: 40px 0;
+	}
+	#FAQ h3 {
+		font-size: 16px;	
+		margin-top: 35px;
+		margin-bottom: 40px;
+	}
+	#FAQList {
+		font-size: 16px;
+		padding-left: 7.15625vw;
+	}
+	#FAQList li {
+		margin-bottom: 25px;
+		max-width: 380px;
+	}
+	#FAQList #FourthFAQ {
+		margin-bottom: 50px;	
+	}
+}
+@media (max-width: 1024px) {
+	#FAQ h2 {
+		font-size: 4.39453125vw;	
+		padding: 3.90625vw 0;
+	}
+	#FAQ h3 {
+		font-size: 1.5625vw;	
+		margin-top: 3.41796875vw;
+		margin-bottom: 3.90625vw;
+	}
+	#FAQList {
+		font-size: 1.5625vw;
+		padding-left: 7.15625vw;
+		padding-bottom: 1vw;
+	}
+	#FAQList li {
+		margin-bottom: 2.44140625vw;
+		max-width: 37.109375vw;
+	}
+	#FAQList #FourthFAQ {
+		margin-bottom:  2.44140625vw;	
+	}
+}
+@media (max-width: 700px) {
+	#FAQ h2 {
+		font-size: 7.5vw;	
+		padding: 10.625vw 0;
+	}
+	#FAQ h3 {
+		font-size: 5vw;	
+		width: 100%;
+		max-width: 81.25vw;
+		margin: 0 auto;
+		margin-top: 9.375vw;
+		margin-bottom: 7.8125vw;
+		line-height: 5.9375vw;
+	}
+	#FAQList {
+		padding-left: 3.125vw;
+		padding-right: 3.125vw;
+		-moz-column-count: 1;
+		-webkit-column-count: 1;
+		column-count: 1;
+		padding-bottom: 2vw;
+	}
+	#FAQList li {
+		font-size: 5vw;
+		line-height: 5.9375vw;
+		margin-bottom: 6.25vw;
+		max-width: 100%;
+		text-align: center;
+	}
+	#FAQList #FourthFAQ {
+		margin-bottom:  6.25vw;	
+	}
+}
+/* END FAQ */

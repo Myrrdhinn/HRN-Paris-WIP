@@ -3,6 +3,8 @@ namespace HRNParis\main;
 use HRNParis\config as config;
 include_once('config.php');	
 if(!isset($_SESSION)) {
+	$lifetime=3600;
+    session_set_cookie_params($lifetime);
 	session_start();
 }
 
@@ -1236,6 +1238,23 @@ public function save_speaker() {
 			throw new Exception('Speakers Title is not set in the speaker upload by:'.$_SESSION['user_id']);  
 		  }
 		  
+		  
+	//Mainpage stuff	
+	
+	if ($_POST['MainPage'] == 1 && isset($_POST['MainPageBio'])) { 
+		     $this->speakers_mainpage($speaker_id, 1);  
+		
+											  //speaker Bio	
+			   $bio_q = "INSERT INTO speakers_mainpage_bio SET text = :bio, speaker_id = :id";
+			   $bio = $this->pdo->prepare($bio_q);
+			   
+			  
+			   $bio->bindValue(':bio', $_POST['MainPageBio'], \PDO::PARAM_STR);
+	  
+			   $bio->bindValue(':id', $speaker_id, \PDO::PARAM_INT);
+			   
+			   $bio->execute();
+	   }
 	//-----------------
 	   //Company Data	 
 		 
@@ -1716,6 +1735,141 @@ public function speaker_order($speaker, $order) {
 			   
 			   $status->execute();
 	
+}
+
+public function speaker_mainpage_order($speaker, $order) {
+	
+						  //speaker Status
+			   $status_q = "UPDATE speakers_mainpage_order SET order_id = :order WHERE speaker_id = :id";
+			   $status = $this->pdo->prepare($status_q);
+	  
+	           $status->bindValue(':order', $order, \PDO::PARAM_INT);
+			   $status->bindValue(':id', $speaker, \PDO::PARAM_INT);
+			   
+			   $status->execute();
+	
+}
+
+public function speakers_mainpage($sId, $val) {
+					 						
+				 $mainpage_q = "SELECT id FROM speakers_mainpage WHERE speaker_id = :id ORDER BY date LIMIT 0,1";
+				 $mainpage = $this->pdo->prepare($mainpage_q);
+				 
+				 $mainpage->bindValue(':id', $sId, \PDO::PARAM_INT);
+				 
+				 $mainpage->execute();
+				 
+				 if ($mainpage->rowCount() > 0) {
+					$main_id = $mainpage->fetch();
+					
+				 } 
+				 
+				 //if the user wants to delete the speaker from the main page
+		if ($val == 0) {
+			
+			if (isset($main_id[0])){
+							    
+				   $delete_q = "DELETE FROM speakers_mainpage WHERE id = :id";
+				   $delete = $this->pdo->prepare($delete_q);
+				   
+				   $delete->bindValue(':id', $main_id[0], \PDO::PARAM_INT);
+				   $delete->execute();
+				   
+				   
+				   $delete_order_q = "DELETE FROM speakers_mainpage_order WHERE speaker_id = :id";
+				   $delete_order = $this->pdo->prepare($delete_order_q);
+				   
+				   $delete_order->bindValue(':id', $main_id[0], \PDO::PARAM_INT);
+				   $delete_order->execute();
+				
+				
+			}
+			
+		}//if val == 0
+		
+		
+	 if ($val == 1) {
+		 if (!isset($main_id[0])){
+									  
+				   $website_q = "INSERT INTO speakers_mainpage SET speaker_id = :id";
+				   $website = $this->pdo->prepare($website_q);
+				   
+				   $website->bindValue(':id', $sId, \PDO::PARAM_INT);
+				   
+				   $website->execute();
+				   
+				   
+				 $order_q = "SELECT id FROM speakers_mainpage_order";
+				 $order = $this->pdo->prepare($order_q);
+
+				 $order->execute();
+				 
+				 if ($order->rowCount() > 0) {
+					$order_num = $order->rowCount();
+					$order_num++;
+				 } else {
+					 $order_num = 1;
+				 }
+				   
+				   
+				   $website_q = "INSERT INTO speakers_mainpage_order SET speaker_id = :id, order_id = :order";
+				   $website = $this->pdo->prepare($website_q);
+				   
+				   $website->bindValue(':id', $sId, \PDO::PARAM_INT);
+				   $website->bindValue(':order', $order_num, \PDO::PARAM_INT);
+				   
+				   $website->execute();
+
+		 
+		 
+		 }
+		 
+	 }//if val == 1
+	
+
+	
+}
+
+public function speaker_mainpage_bio() {
+	
+			     $order_q = "SELECT id FROM speakers_mainpage_bio WHERE speaker_id= :id";
+				 $order = $this->pdo->prepare($order_q);
+                 $order->bindValue(':id', $_POST['sId'], \PDO::PARAM_INT);
+				 $order->execute();
+				 
+				 if ($order->rowCount() > 0) {
+					 							
+														  //speaker Bio	
+			   $bio_q = "UPDATE speakers_mainpage_bio SET text = :bio WHERE speaker_id = :id";
+			   $bio = $this->pdo->prepare($bio_q);
+			   
+			  
+			   $bio->bindValue(':bio', $_POST['body'], \PDO::PARAM_STR);
+	  
+			   $bio->bindValue(':id', $_POST['sId'], \PDO::PARAM_INT);
+			   
+			   $bio->execute();
+					 
+
+				 } else {
+									  //speaker Bio	
+			   $bio_q = "INSERT INTO speakers_mainpage_bio SET text = :bio, speaker_id = :id";
+			   $bio = $this->pdo->prepare($bio_q);
+			   
+			  
+			   $bio->bindValue(':bio', $_POST['body'], \PDO::PARAM_STR);
+	  
+			   $bio->bindValue(':id', $_POST['sId'], \PDO::PARAM_INT);
+			   
+			   $bio->execute();
+					
+					
+				 }
+	
+	
+
+			   
+				 
 }
 
 }
