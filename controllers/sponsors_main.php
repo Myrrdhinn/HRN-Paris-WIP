@@ -414,7 +414,7 @@ class sponsors_main extends config {
 			$achor = $this->clean_str($sponsors['sponsor_name']);
 									 
 			 $content .=' <!-- '.$sponsors['sponsor_name'].' -->
-            <a href="sponsors-list#'.$achor.'" target="_blank"><div class="Sponsor" data-sponsornum="'.$sponsors['sponsor_id'].'" '.$tag.'>
+            <a href="sponsors#'.$achor.'"><div class="Sponsor" data-sponsornum="'.$sponsors['sponsor_id'].'" '.$tag.'>
                 <div class="SponsorLogo" style="background-image: url(img/sponsors/logos/'.$sponsors['image_url'].');"></div>
                 <img src="img/sponsors/sponsor-hover-plus-icon.png" alt="+">
 				<p class="ALaCarteTextContainer">'.$sponsors['text'].'</p>

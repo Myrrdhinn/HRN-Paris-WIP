@@ -1,9 +1,6 @@
 @charset "utf-8";
 /* CSS Document of the HR Tech London 2015 Sponsor Appendices page */
 
-body {
-	/*background-color: #fff;	*/
-}
 h2, h3, h4, h5, h6 {
 	font-family: 'Oswald', sans-serif;	
 	font-weight: 400;
@@ -139,10 +136,13 @@ table {
 #Downloads ol li {
 	line-height: 35px;	
 	color: #353535;
-	font-size: 20px;
+	font-size: 18px;
+}
+#Downloads ol li a {
+	color: #353535;
 }
 #Downloads ol li:hover {
-	font-size: 21px;
+	font-size: 19px;
 }
 #DownloadAllButton {
 	width: 100%;
@@ -228,11 +228,7 @@ table {
 	#Downloads {
 		width: 100vw;
 		padding: 6.25vw 0px 6.25vw 6.25vw;
-	}/*
-	#Downloads h2 {
-		margin-bottom: 20px;
-		margin-top: 0;
-	}*/
+	}
 	#Downloads ol li {
 		line-height: 7.8125vw;	
 		font-size: 5vw;
@@ -477,20 +473,6 @@ table {
 		padding: 5px;
 	}
 }
-/*
-@media (max-width: 900px) {
-	#CalendarContainer {
-		padding-left: 20px;
-		padding-right: 20px;	
-	}
-}
-@media (max-width: 720px) {
-	#CalendarContainer h1 {
-		font-size: 24px;
-	}
-}
-
-*/
 /* END Calendar */
 
 /* Contact */
@@ -528,23 +510,23 @@ table {
 }
 .ContactPhoneNumber {
     font-size: 15px;
-}/*
-@media (max-width: 1000px) {
-	#ContactMembersContainer {
-		margin: 7.5vw 0 7.5vw 0;
-	}
-	.ContactMember {
-		margin:1vw 2vw 2vw 2vw;
-	}
-	.ContactMember div img {
-		width: 20.2vw;
-		height: 20.2vw;	
-	}
-	.ContactMember p{
-		max-width: 20.5vw;
-		font-size: 2.1vw;
-	}
-	.ContactPhoneNumber {
-		font-size: 1.5vw;
-	}
-}*/
+}
+
+/* Modal */
+#DownloadBrochureModal * {
+	font-family: "MS Shell Dlg", sans-serif;	
+	font-weight: 400;
+}
+#DownloadBrochureModal p {
+	font-family: "Raleway", sans-serif;	
+	font-weight: 400;
+}
+#DownloadBrochureModal h2 {
+	font-family: "proxima-nova",sans-serif;
+	font-weight: 600;	
+}
+#DownloadBrochureModal .close-reveal-modal {
+	font-family: "Raleway", sans-serif;	
+	font-weight: 700;
+}
+/* END Modal */

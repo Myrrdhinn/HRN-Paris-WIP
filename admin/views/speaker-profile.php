@@ -36,16 +36,16 @@ $speakers = new speakers_main;
 <link rel="shortcut icon" href="../../favicon.png">
 
 <!-- Include General CSS Definitions -->
-<link rel="stylesheet" href="../../css/general.css" />
+<link rel="stylesheet" href="../css/general.css" />
 
 <!-- Include the Navigation Menu`s CSS Definitions -->
-<link rel="stylesheet" href="../../css/menu.css" />
+<link rel="stylesheet" href="../css/menu.css" />
 
 <!-- Include Custom CSS Definitions -->
-<link rel="stylesheet" href="../../css/speaker-profile.css" />
+<link rel="stylesheet" href="../css/speaker-profile.css" />
 
 <!-- Include Footer CSS Definitions -->
-<link rel="stylesheet" href="../../css/footer.css" />
+<link rel="stylesheet" href="../css/footer.css" />
 
 <!-- Include jQuery -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
@@ -214,50 +214,7 @@ $link = explode("/",$_SERVER['REQUEST_URI']);
 
 </div>
 <!-- END Main Content -->
-<!-- FOOTER -->
-<footer>
- <div id="FooterWrapper">
-   <div id="FooterLeftWrapper">
-        <h1 class="Contact FontRaleway">CONTACT</h1>
-        <h2 class="Contact FontProximaNova"><i class="fa fa-phone"></i>+36 1 201 1469</h2>
-        <h2 class="Contact FontProximaNova"><i class="fa fa-phone"></i>UK/IE +44 20 34 689 689</h2>
-        <h2 class="Contact FontProximaNova"><i class="fa fa-envelope"></i>hrn@hrneurope.com</h2>
-        <div id="GetInTouchButtonContainer">
-          <a href="#" data-reveal-id="DownloadBrochureModal" title="Download Brochure" onClick="_gaq.push(['_trackEvent', 'Footer', 'ModalOpen', 'DownloadBrochure']);"><button class="BlueButton FontRaleway" id="DownloadBrochureButton" >Request Brochure</button></a>
-        </div>
-   </div>
-   <div id="FooterRightWrapper">
-        <form>
-        	<h1>SIGN UP FOR NEWSLETTER</h1>
-        	<input type="text"><input type="submit" value="SEND" onClick="_gaq.push(['_trackEvent', 'Footer', 'FormSubmission', 'SignUpForNewsletter']);">
-        </form>
-        <div id="FooterSocialIconsContainer"> <a href="https://twitter.com/hrtechworld" target="_blank" title="HR Tech World - Twitter" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Twitter']);">
-          <div id="FooterTwitter" class="FooterSocialIcon"></div>
-          </a> <a href="https://www.facebook.com/hrtecheu" target="_blank" title="HR Tech Europe - Facebook" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Facebook']);">
-          <div id="FooterFacebook" class="FooterSocialIcon"></div>
-          </a> <a href="http://www.linkedin.com/groups/HR-Technology-Europe-Human-Resources-3930182/about" target="_blank" title="HR Tech Europe - LinkedIn" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'LinkedIn']);">
-          <div id="FooterLinkedIn" class="FooterSocialIcon"></div>
-          </a> <a href="http://www.slideshare.net/hrtecheurope" target="_blank" title="HR Tech Europe - SlideShare" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'SlideShare']);">
-          <div id="FooterSlideShare" class="FooterSocialIcon"></div>
-          </a> <a href="https://www.flickr.com/photos/hrtecheurope/sets/72157651210562997/" target="_blank" title="HR Tech Europe - Flickr" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Flickr']);">
-          <div id="FooterFlickr" class="FooterSocialIcon"></div>
-          </a> 
-       </div>
-    </div>
- </div>
- <div id="TransparentFooter">
- 	<div id="TransparentFooterInnerContainer">
-        <div id="TransparentFooterImage"><img src="../../img/footer/footer-hrtech-logo.png" alt="HR Tech World Congress logo"></div>
-        <div id="TransparentFooterTextContainer">
-                <h6 class="TransparentFooterText FontRaleway" id="CopyrightText">Copyright &copy; 2015 HRN Europe. All Rights Reserved.</h6>
-                <h6 class="TransparentFooterText FontRaleway" id="PrivacyText">Privacy Policy | Terms and Conditions</h6>
-        </div>
-        <div style="clear: both;"></div>   
-    </div> 
- </div>
-  
-</footer>
-<!-- END FOOTER --> 
+
 <!-- Go to Top Button --> 
 <a href="#" class="GoTopButton FontLato">
     <div id="GoTopImg">
@@ -269,48 +226,9 @@ $link = explode("/",$_SERVER['REQUEST_URI']);
 <!-- END Go to Top Button --> 
 
 
-<!-- Download Brochure Modal -->
-<div id="DownloadBrochureModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
-  <h2>Download Brochure</h2>
-  <p>Thank you for downloading our brochure! Please fill in all the fields below.</p>
-  <!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
-  <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
-    <input type=hidden name="oid" value="00DD0000000nwgk">
-    <input type=hidden name="retURL" value="http://hrtechcongress.com/sponsors.html#ThankYouBrochureModal">
 
-      <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
-      <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />
 
-        <input required placeholder="Email Address *" id="email" maxlength="80" name="email" size="20" type="text" />
-        <input required placeholder="Phone Number *" id="phone" maxlength="40" name="phone" size="20" type="text" />
-        <input required placeholder="Company *" id="company" maxlength="40" name="company" size="20" type="text" />
-        <input required placeholder="Job Title *" id="title" maxlength="40" name="title" size="20" type="text" />
-        <select  style="display:none;"   id="lead_source" name="lead_source" placeholder="Lead Source">
-          <option selected="selected" value="HRTechParis2015-DownloadPDF">HRTechParis2015-DownloadPDF</option>
-        </select>
-        <input onClick="_gaq.push(['_trackEvent', 'DownloadPDFForm', 'FromSubmission', 'InquirySent']);" class="submitbutton" type="submit" name="submit" value="SEND">
-  </form>
-  <!-- END of : DOWNLOAD BROCHURE MODAL FORM -->
-</div>
-<!-- END Download Brochure Modal -->
 
-<!-- Thank You Brochure Modal -->
-<div id="ThankYouBrochureModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
-  <h2>Thank you!</h2>
-   <p>You shall receive an email shortly from one of our team.</p>
-</div>
-<!-- END Thank You Modal -->
-
-<!-- Start of Async HubSpot Analytics Code -->
-  <script type="text/javascript">
-    (function(d,s,i,r) {
-      if (d.getElementById(i)){return;}
-      var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
-      n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/412210.js';
-      e.parentNode.insertBefore(n, e);
-    })(document,"script","hs-analytics",300000);
-  </script>
-<!-- End of Async HubSpot Analytics Code -->
 
 </body>
 </html>

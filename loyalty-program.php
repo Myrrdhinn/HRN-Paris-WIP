@@ -132,7 +132,16 @@ $(document).ready(function() {
 	<ul id="DesktopMenuList">
     	<a href="http://hrtechcongress.com#AboutSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'About']);" title="About"><li class="DesktopMenuItem" id="MenuItemAbout">ABOUT</li></a>
         <a href="speakers" title="Speakers" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);"><li class="DesktopMenuItem" id="MenuItemSpeakers">SPEAKERS</li></a>
-        <a href="sponsors" title="Sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);"><li class="DesktopMenuItem" id="MenuItemSponsors">SPONSORS</li></a>
+          <li class="DesktopMenuItem TransparentDesktopMenuItem" id="PartnersDD"><a href="sponsors" title="Sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);">SPONSORS</a>
+            <!-- Partners Dropdown 
+                <div id="PartnersMenu">
+                <div class="ArrowUp"></div>
+                 <ul class="Dropdown" id="PartnersDropdown">
+                    <a href="sponsor-appendices"><li>Sponsor Appendices</li></a>
+                 </ul>   
+                </div>
+			<!-- Partners Dropdown -->  
+          </li> 
         <a href="hotels" title="Hotels" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Hotels']);"><li class="DesktopMenuItem" id="MenuItemHighlights">HOTELS</li></a>
         <a target="_blank"  href="http://blog.hrtecheurope.com/" title="Blog" onClick="_gaq.push(['_trackEvent', 'Navigation', ExternalForward', 'Blog']);"><li class="DesktopMenuItem" id="MenuItemVenue">BLOG</li></a>
         <a href="contact" title="Get in Touch" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Contact']);"><li class="DesktopMenuItem" id="MenuItemGetInTouch">GET IN TOUCH</li></a>
@@ -324,11 +333,11 @@ $(document).ready(function() {
 <!-- Download Brochure Modal -->
 <div id="DownloadBrochureModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
   <h2>Download Brochure</h2>
-  <p>Thank you for downloading our brochure! Please fill in all the fields below.</p>
-  <!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
+  <p>Thank you for your request. Please fill in all the fields below!</p>
+<!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
   <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
     <input type=hidden name="oid" value="00DD0000000nwgk">
-    <input type=hidden name="retURL" value="http://hrtechcongress.com/tickets.html#ThankYouBrochureModal">
+    <input type=hidden name="retURL" value="http://hrtechcongress.com/loyalty-program#ThankYouBrochureModal">
 
       <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
       <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />

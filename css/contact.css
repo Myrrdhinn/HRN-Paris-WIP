@@ -4,6 +4,15 @@ body * {
 	box-sizing: border-box;	
 }
 
+#MobileUl {
+	padding-left: 0;	
+}
+@media (max-width: 640px) {
+#MobileUl {
+	margin-left: 4vw;	
+}	
+}
+
 /* Header */
 header {
 	width:100%;

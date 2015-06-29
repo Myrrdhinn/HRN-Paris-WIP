@@ -36,16 +36,14 @@ $sponsors = new sponsors_main;
 <link rel="shortcut icon" href="favicon.png">
 
 <!-- Include General CSS Definitions -->
-<link rel="stylesheet" href="../css/general.css" />
+<link rel="stylesheet" href="css/general.css" />
 
 <!-- Include the Navigation Menu`s CSS Definitions -->
-<link rel="stylesheet" href="../css/menu.css" />
+<link rel="stylesheet" href="css/menu.css" />
 
 <!-- Include Custom CSS Definitions -->
-<link rel="stylesheet" href="../css/sponsors-grid.css" />
+<link rel="stylesheet" href="css/sponsors-grid.css" />
 
-<!-- Include Footer CSS Definitions -->
-<link rel="stylesheet" href="../css/footer.css" />
 
 <!-- Include jQuery -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
@@ -98,15 +96,7 @@ include_once('views/menu.php');
   
   
   <!-- END MAIN MENU -->
-<!-- Header -->
-<header>
-  <h1>SPONSORS</h1>
-  <p class="FontProximaNova">Our sponsors comprise a Who's Who of HR software leaders who will showcase the best solutions, services and products on the market.</p>
-  
-  <span data-reveal-id="BecomeASponsorModal" onClick="_gaq.push(['_trackEvent', 'SponsorsPage', 'ModalOpen', 'BecomeASponsor']);"><button class="FontRaleway">Become a Sponsor</button></span>
-  <img id="HeaderWhosWhoLogo" src="../img/sponsors/whos-who-logo-white.png" alt="Who's Who in HR">
-</header>
-<!-- END Header -->
+
 
 
 
@@ -155,52 +145,7 @@ include_once('views/menu.php');
 </section>
 <!--END Sponsors --> 
 <!--END Sponsors --> 
-<!-- FOOTER -->
-<footer>
- <div id="FooterWrapper">
-   <div id="FooterLeftWrapper">
-    <h1 class="Contact FontRaleway">CONTACT</h1>
-    <h2 class="Contact FontProximaNova"><i class="fa fa-phone"></i>+36 1 201 1469</h2>
-    <h2 class="Contact FontProximaNova"><i class="fa fa-phone"></i>UK/IE +44 20 34 689 689</h2>
-    <h2 class="Contact FontProximaNova"><i class="fa fa-envelope"></i>hrn@hrneurope.com</h2>
-    <div id="GetInTouchButtonContainer">
-      <span data-reveal-id="DownloadBrochureModal" onClick="_gaq.push(['_trackEvent', 'Footer', 'ModalOpen', 'DownloadBrochure']);"><button class="BlueButton FontRaleway" id="DownloadBrochureButton" >Request Brochure</button></span>
-    </div>
-   </div>
-   <div id="FooterRightWrapper">
-        <form>
-        	<h1>SIGN UP FOR NEWSLETTER</h1>
-        	<input type="text"><input type="submit" value="SEND" onClick="_gaq.push(['_trackEvent', 'Footer', 'FormSubmission', 'SignUpForNewsletter']);">
-        </form>
-        <div id="FooterSocialIconsContainer"> <a href="https://twitter.com/hrtechworld" target="_blank" title="HR Tech World - Twitter" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Twitter']);">
-          <div id="FooterTwitter" class="FooterSocialIcon"></div>
-          </a> <a href="https://www.facebook.com/hrtecheu" target="_blank" title="HR Tech Europe - Facebook" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Facebook']);">
-          <div id="FooterFacebook" class="FooterSocialIcon"></div>
-          </a> <a href="http://www.linkedin.com/groups/HR-Technology-Europe-Human-Resources-3930182/about" target="_blank" title="HR Tech Europe - LinkedIn" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'LinkedIn']);">
-          <div id="FooterLinkedIn" class="FooterSocialIcon"></div>
-          </a> <a href="http://www.slideshare.net/hrtecheurope" target="_blank" title="HR Tech Europe - SlideShare" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'SlideShare']);">
-          <div id="FooterSlideShare" class="FooterSocialIcon"></div>
-          </a> <a href="https://www.flickr.com/photos/hrtecheurope/sets/72157651210562997/" target="_blank" title="HR Tech Europe - Flickr" onClick="_gaq.push(['_trackEvent', 'Footer', 'ExternalForward', 'Flickr']);">
-          <div id="FooterFlickr" class="FooterSocialIcon"></div>
-          </a> 
-       </div>
-    </div>
- </div>
 
-
- <div id="TransparentFooter">
- 	<div id="TransparentFooterInnerContainer">
-        <div id="TransparentFooterImage"><img src="../img/footer/footer-hrtech-logo.png" alt="HR Tech World Congress logo"></div>
-        <div id="TransparentFooterTextContainer">
-                <h6 class="TransparentFooterText FontRaleway" id="CopyrightText">Copyright &copy; 2015 HRN Europe. All Rights Reserved.</h6>
-                <h6 class="TransparentFooterText FontRaleway" id="PrivacyText">Privacy Policy | Terms and Conditions</h6>
-        </div>
-        <div style="clear: both;"></div>   
-    </div> 
- </div>
-  
-</footer>
-<!-- END FOOTER --> 
 <!-- Go to Top Button --> 
 <a href="#" class="GoTopButton">
 <div id="GoTopImg"><i class="fa fa-caret-up"></i></div>
@@ -210,16 +155,7 @@ include_once('views/menu.php');
 
 
 
-<!-- Start of Async HubSpot Analytics Code -->
-  <script type="text/javascript">
-    (function(d,s,i,r) {
-      if (d.getElementById(i)){return;}
-      var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
-      n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/412210.js';
-      e.parentNode.insertBefore(n, e);
-    })(document,"script","hs-analytics",300000);
-  </script>
-<!-- End of Async HubSpot Analytics Code -->
+
 
 </body>
 </html>

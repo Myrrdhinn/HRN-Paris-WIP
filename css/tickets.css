@@ -5,280 +5,218 @@
 
 /* Header */
 header {
-max-height:540px;
-height:100%;
-background-image:url(../img/tickets/header-bg.jpg);
-background-repeat:no-repeat;
-width:100%; 
-margin:0 auto;
-margin-top:4vw;
-text-align:center;
-color:#fff;
-padding:50px 0 0 0;
+	max-height: 540px;
+	height: 100%;
+	background-image: url(../img/tickets/header-bg.jpg);
+	background-repeat: no-repeat;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 4vw;
+	text-align: center;
+	color: #fff;
+	padding: 50px 0 0 0;
 }
-
 header h1 {
-font-size:90px;
-margin-bottom:50px;
-	}
+	font-size: 90px;
+	margin-bottom: 50px;
+}
 header p {
-max-width:720px;
-margin:0 auto;	
-padding-bottom: 8vw;
-font-size:24px;
-	}
+	max-width: 720px;
+	margin: 0 auto;
+	padding-bottom: 8vw;
+	font-size: 24px;
+}
 #LightParagraph {
-	font-weight:300;
+	font-weight: 300;
 	padding-bottom: 5vw;
-	}	
-	
+}
+@media (max-width: 1000px) {
+	header {
+		margin-top: 14.5vw;	
+	}
+}
 @media (max-width:700px) {
 header h1 {
-    font-size:65px;
-	}
-	
+	font-size: 65px;
+}
 #LightParagraph {
 	padding-bottom: 13vw;
-	}	
-		
-	
 }
-
+}
 @media (max-width:510px) {
 header h1 {
-    font-size:38px;
-	}
-	
-	
-	
+	font-size: 38px;
+}
 header p {
-margin:0 2vw 0 2vw;	
-font-size:18px;
-padding-bottom: 15vw;
-	}	
-	
+	margin: 0 2vw 0 2vw;
+	font-size: 18px;
+	padding-bottom: 15vw;
+}
 #LightParagraph {
-	font-size:16px;
+	font-size: 16px;
 	padding-bottom: 20vw;
-	}	
-	
+}
 }
 /* END Header */
 
-	
 /* Tickets */
-#TicketsMainContainer{
-/*background:green;*/
-width:100%;
-/*max-width:1140px;*/
-margin:0 auto;
-text-align:center;
-padding-bottom: 8vw;
+#TicketsMainContainer {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	padding-bottom: 8vw;
 }
-
-.TicketContainer	{
-	
-	width:360px;
-	display:inline-block;
-	margin:0 auto;
-	text-align:left;
+ @media (max-width:730px) {
+#TicketsMainContainer {
+	padding-bottom: 15vw;
+}
+}
+ @media (max-width:520px) {
+#TicketsMainContainer {
+	padding-bottom: 25vw;
+}
+}
+.TicketContainer {
+	width: 360px;
+	display: inline-block;
+	margin: 0 auto;
+	text-align: left;
 	position: relative;
 	top: 0;
 	transition: all 0.3s;
-	}
+}
 .TicketContainer:hover {
-	top: -8px;	
+	top: -8px;
 }
-.ContainerShadow{
-	/*
-	box-shadow: 1px 1px 9px 1px #888888;
-	*/
-	-webkit-box-shadow: 2px 2px 4px 0px rgba(50, 50, 50, 0.25);
-    -moz-box-shadow: 2px 2px 4px 0px rgba(50, 50, 50, 0.25);
-    box-shadow: 2px 2px 4px 0px rgba(50, 50, 50, 0.25);
-
-	
-}
-
-/*
-#OneDelegateMainContainer {
-	float:left;
-	}
-
-#VIPDelegateMainContainer {
-	float:right;
-	}	
-*/
-
 #ThreeDelegateMainContainer {
-	  margin: 0 2vw;	
+	margin: 0 2vw;
 }
-
-@media (max-width:1364px) {
-	#OneDelegateMainContainer {
-	float:none;
-	}
-}
-	
-@media (max-width:1139px) {
+ @media (max-width:1139px) {
 .TicketContainer {
-	clear:both;
-	display:block;
-	}
-
-	
+	display: block;
+}
 #ThreeDelegateMainContainer {
-	margin: 0 auto;	
-}	
-			
-	}	
-	
-@media (max-width:730px) {
-#TicketsMainContainer{
-
-   padding-bottom: 15vw;
+	margin: 0 auto;
 }
-	
 }
-
-@media (max-width:520px) {
-#TicketsMainContainer{
-
-   padding-bottom: 25vw;
-}
-	
+.ContainerShadow {
+	-webkit-box-shadow: 2px 2px 4px 0px rgba(50, 50, 50, 0.25);
+	-moz-box-shadow: 2px 2px 4px 0px rgba(50, 50, 50, 0.25);
+	box-shadow: 2px 2px 4px 0px rgba(50, 50, 50, 0.25);
 }
 .TicketsHeader {
-	margin:0 auto;
-	text-align:center;
-	height:90px;
-	width:100%;
-	
-	}	
+	margin: 0 auto;
+	text-align: center;
+	height: 90px;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
 .TicketsHeader h6 {
-	color:#fff;
-	font-family: "proxima-nova", sans-serif;
-	font-size:26px;
-	font-weight:bold;
-	padding-top:30px;
-	}
+	color: #fff;
+	font-size: 26px;
+	padding-top: 30px;
+}
 #OneDelegateMainContainer .TicketsHeader {
-	background:url(../img/tickets/onedelegate-bg.jpg);
-	
-	} 
-#ThreeDelegateMainContainer	.TicketsHeader{
-	background:url(../img/tickets/threedelegate-bg.jpg);
-	
-	} 
-#VIPDelegateMainContainer	.TicketsHeader{
-	background:url(../img/tickets/vip-bg.jpg);
-	
-	} 
+	background: url(../img/tickets/onedelegate-bg.jpg);
+	background-size: cover;
+	background-position: center;
+}
+#ThreeDelegateMainContainer .TicketsHeader {
+	background: url(../img/tickets/threedelegate-bg.jpg);
+	background-size: cover;
+	background-position: center;
+}
+#VIPDelegateMainContainer .TicketsHeader {
+	background: url(../img/tickets/vip-bg.jpg);
+	background-size: cover;
+	background-position: center;
+}
 .TicketsInfo {
-	padding:20px;
-	background:#fff;
-	}	
+	padding: 20px;
+	background: #fff;
+}
 .TicketsInfo p {
-	margin:0;
-	font-size:16px;
-	font-family: "proxima-nova", sans-serif;
-	
-	}	
+	margin: 0;
+	font-size: 16px;
+}
 .TicketsInfo p span {
-	color:#da3f3f;
-	}	
+	color: #da3f3f;
+}
 .TicketsInfo ul {
-margin-left:-22px;
-	
-	}	
+	margin-left: -22px;
+}
 .TicketsPrice {
-	width:100%;
-	height:100px;
-	/*
-    -webkit-box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.25);
-    -moz-box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.25);
-    box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.25);
-	*/
-  border-bottom: 1px solid rgba(194, 194, 194, 0.76);
-  border-top: 1px solid rgba(194, 194, 194, 0.76);
-	
-	}	
+	width: 100%;
+	height: 100px;
+	border-bottom: 1px solid rgba(194, 194, 194, 0.76);
+	border-top: 1px solid rgba(194, 194, 194, 0.76);
+}
 .TicketsPrice h4 {
-	margin:0;
-	margin-top:30px;
-	font-size:36px;
-	float:left;
-	text-align:center;
-	width:250px;
-	}	
-#VIPDelegateMainContainer .TicketsPrice h4 {
-	width:100%;
-	}		
-.Discount {
-	float:right;
-	height:100px;
-	width:110px;
-	
-}
-.SavePriceBox {
-	display: inline-block; 
-	float: right;
-	width: 110px; 
-	height: 100px; 
-	background-color: #da3f3f;	
-}
-.SavePriceBox h5 {
-	 color: #fff; 
-	 font-size: 26px; 
-	 text-transform: uppercase; 
-	 text-align: center; 
-	 margin: 0; 
-	 padding-top: 20px;	
-}
-.TicketsButtonContainer{
-	background:#fff;
-	width:100%;
-	height:100px;
-	text-align:center;
-	}
-.TicketsButtonContainer button {
-	padding:0 !important;
-	width:155px;
-	height:60px;
-	background:#106ab5;
-	font-family: "proxima-nova", sans-serif;
-	font-size:20px;
-	color:#fff;
-	text-align:center;
-	margin-top:20px;
-	border-radius:3px;
-	border: 3px solid #106ab5;
-	transition:all 0.3s;
-	}	
-.TicketsButtonContainer button:hover {
-		background:#fff;
-	color: #106ab5;
-	border: 3px solid #106ab5;
-	/*background:#3399cc;*/
-/*	  background: -webkit-linear-gradient(left top, #106ab5, #cf6492); /* For Safari 5.1 to 6.0 */
-/*  background: -o-linear-gradient(bottom right, #106ab5, #cf6492); /* For Opera 11.1 to 12.0 */
-/*  background: -moz-linear-gradient(bottom right, #106ab5, #cf6492); /* For Firefox 3.6 to 15 */
-/*  background: linear-gradient(to bottom right, #106ab5, #cf6492);*/ 
-
-}	
-
-.TicketsButtonContainer button a {
-color: #fff;
+	margin: 0;
+	margin-top: 30px;
+	font-size: 36px;
+	float: left;
+	text-align: center;
+	width: 250px;
 }
 @media (max-width:400px) {
-	
 .TicketsPrice h4 {
-	width: 54vw;	
+	width: 54vw;
 }
-	
 .TicketContainer {
-	width:auto;
+	width: auto;
 	margin: 0 3vw !important;
-	}
+}
+}
+#VIPDelegateMainContainer .TicketsPrice h4 {
+	width: 100%;
+}
+.SavePriceBox {
+	display: inline-block;
+	float: right;
+	width: 110px;
+	height: 100px;
+	background-color: #da3f3f;
+}
+.SavePriceBox h5 {
+	color: #fff;
+	font-size: 26px;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0;
+	padding-top: 20px;
+}
+.TicketsButtonContainer {
+	width: 100%;
+	height: 100px;
+	text-align: center;
+}
+.TicketsButtonContainer button {
+	padding: 0 !important;
+	width: 155px;
+	height: 60px;
+	background: #106ab5;
+	font-family: "proxima-nova", sans-serif;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	margin-top: 20px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border: 3px solid #106ab5;
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+}
+.TicketsButtonContainer button:hover {
+	background: #fff;
+	color: #106ab5;
+	border: 3px solid #106ab5;
+}
+.TicketsButtonContainer button a {
+	color: #fff;
 }
 /*End Tickets */

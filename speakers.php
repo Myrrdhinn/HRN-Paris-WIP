@@ -151,7 +151,16 @@ $(document).ready(function() {
 	<ul id="DesktopMenuList">
     	<a href="http://hrtechcongress.com#AboutSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'About']);" title="About"><li class="DesktopMenuItem" id="MenuItemAbout">ABOUT</li></a>
         <a href="speakers" title="Speakers" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);"><li class="DesktopMenuItem" id="MenuItemSpeakers">SPEAKERS</li></a>
-        <a href="sponsors" title="Sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);"><li class="DesktopMenuItem" id="MenuItemSponsors">SPONSORS</li></a>
+          <li class="DesktopMenuItem TransparentDesktopMenuItem" id="PartnersDD"><a href="sponsors" title="Sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);">SPONSORS</a>
+            <!-- Partners Dropdown 
+                <div id="PartnersMenu">
+                <div class="ArrowUp"></div>
+                 <ul class="Dropdown" id="PartnersDropdown">
+                    <a href="sponsor-appendices"><li>Sponsor Appendices</li></a>
+                 </ul>   
+                </div>
+			<!-- Partners Dropdown -->  
+          </li> 
         <a href="hotels" title="Hotels" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Hotels']);"><li class="DesktopMenuItem" id="MenuItemHighlights">HOTELS</li></a>
         <a target="_blank"  href="http://blog.hrtecheurope.com/" title="Blog" onClick="_gaq.push(['_trackEvent', 'Navigation', ExternalForward', 'Blog']);"><li class="DesktopMenuItem" id="MenuItemVenue">BLOG</li></a>
         <a href="contact" title="Get in Touch" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Contact']);"><li class="DesktopMenuItem" id="MenuItemGetInTouch">GET IN TOUCH</li></a>
@@ -169,233 +178,19 @@ $(document).ready(function() {
 
 <!-- Header -->
 <header>
-  <!-- Place the header here -->
+  <h1>Speakers</h1>
+  <p class="FontRaleway">The Movers, the Shakers &amp; the industry Rock Stars bringing you the insight, knowledge, and practical experience to enable you to unleash your people.</p>
+  
+  <span data-reveal-id="BecomeASpeakerModal" onClick="_gaq.push(['_trackEvent', 'SpeakersPage', 'ModalOpen', 'BecomeASpeaker']);"><button class="FontRaleway">Become a Speaker</button></span>
+ 
 </header>
 <!-- END Header -->
 
 
 <!-- Main Content -->
 <div id="MainContent">
-<!-- Search bar -->
-<div id="SearchBarContainer">
-	<div id="SearchBarInnerContainer">
-    	<h2 class="FontLato" id="SpeakersMobileHeadlineText">SPEAKERS</h2>
-        <div id="FilterSpeakersButton" class="FontLato">
-               <img src="img/speakers/search-icon.png" alt="Search">
-               <span>FILTER SPEAKERS</span>
-        </div>
-    </div>
-</div>
-<!-- END Search bar -->
-<!-- Filters -->
-        <div id="FiltersContainer">
-        	<!-- Filter Headline -->
-        	<div id="FilterHeadline" class="FontLato">
-            	<div id="FilteringSpeakers">Filtering Speakers</div>
-                <div id="FiltersCloseButton" onClick='$("#FiltersContainer").slideUp("fast");$("#SelectedFiltersContainer").slideDown("fast");'>CLOSE <img src="img/speakers/close-icon.png" alt="X"></div>
-            </div>
-            <!-- END Filter Headline -->
-            <!-- Filter Icons -->
-            <div id="Filters">
-            	<div class="Filter" id="FutureOfWorkforceLearningFilter">
-                	<div class="FilterColor FutureOfWorkforceLearningColor"></div> <!-- Use the .FilterColorSelected class if a filter is selected.. -->
-                    <img src="img/speakers/StageIcons/future-of-workforce-learning-icon.png" alt="Future of Workforce Learning icon">
-                    <h6 class="FilterStageName FontLato">Future of Workforce Learning</h6> <!-- ...and use the .FilterStageNameSelected class as well to change the text color to #fff -->
-                </div>
-            	<div class="Filter" id="HRTechnologyFilter">
-                	<div class="FilterColor HRTechnologyColor"></div>
-                    <img src="img/speakers/StageIcons/hr-technology-icon.png" alt="HR Technology icon">
-                    <h6 class="FilterStageName FontLato">HR Technology</h6>
-                </div>
-            	<div class="Filter" id="ProductDemoFilter">
-                	<div class="FilterColor ProductDemoColor"></div>
-                    <img src="img/speakers/StageIcons/product-demo-icon.png" alt="Product Demo icon">
-                    <h6 class="FilterStageName FontLato">Product Demo</h6>
-                </div>
-            	<div class="Filter" id="PayrollAndRewardsFilter">
-                	<div class="FilterColor PayrollAndRewardsColor"></div>
-                    <img src="img/speakers/StageIcons/payroll-and-rewards-icon.png" alt="Payroll and Rewards icon">
-                    <h6 class="FilterStageName FontLato">Payroll &amp; Rewards</h6>
-                </div>
-            	<div class="Filter" id="FutureOfWorkFilter">
-                	<div class="FilterColor FutureOfWorkColor"></div>
-                    <img src="img/speakers/StageIcons/future-of-work-icon.png" alt="Future of Work icon">
-                    <h6 class="FilterStageName FontLato">Future of Work</h6>
-                </div>
-            	<div class="Filter" id="UserAdoptionFilter">
-                	<div class="FilterColor UserAdoptionColor"></div>
-                    <img src="img/speakers/StageIcons/user-adoption-icon.png" alt="User Adoption icon">
-                    <h6 class="FilterStageName FontLato">User Adoption</h6>
-                </div>
-            	<div class="Filter" id="HRAnalyticsAndReportingFilter">
-                	<div class="FilterColor HRAnalyticsAndReportingColor"></div>
-                    <img src="img/speakers/StageIcons/hr-analytics-and-reporting-icon.png" alt="HR Analytics &amp; Reporting icon">
-                    <h6 class="FilterStageName FontLato">HR Analytics<br>&amp; Reporting</h6>
-                </div>
-            	<div class="Filter" id="MainStageFilter">
-                	<div class="FilterColor MainStageColor"></div>
-                    <img src="img/speakers/StageIcons/main-stage-icon.png" alt="Main Stage icon">
-                    <h6 class="FilterStageName FontLato">Main Stage</h6>
-                </div>
-            	<div class="Filter" id="CloudTechnologyFilter">
-                	<div class="FilterColor CloudTechnologyColor"></div>
-                    <img src="img/speakers/StageIcons/cloud-technology-icon.png" alt="Cloud Technology icon">
-                    <h6 class="FilterStageName FontLato">Cloud Technology</h6>
-                </div>
-            	<div class="Filter" id="LabsAndExecutiveBriefingsFilter">
-                	<div class="FilterColor LabsAndExecutiveBriefingsColor"></div>
-                    <img src="img/speakers/StageIcons/labs-and-executive-briefings-icon.png" alt="Labs &amp; Executive Briefings icon">
-                    <h6 class="FilterStageName FontLato">Labs &amp;<br> Executive Briefings</h6>
-                </div>
-            	<div class="Filter" id="RoundTableFilter">
-                	<div class="FilterColor RoundTableColor"></div>
-                    <img src="img/speakers/StageIcons/round-table-icon.png" alt="Round Table icon">
-                    <h6 class="FilterStageName FontLato">Round Table</h6>
-                </div>
-            	<div class="Filter" id="TalentAndRecruitmentTechnologyFilter">
-                	<div class="FilterColor TalentAndRecruitmentTechnologyColor"></div>
-                    <img src="img/speakers/StageIcons/talent-and-recruitment-technology-icon.png" alt="Talent &amp; Recruitment Technology icon">
-                    <h6 class="FilterStageName FontLato">Talent &amp; Recruitment Technology</h6>
-                </div>
-            	<div class="Filter" id="SocialCollaborationFilter">
-                	<div class="FilterColor SocialCollaborationColor"></div>
-                    <img src="img/speakers/StageIcons/social-collaboration-icon.png" alt="Social Collaboration icon">
-                    <h6 class="FilterStageName FontLato">Social Collaboration</h6>
-                </div>
-            	<div class="Filter" id="HRSharedServicesAndPayrollFilter">
-                	<div class="FilterColor HRSharedServicesAndPayrollColor"></div>
-                    <img src="img/speakers/StageIcons/hr-shared-services-and-payroll-icon.png" alt="HR Shared Services &amp; Payroll icon">
-                    <h6 class="FilterStageName FontLato">HR Shared Services <br>&amp; Payroll</h6>
-                </div>
-            </div>
-            <!-- END Filter Icons -->
-            <!-- Apply Button -->
-            <div id="ApplyButtonContainer">
-                <button title="Apply" class="BlueButton FontLato" id="ApplyFiltersButton">APPLY</button>
-            </div>
-            <!-- END Apply Button -->
-        </div>        
-<!-- END Filters --> 
-<!-- Filters Mobile -->
-        <div id="FiltersContainerMobile">
-        	<div id="FilterHeadlineMobile" class="FontLato">
-            	<div id="FilteringSpeakersMobile">Filtering Speakers</div>
-                <div id="FiltersCloseButtonMobile" onClick='$("#SelectedFiltersContainer").slideToggle("fast"); $("#FiltersContainerMobile").css("right", "-100vw");'><img src="img/speakers/close-icon.png" alt="X"></div>
-            </div>
-            <ul>
-                <li class="FilterMobile" id="FutureOfWorkforceLearningFilterMobile">
-                    <div class="FilterColorMobile FutureOfWorkforceLearningColor"></div>
-                    <img src="img/speakers/StageIcons/future-of-workforce-learning-icon.png" alt="icon">
-                    <p class="FilterStageNameMobile">Future of Workforce Learning</p>
-                    <div class="FilterCircleMobile"><div class="FilterCircleMobileFill"></div></div>
-                </li>
-                <li class="FilterMobile" id="HRTechnologyFilterMobile">
-                    <div class="FilterColorMobile HRTechnologyColor"></div>
-                    <img src="img/speakers/StageIcons/hr-technology-icon.png" alt="icon">
-                    <p class="FilterStageNameMobile ShortStageNameMobile">HR Technology</p>
-                    <div class="FilterCircleMobile"><div class="FilterCircleMobileFill"></div></div>
-                </li>    
-                <li class="FilterMobile" id="ProductDemoFilterMobile">
-                    <div class="FilterColorMobile ProductDemoColor"></div>
-                    <img src="img/speakers/StageIcons/product-demo-icon.png" alt="icon">
-                    <p class="FilterStageNameMobile ShortStageNameMobile">Product Demo</p>
-                    <div class="FilterCircleMobile"><div class="FilterCircleMobileFill"></div></div>
-                </li>                
-                <li class="FilterMobile" id="PayrollAndRewardsFilterMobile">
-                    <div class="FilterColorMobile PayrollAndRewardsColor"></div>
-                    <img src="img/speakers/StageIcons/payroll-and-rewards-icon.png" alt="icon">
-                    <p class="FilterStageNameMobile ShortStageNameMobile">Payroll & Rewards</p>
-                    <div class="FilterCircleMobile"><div class="FilterCircleMobileFill"></div></div>
-                </li>                
-                <li class="FilterMobile" id="FutureOfWorkFilterMobile">
-                    <div class="FilterColorMobile FutureOfWorkColor"></div>
-                    <img src="img/speakers/StageIcons/future-of-work-icon.png" alt="icon">
-                    <p class="FilterStageNameMobile ShortStageNameMobile">Future of Work</p>
-                    <div class="FilterCircleMobile"><div class="FilterCircleMobileFill"></div></div>
-                </li>                
-                <li class="FilterMobile" id="UserAdoptionFilterMobile">
-                    <div class="FilterColorMobile UserAdoptionColor"></div>
-                    <img src="img/speakers/StageIcons/user-adoption-icon.png" alt="icon">
-                    <p class="FilterStageNameMobile ShortStageNameMobile">User Adoption</p>
-                    <div class="FilterCircleMobile"><div class="FilterCircleMobileFill"></div></div>
-                </li>                
-                <li class="FilterMobile" id="HRAnalyticsAndReportingFilterMobile">
-                    <div class="FilterColorMobile HRAnalyticsAndReportingColor"></div>
-                    <img src="img/speakers/StageIcons/hr-analytics-and-reporting-icon.png" alt="icon">
-                    <p class="FilterStageNameMobile">HR Analytics & Reporting</p>
-                    <div class="FilterCircleMobile"><div class="FilterCircleMobileFill"></div></div>
-                </li>                
-                <li class="FilterMobile" id="MainStageFilterMobile">
-                    <div class="FilterColorMobile MainStageColor"></div>
-                    <img src="img/speakers/StageIcons/main-stage-icon.png" alt="icon">
-                    <p class="FilterStageNameMobile ShortStageNameMobile">Main Stage</p>
-                    <div class="FilterCircleMobile"><div class="FilterCircleMobileFill"></div></div>
-                </li>                
-                <li class="FilterMobile" id="CloudTechnologyFilterMobile">
-                    <div class="FilterColorMobile CloudTechnologyColor"></div>
-                    <img src="img/speakers/StageIcons/cloud-technology-icon.png" alt="icon">
-                    <p class="FilterStageNameMobile ShortStageNameMobile">Cloud Technology</p>
-                    <div class="FilterCircleMobile"><div class="FilterCircleMobileFill"></div></div>
-                </li>                
-                <li class="FilterMobile" id="LabsAndExecutiveBriefingsFilterMobile">
-                    <div class="FilterColorMobile LabsAndExecutiveBriefingsColor"></div>
-                    <img src="img/speakers/StageIcons/labs-and-executive-briefings-icon.png" alt="icon">
-                    <p class="FilterStageNameMobile">Labs & Executive Briefings</p>
-                    <div class="FilterCircleMobile"><div class="FilterCircleMobileFill"></div></div>
-                </li>                
-                <li class="FilterMobile" id="RoundTableFilterMobile">
-                    <div class="FilterColorMobile RoundTableColor"></div>
-                    <img src="img/speakers/StageIcons/round-table-icon.png" alt="icon">
-                    <p class="FilterStageNameMobile ShortStageNameMobile">Round Table</p>
-                    <div class="FilterCircleMobile"><div class="FilterCircleMobileFill"></div></div>
-                </li>                
-                <li class="FilterMobile" id="TalentAndRecruitmentTechnologyFilterMobile">
-                    <div class="FilterColorMobile TalentAndRecruitmentTechnologyColor"></div>
-                    <img src="img/speakers/StageIcons/talent-and-recruitment-technology-icon.png" alt="icon">
-                    <p class="FilterStageNameMobile">Talent & Recruitment Technology</p>
-                    <div class="FilterCircleMobile"><div class="FilterCircleMobileFill"></div></div>
-                </li>                
-                <li class="FilterMobile" id="SocialCollaborationFilterMobile">
-                    <div class="FilterColorMobile SocialCollaborationColor"></div>
-                    <img src="img/speakers/StageIcons/social-collaboration-icon.png" alt="icon">
-                    <p class="FilterStageNameMobile ShortStageNameMobile">Social Collaboration</p>
-                    <div class="FilterCircleMobile"><div class="FilterCircleMobileFill"></div></div>
-                </li>                
-                <li class="FilterMobile" id="HRSharedServicesAndPayrollFilterMobile">
-                    <div class="FilterColorMobile HRSharedServicesAndPayrollColor"></div>
-                    <img src="img/speakers/StageIcons/hr-shared-services-and-payroll-icon.png" alt="icon">
-                    <p class="FilterStageNameMobile">HR Shared Services & Payroll</p>
-                    <div class="FilterCircleMobile"><div class="FilterCircleMobileFill"></div></div>
-                </li> 
-            </ul>
-           	<div id="MobileApplyButtonContainer">
-	            <button title="Apply" class="BlueButton FontLato" id="ApplyFiltersButtonMobile">APPLY</button>
-            </div>
-        </div>
-<!-- END Filters Mobile -->
-<!-- Selected Filters -->
-<div id="SelectedFiltersContainer" class="FontLato" style="display:none">
-	<span id="Filter">filter: </span>
-    <ul>
-    	<li id="FutureOfWorkforceLearningLabel" class="FutureOfWorkforceLearningColor">Future of Workforce Learning</li>
-        <li id="HRTechnologyLabel" class="HRTechnologyColor">HR Technology</li>
-        <li id="ProductDemoLabel" class="ProductDemoColor">Product Demo</li>
-        <li id="PayrollAndRewardsLabel" class="PayrollAndRewardsColor">Payroll & Rewards</li>
-        <li id="FutureOfWorkLabel" class="FutureOfWorkColor">Future of Work</li>
-        <li id="UserAdoptionLabel" class="UserAdoptionColor">User Adoption</li>
-        <li id="HRAnalyticsAndReportingLabel" class="HRAnalyticsAndReportingColor">HR Analytics & Reporting</li>
-        <li id="MainStageLabel" class="MainStageColor">Main Stage</li>
-        <li id="CloudTechnologyLabel" class="CloudTechnologyColor">Cloud Technology</li>
-        <li id="LabsAndExecutiveBriefingsLabel" class="LabsAndExecutiveBriefingsColor">Labs & Executive Briefings</li>
-        <li id="RoundTableLabel" class="RoundTableColor">Round Table</li>
-        <li id="TalentAndRecruitmentTechnologyLabel" class="TalentAndRecruitmentTechnologyColor">Talent & Recruitment Technology</li>  
-        <li id="SocialCollaborationLabel" class="SocialCollaborationColor">Social Collaboration</li> 
-        <li id="HRSharedServicesAndPayrollLabel" class="HRSharedServicesAndPayrollColor">HR Shared Services & Payroll</li>
-        <li id="AllLabel" class="AllColor">All</li>
-    </ul>
-    <span id="ClearFilters">Clear filters</span>
-</div>
-<!-- END Selected Filters -->
+
+
 <!-- Speakers -->
 <section id="Speakers">
 	<h2 class="InvisibleHeadline">Speakers</h2>               
@@ -512,11 +307,11 @@ echo $content;
 <!-- Download Brochure Modal -->
 <div id="DownloadBrochureModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
   <h2>Download Brochure</h2>
-  <p>Thank you for downloading our brochure! Please fill in all the fields below.</p>
-  <!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
+  <p>Thank you for your request. Please fill in all the fields below!</p>
+<!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
   <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
     <input type=hidden name="oid" value="00DD0000000nwgk">
-    <input type=hidden name="retURL" value="http://hrtechcongress.com/sponsors.html#ThankYouBrochureModal">
+    <input type=hidden name="retURL" value="http://hrtechcongress.com/speakers#ThankYouBrochureModal">
 
       <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
       <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />
@@ -532,6 +327,29 @@ echo $content;
   </form>
   <!-- END of : DOWNLOAD BROCHURE MODAL FORM -->
 </div>
+
+<!-- Become a Speaker Modal -->
+<div id="BecomeASpeakerModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
+  <h2>Call for Speakers</h2>
+  <p>HR Tech World is seeking submissions from expert speakers who can offer key insights into areas of impact in HR, management, technology and the future of work.</p>
+  <!-- BEGINING of : BECOME A SPEAKER MODAL FORM -->
+  <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+    <input type=hidden name="oid" value="00DD0000000nwgk">
+    <input type=hidden name="retURL" value="http://hrtechcongress.com/speakers#ThankYouBrochureModal">
+    <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+    <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+    <input required placeholder="Email Address *" id="email" maxlength="80" name="email" size="20" type="text" />
+    <input required placeholder="Phone Number *" id="phone" maxlength="40" name="phone" size="20" type="text" />
+    <input required placeholder="Company *" id="company" maxlength="40" name="company" size="20" type="text" />
+    <input required placeholder="Job Title *" id="title" maxlength="40" name="title" size="20" type="text" />
+    <select  style="display:none;"   id="lead_source" name="lead_source">
+      <option selected="selected" value="HRTechParis2015-BecomeASpeaker">HRTechParis2015-BecomeASpeaker</option>
+    </select>
+    <input onClick="_gaq.push(['_trackEvent', 'BecomeASpeaker', 'FromSubmission', 'InquirySent']);" class="submitbutton" type="submit" name="submit" value="SEND">
+  </form>
+  <!-- END of : BECOME A SPEAKER MODAL FORM --> 
+</div>
+<!-- END Become a Speaker Modal --> 
 <!-- END Download Brochure Modal -->
 
 <!-- Thank You Brochure Modal -->

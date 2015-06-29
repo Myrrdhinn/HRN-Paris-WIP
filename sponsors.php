@@ -89,11 +89,15 @@ $sponsors = new sponsors_main;
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
 <!-- Scroll to top JS -->
 <script src="js/gotopscroll.js"></script>
 
-<!-- Mainpage JS -->
+<!-- Sponsors JS -->
 <script src="js/sponsors.js"></script>
+
+<!-- Menu JS -->
+<script src="js/menu.js"></script>
 
 <!-- Include Reveal Modal -->
 <link rel="stylesheet" href="vendor/reveal/reveal.css">
@@ -226,7 +230,16 @@ $(document).ready(function(){
 	<ul id="DesktopMenuList">
     	<a href="http://hrtechcongress.com#AboutSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'About']);" title="About"><li class="DesktopMenuItem" id="MenuItemAbout">ABOUT</li></a>
         <a href="speakers" title="Speakers" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);"><li class="DesktopMenuItem" id="MenuItemSpeakers">SPEAKERS</li></a>
-        <a href="sponsors" title="Sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);"><li class="DesktopMenuItem" id="MenuItemSponsors">SPONSORS</li></a>
+          <li class="DesktopMenuItem TransparentDesktopMenuItem" id="PartnersDD"><a href="sponsors" title="Sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);">SPONSORS</a>
+            <!-- Partners Dropdown 
+                <div id="PartnersMenu">
+                <div class="ArrowUp"></div>
+                 <ul class="Dropdown" id="PartnersDropdown">
+                    <a href="sponsor-appendices"><li>Sponsor Appendices</li></a>
+                 </ul>   
+                </div>
+			<!-- Partners Dropdown -->  
+          </li> 
         <a href="hotels" title="Hotels" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Hotels']);"><li class="DesktopMenuItem" id="MenuItemHighlights">HOTELS</li></a>
         <a target="_blank"  href="http://blog.hrtecheurope.com/" title="Blog" onClick="_gaq.push(['_trackEvent', 'Navigation', ExternalForward', 'Blog']);"><li class="DesktopMenuItem" id="MenuItemVenue">BLOG</li></a>
         <a href="contact" title="Get in Touch" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Contact']);"><li class="DesktopMenuItem" id="MenuItemGetInTouch">GET IN TOUCH</li></a>
@@ -518,12 +531,12 @@ $(document).ready(function(){
 <!-- END Exhibitor Sponsors -->
 
 <!-- A La Carte Sponsors -->
-		<h2 class="SponsorHeadline FontRaleway" style="display:none"><span>A La Carte Sponsors</span></h2>
-        <div class="CategoryContainer" id="AlaCarteWrapper" style="display:none">
+		<h2 class="SponsorHeadline FontRaleway"><span>A La Carte Sponsors</span></h2>
+        <div class="CategoryContainer" id="AlaCarteWrapper">
 <?php 
 
-  //$content = $sponsors->sponsors_grid_alacarte();        
-  //echo $content;	
+  $content = $sponsors->sponsors_grid_alacarte();        
+  echo $content;	
 
   
 ?>
@@ -558,7 +571,7 @@ $(document).ready(function(){
 	<div id="SponsorListsInnerContainer">
 
 <!-- Diamond SponsorLists -->
-   <h2 class="SponsorListHeadline FontRaleway"><span>Diamond Sponsor</span></h2>
+   <h2 class="SponsorListHeadline FontRaleway"><span>Diamond Sponsors</span></h2>
 
 <?php 
 
@@ -572,7 +585,7 @@ $(document).ready(function(){
 <!-- END Diamond SponsorLists -->
 
 <!-- Emerald SponsorLists -->
-		<h2 class="SponsorListHeadline FontRaleway"><span>Emerald Sponsor</span></h2>  
+		<h2 class="SponsorListHeadline FontRaleway"><span>Emerald Sponsors</span></h2>  
         
 <?php 
 
@@ -586,7 +599,7 @@ $(document).ready(function(){
 <!-- END Emerald SponsorLists -->  
 
 <!-- Platinum SponsorLists --> 
-		<h2 class="SponsorListHeadline FontRaleway"><span>Platinum Sponsor</span></h2>
+		<h2 class="SponsorListHeadline FontRaleway"><span>Platinum Sponsors</span></h2>
        <?php 
 
   $content = $sponsors->sponsors(3); 
@@ -597,7 +610,7 @@ $(document).ready(function(){
 <!-- END Platinum SponsorLists -->  
 
 <!-- Gold SponsorLists --> 
-		<h2 class="SponsorListHeadline FontRaleway"><span>Gold Sponsor</span></h2>  
+		<h2 class="SponsorListHeadline FontRaleway"><span>Gold Sponsors</span></h2>  
 <?php 
 
   $content = $sponsors->sponsors(4); 
@@ -609,7 +622,7 @@ $(document).ready(function(){
 <!-- END Gold SponsorLists -->  
 
 <!-- Silver SponsorLists --> 
-		<h2 class="SponsorListHeadline FontRaleway"><span>Silver Sponsor</span></h2>  
+		<h2 class="SponsorListHeadline FontRaleway"><span>Silver Sponsors</span></h2>  
      <?php 
 
   $content = $sponsors->sponsors(5); 
@@ -622,7 +635,7 @@ $(document).ready(function(){
 <!-- END Silver SponsorLists --> 
 
 <!-- Exhibitors --> 
-		<h2 class="SponsorListHeadline FontRaleway"><span>Sponsor</span></h2>
+		<h2 class="SponsorListHeadline FontRaleway"><span>Sponsors</span></h2>
      <?php 
 
   $content = $sponsors->sponsors(6); 
@@ -632,7 +645,10 @@ $(document).ready(function(){
 ?>  
                
 <!-- END Exhibitors -->                                                   
-    </div>         
+    </div>  
+    
+ 
+           
     <!-- END SponsorLists List -->
 
 </section>
@@ -707,11 +723,11 @@ $(document).ready(function(){
 <!-- Download Brochure Modal -->
 <div id="DownloadBrochureModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
   <h2>Download Brochure</h2>
-  <p>Thank you for downloading our brochure! Please fill in all the fields below.</p>
-  <!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
+  <p>Thank you for your request. Please fill in all the fields below!</p>
+<!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
   <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
     <input type=hidden name="oid" value="00DD0000000nwgk">
-    <input type=hidden name="retURL" value="http://hrtechcongress.com/sponsors.html#ThankYouBrochureModal">
+    <input type=hidden name="retURL" value="http://hrtechcongress.com/sponsors#ThankYouBrochureModal">
 
       <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
       <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />
@@ -738,7 +754,7 @@ $(document).ready(function(){
   <!-- BEGINING of : BECOME A SPONSOR MODAL FORM -->
   <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
     <input type=hidden name="oid" value="00DD0000000nwgk">
-    <input type=hidden name="retURL" value="http://hrneurope.com/sponsorship-thankyou.html">
+    <input type=hidden name="retURL" value="http://hrtechcongress.com/sponsors#ThankYouForApplyModal">
 
       <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
       <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />

@@ -8,13 +8,13 @@
 <meta name="developer" content="Developed by: TesseracT - bottyan.tamas@web-developer.hu, Benedek Nagy - trialshock@gmail.com, Myrrdhinn - balazs.pentek@web-developer.hu">
 <meta charset="utf-8" />
 <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-<title>HR Tech World Congress | Partner Program</title>
+<title>HR Tech World Congress | Venue</title>
 
 <!-- Open Graph data -->
 <meta property="og:site_name" content="HR Tech World Congress"/>
-<meta property="og:title" content="HR Tech World Congress | Partner Program"/>
+<meta property="og:title" content="HR Tech World Congress | Venue"/>
 <meta property="og:description" content="The fastest growing HR event in the world! Paris October 24 - 25"/>
-<meta property="og:url" content="http://hrtechcongress.com/partner-program">
+<meta property="og:url" content="http://hrtechcongress.com/venue">
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="http://hrtechcongress.com/img/preview-images/preview-image-1.jpg" />
 <meta property="og:image" content="http://hrtechcongress.com/img/preview-images/preview-image-2.jpg" />
@@ -57,7 +57,7 @@
 <link rel="stylesheet" href="css/menu.css" />
 
 <!-- Include Custom CSS Definitions -->
-<link rel="stylesheet" href="css/partner-program.css" />
+<link rel="stylesheet" href="css/venue.css" />
 
 <!-- Include Footer CSS Definitions -->
 <link rel="stylesheet" href="css/footer.css" />
@@ -159,149 +159,55 @@ $(document).ready(function() {
 
 <!-- Header -->
 <header>
-	<div id="IntroImageBackground">
-    	<h1 class="FontLato">PARTNER PROGRAM</h1>
-        <h2 class="FontLato">The team at HRN Europe have organized handful of events throughout the day for partners and guests of delegates joining us in Paris, global capital of culture with iconic architecture, glorious food, stylish shopping and artistic treasures.</h2>    
-    	<p class="FontLato">You will need to register Partners and Guests for the program due to the limited availability of places. All programs will start in front of Palais de Congres - Early bookings are advised.</p>
-    </div>
-    <div id="IntroContact">
-    	<h2>To register please email details of attendees listing the preferred option(s) to Kata Csader at: <a href="mailto:partner@hrneurope.com">partner@hrneurope.com</a></h2>
-    </div>
+	<h1>VENUE</h1>
+    <h2 class="FontSourceSansPro">Palais des Congrès, Paris</h2>
+    <p>Combining bold architecture, international renown, a strategic location enjoying ease of access and a wide range of nearby hotel accommodation, this venue has all it takes to be one of the world’s most significant conference centres.</p>
 </header>
 <!-- END Header -->
-<!-- Partner Program -->
-<section>
-	<h2 class="InvisibleHeadline">Partner Program</h2>
-	<!-- SAINT-GERMAIN-DES-PRÉS & LATIN QUARTER -->
-    <div class="PartnerContainer">
-    	<div class="PartnerMobile" id="SaintgermainMobile">
-        	<h2 class="FontLato WhiteText">GUIDED WALKING TOUR<br> SAINT-GERMAIN-DES-PRÉS & LATIN QUARTER</h2>
-        </div>
-        <div class="PartnerDescription GreyText">
-        	<div class="PartnerTextContainer">
-                <h2 class="FontLato BlueText">GUIDED WALKING TOUR<br> SAINT-GERMAIN-DES-PRÉS & LATIN QUARTER</h2>
-                <p class="FontLato">After WWII, Saint Germain des Prés became synonymous with intellectual life centered around bars and cafés like Les Deux Magots and le Café de Flore. Philosophers, writers, actors and musicians mingled in the brasseries and medieval cellar nightspots where philosophy still coexists with Jazz.</p>
-                <p class="FontLato">Places of interest in our walk include St Germain des Prés church, the oldest church in Paris, the rue Jacob (one of Paris’s most historic streets), the left bank’s most celebrated thoroughfare - Boulevard St Germain, Fürstenberg Square, rue de Buci and the Theatre National de l’Odéon before walking through the
-    beautiful Luxembourg Gardens. After the tour, guests will have some free time to explore the area and do some shopping.</p>
-                <p class="FontLato">
-                    <strong>Departure:</strong> Tuesday, 27 October, 10:00<br>
-                    <strong>Duration:</strong> 4 hours<br>
-                    <strong>Available places:</strong> 20<br>
-                    <strong>Price:</strong> € 55
-                </strong></p>
-            </div>
-            <div class="PartnerImageContainer">
-            	<img class="PartnerImage" src="img/partner-program/saintgermain.jpg" alt="SAINTGERMAIN DES PRÉS &amp; LATIN QUARTER">
-            </div>
-            <div class="ClearFix"></div>
-        </div>
-	</div>
-    <!-- END SAINT-GERMAIN-DES-PRÉS & LATIN QUARTER -->    
 
-	<!-- WINE AND CHEESE TASTING -->
-    <div class="PartnerContainer">
-    	<div class="PartnerMobile" id="WineMobile">
-        	<h2 class="FontLato WhiteText">WINE AND CHEESE TASTING</h2>
-        </div>
-        <div class="PartnerDescription GreyBackground WhiteText">
-        	<div class="PartnerTextContainer">
-                <h2 class="FontLato">WINE AND CHEESE TASTING</h2>
-                <p class="FontLato">The wine tasting company we are working with is a leading pioneer of winetasting in Paris directed towards an international public. The wine tasting goes hand in hand with pleasure and conviviality. Breaking away from the usual clichés and techniques, the class offers an approach that is both dynamic and accessible
-based around the fascinating world of French wine.</p>
-                <p class="FontLato">A selected team of sommeliers will pass on their passion for wine, keeping it light and good humored. In addition to being seasoned wine professionals, the sommeliers are all unique and interesting characters, and are sure to make your wine tasting a very pleasant experience.</p>
-                <p class="FontLato">
-                    <strong>Departure:</strong> Tuesday, 27 October, 14:00<br>
-                    <strong>Duration:</strong> 4 hours<br>
-                    <strong>Available places:</strong> 20<br>
-                    <strong>Price:</strong> € 85
-                </strong></p>
-            </div>
-            <div class="PartnerImageContainer">
-            	<img class="PartnerImage" src="img/partner-program/wine.jpg" alt="WINE AND CHEESE TASTING">
-            </div>
-            <div class="ClearFix"></div>
-        </div>
-	</div>
-    <!-- END WINE AND CHEESE TASTING -->    
-
-	<!-- GUIDED TOUR OF VERSAILLES PALACE AND GARDENS -->
-    <div class="PartnerContainer">
-    	<div class="PartnerMobile" id="VersaillesMobile">
-        	<h2 class="FontLato WhiteText">GUIDED TOUR OF VERSAILLES<br> PALACE AND GARDENS</h2>
-        </div>
-        <div class="PartnerDescription GreyText">
-        	<div class="PartnerTextContainer">
-                <h2 class="FontLato BlueText">GUIDED TOUR OF VERSAILLES PALACE AND GARDENS</h2>
-                <p class="FontLato">The royal estate of Versailles was the main home of Kings Louis XIV, Louis XV and Louis XVI during the 17th and the 18th centuries. Closed during the revolution, it was transformed into a museum in the XIXth century.</p>
-                <p class="FontLato">After lunch, and some free time in the gardens of Versailles the visit continues with: The Petit Trianon: a lovely building set next to the Grand Canal built in 1762 as a retreat for Louis XV and later on a favorite retreat of Louis XVI’s wife Marie Antoinette. Followed by the Grand Trianon: Louis XIV built this small palace of
-stone and pink marble in 1687 to escape the rigors of court life, and to enjoy the company of his mistress, Madame de Maintenon.</p>
-                <p class="FontLato">
-                    <strong>Departure:</strong> Tuesday, 27 October, 10:00<br>
-                    <strong>Duration:</strong> 8 hours<br>
-                    <strong>Available places:</strong> 20<br>
-                    <strong>Price:</strong> € 150 *includes lunch
-                </strong></p>
-            </div>
-            <div class="PartnerImageContainer">
-            	<img class="PartnerImage" src="img/partner-program/versailles.jpg" alt="GUIDED TOUR OF VERSAILLES PALACE AND GARDENS">
-            </div>
-            <div class="ClearFix"></div>
-        </div>
-	</div>
-    <!-- END GUIDED TOUR OF VERSAILLES PALACE AND GARDENS -->    
-
-	<!-- GUIDED VISIT OF THE LOUVRE MUSEUM -->
-    <div class="PartnerContainer">
-    	<div class="PartnerMobile" id="LouvreMobile">
-        	<h2 class="FontLato WhiteText">GUIDED VISIT OF <br>THE LOUVRE MUSEUM</h2>
-        </div>
-        <div class="PartnerDescription GreyBackground WhiteText">
-        	<div class="PartnerTextContainer">
-                <h2 class="FontLato">GUIDED VISIT OF <br>THE LOUVRE MUSEUM</h2>
-                <p class="FontLato">The Louvre, containing one of the most important art collections in the world, has a history extending back to the medieval times. The Louvre slowly evolved toward its status as a public arts museum during the French Revolution in the late 18th century.<br>
-The Louvre is today the world’s most-visited museum, and an enduring symbol of French excellence in the arts.</p>
-                <p class="FontLato">Spanning eight thematic departments and 35,000 pieces of artwork dating from antiquity to the early modern period, the Louvre’s permanent collection includes masterpieces by European masters such as Da Vinci, Delacroix, Vermeer, and Rubens, as well as unsurpassed Greco-Roman, Egyptian, or Islamic arts collections.</p>
-                <p class="FontLato">
-                    <strong>Departure:</strong> Wednesday, 28 October, 11:00<br>
-                    <strong>Duration:</strong> 4 hours<br>
-                    <strong>Available places:</strong> 40<br>
-                    <strong>Price:</strong> € 60
-                </strong></p>
-            </div>
-            <div class="PartnerImageContainer">
-            	<img class="PartnerImage" src="img/partner-program/louvre.jpg" alt="GUIDED TOUR OF VERSAILLES PALACE AND GARDENS">
-            </div>
-            <div class="ClearFix"></div>
-        </div>
-	</div>
-    <!-- END GUIDED VISIT OF THE LOUVRE MUSEUM -->
-
-	<!-- GUIDED VISIT OF MONTMARTRE WITH LUNCH & WINE TASTING -->
-    <div class="PartnerContainer">
-    	<div class="PartnerMobile" id="MontmartreMobile">
-        	<h2 class="FontLato WhiteText">GUIDED VISIT OF MONTMARTRE <br>WITH LUNCH & WINE TASTING</h2>
-        </div>
-        <div class="PartnerDescription GreyText">
-        	<div class="PartnerTextContainer">
-                <h2 class="FontLato BlueText">GUIDED VISIT OF MONTMARTRE WITH LUNCH &amp; WINE TASTING</h2>
-                <p class="FontLato">By the end of the 19th century Montmartre was a Mecca for artists, writers, poets and their disciples, who gathered to sample the cabarets and revues which made Montmartre’s reputation. Montmartre still has this village atmosphere which remains remarkably intact. There is the old village square, the world famous Place du Tertre, with its cafés and artists where quick portrait artists and souvenir sellers thrive.</p>
-                <p class="FontLato">There are spectacular views of the city from various points, especially from the monumental Sacré-Coeur. It is one of the liveliest, most colorful, bustling areas of Paris and if you really want to get that typically “French Feel” this is where to come!</p>
-                <p class="FontLato">
-                    <strong>Departure:</strong> Wednesday, 28 October, 10:00<br>
-                    <strong>Duration:</strong> 6 hours<br>
-                    <strong>Available places:</strong> 20<br>
-                    <strong>Price:</strong> € 125 * includes lunch
-                </strong></p>
-            </div>
-            <div class="PartnerImageContainer">
-            	<img class="PartnerImage" src="img/partner-program/montmartre.jpg" alt="GUIDED VISIT OF MONTMARTRE WITH LUNCH & WINE TASTING">
-            </div>
-            <div class="ClearFix"></div>
-        </div>
-	</div>
-    <!-- END GUIDED VISIT OF MONTMARTRE WITH LUNCH & WINE TASTING -->
+<!-- Flights -->
+<section id="FlightOffer">
+	<h2 class="InvisibleHeadline">Flight Offer</h2>
+	<img id="AirplanePhoto" src="img/venue/airplane-photo.png">
+    <div id="IDCode">
+    	<img src="img/venue/airfrance-klm-logo.png" alt="AIRFRANCE KLM">
+        <h2 class="FontRaleway BlueText">Attractive discounts on a wide range of fares on all Air France and KLM flights worldwide</h2>
+        <p class="FontLato">Event ID Code to keep for the booking:<br> 25390AF</p>
+    </div>
+    <div id="FlightDescription">
+    	<p>We are pleased to let you know that we have partnered up with KLM / Air France to make the most out of your event experience by providing discounted rates on a wide range of airfares on all Air France and KLM flights worldwide.</p>
+    </div>
 </section>
-<!--END Partner Program --> 
+<!--END Flights --> 
+
+<!-- How to Get There -->
+<section id="HowToGetThere">
+	<h2 class="BlueText">How to Get There</h2>
+    <div id="TravelOpportunities">
+    	<!-- RATP -->
+        <div class="TravelContainer">
+        	<img id="RATP-logo" src="img/venue/ratp-icon.png" alt="RATP">
+            <p>Located just a stone’s throw away from central Paris,  it is very easy to commute to the venue by metro (station Port Maillot). The venue is also connected by a variety of bus lines (PC1; PC3; 82; 73; 43; 244) and by RER (line C, station Neuilly-Port Maillot).</p>
+        </div>
+        <!-- END RATP -->
+    	<!-- Highway -->
+        <div class="TravelContainer">
+        	<img class="TravelLogo" src="img/venue/highway-icon.png" alt="Highway">
+            <p>When driving to Palais des Congrès de Paris from A1, A4, A6, A10 or A15, take Paris direction, access via the western section of the ring road and exit at Porte des Ternes. When coming on the A3, A13 or A14, take the Paris direction and access via the southern section of the ring road and exit at Porte Maillot.</p>
+        </div>
+        <!-- END Highway -->       
+    	<!-- Parking areas -->
+        <div class="TravelContainer">
+        	<img class="TravelLogo" src="img/venue/parking-area-icon.png" alt="Parking">
+            <p>At the venue, there are more than 1.500 underground parking spaces with direct access to the Palais des Congrès de Paris.</p>
+        </div>
+        <!-- END Parking areas -->            
+    </div>
+    <div id="Map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.886038614024!2d2.283712!3d48.879448999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f8b41cac529%3A0x3c64b279efb84cbe!2sLe+Palais+des+Congr%C3%A8s+de+Paris!5e0!3m2!1shu!2s!4v1434020771868" width="100%" height="100%" frameborder="0" style="border:0"></iframe>
+    </div>
+</section>
+<!--END How to Get There --> 
 
 <!-- FOOTER -->
 <footer>
@@ -359,10 +265,10 @@ The Louvre is today the world’s most-visited museum, and an enduring symbol of
 <div id="DownloadBrochureModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
   <h2>Download Brochure</h2>
   <p>Thank you for your request. Please fill in all the fields below!</p>
-<!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
+  <!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
   <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
     <input type=hidden name="oid" value="00DD0000000nwgk">
-    <input type=hidden name="retURL" value="http://hrtechcongress.com/partner-program#ThankYouBrochureModal">
+    <input type=hidden name="retURL" value="http://hrtechcongress.com/venue#ThankYouBrochureModal">
 
       <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
       <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />

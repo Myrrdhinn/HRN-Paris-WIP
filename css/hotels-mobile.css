@@ -201,6 +201,9 @@
 		margin-top: 0;
 		margin-bottom: 12px;
 	}
+	.RoomType {
+		margin-left: 40px;	
+	}		
 	.Hotel .BookNowButton {
 		margin-top: 3px;
 		font-size: 14px;

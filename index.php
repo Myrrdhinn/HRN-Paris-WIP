@@ -105,10 +105,7 @@ if(window.location.href.indexOf('#ThankYouForApplyModal') != -1) {
   
 if(window.location.href.indexOf('#ThankYouBrochureModal') != -1) {
    jQuery("#ThankYouBrochureModal").reveal();
-  }  
-if(window.location.href.indexOf('#Get2For1Tickets') != -1) {
-   jQuery("#Get2For1TicketsModal").reveal();
-  } 
+  }   
 });
 </script>
 <!-- END Thank you modal  -->
@@ -124,25 +121,24 @@ $(document).scroll(function() {
 	$("#DesktopMenu").css("background-color", "rgba(255,255,255,1)");
 	$("#DesktopMenu").css("border-bottom", "1px solid #bfbfbf");	
 	$(".DesktopMenuItem").removeClass("TransparentDesktopMenuItem");
-	$("#DesktopMenuList #DesktopGetTickets").css("color", "#106ab5");	
+	$("#DesktopMenuList #DesktopGetTickets").css("color", "#106ab5");
+	$("#PartnersDD > a").css("color", "#707070");
 	$("#HRTechDesktopLogo").css("background-image", "url(img/menu/horizontallogo.png)");
-
 	$("#DesktopMenuSocialIcons").css("transition-delay", "0.4s");
 	$("#DesktopMenuSocialIcons").css("moz-transition-delay", "0.4s");
 	$("#DesktopMenuSocialIcons").css("opacity", "1");
 	$("#DesktopMenuSocialIcons").css("visibility", "visible");
 	
   } else {
-	$("#HRTechDesktopLogo").css("width", "20.8333333333333333vw");
-	$("#HRTechDesktopLogo").css("height", "5vw");
-	$("#HRTechDesktopLogo").css("margin-right", "17vw");
-
+	$("#HRTechDesktopLogo").css("width", "14.58333333333333331vw");
+	$("#HRTechDesktopLogo").css("height", "3.5vw");
+	$("#HRTechDesktopLogo").css("margin-right", "23vw");
 	$("#DesktopMenu").css("background-color", "rgba(255,255,255,0)");
 	$("#DesktopMenu").css("border-bottom", "none");	
 	$(".DesktopMenuItem").addClass("TransparentDesktopMenuItem");
 	$("#DesktopMenuList #DesktopGetTickets").css("color", "#fff");	
+	$("#PartnersDD > a").css("color", "#fff");
 	$("#HRTechDesktopLogo").css("background-image", "url(img/menu/transparent-horizontallogo.png)");
-	
 	$("#DesktopMenuSocialIcons").css("transition-delay", "0");
 	$("#DesktopMenuSocialIcons").css("moz-transition-delay", "0");
 	$("#DesktopMenuSocialIcons").css("visibility", "hidden");
@@ -173,10 +169,17 @@ $(document).scroll(function() {
 }
 #HRTechDesktopLogo {
 	background-image: url(img/menu/transparent-horizontallogo.png);	
-	
-	width: 20.8333333333333333vw;
-	height: 5vw;
-	margin-right: 17vw;
+	width: 14.58333333333333331vw;
+	height: 3.5vw;
+	margin-right: 23vw;
+}
+#PartnersDD > a{
+	color: #fff;
+	transition: all 0.3s;	
+}
+.TransparentDD:hover > a{
+	color: #fff !important;	
+	transition: all 0.3s;	
 }
 .TransparentDesktopMenuItem {
 	color: rgba(255,255,255,1);
@@ -271,7 +274,16 @@ not transparent menu logo background: img/menu/horizontallogo.png
 	<ul id="DesktopMenuList">
     	<a href="#AboutSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'About']);" title="About"><li class="DesktopMenuItem TransparentDesktopMenuItem" id="MenuItemAbout">ABOUT</li></a>
         <a href="speakers" title="Speakers" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);"><li class="DesktopMenuItem TransparentDesktopMenuItem" id="MenuItemSpeakers">SPEAKERS</li></a>
-        <a href="sponsors" title="Sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);"><li class="DesktopMenuItem TransparentDesktopMenuItem" id="MenuItemSponsors">SPONSORS</li></a>
+        <li id="PartnersDD" class="DesktopMenuItem TransparentDesktopMenuItem TransparentDD"><a href="sponsors" title="Sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);">SPONSORS</a>
+        <!-- Partners Dropdown 
+            <div id="PartnersMenu">
+            <div class="ArrowUp"></div>
+             <ul class="Dropdown" id="PartnersDropdown">
+                <a href="sponsor-appendices"><li>Sponsor Appendices</li></a>
+             </ul>   
+            </div> 
+        <!-- Partners Dropdown -->
+        </li>
         <a href="hotels" title="Hotels" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Hotels']);"><li class="DesktopMenuItem TransparentDesktopMenuItem" id="MenuItemHighlights">HOTELS</li></a>
         <a href="http://blog.hrtecheurope.com/" title="Blog" onClick="_gaq.push(['_trackEvent', 'Navigation', 'ExternalForward', 'Blog']);"><li class="DesktopMenuItem TransparentDesktopMenuItem" id="MenuItemVenue">BLOG</li></a>
         <a href="contact" title="Get in Touch" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Contact']);"><li class="DesktopMenuItem TransparentDesktopMenuItem" id="MenuItemGetInTouch">GET IN TOUCH</li></a>
@@ -600,7 +612,7 @@ echo $content;
   
   <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
     <input type=hidden name="oid" value="00DD0000000nwgk">
-    <input type=hidden name="retURL" value="http://hrtechcongress.com/index.html#ThankYouModal">
+    <input type=hidden name="retURL" value="http://hrtechcongress.com/#ThankYouModal">
     <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
     <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />
     <input required placeholder="Email Address *" id="email" maxlength="80" name="email" size="20" type="text" />
@@ -619,11 +631,11 @@ echo $content;
 <!-- Download Brochure Modal -->
 <div id="DownloadBrochureModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
   <h2>Download Brochure</h2>
-  <p>Thank you for downloading our brochure! Please fill in all the fields below.</p>
-  <!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
+  <p>Thank you for your request. Please fill in all the fields below!</p>
+<!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
   <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
     <input type=hidden name="oid" value="00DD0000000nwgk">
-    <input type=hidden name="retURL" value="http://hrtechcongress.com/index.html#ThankYouBrochureModal">
+    <input type=hidden name="retURL" value="http://hrtechcongress.com/#ThankYouBrochureModal">
     <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
     <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />
     <input required placeholder="Email Address *" id="email" maxlength="80" name="email" size="20" type="text" />
@@ -646,7 +658,7 @@ echo $content;
   <!-- BEGINING of : BECOME A SPEAKER MODAL FORM -->
   <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
     <input type=hidden name="oid" value="00DD0000000nwgk">
-    <input type=hidden name="retURL" value="http://hrtechcongress.com/index.html#ThankYouForApplyModal">
+    <input type=hidden name="retURL" value="http://hrtechcongress.com/#ThankYouForApplyModal">
     <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
     <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />
     <input required placeholder="Email Address *" id="email" maxlength="80" name="email" size="20" type="text" />

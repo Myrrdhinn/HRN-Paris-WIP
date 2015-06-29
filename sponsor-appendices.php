@@ -42,6 +42,10 @@
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
 
+<!--Include Include Proxima Nova Font (Adobe Typekit) -->
+<script src="//use.typekit.net/gku8ogo.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+
 <!-- Include jQuery -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -179,7 +183,16 @@ $(document).ready(function() {
 	<ul id="DesktopMenuList">
     	<a href="http://hrtechcongress.com#AboutSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'About']);" title="About"><li class="DesktopMenuItem" id="MenuItemAbout">ABOUT</li></a>
         <a href="speakers" title="Speakers" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);"><li class="DesktopMenuItem" id="MenuItemSpeakers">SPEAKERS</li></a>
-        <a href="sponsors" title="Sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);"><li class="DesktopMenuItem" id="MenuItemSponsors">SPONSORS</li></a>
+          <li class="DesktopMenuItem TransparentDesktopMenuItem" id="PartnersDD"><a href="sponsors" title="Sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);">SPONSORS</a>
+            <!-- Partners Dropdown 
+                <div id="PartnersMenu">
+                <div class="ArrowUp"></div>
+                 <ul class="Dropdown" id="PartnersDropdown">
+                    <a href="sponsor-appendices"><li>Sponsor Appendices</li></a>
+                 </ul>   
+                </div>
+			<!-- Partners Dropdown -->  
+          </li> 
         <a href="hotels" title="Hotels" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Hotels']);"><li class="DesktopMenuItem" id="MenuItemHighlights">HOTELS</li></a>
         <a target="_blank"  href="http://blog.hrtecheurope.com/" title="Blog" onClick="_gaq.push(['_trackEvent', 'Navigation', ExternalForward', 'Blog']);"><li class="DesktopMenuItem" id="MenuItemVenue">BLOG</li></a>
         <a href="contact" title="Get in Touch" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Contact']);"><li class="DesktopMenuItem" id="MenuItemGetInTouch">GET IN TOUCH</li></a>
@@ -203,70 +216,58 @@ $(document).ready(function() {
 <div id="MainContent"> 
       
       <!-- Downloads -->
+      <style>
+
+      </style>
       <div id="DownloadsContainer">
         <div id="DownloadAllContainer">
           <div id="Downloads">
             <h2><i class="fa fa-cloud-download"></i> Download Links</h2>
-            <ol>
-              <a href="sponsor-appendices/01_HR_Tech_Europe_Contact_List.pdf" target="_blank">
-              <li>HR Tech Europe Contact List</li>
-              </a> <a href="sponsor-appendices/02_Frequently_Asked_Questions.pdf" target="_blank">
-              <li>Frequently Asked Questions</li>
-              </a> <a href="sponsor-appendices/03_Whats_On.pdf" target="_blank">
-              <li>What's On</li>
-              </a> <a href="sponsor-appendices/04_Furniture_Brochure_2015_Interactive.pdf" target="_blank">
-              <li>Furniture brochure 2015 Interactive</li>
-              </a> <a href="sponsor-appendices/05_Furniture_Order_Form.pdf" target="_blank">
-              <li>Furniture Order Form</li>
-              </a> <a href="sponsor-appendices/06_Electrical_Order_Form.pdf" target="_blank">
-              <li>Electrical Order Form</li>
-              </a> <a href="sponsor-appendices/07_GES_Payment_Authorisation_Form.pdf" target="_blank">
-              <li>GES Payment Authorisation Form</li>
-              </a> <a href="sponsor-appendices/08_GES_Shipping_Label.pdf" target="_blank">
-              <li>GES Shipping Label</li>
-              </a> <a href="sponsor-appendices/09_Sponsors_Video_Interview_Guide.pdf" target="_blank">
-              <li>Sponsors' Video Interview Guide</li>
-              </a> <a href="sponsor-appendices/10_Case_Study_Interview_Sample.pdf" target="_blank">
-              <li>Case Study Interview Sample</li>
-              </a> <a href="sponsor-appendices/11_Case_Study_Oracle.pdf" target="_blank">
-              <li>Case Study Oracle</li>
-              </a> <a href="sponsor-appendices/12_Giveaway_Ideas.pdf" target="_blank">
-              <li>Giveaway Ideas</li>
-              </a> <a href="sponsor-appendices/13_HR_Tech_Europe_Badge_Scanners.pdf" target="_blank">
-              <li>HR Tech Europe Badge Scanners</li>
-              </a>
+            <ol style="list-style-type:decimal" start="1">
+              
+              <li><a href="SponsorAppendices/01_HR_Tech_World_Congress_Contact_List_2015.pdf" target="_blank">HR Tech World Congress Contact List</a></li>
+              <li><a href="SponsorAppendices/02_Sponsorship_Manual_Paris_2015.pdf" target="_blank">Sponsorship Manual Paris 2015</a></li>
+              <li><a href="SponsorAppendices/03_Stand_Manual_Paris_2015.pdf" target="_blank">Stand Manual Paris 2015</li></a> 
+              <li><a href="SponsorAppendices/04_Shipping_Manual_Paris_2015.pdf" target="_blank">Shipping Manual Paris 2015</a></li>
+              <li><a href="SponsorAppendices/05_Shipping_Label.pdf" target="_blank">Shipping Label</a></li>
+              <li><a href="SponsorAppendices/06_Webshop_Guidelines.pdf" target="_blank">Webshop Guidelines</a></li>
+              <li><a href="SponsorAppendices/07_Electricity_Calculation_Paris_2015.pdf" target="_blank">Electricity Calculation Paris 2015</a></li>
+              <li><a href="SponsorAppendices/08_Sponsors_Video_Interview_Guide.pdf" target="_blank">Sponsors' Video Interview Guide</a></li>
+              <li><a href="SponsorAppendices/09_Tax_Information_France.pdf" target="_blank">Tax Information France</a></li>
+              <li><a href="SponsorAppendices/10_Parking_Information.pdf" target="_blank">Parking Information</a></li>
+              <li><a href="SponsorAppendices/11_Hotel_Information.pdf" target="_blank">Hotel Information</a></li>
+              <li><a href="SponsorAppendices/11_HR_Tech_Spiral_Creative_Proposal.pdf" target="_blank">HR Tech Spiral Creative Proposal</a></li>
+              <li><a href="SponsorAppendices/12_Creative_Advert_Sample.pdf" target="_blank">Creative Advert Sample</a></li>
+              <li><a href="SponsorAppendices/13_Creative_Case_Study_Sample.pdf" target="_blank">Creative Case Study Sample</a></li>
+              <li><a href="SponsorAppendices/14_KLM_AirFrance.pdf" target="_blank">KLM AirFrance</a></li> 
+              <li><a href="SponsorAppendices/15_Frequently_Asked_Questions.pdf" target="_blank">Frequently Asked Questions</a></li>
             </ol>
           </div>
-          <a href="sponsor-appendices/HR_Tech_Europe_2015_London_Sponsor_Appendices.zip" target="_blank">
+          <a href="SponsorAppendices/HR_Tech_World_Congress_2015_Paris_Sponsor_Appendices.zip" target="_blank">
           <div id="DownloadAllButton" class="FontRoboto"> <i class="fa fa-download"></i> Download all </div>
           </a> </div>
         <div id="Recommendations">
           <h2 id="Compulsory">Compulsory</h2>
-          <p>Please make sure you fill out and send back these forms. The furniture / electricity order form must be sent back directly to GES on the following address:<br>
-            GES ServiCentre<br>
-            customerservice@ges.com +44 2476 380 180</p>
-          <ul id="Compulsory">
-            <li>Furniture Brochure</li>
-            <li>Furniture Order Form</li>
-            <li>Electricity Order Form</li>
-            <li>GES Payment Authorization Form</li>
-            <li>What’s On? What’s New? Form</li>
-          </ul>
+          <p>Please make sure you order electricity by 1st October from the <a href="http://www.viparis.com/epex/?utm_source=hs_email&utm_medium=email&utm_content=17511559&_hsenc=p2ANqtz-_KwO8m1OqbwFFjPogVDHwl4mP3cVDPsxOXwKyFLW4TsYq-Gk1ItqvaAlbJb6XOMdPKqKnmOXQGZMA4onCCtXaVCfoEnQ&_hsmi=17511559" target="_blank">webshop</a>. </p>
+          <p>Using the webshop is very quick and easy; all you need to do is to setup an account, login, choose Palais des Congrés from the venues, chose HR Tech World Congress from the events and you can start ordering anything you might need. </p>
+          <p>Please note the prices are for two days and exclude VAT.</p>
+          <p>The webshop closes on the 22nd October.</p>
           <h2>Recommended</h2>
           <p>Please read all documents carefully as they contain useful information about the event.</p>
           <ul>
-            <li>HR Tech Europe Contact List</li>
-            <li>GES Shipping Label</li>
-            <li>Floor Plan</li>
-            <li>HR Tech Europe Badge Scanners</li>
+            <li>Contact List</li>
+            <li>Sponsorship and Stand manual </li>
+            <li>Shipping Label</li>
+            <li>Webshop Guide</li>
+            <li>Hotel and flight information </li>
           </ul>
           <h2>Extra</h2>
-          <p>Please see the frequently asked questions and some examples of previous case studies, etc.</p>
+          <p>Please see the frequently asked questions and some examples of previous case studies and materials.</p>
           <ul>
             <li>FAQ</li>
             <li>Sponsors Video Interview Guide</li>
             <li>Case Study Interview Sample</li>
-            <li>Case Study Example</li>
+            <li>HR Tech Spiral Creative Proposal</li>
             <li>Giveaway Ideas</li>
           </ul>
         </div>
@@ -286,15 +287,15 @@ $(document).ready(function() {
           <tbody>
             <tr>
               <td class="ItemDeadline">Immediate submission</td>
-              <td class="ItemDescription" colspan="3">Logos, urls, company profile, Speaker Nomination (for Diamond & Titanium)</td>
+              <td class="ItemDescription" colspan="3">Logos, urls, company profile</td>
             </tr>
             <tr>
-              <td class="ItemDeadline">18 February</td>
-              <td class="ItemDescription" colspan="3">Adverts (for Diamond, Titanium, Platinum)</td>
+              <td class="ItemDeadline">27 July</td>
+              <td class="ItemDescription" colspan="3">Adverts (for Diamond, Emerald, Platinum)</td>
             </tr>
             <tr>
-              <td class="ItemDeadline">18 February</td>
-              <td class="ItemDescription" colspan="3">Client Interview (for Diamond & Titanium)</td>
+              <td class="ItemDeadline">27 July</td>
+              <td class="ItemDescription" colspan="3">Client Interview (for Diamond, Emerald)</td>
             </tr>
           </tbody>
         </table>
@@ -308,29 +309,36 @@ $(document).ready(function() {
           </thead>
           <tbody>
             <tr>
-              <td class="ItemDeadline">23 February</td>
-              <td class="ItemDescription" colspan="3">Order badge scanners (optional) £115 / device / 2 days</td>
+              <td class="ItemDeadline">1 September</td>
+              <td class="ItemDescription" colspan="3">Order badge scanners</td>
             </tr>
             <tr>
-              <td class="ItemDeadline">23 February</td>
+              <td class="ItemDeadline">4 September</td>
               <td class="ItemDescription" colspan="3">Stand picture / Design submitted</td>
             </tr>
             <tr>
-              <td class="ItemDeadline">23 February</td>
+              <td class="ItemDeadline">1 October</td>
               <td class="ItemDescription" colspan="3">Electricity ordered</td>
             </tr>
             <tr>
-              <td class="ItemDeadline">3 March</td>
-              <td class="ItemDescription" colspan="3">Internet / Stand furniture ordered (optional)</td>
-            </tr>
-            <tr>
-              <td class="ItemDeadline">9 March</td>
+              <td class="ItemDeadline">1 October</td>
               <td class="ItemDescription" colspan="3">Registration deadline for all conference passes</td>
             </tr>
             <tr>
-              <td class="ItemDeadline">23 March</td>
-              <td class="ItemDescription" colspan="3">Set-up (11 am – 7 pm)</td>
+              <td class="ItemDeadline">22 October</td>
+              <td class="ItemDescription" colspan="3">Internet / Stand furniture ordered (optional)</td>
             </tr>
+            <tr>
+              <td class="ItemDeadline">25 October</td>
+              <td class="ItemDescription" colspan="3">Set-up day</td>
+            </tr>
+            <tr>
+              <td class="ItemDeadline">26 October</td>
+              <td class="ItemDescription" colspan="3">Set-up day</td>
+            </tr>            <tr>
+              <td class="ItemDeadline">28 October</td>
+              <td class="ItemDescription" colspan="3">Breakdown day</td>
+            </tr>            
           </tbody>
         </table>
         <!-- end Stand & Supplies --> 
@@ -343,11 +351,11 @@ $(document).ready(function() {
           </thead>
           <tbody>
             <tr>
-              <td class="ItemDeadline">16 March</td>
-              <td class="ItemDescription" colspan="3">All conference bag materials (bag, pen, notepad, etc.) must arrive</td>
+              <td class="ItemDeadline">22 October</td>
+              <td class="ItemDescription" colspan="3">All conference bag materials must arrive</td>
             </tr>
             <tr>
-              <td class="ItemDeadline">20 March</td>
+              <td class="ItemDeadline">23 October</td>
               <td class="ItemDescription" colspan="3">All shipments arrive</td>
             </tr>
           </tbody>
@@ -375,10 +383,10 @@ $(document).ready(function() {
           <tbody>
             <tr>
               <td class="NotDayOfTheMonth">31</td>
-              <td>1</td>
+              <td class="HighlightedDay tooltipster" title='<i class="fa fa-check"></i> Order badge scanners (optional)<br>&nbsp;&nbsp;&nbsp;&nbsp; €160 / device / 2 days'>1</td>
               <td>2</td>
               <td>3</td>
-              <td>4</td>
+              <td class="HighlightedDay tooltipster" title='<i class="fa fa-check"></i> Stand picture / Design submitted'>4</td>
               <td>5</td>
               <td>6</td>
             </tr>
@@ -403,14 +411,14 @@ $(document).ready(function() {
             <tr>
               <td>20</td>
               <td>22</td>
-              <td class="HighlightedDay tooltipster" title='<i class="fa fa-check"></i> Adverts (for Diamond, Titanium, Platinum) <br> <i class="fa fa-check"></i> Client Interview (for Diamond & Titanium)'>23</td>
+              <td>23</td>
               <td>24</td>
               <td>25</td>
               <td>26</td>
               <td>27</td>
             </tr>
             <tr>
-              <td class="HighlightedDay tooltipster" title='<i class="fa fa-check"></i> Order badge scanners (optional) £115 / device / 2 days <br> <i class="fa fa-check"></i> Stand picture / Design submitted <br> <i class="fa fa-check"></i> Electricity ordered'>28</td>
+              <td>28</td>
               <td>29</td>
               <td>30</td>
               <td class="NotDayOfTheMonth">1 Oct.</td>
@@ -439,14 +447,14 @@ $(document).ready(function() {
               <td class="NotDayOfTheMonth">28</td>
               <td class="NotDayOfTheMonth">29</td>
               <td class="NotDayOfTheMonth">30</td>
-              <td>1</td>
+              <td class="HighlightedDay tooltipster" title='<i class="fa fa-check"></i> Electricity ordered<br> <i class="fa fa-check"></i> Registration deadline for all conference passes'>1</td>
               <td>2</td>
               <td>3</td>
               <td>4</td>
             </tr>
             <tr>
               <td>5</td>
-              <td class="HighlightedDay tooltipster" title='<i class="fa fa-check"></i> Internet / Stand furniture ordered (optional)'>6</td>
+              <td>6</td>
               <td>7</td>
               <td>8</td>
               <td>9</td>
@@ -454,7 +462,7 @@ $(document).ready(function() {
               <td>11</td>
             </tr>
             <tr>
-              <td class="HighlightedDay tooltipster" title='<i class="fa fa-check"></i> Registration deadline for all conference passes'>12</td>
+              <td>12</td>
               <td>13</td>
               <td>14</td>
               <td>15</td>
@@ -463,18 +471,18 @@ $(document).ready(function() {
               <td>18</td>
             </tr>
             <tr>
-              <td class="HighlightedDay tooltipster" title='<i class="fa fa-check"></i> All conference bag materials (bag, pen, notepad, etc.) must arrive'>19</td>
+              <td>19</td>
               <td>20</td>
               <td>21</td>
-              <td>22</td>
+              <td class="HighlightedDay tooltipster" title='<i class="fa fa-check"></i> Internet / Stand furniture ordered (optional)<br> <i class="fa fa-check"></i>  	All conference bag materials must arrive'>22</td>
               <td class="HighlightedDay tooltipster" title='<i class="fa fa-check"></i> All shipments arrive'>23</td>
               <td>24</td>
-              <td>25</td>
+              <td class="HighlightedDay tooltipster" title='<i class="fa fa-check"></i> Set-up day'>25</td>
             </tr>
             <tr>
-              <td class="HighlightedDay tooltipster" title='<i class="fa fa-check"></i> Set-up (11 am – 7 pm)'>26</td>
+              <td class="HighlightedDay tooltipster" title='<i class="fa fa-check"></i> Set-up day'>26</td>
               <td>27</td>
-              <td>28</td>
+              <td class="HighlightedDay tooltipster" title='<i class="fa fa-check"></i> Breakdown day'>28</td>
               <td>29</td>
               <td>30</td>
               <td>31</td>
@@ -502,7 +510,7 @@ $(document).ready(function() {
       </div>
       <div class="ContactMember">
         <div ><img src="img/contact/CsaderK.jpg" alt="Kata Csáder picture"></div>
-        <p class="ContactPosition" id="OrangeTitle">Operations Coordinator</p>
+        <p class="ContactPosition" id="OrangeTitle">Operations Manager</p>
         <p>Kata Csáder</p>
         <p class="ContactPhoneNumber">+36 70 200 8075</p>
       </div>
@@ -568,11 +576,11 @@ $(document).ready(function() {
 <!-- Download Brochure Modal -->
 <div id="DownloadBrochureModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
   <h2>Download Brochure</h2>
-  <p>Thank you for downloading our brochure! Please fill in all the fields below.</p>
-  <!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
+  <p>Thank you for your request. Please fill in all the fields below!</p>
+<!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
   <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
     <input type=hidden name="oid" value="00DD0000000nwgk">
-    <input type=hidden name="retURL" value="http://hrtechcongress.com/sponsors.html#ThankYouBrochureModal">
+    <input type=hidden name="retURL" value="http://hrtechcongress.com/sponsor-appendices#ThankYouBrochureModal">
 
       <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
       <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />

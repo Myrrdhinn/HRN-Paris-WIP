@@ -1,173 +1,83 @@
 @charset "utf-8";
 /* These CSS rules will effect every page. Use this file to define only the navigation menu`s style properties. */
 
-
-a {
-	text-decoration: none;	
-}
-
-/* Desktop Menu */
-#DesktopMenu {
+#MainMenuContainer {
 	width: 100%;
-	height: 4.0625vw;
-	background-color: rgba(255,255,255,1);
-	border-bottom: 1px solid #bfbfbf;	
-	position: fixed;
-	top: 0;
-	box-sizing: border-box;
-	font-size: 0;
-	z-index: 5000;
-}
-#DesktopMenu * {
-	box-sizing: border-box;
-}
-#HRTechDesktopLogo {
-	display: inline-block;	
-	width: 10.2604166666666667vw;
-	height: 2.5vw;
-	margin-top: 0.7vw;
-	margin-left: 2.8645833vw;
-	margin-right: 8.33333vw;
-	background-image: url(../img/menu/horizontallogo.png);
-	background-size: cover;
-}
-
-#DesktopMenuList {
-	display: inline-block;
-	list-style-type: none;
-	vertical-align: top;
-	margin: 0;
-	padding: 0;
-	position: relative;
-	font-family: 'Raleway', sans-serif;
-}
-#DesktopMenuList a {
-	color: none;
-}
-.DesktopMenuItem {
-	display: inline-block;
-	font-size: 1.25vw;
-	color: #707070;
-	padding: 1.25vw 0.9375vw 1.302083vw 0.9375vw;
-	height: 100%;
-	cursor: pointer;
-	transition: all 0.3s;
-}
-.DesktopMenuItem:hover {
-	background-color: #106ab5;
-	color: #fff;	
-}
-.DesktopMenuItem > a{
-	color: #707070;
-}
-.DesktopMenuItem:hover > a {
-	color: #fff;	
-}
-#DesktopMenuList #DesktopGetTickets {
-	color: #106ab5;
-	font-weight: 700;
-}
-#DesktopMenuList #DesktopGetTickets:hover {
-	color: #fff;
-}
-#DesktopGetTickets .fa-ticket{
-	margin-right: 0.520833vw;
-}
-#DesktopMenuSocialIcons {
-	display: inline-block;
-	vertical-align: top;
-	margin-top: 1.2vw;	
-	position: absolute;
-	right: 2.34375vw;
-}
-.DesktopMenuSocialIcon {
-	margin-right: 0.260416vw;	
-	width: 1.71875vw;
-	height: 1.71875vw;
-	display: inline-block;
-}
-#DesktopMenuTwitterIcon {
-	background-image: url(../img/menu/twitter.png);
-	background-size: cover;
-}
-#DesktopMenuFacebookIcon {
-	background-image: url(../img/menu/facebook.png);
-	background-size: cover;
-}
-#DesktopMenuLinkedInIcon {
-	background-image: url(../img/menu/linkedin.png);
-	background-size: cover;
-}
-#DesktopMenuSlideShareIcon {
-	background-image: url(../img/menu/slideshare.png);
-	background-size: cover;
-}
-#DesktopMenuFlickrIcon {
-	background-image: url(../img/menu/flickr.png);
-	background-size: cover;
-}
-/* Dropdowns */
-#PartnersMenu, #VenueMenu  {
-	display: none;
-	opacity: 0;
-	position: absolute;	
-	top: 2.083333vw;
+	margin: 0 auto;
+	margin-top: -4.6875vw;
+	/*height: 5.2vw;*/
+	height: 4vw;
 	text-align: center;
+	z-index: 500;
+	transition: all 0.5s;
+}
+
+#MenuContainer {
+	margin: 0 auto;
+	width: 85%;
+	/*height: 8.59375vw;*/
+}
+#MenuLogo {
+	width:11.25vw;
+	height:8.59375vw;
+	background: url(../img/menu/whitelogo.png) no-repeat;
+	background-size: contain;
+	margin: 0 auto;
+	position: relative;
+	top: 0.2vw;
+	display: inline-block;
+	transition: all 0.5s;
+}
+.MainMenuItem {
+	margin: 0 1.125vw;
+	position: relative;
+	top: -3vw;
+	color: #fff;
+	opacity: 0.5;
+	text-decoration: none;
+	font-size: 1.25vw;
+	display: inline-block;
+	transition: all 0.5s;
+	font-weight:bold;
+}
+#MenuContainer a:hover {
+	opacity: 1;
 	transition: all 0.3s;
 }
-#PartnersMenu {
-	left: 13.2vw;	/* set this to 0vw if fixed width is deleted */
+.StaticPos {
+	position: static !important;
+	top: 0;
 }
-#VenueMenu {
-	left: 0vw;
-}
-#PartnersDD:hover #PartnersMenu, #VenueDD:hover #VenueMenu {
-	display: inline-block;	
-	opacity: 1;
-}
-.Dropdown {
-	margin-top: 0;
-	padding: 0.885416vw 1.041666vw 0.052083vw 1.041666vw;
-	background-color: #0a2841;
-	border-top: 0.416666vw solid #4899dd;
-	list-style-type: none;
-	font-size: 0.9375vw;
-	font-family: 'Raleway', sans-serif;
-	text-align: left;
-}
-.Dropdown a {
-	color: 	rgba(255,255,255, 0.8);
-}
-.Dropdown a:hover {
-	color: #fff;
-}
-.Dropdown li {
-	margin-bottom: 0.83333vw;
-}
-.ArrowUp {
-	display: inline-block;
-	width: 0; 
-	height: 0; 
-	border-left: 0.364583vw solid transparent;
-	border-right: 0.364583vw solid transparent;
-	
-	border-bottom: 0.364583vw solid #4899dd;
-	margin-bottom: -0.3125vw;
-}
-/* END Dropdowns */
-/* END Desktop Menu */
+	#SpeakersSection, #SponsorsSection, #HighlightsSection, #VenueSection, #GetInTouchSection {
+		position: relative; 
+		top: -3.125vw;
+	}
+	#AboutSection {
+		position: relative;
+		top: 0.677083vw;	
+	}
 
-/* Mobile Menu */
-/* The full-screen menu*/
 #MobileMenuContainer {
 	display:none;	
 }
+	
+@media (min-width: 1361px) {
+#MainMenuContainer {
+	/*height: 4vw;*/
+
+}
+}
+
+
+/* The full-screen menu*/
 @media (max-width: 1000px) {
-	#DesktopMenu {
+	#MenuContainer {
 		display: none;	
 	}
 	#MobileMenuContainer {
 		display: block;	
+	}
+	#MobileMenuContainer {
 		width: 100%;
 		height: 15.320832vw;	
 		background-color: #fff;
@@ -177,7 +87,7 @@ a {
 		z-index: 1900;
 	}
 	#MobileMenuLogo {
-		background:url(../img/menu/horizontallogo.png) no-repeat;
+		background: url(../img/menu/mobile-bluelogo.png) no-repeat;
 		background-size: contain;
 		position: relative;
 		width: 50vw;	
@@ -197,29 +107,36 @@ a {
 	#MobileMenuButton:hover {
 		cursor: pointer;	
 	}
-	#MobileMenu{ 
-		width: 100vw;
-		height: 100vh;
-		position: fixed;
-		opacity: 0.95;
-		background-color: #106ab5;
-		z-index: 1000;
-		display: none;
-	}
-	#MobileMenuList {
-			padding-left: 0;
-			text-decoration: none;
-			text-align:center;
-			text-transform: uppercase;
-			list-style-type: none;
-			font-weight: 400;
-			font-size: 3.125vw;	
-			padding-top: 30vh;
-			margin: 0;
-	}
-	#MobileMenuList li {
+}
+
+#MobileMenu{ 
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	opacity: 0.95;
+	background-color: #106ab5;
+	z-index: 1000;
+	display: none;
+}
+#MobileMenuList {
+		padding-left: 0;
+		text-decoration: none;
+		text-align:center;
+		text-transform: uppercase;
+		list-style-type: none;
+		font-weight: 400;
+		margin: 0;
+}
+#MobileMenuList li {
 		padding: 0;	
 		color: #fff;
+}
+@media (max-width: 1000px) {
+	#MobileMenuList {
+		font-size: 3.125vw;	
+		padding-top: 30vh;
+	}
+	#MobileMenuList li {
 		margin-bottom: 2.604166vw;
 	}
 	#MobileMenuCloseButton {
@@ -228,7 +145,7 @@ a {
 		top: 3.90625vw; 
 		cursor: pointer;
 	}
-	#AboutSection {
+	#AboutSection, #SpeakersSection, #SponsorsSection, #HighlightsSection, #VenueSection, #GetInTouchSection {
 		position: relative; 
 		top: -9.114583vw;
 	}		
@@ -243,8 +160,9 @@ a {
 	}
 	
 /*Mobile menu line transition*/
-#MobileMenuList li:before {	
-	width: 100%;
+#MobileMenuList li:before {
+	
+	 width: 100%;
   opacity: 0.3;
   -webkit-transition: all 1.4s cubic-bezier(0.77, 0, 0.175, 1) 0.1s;
   -moz-transition: all 1.4s cubic-bezier(0.77, 0, 0.175, 1) 0.1s;
@@ -266,6 +184,7 @@ a {
   bottom: 0;
 
 }
+
 #MobileMenuList li:after {
   content: "";
   position: absolute;
@@ -289,11 +208,36 @@ a {
 		top: 7.1875vw; 
 		cursor: pointer;
 	}
-	#AboutSection {
+	#AboutSection, #SpeakersSection, #SponsorsSection, #HighlightsSection, #VenueSection, #GetInTouchSection {
 		position: relative; 
 		top: -9.375vw;
 	}
 }
+
+
+#GetTickets {
+	display: none;
+	overflow: hidden;
+	transition-delay: 1s;
+	transition: all 0.5s;
+	font-weight:bold !important;
+	color:#146cb6 !important;
+	opacity:1 !important;
+}
+#HorizontalLogo {
+	width:12.6875vw;
+	display:none;
+	float:left;
+	margin-top:0.5vw;
+	}
+#GetTickets:hover {
+	opacity: 1;
+}
+#GetTickets i {
+	margin-right: 1vw;
+}
+
+/*NEW MOBILE MENU*/
 .sidebar {
 	display:none;
     width: 100%;
@@ -340,14 +284,15 @@ a {
     font-family: "brandon_grotesquemedium";
     color: #fff;
     width: 100%
-}
+	}
+	
 .sidebar ul li {
 	list-style-type:none;
-}	
-@media (max-width: 1280px) {
+	}	
+@media only screen and (max-width: 1280px) {
     .sidebar ul li a {
-		padding: 20px 0px;
-	}
+    padding: 20px 0px;
+}
 }
 .sidebar ul.active li a {
     -webkit-transition: all 300ms cubic-bezier(0.215,  0.61,  0.355,  1);
@@ -391,8 +336,8 @@ a {
 }
 @media only screen and (max-width: 767px) {
     .sidebar ul li.mobile {
-		display: block;
-	}
+    display: block;
+}
 }
 .sidebar ul li:before {
     content: "";
@@ -618,40 +563,141 @@ a {
     -o-transition-delay: 0.096s;
     transition-delay: 0.096s;
 }
+.nav-social {
+    position: absolute;
+    top: 87%;
+    z-index: 2;
+    width: 100%;
+    height: 35px;
+    text-align: center;
+}
+.nav-social a {
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 41px;
+    height: 50px;
+    margin: 0 20px;
+    display: inline-block;
+    opacity: 0.4;
+}
+.nav-social a.ico-slideshare {
+    background: url(../img/mainpage/getintouch/slideshare-icon-white.png) no-repeat;
+}
+.nav-social a.ico-linkedin {
+    background: url(../img/mainpage/getintouch/linkedin-icon-white.png) no-repeat;
+}
+.nav-social a.ico-fb {
+   background: url(../img/mainpage/getintouch/facebook-icon-white.png) no-repeat;
+}
+.nav-social a.ico-tw {
+   background: url(../img/mainpage/getintouch/twitter-icon-white.png) no-repeat;
+}
+.nav-social a.ico-flickr {
+   background: url(../img/mainpage/getintouch/flickr-icon-white.png) no-repeat;
+}
+.nav-social a:hover {
+    opacity: 1;
+}
+@media (min-width: 1680px) {
+    .sidebar ul li a {
+    padding: 25px 0;
+}
+}
 @media (min-width: 768px) and (max-width: 1023px) {
     .sidebar ul {
-		-webkit-transform: translate3d(-50%,  -50%,  0);
-		-moz-transform: translate3d(-50%,  -50%,  0);
-		-ms-transform: translate3d(-50%,  -50%,  0);
-		-o-transform: translate3d(-50%,  -50%,  0);
-		transform: translate3d(-50%,  -50%,  0);
-	}
-	.sidebar ul li a {
-		padding: 15px 0;
-	}
+    -webkit-transform: translate3d(-50%,  -50%,  0);
+    -moz-transform: translate3d(-50%,  -50%,  0);
+    -ms-transform: translate3d(-50%,  -50%,  0);
+    -o-transform: translate3d(-50%,  -50%,  0);
+    transform: translate3d(-50%,  -50%,  0);
+}
+.sidebar ul li a {
+    padding: 15px 0;
+}
+
 }
 @media (max-width: 768px) {
     .sidebar ul {
-		-webkit-transform: translate3d(-50%,  -60%,  0);
-		-moz-transform: translate3d(-50%,  -60%,  0);
-		-ms-transform: translate3d(-50%,  -60%,  0);
-		-o-transform: translate3d(-50%,  -60%,  0);
-		transform: translate3d(-50%,  -60%,  0);
-		margin-top: 20vh;
-	}
-	.sidebar ul li a {
-		font-size: 14px;
-		padding: 10px 0;
-	}
+    -webkit-transform: translate3d(-50%,  -60%,  0);
+    -moz-transform: translate3d(-50%,  -60%,  0);
+    -ms-transform: translate3d(-50%,  -60%,  0);
+    -o-transform: translate3d(-50%,  -60%,  0);
+    transform: translate3d(-50%,  -60%,  0);
 }
-@media (max-width: 370px) {
-	.sidebar ul li a {
-		font-size: 14px;
-	}
-	.sidebar ul {
-		width: 66%;
-		left: 45%;
-	}
+.sidebar ul li a {
+
+    font-size: 14px;
+    padding: 10px 0;
+}
+.nav-social a {
+    margin: 0 15px;
+}
+.nav-social {
+    top: 80%;
+
 }
 
-/* END Mobile Menu*/
+}
+
+@media (max-width: 370px) {
+.nav-social a {
+    margin:0 6px;
+}
+
+.sidebar ul li a {
+    font-size: 14px;
+}
+
+.sidebar ul {
+    width: 66%;
+	left: 45%;
+}
+}
+
+/*END NEW MOBILE MENU*/
+
+
+/* Second State of the menu */
+
+#SecondStateMainMenuContainer {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 4.1vw;
+	text-align: center;
+	background: #f4f4f2;
+	border-bottom:1px solid #c0c0c0;
+	z-index: 500;
+	transition: all 0.5s;
+}
+	
+#SecondStateMainMenuContainer #HorizontalLogo {
+	margin-top: 0.44vw;
+}
+@media (max-width:1000px) {
+#SecondStateMainMenuContainer {
+	display:none;
+	}
+}	
+	
+#SecondStateMainMenuContainer .MainMenuItem {
+	margin: 0 1.125vw;
+	position: relative;
+	top: 1vw;
+	color: #000;
+	opacity: 0.5;
+	text-decoration: none;
+	font-size: 1.25vw;
+	display: inline-block;
+	transition: all 0.5s;
+	font-weight:400;
+}
+
+#SecondStateMainMenuContainer #GetTickets {
+	top:1.31vw;
+}
+
+#SecondStateMainMenuContainer  #HorizontalLogo {
+	display:block;
+	
+	}

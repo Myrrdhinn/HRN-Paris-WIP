@@ -1779,7 +1779,7 @@ public function speakers_mainpage($sId, $val) {
 				   $delete_order_q = "DELETE FROM speakers_mainpage_order WHERE speaker_id = :id";
 				   $delete_order = $this->pdo->prepare($delete_order_q);
 				   
-				   $delete_order->bindValue(':id', $main_id[0], \PDO::PARAM_INT);
+				   $delete_order->bindValue(':id', $sId, \PDO::PARAM_INT);
 				   $delete_order->execute();
 				
 				

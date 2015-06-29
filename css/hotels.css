@@ -156,9 +156,9 @@ a:hover {
 	color: #106ab5;
 }
 #FeaturedHotelAddress .BookNowButton {
-	margin-bottom: 2.864583vw;
+	margin-bottom: 0.78125vw;
 }
-#FeaturedHotelAddress p, #FeaturedHotelAddress p a, .HotelAddress p, .HotelAddress p a {
+#FeaturedHotelAddress p, #FeaturedHotelAddress p a {
 	font-size: 0.9375vw;
 	color: #000;
 	font-weight: 600;
@@ -263,7 +263,7 @@ a:hover {
 		padding-top: 12px;
 	}
 	#FeaturedHotelAddress .BookNowButton {
-		margin-bottom: 55px;
+		margin-bottom: 15px;
 	}
 	#FeaturedHotelAddress p, #FeaturedHotelAddress p a {
 		font-size: 18px;
@@ -357,7 +357,7 @@ a:hover {
 		padding-top: 0.9375vw;
 	}
 	#FeaturedHotelAddress .BookNowButton {
-		margin-bottom: 4.296875vw;
+		margin-bottom: 1.25vw;
 	}
 	#FeaturedHotelAddress p, #FeaturedHotelAddress p a {
 		font-size: 1.40625vw;
@@ -541,7 +541,7 @@ a:hover {
 	width: 100%;
 	max-width: 27.083333vw;
 	display: inline-block;
-	height: 33.8541666vw;
+	height: 36.458333vw;
 	vertical-align: top;
 }
 .Hotel h2, .Hotel p {
@@ -573,6 +573,13 @@ a:hover {
 	font-weight: 600;
 	margin-top: 0;
 	margin-bottom: 0.8854166vw;
+	color: #000;
+}
+.Hotel p a {
+	transition: all 0.3s;	
+}
+.RoomType {
+	margin-left: 2.604166vw;	
 }
 .Hotel .BookNowButton {
 	margin-top: 0.5208333vw;
@@ -585,7 +592,7 @@ a:hover {
 @media (max-width:1920px) {  /* Swap the units from vw to px */
 	.Hotel {
 		max-width: 520px;
-		height: 650px;
+		height: 700px;
 	}
 	.RightHotel {
 		margin-left: 90px;
@@ -606,6 +613,9 @@ a:hover {
 		font-size: 18px;
 		margin-bottom: 17px;
 	}
+	.RoomType {
+		margin-left: 50px;	
+	}	
 	.Hotel .BookNowButton {
 		margin-top: 10px;
 	}
@@ -614,10 +624,10 @@ a:hover {
 	}
 }
 
-@media (max-width:1279px) { /* Swap to the units to vw again, keeping the aspect ratio of the 1280px wide PSD. */
+@media (max-width:1280px) { /* Swap to the units to vw again, keeping the aspect ratio of the 1280px wide PSD. */
 	.Hotel {
 		max-width: 40.625vw;
-		height: 51.78125vw;
+		height: 54.6875vw;
 	}
 	.RightHotel {
 		margin-left: 7.03125vw;
@@ -638,6 +648,9 @@ a:hover {
 		font-size: 1.40625vw;
 		margin-bottom: 1.328125vw;
 	}
+	.RoomType {
+		margin-left: 3.90625vw;	
+	}		
 	.Hotel .BookNowButton {
 		margin-top: 0.78125vw;
 	}

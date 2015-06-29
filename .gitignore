@@ -43,3 +43,6 @@ Temporary Items
 .apdisk
 admin/controllers/SYS/aaa.php
 controllers/SYS/aaa.php
+admin/controllers/errors/error.log
+.htpasswd
+admin/controllers/eventlog/events.log

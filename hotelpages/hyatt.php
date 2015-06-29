@@ -50,33 +50,16 @@
 <link rel="stylesheet" href="../css/menu.css" />
 
 <!-- Include Custom CSS Definitions -->
-<link rel="stylesheet" href="../css/hotels.css" />
-<link rel="stylesheet" href="../css/hotels-mobile.css" />
 <link rel="stylesheet" href="../css/hotelpages.css" />
 
 <!-- Include jQuery -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-<!-- Scroll to top JS -->
-<script src="../js/gotopscroll.js"></script>
-
-<!-- Mobile Menu JS -->
-<script src="../js/menu.js"></script>
-
 <!-- Include Reveal Modal -->
 <link rel="stylesheet" href="../vendor/reveal/reveal.css">
 <script src="../vendor/reveal/jquery.min.js" type="text/javascript"></script>
 <script src="../vendor/reveal/jquery.reveal.js" type="text/javascript"></script>
-
-<!-- Open Modal on pageload -->
-<script type="text/javascript">
-$(document).ready(function() {
-	
-   		jQuery("#InfoModal").reveal();
- 	
-});
-</script>
 
 <!-- GOOGLE ANALYTICS TRACKING SCRIPT -->
 <script type="text/javascript">
@@ -93,47 +76,28 @@ $(document).ready(function() {
 
 </script>
 
-
-
 </head>
 <body>
+<!-- Mobile Menu -->
 <nav>
   <div id="MobileMenuContainer"> <a href="http://hrtechcongress.com" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'LogoHome']);">
     <div id="MobileMenuLogo"></div>
     </a>
-    <h1 class="BlueText" id="mobile">Reference code <br>
-									 « HR Tech World » </h1>
+    <h1 class="BlueText" id="mobile"><br></h1>
   </div>
 </nav>
+<!-- END Mobile Menu -->
 
-<!-- MAIN MENU 
-This section is controlled by the menu.css 
--->
-
-<nav id="SecondStateMainMenuContainer">
-  <div id="MenuContainer"><a href="http://hrtechcongress.com" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'LogoHome']);"><img src="../img/menu/horizontallogo.png" alt="HR Tech Congress Logo"  id="HorizontalLogo"/></a><h1 class="BlueText">Reference code  « HR Tech World » </h1></div>
+<!-- Desktop Menu -->
+<nav id="DesktopMenu">
+	<a href="http://hrtechcongress.com" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'LogoHome']);"><div id="HRTechDesktopLogo">   </div></a>
+    <h1 class="BlueText"></h1>
 </nav>
+<!-- END Desktop Menu --> 
 
-<!-- END MAIN MENU --> 
-<!-- HOTELS PAGE SPECIFIC CONTENT -->
-
-<iframe   frameborder="0" src="http://www.parisetoile.regency.hyatt.com/en/hotel/home.html"></iframe>
-<!-- END HOTELS PAGE SPECIFIC CONTENT --> 
-
-<!-- Go to Top Button --> 
-<a href="#" class="GoTopButton">
-<div id="GoTopImg"><i class="fa fa-caret-up"></i></div>
-</a> 
-<!-- END Go to Top Button --> 
-
-
-<!-- InfoModal -->
-<div id="InfoModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
-  <h3>Book online or via phone / e-mail given below and make sure you indicate the Reference code </h3>
-  <h1 class="BlueText"> « HR Tech World » </h1><h3>to apply for the discounted rates !</h3>
-  <img src="http://hrtechcongress.com/img/mainpage/featuredcontent/hrcongress-logo.png" alt="HR Tech Congress Logo">
-</div>
-<!-- END InfoModal --> 
+<!-- HOTEL PAGE SPECIFIC CONTENT -->
+<iframe   frameborder="0" src="https://resweb.passkey.com/go/hrtech2015"></iframe>
+<!-- END HOTEL PAGE SPECIFIC CONTENT --> 
 
 <!-- Start of Async HubSpot Analytics Code --> 
 <script type="text/javascript">

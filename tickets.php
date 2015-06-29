@@ -87,7 +87,6 @@ $(document).ready(function() {
 </script>
 <!-- END Thank you modal  -->
 
-
 <!-- GOOGLE ANALYTICS TRACKING SCRIPT -->
 <script type="text/javascript">
 
@@ -132,7 +131,16 @@ $(document).ready(function() {
 	<ul id="DesktopMenuList">
     	<a href="http://hrtechcongress.com#AboutSection" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'About']);" title="About"><li class="DesktopMenuItem" id="MenuItemAbout">ABOUT</li></a>
         <a href="speakers" title="Speakers" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);"><li class="DesktopMenuItem" id="MenuItemSpeakers">SPEAKERS</li></a>
-        <a href="sponsors" title="Sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);"><li class="DesktopMenuItem" id="MenuItemSponsors">SPONSORS</li></a>
+        <li class="DesktopMenuItem TransparentDesktopMenuItem" id="PartnersDD"><a href="sponsors" title="Sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);">SPONSORS</a>
+        <!-- Partners Dropdown 
+            <div id="PartnersMenu">
+            <div class="ArrowUp"></div>
+             <ul class="Dropdown" id="PartnersDropdown">
+                <a href="sponsor-appendices"><li>Sponsor Appendices</li></a>
+             </ul>   
+            </div>
+        </li> 
+        <!-- Partners Dropdown -->
         <a href="hotels" title="Hotels" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Hotels']);"><li class="DesktopMenuItem" id="MenuItemHighlights">HOTELS</li></a>
         <a target="_blank"  href="http://blog.hrtecheurope.com/" title="Blog" onClick="_gaq.push(['_trackEvent', 'Navigation', ExternalForward', 'Blog']);"><li class="DesktopMenuItem" id="MenuItemVenue">BLOG</li></a>
         <a href="contact" title="Get in Touch" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Contact']);"><li class="DesktopMenuItem" id="MenuItemGetInTouch">GET IN TOUCH</li></a>
@@ -156,15 +164,15 @@ $(document).ready(function() {
   
   </header>
 <!-- END Header -->
+
 <!-- Tickets -->
-<!-- Tickets Main Container -->
 <div id="TicketsMainContainer">
 
 <!-- 1 Delegate Container -->
  <div id="OneDelegateMainContainer" class="TicketContainer">
   <div class="ContainerShadow">
     <div class="TicketsHeader"><h6>1 DELEGATE</h6></div>
-    <div class="TicketsInfo"><p>Regular tickets are priced at €1,190 per ticket. <span>Current early bird saves you €238.</span> Prices increase every two weeks.
+    <div class="TicketsInfo"><p class="FontProximaNova">Regular tickets are priced at €1,190 per ticket. <span>Current early bird saves you €238.</span> Prices increase every two weeks.
      </p>
     <ul>
       <li>Access to all stages</li>
@@ -192,7 +200,7 @@ $(document).ready(function() {
  <div id="ThreeDelegateMainContainer" class="TicketContainer">
   <div class="ContainerShadow">
     <div class="TicketsHeader"><h6>3 DELEGATES</h6></div>
-    <div class="TicketsInfo"><p>Regular tickets are priced at €1,190. <br><span>Save €1,190 if you book 3 delegates before June 30th.
+    <div class="TicketsInfo"><p class="FontProximaNova">Regular tickets are priced at €1,190. <br><span>Save €1,190 if you book 3 delegates before June 30th.
      </span></p>
      <ul>
       <li>Access to all stages</li>
@@ -219,7 +227,7 @@ $(document).ready(function() {
  <div id="VIPDelegateMainContainer" class="TicketContainer">
   <div class="ContainerShadow">
    <div class="TicketsHeader"><h6>VIP TICKETS</h6></div>
-   <div class="TicketsInfo"><p>Enter your promo code to register for VIP tickets or special offers.
+   <div class="TicketsInfo"><p class="FontProximaNova">Enter your promo code to register for VIP tickets or special offers.
     </p>
     <ul>
      <li>Access to all stages</li>
@@ -244,6 +252,7 @@ $(document).ready(function() {
 
 </div>
 <!--END Tickets --> 
+
 <!-- FOOTER -->
 <footer>
  <div id="FooterWrapper">
@@ -299,11 +308,11 @@ $(document).ready(function() {
 <!-- Download Brochure Modal -->
 <div id="DownloadBrochureModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
   <h2>Download Brochure</h2>
-  <p>Thank you for downloading our brochure! Please fill in all the fields below.</p>
+  <p>Thank you for your request. Please fill in all the fields below!</p>
   <!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
   <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
     <input type=hidden name="oid" value="00DD0000000nwgk">
-    <input type=hidden name="retURL" value="http://hrtechcongress.com/tickets.html#ThankYouBrochureModal">
+    <input type=hidden name="retURL" value="http://hrtechcongress.com/tickets#ThankYouBrochureModal">
 
       <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
       <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />

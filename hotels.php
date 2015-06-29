@@ -137,9 +137,19 @@ $(document).ready(function() {
     <li class="DesktopMenuItem" id="MenuItemAbout">ABOUT</li>
     </a> <a href="speakers" title="Speakers" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Speakers']);">
     <li class="DesktopMenuItem" id="MenuItemSpeakers">SPEAKERS</li>
-    </a> <a href="sponsors" title="Sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);">
-    <li class="DesktopMenuItem" id="MenuItemSponsors">SPONSORS</li>
-    </a> <a href="hotels" title="Hotels" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Hotels']);">
+    </a> 
+          <li class="DesktopMenuItem TransparentDesktopMenuItem" id="PartnersDD"><a href="sponsors" title="Sponsors" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Sponsors']);">SPONSORS</a>
+            <!-- Partners Dropdown 
+                <div id="PartnersMenu">
+                <div class="ArrowUp"></div>
+                 <ul class="Dropdown" id="PartnersDropdown">
+                    <a href="sponsor-appendices"><li>Sponsor Appendices</li></a>
+                 </ul>   
+                </div>
+			<!-- Partners Dropdown -->  
+          </li> 
+    
+     <a href="hotels" title="Hotels" onClick="_gaq.push(['_trackEvent', 'Navigation', 'InternalForward', 'Hotels']);">
     <li class="DesktopMenuItem" id="MenuItemHighlights">HOTELS</li>
     </a> <a target="_blank"  href="http://blog.hrtecheurope.com/" title="Blog" onClick="_gaq.push(['_trackEvent', 'Navigation', ExternalForward', 'Blog']);">
     <li class="DesktopMenuItem" id="MenuItemVenue">BLOG</li>
@@ -167,8 +177,7 @@ $(document).ready(function() {
 <div id="HotelsWrapper"> 
   <!-- Featured Hotel -->
   <div id="FeaturedHotelWrapper">
-    <h3 class="FontRaleway">We are pleased to let you know that we have partnered up with the top hotels nearby to make sure you have rooms available for a good price.
-      For a discounted HR Tech World rate please apply via e-mail/phone with the reference codes or on the dedicated booking links indicated below.</h3>
+    <h3 class="FontRaleway">We are delighted to announce that we have partnered with the best hotels within the vicinity of Palais de Congres to ensure you get the best rate available. Please use reference codes listed on your hotel booking to avail of our special discount.</h3>
     <h1 class="FontRaleway">Our Premier Partner</h1>
     <a href="http://www.lemeridienetoile.com/" target="_blank">
     <h2 class="FontRaleway">Le Méridien Etoile</h2>
@@ -190,13 +199,14 @@ $(document).ready(function() {
     <!-- END Featured Hotel Images -->
     
     <div id="FeaturedHotelTextContainer">
-      <p class="FeaturedHotelText">Our nr. 1 Partnering Hotel is the spectacular 4star Le Méridien Etoile - strategically located in Porte Maillot to appeal to business travelers and art-lovers alike, located literally just a few steps away from the Palais de Congrés and very close to the legendary Champs Elysées.</p>
-      <p class="FeaturedHotelText">Through the lenses of art, design, fashion and cuisine, Le Méridien Etoile creates a stimulating experience that awakens your curiosity and allows you to discover Paris from a new perspective. </p>
-      <p class="FeaturedHotelText">The sophisticated 1,025 guestrooms include 22 suites, renovated Executive rooms and new Urban rooms.</p>
+      <p class="FeaturedHotelText">Our recommended hotel is just a few hundred meters from the entrance to HR Tech World Congress. Staying at Le Méridien you will enjoy all the extra benefits that come from being located next to the show i.e. offsite meetings in close proximity to the show conference, not to mention easy access to parties, receptions and the many other happenings that will be scheduled around the conference.</p>
+     
     </div>
     <div id="FeaturedHotelAddress"> <a href="https://www.starwoodmeeting.com/StarGroupsWeb/res?id=1504292399&key=374C3BF7" target="_blank" title="BOOK NOW">
       <div class="BookNowButton">BOOK NOW</div>
       </a>
+    <p class="Price">€209 <span class="RoomType">Single&nbsp;&nbsp;&nbsp;</span></p>
+    <p class="Price">€229 <span class="RoomType">Double</span></p>          
       <p><a href="http://lemeridienetoile.com" target="_blank" title="Le Méridien Etoile"><i class="fa fa-external-link BlueText"></i> lemeridienetoile.com</a></p>
       <p><i class="fa fa-phone BlueText"></i> +33 1 40 68 34 34</p>
       <p><a target="_blank" href="https://www.google.hu/maps/place/Le+M%C3%A9ridien+Etoile/@48.879481,2.285057,17z/data=!3m1!4b1!4m2!3m1!1s0x47e66f8c9c0d70c9:0x4b28d4ea6023f826"><i class="fa fa-map-marker BlueText"></i> 81 boulevard Gouvion St Cyr</a></p>
@@ -209,6 +219,8 @@ $(document).ready(function() {
     <h2>Hyatt Regency Paris Etoile</h2>
     <div class="StarContainer"> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </div>
     <img src="img/hotels/hyatt-regency-paris-etoile.jpg" alt="Hyatt Regency Paris Etoile"></a>
+    <p>€200 <span class="RoomType">Single</span></p>
+    <p>€220 <span class="RoomType">Double</span></p>    
     <div class="HotelAddress">
       <p><i class="fa fa-phone BlueText"></i>+33 1 40 68 51 31 </p>
       <p><a target="_blank" href="https://www.google.hu/maps?q=hyatt+paris+etoile&ion=1&espv=2&bav=on.2,or.r_cp.&bvm=bv.91665533,d.bGg&biw=1920&bih=896&dpr=1&um=1&ie=UTF-8&sa=X&ei=yNlAVcnuK4GAU-qrgIAL&ved=0CAcQ_AUoAg"><i class="fa fa-map-marker BlueText"></i>3 Place du Général Koenig</a></p>
@@ -227,7 +239,9 @@ $(document).ready(function() {
     <h2>Splendid Etoile</h2>
     <div class="StarContainer"> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </div>
     <img src="img/hotels/splendid-etoile.jpg" alt="Splendid Etoile"></a>
-    <p>Promo Code: HRN Europe</p>
+    <p>Promo Code: hrtech</p>
+    <p>€240 <span class="RoomType">Single</span></p>
+    <p>€255 <span class="RoomType">Double</span></p>
     <div class="HotelAddress">
       <p><i class="fa fa-phone BlueText"></i>+33 1 45 72 72 00</p>
       <p><a target="_blank" href="https://www.google.hu/maps/place/Splendid+Etoile/@48.875011,2.293481,17z/data=!3m1!4b1!4m2!3m1!1s0x47e66fec8b625bd3:0xd8eadd160f772850"><i class="fa fa-map-marker BlueText"></i>1 Avenue Carnot</a></p>
@@ -242,7 +256,9 @@ $(document).ready(function() {
     <h2>Mon Hotel</h2>
     <div class="StarContainer"> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </div>
     <img src="img/hotels/mon-hotel.jpg" alt="Mon Hotel"></a>
-    <p>Promo Code: HRN Europe</p>
+    <p>Promo Code: hrtech</p>
+    <p>€239 <span class="RoomType">Premium</span></p>
+    <p>€269 <span class="RoomType">Superior</span></p>   
     <div class="HotelAddress">
       <p><i class="fa fa-phone BlueText"></i>+33 1 45 02 76 76</p>
       <p><a target="_blank" href="https://www.google.hu/maps/place/Mon+Hotel/@48.8752752,2.2924225,17z/data=!4m2!3m1!1s0x47e66ff27801d6c7:0x80b45f30db6a7951"><i class="fa fa-map-marker BlueText"></i>1, 5 rue d’Argentine</a></p>
@@ -257,7 +273,9 @@ $(document).ready(function() {
     <h2>Regent's Garden Hotel</h2>
     <div class="StarContainer"> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </div>
     <img src="img/hotels/regents-garden-hotel.jpg" alt="Regent's Garden Hotel"></a>
-    <p>Promo Code: HREGENTS17</p>
+    <p>Promo Code: hrtech</p>
+    <p>€235 <span class="RoomType">Single</span></p>
+    <p>€285 <span class="RoomType">Superior</span></p>    
     <div class="HotelAddress">
       <p><i class="fa fa-phone BlueText"></i>+33 1 45 74 07 30</p>
       <p><a target="_blank" href="https://www.google.hu/maps/place/Regent's+Garden/@48.8785963,2.2932138,16z/data=!4m2!3m1!1s0x47e66f92f58d4701:0x439123464eee2df1"><i class="fa fa-map-marker BlueText"></i>6 rue Pierre Demours</a></p>
@@ -272,7 +290,8 @@ $(document).ready(function() {
     <h2>Hotel Napoleon Paris</h2>
     <div class="StarContainer"> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </div>
     <img src="img/hotels/hotel-napoleon-paris.jpg" alt="Hotel Napoleon Paris"></a>
-    <p>Promo Code: HRN</p>
+    <p>Promo Code: hrtech</p>
+    <p>-10% from Best Available Rates</p>
     <div class="HotelAddress">
       <p><i class="fa fa-phone BlueText"></i>+33 1 56 68 43 21</p>
       <p><a target="_blank" href="https://www.google.hu/maps/place/Hotel+Napoleon+Paris/@48.8752179,2.2922037,16z/data=!4m2!3m1!1s0x47e66febba7ec263:0x76c9dc60f25cb3b0"><i class="fa fa-map-marker BlueText"></i>40 Avenue de Fiedland</a></p>
@@ -287,7 +306,9 @@ $(document).ready(function() {
     <h2>La Villa Maillot & Spa</h2>
     <div class="StarContainer"> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </div>
     <img src="img/hotels/la-villa-maillot-and-spa.jpg" alt="La Villa Maillot & Spa"></a>
-    <p>Promo Code: HRTECH</p>
+    <p>Promo Code: hrtech</p>
+    <p>€289 <span class="RoomType">Superior</span></p>
+    <p>€319 <span class="RoomType">Deluxe</span></p>    
     <div class="HotelAddress">
       <p><i class="fa fa-phone BlueText"></i>+33 1 53 64 52 53</p>
       <p><a target="_blank" href="https://www.google.hu/maps/place/La+Villa+Maillot+%26+Spa/@48.8767823,2.2843003,17z/data=!4m2!3m1!1s0x47e66ff48454fb2d:0x81233d7a53b1e17c"><i class="fa fa-map-marker BlueText"></i>143 avenue de Malakoff</a></p>
@@ -302,7 +323,8 @@ $(document).ready(function() {
     <h2>Les Jardins de la Villa</h2>
     <div class="StarContainer"> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </div>
     <img src="img/hotels/les-jardins-de-la-villa.jpg" alt="Les Jardins de la Villa"></a>
-    <p>Promo Code: HRN2015</p>
+    <p>Promo Code: HRTECH</p>
+    <p>-10% from Rate</p>   
     <div class="HotelAddress">
       <p><i class="fa fa-phone BlueText"></i>+33 1 53 81 01 10<br>
         <br>
@@ -319,7 +341,9 @@ $(document).ready(function() {
     <h2>Hotel Duret</h2>
     <div class="StarContainer"> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </div>
     <img src="img/hotels/hotel-duret.jpg" alt="Hotel Duret"></a>
-    <p>Promo Code: HR Tech World</p>
+    <p>Promo Code: hrtech</p>
+    <p>€200 <span class="RoomType">Single</span></p>
+    <p>€230 <span class="RoomType">Double</span></p>    
     <div class="HotelAddress">
       <p><i class="fa fa-phone BlueText"></i>+33(0) 1 45 00 42 60</p>
       <p><a target="_blank" href="https://www.google.hu/maps/place/Hotel+Duret/@48.875271,2.286614,17z/data=!3m1!4b1!4m2!3m1!1s0x47e66ff306569259:0xbb4fa040bb848e0d"><i class="fa fa-map-marker BlueText"></i>30 rue Duret</a></p>
@@ -334,6 +358,8 @@ $(document).ready(function() {
     <h2>Sofitel Paris Arc de Triomphe</h2>
     <div class="StarContainer"> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </div>
     <img src="img/hotels/sofitel.jpg" alt="Sofitel Paris Arc de Triomphe"></a>
+    <p>€380 <span class="RoomType">Single</span></p>
+    <p>€414 <span class="RoomType">Double</span></p>    
     <div class="HotelAddress">
       <p><i class="fa fa-phone BlueText"></i>+33 1 53 89 50 60</p>
       <p><a target="_blank" href="https://www.google.hu/maps/place/Hotel+Sofitel+Paris+Arc+de+Triomphe/@48.875029,2.301244,17z/data=!3m1!4b1!4m2!3m1!1s0x47c37420dcd5ab55:0x5423b3de3cebb77e"><i class="fa fa-map-marker BlueText"></i>14 rue Beaujon</a></p>
@@ -399,11 +425,11 @@ $(document).ready(function() {
 <!-- Download Brochure Modal -->
 <div id="DownloadBrochureModal" class="reveal-modal" data-reveal> <a class="close-reveal-modal">&#215;</a>
   <h2>Download Brochure</h2>
-  <p>Thank you for downloading our brochure! Please fill in all the fields below.</p>
-  <!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
+  <p>Thank you for your request. Please fill in all the fields below!</p>
+<!-- BEGINING of : DOWNLOAD BROCHURE MODAL FORM -->
   <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
     <input type=hidden name="oid" value="00DD0000000nwgk">
-    <input type=hidden name="retURL" value="http://hrtechcongress.com/sponsors.html#ThankYouBrochureModal">
+    <input type=hidden name="retURL" value="http://hrtechcongress.com/hotels#ThankYouBrochureModal">
     <input required placeholder="First Name *"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
     <input required placeholder="Last Name *" id="last_name" maxlength="80" name="last_name" size="20" type="text" />
     <input required placeholder="Email Address *" id="email" maxlength="80" name="email" size="20" type="text" />

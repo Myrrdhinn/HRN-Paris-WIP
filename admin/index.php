@@ -8,11 +8,11 @@ if(!isset($_SESSION)) {
   $params = explode("/", $_SERVER['REQUEST_URI']);
   
      
-if (!isset($params[3]) || $params[3] == '') {
+if (!isset($params[2]) || $params[2] == '') {
  	include_once('views/mainpage.php');
 } else {
 	$extensions = array('.php'=>'','.html'=>'');
-	$class = strtr($params[3], $extensions);
+	$class = strtr($params[2], $extensions);
 	if ($class == 'index'){
 	   $class = 'mainpage';	
 	}

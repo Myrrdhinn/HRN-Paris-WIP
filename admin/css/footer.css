@@ -1,202 +1,287 @@
-/* This CSS file contains the CSS definitions of the FOOTER section of the site */
+@charset "utf-8";
+/* These CSS rules will affect the FOOTER of every page.  */
 
+/*Footer*/
 footer {
-    width: 100%;
-    background-color: #E5E5E5;
+	width: 100%;
+	background-image: url(../img/footer/footer-bg.jpg);	
+	background-repeat: repeat;
+	color: #fff;
 }
-#GreyFooterContainer {
-    max-width: 1000px;
-    margin: 0 auto;
-    margin-bottom: 20px;
+footer h1 {
+	font-size: 24px;
+	font-weight: 400;
+	margin-top: 0;
+	margin-bottom: 25px;	
 }
-#GreyFooterHeader {
-    text-align: center;
-    font-family: "Oswald",sans-serif;
-    font-size: 3em;
-    padding-top: 25px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #808080;
+footer h2 {
+	font-size: 20px;
+	font-weight: 400;
+	margin-top: 0;
+	margin-bottom: 10px;	
 }
-.FooterSectionTitle {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2em;
-    font-weight: 300;
-    color: #353535;
+footer h2 .fa {
+	padding-right: 7px;	
 }
-#LeftGreyFooterItems, #RightGreyFooterItems {
-    float: left;
+#FooterWrapper {
+	width: 100%;
+	max-width: 950px;	
+	padding-top: 80px;
+	padding-bottom: 45px;
+	margin: 0 auto;
 }
-#FollowUs, #HRNEvents, #FooterButtons, #GetInTouch {
-    float: left;
-    margin: 20px 0px 0px 20px;
+#FooterLeftWrapper {
+	float: left;	
+	width: 100%;
+	max-width: 330px;
+	display: inline-block;
+	margin-bottom: 40px;
 }
-/*Follow Us*/
-#FollowUsSocialIcons {
-    margin-top: 20px;
+#GetInTouchButtonContainer button {
+	max-width: 330px;
+	height: 70px;
+	margin: 50px 0 0 0;
+	font-size: 24px;
+	color: #fff;
+	padding: 0;
+	transition: all 0.3s;
 }
-#FollowUsSocialIcons img {
-    width: 38px;
-    height: 38px;
+#GetInTouchButtonContainer button:hover {
+	color: #106ab5;
+	background-color: #fff;
 }
-/*end Follow Us*/
 
-/*HRN Events*/
-#HRNEvents {
-    width: 250px;
-    padding-left: 20px;
+#FooterRightWrapper {
+	float: right;	
+	width: 100%;
+	max-width: 500px;display: inline-block;
+	margin-bottom: 40px;
 }
-
-/*End HRN Events*/
-
-/*Footer Buttons*/
-.FooterButton {
-    width: 210px;
-    height: 45px;
-    padding-top: 15px;
-    margin-bottom: 8px;
-    background-color: #16aae1;
-    text-transform: uppercase;
-    color: #fff;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s;
+#FooterRightWrapper form {
+	margin-bottom: 90px;	
 }
-.FooterButton:hover {
-    background-color: #FC354C;
+#FooterRightWrapper form input {
+	height: 70px;
+	font-size: 24px;
+	margin: 0;	
 }
-/*end Footer Buttons*/
-
-/*Get In Touch*/
-#GetInTouch {
-    margin-left: 50px;
+#FooterRightWrapper form input[type="text"]{
+	width: 100%;
+	max-width: 340px;
 }
-.fa-phone {padding-right: 10px;}
-.fa-envelope {position: relative; top: 0px; padding-right: 7px;}
-#GeneralEnquiries, #HRNEventsList {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.4em;
-    color: #7f7f7f;
-    margin-top: 10px;
+#FooterRightWrapper form input[type="submit"]{
+	width: 100%;
+	max-width: 150px;
+	border: none;
+	background-color: #2d2d28;
+	font-weight: 600;
+	transition: all 0.3s;
 }
-#HRNEventsList a {
-  color: #7f7f7f;
-  transition: all 0.3s
-}
-#HRNEventsList a:hover {
-  color: #16aae1;    
-}
-/*end Get In Touch*/
-
-#BlackFooterContainer {
-    width: 100%;
-    background-color: #202020;
-    padding: 10px;
-}
-#BlackFooterItems {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2em;
-    color: #7f7f7f;
-    
-    display: -moz-flex;
-    -moz-justify-content: space-around;
-    -moz-align-items: center;
-    display: -webkit-flex;
-    -webkit-justify-content: space-around;
-    -webkit-align-items: center;    
-}
-#FooterHRNLogo, #Copyright, #Privacy {
-    display: inline-block;
-    margin-top: 10px;
+#FooterRightWrapper form input[type="submit"]:hover {
+	background-color: #106ab5;
+	color: #fff;
 }
 
 
-
-
-
-@media (max-width: 730px){
-    #BlackFooterItems {
-        flex-wrap: wrap;
-        flex-direction: column;
-        
-        -moz-flex-wrap: wrap;
-        -moz-flex-direction: column;
-        -webkit-flex-wrap: wrap;
-        -webkit-flex-direction: column;
-    }
-    #Copyright, #Privacy {
-        margin: 15px 0;
-    }
+#FooterSocialIconsContainer { /* Wrapper for the twitter, facebook, linkedin, slideshare, flickr icons. 1100px wide. */
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+}
+.FooterSocialIcon {  /* Defines a social icon: the icon itself is a DIV element with a background image */
+	display: inline-block;
+	background-size: cover;
+	width: 71px;
+	height: 71px;
+	margin-right: 30px;
+}
+#FooterTwitter {
+	background-image: url(../img/footer/twitter-icon.png);
+}
+#FooterTwitter:hover {
+	background-image: url(../img/footer/twitter-icon-hover.png);
+}
+#FooterFacebook {
+	background-image: url(../img/footer/facebook-icon.png);
+}
+#FooterFacebook:hover {
+	background-image: url(../img/footer/facebook-icon-hover.png);
+}
+#FooterLinkedIn {
+	background-image: url(../img/footer/linkedin-icon.png);
+}
+#FooterLinkedIn:hover {
+	background-image: url(../img/footer/linkedin-icon-hover.png);
+}
+#FooterSlideShare {
+	background-image: url(../img/footer/slideshare-icon.png);
+}
+#FooterSlideShare:hover {
+	background-image: url(../img/footer/slideshare-icon-hover.png);
+}
+#FooterFlickr {
+	background-image: url(../img/footer/flickr-icon.png);
+	margin-right: 0;
+}
+#FooterFlickr:hover {
+	background-image: url(../img/footer/flickr-icon-hover.png);
+}
+#TransparentFooter {
+	width: 100%;
+	padding-top: 12px;
+	padding-bottom: 8px;
+	background-color: rgba(0, 0, 0, 0.38);
+	/*background-color: rgba(51, 51, 46, 0.36);*/
+	clear: both;
+	text-align: center;
+}
+#TransparentFooterInnerContainer {
+	width: 100%;
+	max-width: 860px;
+	margin: 0 auto;	
+}
+#TransparentFooterImage {
+	display: inline-block;	
+	float: left;
+}
+#TransparentFooterTextContainer {
+	display: inline-block;
+	float: right;	
+	padding-top: 40px;
+}
+.TransparentFooterText {
+	display: inline-block;
+	margin: 0 30px 0 0;
+	font-size: 16px;
+	color: #7f7f7f;
+	font-weight: 400;
 }
 
+@media (max-width: 830px) {
+	#FooterWrapper {
+		max-width: 500px;
+		margin: 0 auto;	
+		/*text-align: center;*/
+	}
+	#FooterLeftWrapper, #FooterRightWrapper {
+		float: none;
+	}
+	#FooterLeftWrapper {
+		margin-bottom: 50px;	
+	}
+	#TransparentFooterInnerContainer {
+		max-width: 550px;	
+	}
+	#TransparentFooterTextContainer {
+		display: block;
+		text-align: left;
+		padding-top: 20px;
+	}
+	.TransparentFooterText {
+		display: block;
+		text-align: left;
+	}
+	#PrivacyText {
+		line-height: 40px;
+	}	
 
-
-
-
-
-
-
-@media (max-width:950px){
-    #LeftGreyFooterItems, #RightGreyFooterItems {
-        float: none;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        display: -moz-flex;
-        -moz-justify-content: center;
-        display: -webkit-flex;
-        -webkit-justify-content: center;         
-    }
-    #FooterButtons {
-        margin-left: -70px;
-    }
-    #GetInTouch {
-        margin-left: 30px;
-    }
 }
-@media (max-width: 580px){
-    #LeftGreyFooterItems, #RightGreyFooterItems {
-        float: left;
-        display: inline-block;
-    }
-    #FooterButtons {
-        margin-left: 20px;
-    }
-    #GetInTouch {
-        margin-left: 30px;
-    }    
+
+@media (max-width: 640px) {
+	#FooterWrapper {
+		max-width: 100%;
+		padding-top: 42px;	
+	}
+	footer h1 {
+		font-size: 20px;
+		margin-top: 0;
+		margin-bottom: 25px;	
+	}
+	footer h2 {
+		font-size: 18px;
+		margin-bottom: 15px;	
+	}
+	
+	
+	#FooterLeftWrapper, #FooterRightWrapper {
+		max-width: 100%;
+		padding-left: 20px;
+		padding-right: 20px;
+		display: block;
+		margin: 0 auto;
+		box-sizing: border-box;
+	}
+	#FooterLeftWrapper {
+		margin-bottom: 40px;
+	}
+
+	#GetInTouchButtonContainer button {
+		max-width: 100%;
+		height: 60px;
+		font-size: 20px;
+		display: block;
+		margin: 0 auto;
+		margin-top: 50px;
+		/*margin-left: 20px;
+		margin-right: 20px;*/
+	}
+
+	
+	#FooterRightWrapper form {
+		margin-bottom: 45px;
+		text-align: center;	
+	}
+	#FooterRightWrapper form h1 {
+		text-align: left;	
+	}
+	#FooterRightWrapper form input {
+		height: 70px;
+		font-size: 24px;
+		margin: 0;	
+	}
+	#FooterRightWrapper form input[type="text"]{
+		max-width: 100%;
+	}
+	#FooterRightWrapper form input[type="submit"]{
+		font-size: 20px;
+		width: 100%;
+		max-width: 150px;
+		height: 60px;
+		margin-top: 20px;
+	}
+	#FooterSocialIconsContainer {
+		width: 100%;
+		max-width: 280px;
+		margin: 0 auto;	
+	}
+	.FooterSocialIcon {  /* Defines a social icon: the icon itself is a DIV element with a background image */
+		display: inline-block;
+		background-size: cover;
+		width: 44px;
+		height: 44px;
+		margin-right: 10px;
+	}
+	#TransparentFooterInnerContainer {
+		max-width: 290px;	
+	}
+	#TransparentFooterImage {
+		margin: 0 auto;
+		float: none;
+	}
+	#TransparentFooterTextContainer {
+		margin: 0 auto;	
+		float: none;
+	}
+	.TransparentFooterText {
+		text-align: center;	
+		font-size: 16px;
+		margin-right: 0;
+		line-height: 24px;
+	}
+	#PrivacyText {
+		line-height: normal;	
+		padding-bottom: 20px;
+	}
+
 }
-@media (max-width:420px){
-    #FollowUs {
-        width: 100% !important;
-        margin-left: 0;
-        text-align: center;
-    }
-    #HRNEvents {
-        padding-left: 0;
-        margin-left: 0;
-        width: 100%;
-        text-align: center;
-    }
-    #FooterButtons {
-        width: 100%;
-        margin-left: 0;
-        margin-top: 0;
-    }
-    #GetInTouchButton, #RegisterNowButton {
-        margin: 8px auto;
-    }
-    #GetInTouch {
-        width: 100%;
-        margin-left: 0;
-        text-align: center;
-    }
-    #GeneralEnquiries {
-        
-    }
-}
+/*END Footer*/
