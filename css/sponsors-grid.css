@@ -1,50 +1,51 @@
 @charset "utf-8";
 /* These CSS rules will affect the sponsors page.  */
 
+body {
+		background-color: #fff;	
+}
+
 
 /* Header */
 header {
-	background-image:url(../img/sponsors/sponsors-header-background.jpg);
+	background-image:url(../img/sponsors/header.jpg);
 	background-repeat:no-repeat;
 	background-size: contain;
-	width:100%; 
+	width:100%;
+	height:27.08333vw; 
 	color:#fff;
-	padding-left: 10.41666vw;
-	padding-top: 3.125vw;
-	padding-bottom: 3.3854166vw;
 	margin-top: 4.0625vw;
 }
+#HeaderInnerContainer {
+	padding-top: 4.6875vw;
+	padding-left: 16.666666vw;	
+}
 header h1 {
-	font-size:5.20833vw;
-	margin-top: 0;
-	margin-bottom:0.2604166vw;
+	font-size:3.125833vw;
+	margin-top: 0px;
+	margin-bottom:2.1vw;
 }
 header p {
 	width: 100%;
-	max-width:30.46875vw;
+	max-width:29vw;
 	font-size:1.25vw;
-	line-height: 1.875vw;
+	line-height: 1.5625vw;
+	margin-bottom: 2.4vw;
 }
 header button {
-	font-size: 1.041666vw;
+	font-size: 1.25vw;
 	font-weight: 600;
 	background-color: rgba(255, 255, 255, 0);
 	color: #fff;
-	border: 2px solid #fff;
+	border: 3px solid #fff;
 	padding: 0;
-	max-width: 13.28125vw;
-	height: 3.125vw;
-	vertical-align: bottom;
+	max-width: 15.625vw;
+	height: 3.6458333vw;
 	transition: all 0.3s ease-in;
 }
 header button:hover {
 	background-color: #106ab5;
-	border: 2px solid #106ab5;
-}
-#HeaderWhosWhoLogo {
-	width: 9.895833vw;
-	height: 3.802083vw;
-	margin-left: 2.864583vw;
+	border: 3px solid #106ab5;
 }
 @media (max-width: 1000px) {
 	header {
@@ -52,7 +53,7 @@ header button:hover {
 	}
 }
 @media (max-width: 767px) {
-	/* hide the full-width header at 767px and below. Add margin to the #Sponsors section to separate it from the menu. */
+	/* hide the full-width header at 767px and below.*/
 	header {
 		display: none;	
 	}
@@ -151,8 +152,7 @@ header button:hover {
 		margin: 0 auto;
 		position: relative;
 	}
-	#CloseFiltersContainer {
-		margin: 0; 
+	#CloseFiltersContainer { 
 		padding: 0.989583vw;
 		font-size: 0.9375vw;  
 		text-align: right; 
@@ -574,189 +574,484 @@ header button:hover {
 }
 	
 	
-	
-	
-	
-	
-	
-	
-/* Sponsors Grid */
-#Sponsors {
-	width: 100%;
-	background-color: #fff;
-	font-size: 0;
-}
-#Sponsors * {
-	box-sizing: border-box;
-}
-.SponsorHeadline {
-	width: 100%;
-	max-width: 59.375vw; 
-	/*background-image: url(../img/sponsors/headline-background-desktop.png); */
-	background-size: cover;
-	background-position: center center; 
-	font-size: 1.875vw;
-	font-weight: 500;
-	text-align: center; 
-	padding: 0px; 
-	margin: 0 auto;
-	margin-top: 3.90625vw;
-	margin-bottom: 2.6041666vw;
-}
-.SponsorHeadline span {
-	margin-left: -0.260416vw;
-}
-.CategoryContainer {
-	/*
-	width: 100%; 
-	max-width: 89.5833333vw; 
-	margin: 0 auto;
-	*/
-	
-  width: 100%;
-  max-width: 89.5833333vw;
-  margin: 0 auto;
-  text-align: center;	
-  	
-}
-.Sponsor {
-	width: 10.84375vw;
-	height: 10.677083vw;
-	display: inline-block;
-	text-align: center; /* aligns the Sponsor logo container divs (.SponsorLogo) to the center */
-	position: relative;
-	padding-top: 2.604166vw;
-	transition: all 0.3s;
-}
-.Sponsor:hover {
-	background-color: #d8e3eb;	
-}
-.Sponsor:hover img{
-	opacity: 1;
-}
-.Sponsor img { /* the small + icon on hover */
-	position: absolute;	
-	left: 0.8854166vw;
-	top: 0.8854166vw;
-	width: 1.3020833vw;
-	height: 1.3020833vw;
-	opacity: 0;
-	transition: all 0.3s;
-}
-.SponsorLogo {
-	display: inline-block;
-	width: 7.979166vw;
-	height: 5.7291666vw;
-	background-position: center; 
-	background-repeat: no-repeat; 
-	background-size: contain;
+
+/* Sponsors */
+
+.SponsorHeadline{
+  font-size: 3.697vw;
+  text-align: center;
+  margin-top: 3.5vw;
+  margin-bottom: 6.7708333vw;
+  font-family: "Roboto", sans-serif;
+  text-transform:uppercase;
+  font-weight:700;
+  color: #005CB9;
 }
 
-#AlaCarteWrapper .Sponsor {
-	margin-bottom: 3.645833vw;
-}
-.ALaCarteTextContainer { /* Sponsored A La Carte product text */
-	font-size: 0.833333vw;
-	color: #777777;
-	text-align: center;
-	width: 10.84375vw;
-	position: absolute;
-	/*bottom: -1.041666vw;*/
-	margin: 0;
-}
-@media (max-width: 1000px) {
-	.ALaCarteTextContainer { /* Sponsored A La Carte product text */
-		font-size: 1.2vw;
-		height: 2.34375vw;
-		bottom: -2.5vw;
-	}
+.SponsorsInnerContainer{
+	  text-align: center;
 }
 
-@media (max-width: 767px) {
-	.SponsorHeadline {
-		font-size: 2.864583vw;
-		max-width: 80vw;
-		margin-top: 5.859375vw;
-		margin-bottom: 3.90625vw;
-	}
-	.CategoryContainer {
-		max-width: 80vw; 
-	}
-	.Sponsor, #crossknowledgeSponsor, #adpSponsor, #inforSponsor {
-		/*width: 153px;
-		height: 110px;
-		padding: 25px 10px 0 10px;*/
-		width: 19.921875vw;
-		height: 14.3229166vw;
-		padding-top: 3.2552083vw;
-	}
-	.Sponsor img { /* the small + icon on hover */
-		/*left: 10px;
-		top: 10px;
-		width: 15px;
-		height: 15px;*/
-		left: 1.3020833vw;
-		top: 1.3020833vw;
-		width: 1.953125vw;
-		height: 1.953125vw;
-	}	
-	.SponsorLogo, #crossknowledgeSponsorBox {
-		/*width: 120px;
-		height: 60px;*/
-		width: 15.625vw;
-		height: 7.8125vw;
-	}
-	#AlaCarteWrapper .Sponsor {
-		margin-bottom: 4.81770833vw;
-	}
-	.ALaCarteTextContainer { /* Sponsored A La Carte product text */
-		font-size: 1.71875vw;
-		width: 19.921875vw;
-		height: 3.90625vw;
-		bottom: -4.16666vw;
-	}
+.Sponsor{
+  width: 18vw;
+  display: inline-block;
+   margin-bottom: 6vw;
+   vertical-align:middle;
 }
 
-@media (max-width: 639px) {
-	.SponsorHeadline {
-		font-size: 6.875vw;
-		background-image: none;
-		margin-top: 10vw;
-		margin-bottom: 8vw;
-	}
-	#SponsorHeadlineAlaCarte {
-		background-image: none; 
-	}
-	.Sponsor, #crossknowledgeSponsor, #adpSponsor, #inforSponsor {
-		width: 39.7vw;
-		height: 28.4172vw;
-		padding-top: 6vw;
-	}
-	.Sponsor img { /* the small + icon on hover */
-		left: 2.65625vw;
-		top: 2.65625vw;
-		width: 3.90625vw;
-		height: 3.90625vw;
-	}
-	.SponsorLogo, #crossknowledgeSponsorBox {
-		width: 30vw;
-		height: 17.1875vw;
-	}
-	#AlaCarteWrapper .Sponsor {
-		margin-bottom: 11.5625vw;
-	}
-	.ALaCarteTextContainer { /* Sponsored A La Carte product text */
-		font-size: 3.4375vw;
-		width: 39.7vw;
-		height: 9.375vw;
-		bottom: -10vw;
-	}
+#SponsorsGrid{
+  width: 87vw;
+  margin: 5.4vw auto 0 auto;
+  text-align: center;
 }
 
-/*Correction for search bar*/
-.token-input-list-facebook {
+.SponsorLogoContainer{
+	  text-align: center;
+}
+
+.SponsorLogo{
+ transition:all 0.3s;
+   max-height: 6.6vw;
+   max-width: 15.6vw;
+   transform:scale(0.8,0.8);
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.SponsorLogo:hover{
+	transform:scale(1,1);
+}
+
+.AlacarteText{
+  font-family: "Roboto", sans-serif;
+  color:#000;
+  font-weight:300;
+  text-transform:uppercase;
+  font-size: 18px;
+  margin-top:2vw;
+}
+
+
+.AlacarteSponsor{
+	 vertical-align:text-bottom;
+}
+
+.ModalArrow{
+	  top: 198px;
   position: absolute;
-  top: -2px;
-  left: 210px;
+  cursor:pointer;
+  width: 47px;
+  height: 47px;
+  background-repeat: no-repeat;
+  background-size:contain;
 }
-/*End Sponsors Grid */
+
+.ModalArrowLeft{
+	background-image:url(../img/sponsors/arrow_left.png);
+ 	
+
+}
+
+.ModalArrowRight{
+background-image:url(../img/sponsors/arrow_right.png);
+  right: 0%;
+
+}
+
+.close-reveal-modal {
+	right: 2vw !important;
+}
+
+@media (max-width: 1025px) {
+.ModalArrow{
+  position: relative;
+     top: 3vw;	
+  width: 6.2vw;
+  height: 18.2vw;
+  display:inline-block;	
+}
+	
+.ModalArrowRight{
+	display:none;
+
+}
+
+.ModalArrowLeft{
+	display:none;
+
+}
+
+.ModalArrowRightMobile{
+  left:4vw;
+background-image:url(../img/sponsors/arrow_right_mobile.png);
+}
+
+.ModalArrowLeftMobile{
+	right: 4vw;	
+	background-image:url(../img/sponsors/arrow_left_mobile.png);
+}
+
+.close-reveal-modal {
+  font-size: 9vw !important;
+}
+
+}
+
+@media (max-width: 1000px) {
+.SponsorHeadline{
+  margin-top: 9.114583vw;
+  margin-bottom: 10.4166vw;
+  font-size: 4.4vw;
+}
+#SponsorsGrid{
+  text-align: left;
+}	
+	
+ .Sponsor{
+  width: 32vw;
+   margin-bottom: 10vw;	
+}
+
+.SponsorLogo{
+  max-height: 11.6vw;
+  max-width: 29.6vw;
+}
+.AlacarteText{
+  font-size: 16px;
+}
+
+}
+@media (max-width: 640px) {
+.SponsorHeadline{
+  font-size: 6.875vw;
+  margin-top: 12.5vw;
+  margin-bottom: 15.625vw;
+}
+.Sponsor{
+  width: 42vw;
+   margin-bottom: 8vw;	
+}
+
+.SponsorLogo{
+	
+}
+.AlacarteText{
+  font-size: 12px;
+}
+
+
+.ModalArrow{
+	  top: -1vw;     	
+  width: 9.2vw;
+  height: 20.2vw;
+}
+
+.close-reveal-modal {
+  font-size: 15vw !important;
+}
+
+}
+
+
+/* Sponsors Modal */
+#emptymodal {
+	overflow-x: hidden;
+	  margin-left: -19.8vw;
+}
+
+#emptymodal p{
+	  text-align:justify;
+	  	font-size: 15px;
+	line-height: 17px;
+	font-family: "Roboto", sans-serif;
+}
+
+.SponsorModal {
+  padding: 0;
+  width: 40.1vw;
+  background-color: rgba(255, 255, 255, 0);
+   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  -box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  
+}
+
+
+.SponsorModalInnerContainer {
+	text-align:justify;
+	  width: 37.9vw;
+ background-color:#E5E5E5;
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0,.4);
+  -box-shadow: 0 0 10px rgba(0,0,0,.4);
+    margin: 0 auto;
+}
+.SponsorModalLogo, .SponsorModalDetails {
+	display: block;
+	margin: 0 auto;
+	vertical-align: top;
+}	
+.SponsorModalLogo {
+	/*width: 200px;*/
+	text-align: center;
+	background-color:#fff;
+	height: 223px; display: flex; justify-content: center; align-items: center;
+}
+.SponsorModalLogo img {
+	width: auto;
+	/*max-width: 200px;*/
+	max-width: 285px;
+	height: auto;
+	max-height: 100px;
+
+}
+
+.SponsorModalDetailsContainer{
+	  /*background-color: #E5E5E5;*/
+	    height: 100%;
+}  
+
+.SponsorModalDetails {
+	width: 100%;
+	max-width: 31vw;
+	margin: 0 auto;
+	font-size: 1.04166vw;
+	color: #322f2f;
+	text-align:center;
+	/*font-size: 17px;*/
+}
+.SponsorModalName {
+	font-size: 25px;
+	margin-top: 0;
+	margin-bottom: -5px;
+	line-height: 150%;
+	color: #322f2f;
+}
+.SponsorModalName a {
+	color: #322f2f;
+	transition: all 0.3s;
+}
+.SponsorModalName a:hover {
+	color: #106ab5;
+	text-decoration: none;
+}
+.SponsorModalName .fa-external-link {
+	font-size: 1.14583vw;
+	padding-left: 0.260416vw;
+	color: #106ab5;	
+}
+
+.SponsorModalSponsorName{
+    padding:1vw 0;
+	color:#456EB2;	
+}
+
+
+.SponsorModalDescription {
+	margin-bottom: 25px;
+	font-size: 17px;
+	width: 100%;
+	/*max-width: 650px;*/
+	line-height: 150%;
+	  max-width: 50vw;
+	  
+}
+
+.SponsorModalSocialIcons {
+	/*display: inline-block;*/
+	text-align: center;
+    margin: 3vw auto 1vw auto;
+	padding-left: 12px;
+}
+.SponsorModalSocialIcon {
+	display: inline-block;	
+	background-repeat: no-repeat;
+	width: 2.60416vw;
+	height: 2.65625vw;
+	margin-right: 0.78125vw;
+}
+.SponsorModalFacebookIcon {
+	background-image: url(../img/sponsors/facebook-icon.png);
+	background-size: cover;
+}
+.SponsorModalTwitterIcon {
+	background-image: url(../img/sponsors/twitter-icon.png);
+	background-size: cover;
+}
+.SponsorModalLinkedinIcon {
+	background-image: url(../img/sponsors/linkedin-icon.png);
+	background-size: cover;
+}
+.SponsorModalBlogIcon {
+	background-image: url(../img/sponsors/blog-icon.png);
+	background-size: cover;
+}
+.SponsorModalLinkIcon {
+	background-image: url(../img/sponsors/link-icon.png);
+	background-size: cover;
+}
+
+.CompanyLink{
+	font-size:15px;
+	font-family: "Roboto", sans-serif;	
+	color:#33669A;
+	  display: block;
+     margin-top: 1.5vw;
+    padding-bottom: 1vw;
+}
+
+
+@media (max-width: 1920px) {
+	.SponsorModalDetails {
+		font-size: 20px;
+	}
+	.SponsorModalName .fa-external-link {
+		font-size: 22px;
+	}
+	.SponsorModalSocialIcon {
+		width: 36px;
+		height: 37px;
+	}
+	
+}
+
+@media (max-width: 1500px) {
+.SponsorModalDescription {
+  max-width: 45vw;
+  margin: 0 auto;
+}	
+	
+}
+
+@media (max-width: 1025px) {
+	
+  #emptymodal {
+     left: 0;
+    margin-left: 0;
+   }
+
+  .SponsorModal {
+	padding: 0;
+	left: 0;
+	width: 100%;
+	
+}
+
+
+	.SponsorModalInnerContainer {	
+		width: 100%;
+	}
+	
+	
+.SponsorModalDescription {
+  max-width: 85vw;
+}   
+
+	.SponsorModalLogo img {
+	margin-bottom: 0;
+}
+
+	.SponsorModalInnerContainer {	
+
+	}
+	
+.SponsorModalDetails {
+	width: 100%;
+	max-width: 100%;
+
+}	
+   
+}
+
+@media (max-width: 1022px) {
+	.SponsorModalLogo {
+		text-align: center;	
+		/*padding-top: 0;*/
+		width: 100%;
+	}
+	.SponsorModalName {	
+		text-align:center;
+	}
+
+		
+}
+
+
+@media (max-width: 1000px) {
+
+
+	.SponsorModalInnerContainer {	
+		margin-bottom: 65px;
+	}
+	
+	.SponsorModalDetails {
+		width: 100%;
+		margin: 0 auto;
+		font-size: 17px;	
+	}
+	.SponsorModalName {
+		font-size: 25px;
+		margin-top: 15px;
+	}
+	.SponsorModalName .fa-external-link {
+		font-size: 22px;
+		padding-left: 5px;	
+	}
+	.SponsorModalSocialIcon {
+
+		margin-right: 17px;
+	}
+	
+
+	
+}
+
+
+@media (max-width: 640px) {
+	
+	
+	.SponsorModalDetails {
+		padding-left: 10px;
+		padding-right: 5px;
+		box-sizing: border-box;
+		
+	}
+	.SponsorModalName {
+		margin-bottom: 15px;	
+	}
+	.SponsorModalName .fa-external-link {
+		font-size: 20px;
+		padding-left: 5px;	
+	}	
+	#emptymodal .SponsorModalInnerContainer p {
+		font-size:13px;
+		line-height: 150%;
+		text-align: justify;
+	}
+	.SponsorModalSocialIcons {
+		float: none;
+		display: block;	
+		margin-top: 30px;
+	}
+	.SponsorModalSocialIcon {
+		margin-left: 0; 
+		margin-right: 15px;	
+
+	}
+	
+.SponsorModalLogo img {
+
+
+	max-width: 200px;
+	/*margin-bottom: 0;*/
+}	
+.CompanyLink{
+	font-size:11px;
+	margin-bottom:1vw;
+}
+
+}
+
+
+
+/* END Sponsors*/

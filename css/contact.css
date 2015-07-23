@@ -75,44 +75,6 @@ header {
 
 
 
-
-/* Contact Members */
-#PeterFile, #SteveMic, #ViktoriaCog, #MarcPeople, #ClaireBadge {
-	padding: 40px 50px 10px 50px;
-	background-repeat:no-repeat;
-}
-#PeterFile { 	background-image:url(../img/contact/file.png); 			}
-#SteveMic {		background-image:url(../img/contact/microphone.png);	}
-#ViktoriaCog {	background-image:url(../img/contact/cog.png);			}
-#MarcPeople {	background-image:url(../img/contact/humans.png);		}
-#ClaireBadge {	background-image:url(../img/contact/badge.png);			}
-
-#SteveTitle {		color:#fc354c;	}
-#PeterTitle {		color:#ff8e2d;	}
-#ViktoriaTitle {	color:#8fbe00;	}
-#MarcTitle {		color:#56aecf;	}
-#ClaireTitle {		color:#fc354c;	}
-
-#ContactMembersContainer {
-    text-align: center;
-	margin: 75px 0 75px 0;
-}
-.ContactMember {
-	display:inline-block;
-	margin:10px;
-}
-.ContactMember p {
-	width: 100%;
-    max-width: 205px;
-    margin: 0 auto;
-	margin-bottom: 7px;
-    text-align: left;
-	font-size: 18px;
-}
-/* END Contact Members */
-
-
-
 /* HRN Contact Info */
 #ContactFormSection {
     width:100%;

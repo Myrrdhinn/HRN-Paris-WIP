@@ -160,6 +160,7 @@ class sponsors_main extends config {
 	//This is the function what collets all the sponsors to the content multi dimensional array.
   public function sponsors_modal_list() {
 		$content = '';
+		$num = 1;
 		
 		//ORDER BY CASE sdc.sponsor_id WHEN 14 THEN 1 END DESC, rand()    :O  ilyenkor a 14-es id-jú lesz mindig az első a többi pedig random utána 
 		//ha meg fix a sorrend akkor meg ORDER BY sdc.id DESC
@@ -214,11 +215,16 @@ class sponsors_main extends config {
 		<div id="'.$achor.'Modal" class="reveal-modal SponsorModal" data-reveal> <a class="close-reveal-modal">&#215;</a>
 		
 		
+		<div class="ModalArrow" data-arrowtype="left" data-current="'.$sponsors['sponsor_id'].'"><img src="img/sponsors/arrow_left.png" alt="Previous"></div>
+		<div class="ModalArrow" data-arrowtype="right" data-current="'.$sponsors['sponsor_id'].'"><img src="img/sponsors/arrow_right.png" alt="Next"></div>
 		
         <div class="SponsorModalInnerContainer">
             <div class="SponsorModalLogo"><img src="img/sponsors/logos/'.$sponsors['image_url'].'" alt="'.$sponsors['alt_name'].'"></div>
             <div class="SponsorModalDetails">';
 
+                $content .= '<div class="SponsorModalDescription">'.$sponsors['sponsor_bio'].'</div>';
+				
+				
                 $content .='<div class="SponsorModalSocialIcons">';
 				
 				 if ($data[10] !='') {
@@ -257,7 +263,11 @@ class sponsors_main extends config {
 					$content .= '<div class="SponsorModalSocialIcon SponsorModalLinkedinIcon"></div></a>';
 				}
 				
-				     $content .= '<a class="CompanyLink" href="'.$sponsors['sponsor_link_url'].'" target="_blank" title="'.$sponsors['sponsor_name'].'"';
+					
+                $content .= '</div>';
+
+               
+                	$content .= '<a class="CompanyLink" href="'.$sponsors['sponsor_link_url'].'" target="_blank" title="'.$sponsors['sponsor_name'].'"';
 				
 				    $content .=' onClick="_gaq.push([';
 				
@@ -265,25 +275,7 @@ class sponsors_main extends config {
 				
 					$content .='">';
 					
-					$content .= ' <div class="SponsorModalSocialIcon SponsorModalLinkIcon"></div></a>';
-					
-/*
-				if ($data[13] !='') {
-					$content .= '<a href="'.$data[13].'" target="_blank" title="'.$sponsors['sponsor_name'].' - Flickr"'; 
-					
-					$content .=' onClick="_gaq.push([';
-				
-				    $content .="'_trackEvent', 'SponsorModalSocialSite', 'ExternalForward', 'Flickr-".$sponsors['sponsor_name']."']);";
-				
-					$content .='">';
-					$content .= '<div class="SponsorModalSocialIcon SponsorModalFlickrinIcon"></div></a>';
-				}
-				*/	
-					
-                $content .= '</div>';
-
-                $content .= '<div class="SponsorModalDescription">'.$sponsors['sponsor_bio'].'</div>';
-                
+					$content .= $sponsors['sponsor_link_url'].'</a>';
                 
 					
                
@@ -291,7 +283,7 @@ class sponsors_main extends config {
         </div>		
 	</div>
         <!-- END '.$sponsors['sponsor_name'].' --> ';
-        	
+        	$num++;
 
 					} //stat_q fetch
 			}  //stat num row end
@@ -300,6 +292,166 @@ class sponsors_main extends config {
 }
 
 
+
+
+	//This is the function what collets all the sponsors to the content multi dimensional array.
+  public function sponsors_modal_first($id) {
+		$content = '';
+		$num = 1;
+		
+		//ORDER BY CASE sdc.sponsor_id WHEN 14 THEN 1 END DESC, rand()    :O  ilyenkor a 14-es id-jú lesz mindig az első a többi pedig random utána 
+		//ha meg fix a sorrend akkor meg ORDER BY sdc.id DESC
+	
+		//Get basic date about a sponsors
+		                    //Name                 Bio         Category              website         image       image alt       sponsor_id
+		$stat_q = "SELECT sn.sponsor_name, sb.sponsor_bio, sc.category_id, sl.sponsor_link_url, idb.image_url, idb.alt_name, sdc.sponsor_id FROM sponsors_name as sn, sponsors_bio as sb, sponsors_data_connection as sdc, sponsors_status as ss, sponsors_category as sc, sponsors_links as sl, image_db as idb, image_connection as ic WHERE sdc.sponsor_name_id=sn.id AND sdc.sponsor_bio_id=sb.id AND sdc.sponsor_id=ss.sponsor_id AND ss.status_id='1' AND sdc.sponsor_link_id=sl.id AND ic.entity_type_id='2' AND ic.entity_id=sdc.sponsor_id AND idb.id=ic.image_db_id AND sdc.sponsor_category_id=sc.id ORDER BY sn.sponsor_name ASC";	
+					
+		$stat = $this->pdo->prepare($stat_q);
+		$stat->execute();
+
+			if ($stat->rowCount() > 0) {
+					while($sponsors = $stat->fetch()){
+
+						
+		//Get the social link types
+		$s = 10;
+				
+			               $social_type_q = "SELECT id, type FROM social_link_types";	
+										  
+							  $stype = $this->pdo->prepare($social_type_q);
+							  $stype->execute();
+							  
+								if ($stype->rowCount() > 0) {	
+									while($link_type = $stype->fetch()){ //facebook
+									 
+											  $social_q = "SELECT sl.social_link_url FROM social_links as sl, social_links_connection as slc WHERE slc.entity_type_id='2' AND slc.entity_id= :id AND slc.link_id=sl.id AND slc.social_link_type_id= :type ORDER BY slc.date DESC LIMIT 0,1";	
+												  
+									  $socials = $this->pdo->prepare($social_q);
+									  $socials->bindValue(':id', $sponsors['sponsor_id'], \PDO::PARAM_INT);
+									  $socials->bindValue(':type', $link_type['id'], \PDO::PARAM_INT);
+									  $socials->execute();
+									  
+										if ($socials->rowCount() > 0) {	
+											$link = $socials->fetch(); //facebook
+											 
+											 $data[$s] = $link['social_link_url'];
+											 $s++;
+										}else {
+											 $data[$s] = '';
+											 $s++;
+										}
+											 
+									 
+									}//link type fetch ends
+								}//if stype row count end
+			
+			
+								
+				$achor = $this->clean_str($sponsors['sponsor_name']);	
+					
+					//if this is the sponsor we are looking for			  
+					if($sponsors['sponsor_id'] == $id){	
+						  
+
+						  
+						  
+						   $content .='
+						   <a class="close-reveal-modal">&#215;</a>
+					
+							   <div class="ModalArrow ModalArrowLeft" data-arrowtype="left" data-current="'.$sponsors['sponsor_id'].'">&nbsp</div>
+							   <div class="ModalArrow ModalArrowRight" data-arrowtype="right" data-current="'.$sponsors['sponsor_id'].'">&nbsp</div>
+					
+						  
+						  <div class="SponsorModalInnerContainer">
+							  <div class="SponsorModalLogo">
+							     <div class="ModalArrow ModalArrowLeftMobile" data-arrowtype="left" data-current="'.$sponsors['sponsor_id'].'">&nbsp</div>
+							     <img src="img/sponsors/logos/'.$sponsors['image_url'].'" alt="'.$sponsors['alt_name'].'">
+							     <div class="ModalArrow ModalArrowRightMobile" data-arrowtype="right" data-current="'.$sponsors['sponsor_id'].'">&nbsp</div>
+							  </div>
+							 <div class="SponsorModalDetailsContainer">
+							  <div class="SponsorModalDetails">
+				  
+				                 <h2 class="SponsorModalSponsorName">'.$sponsors['sponsor_name'].'</h2>';
+				  
+								  $content .= '<div class="SponsorModalDescription">'.$sponsors['sponsor_bio'].'</div>';
+								  
+								  
+								  $content .='<div class="SponsorModalSocialIcons">';
+								  
+								   if ($data[10] !='') {
+									  $content .= '<a href="'.$data[10].'" target="_blank" title="'.$sponsors['sponsor_name'].' - Facebook"'; 
+									  
+									  $content .=' onClick="_gaq.push([';
+								  
+									  $content .="'_trackEvent', 'SponsorModalSocialSite', 'ExternalForward', 'Facebook-".$sponsors['sponsor_name']."']);";
+								  
+									  $content .='">';
+				  
+									  $content .='<div class="SponsorModalSocialIcon SponsorModalFacebookIcon"></div></a>';
+								  }
+								  
+								  if ($data[11] !='') {
+									  $content .= '<a href="'.$data[11].'" target="_blank" title="'.$sponsors['sponsor_name'].' - Twitter"'; 
+									  
+									  $content .=' onClick="_gaq.push([';
+								  
+									  $content .="'_trackEvent', 'SponsorModalSocialSite', 'ExternalForward', 'Twitter-".$sponsors['sponsor_name']."']);";
+								  
+									  $content .='">';
+									  
+									  
+									  $content .= '<div class="SponsorModalSocialIcon SponsorModalTwitterIcon"></div></a>';
+								  }
+								  
+								  if ($data[12] !='') {
+									  $content .= '<a href="'.$data[12].'" target="_blank" title="'.$sponsors['sponsor_name'].' - Linkedin"'; 
+									  
+									  $content .=' onClick="_gaq.push([';
+								  
+									  $content .="'_trackEvent', 'SponsorModalSocialSite', 'ExternalForward', 'Linkedin-".$sponsors['sponsor_name']."']);";
+								  
+									  $content .='">';
+									  $content .= '<div class="SponsorModalSocialIcon SponsorModalLinkedinIcon"></div></a>';
+								  }
+								  
+									  
+									   $content .= '<a class="CompanyLink" href="'.$sponsors['sponsor_link_url'].'" target="_blank" title="'.$sponsors['sponsor_name'].'"';
+								  
+									  $content .=' onClick="_gaq.push([';
+								  
+									  $content .="'_trackEvent', 'SponsorModalCompanySite', 'ExternalForward', '".$sponsors['sponsor_name']."']);";
+								  
+									  $content .='">';
+									  
+									  $content .= $sponsors['sponsor_link_url'].'</a>';
+									  
+								  $content .= '</div>';
+				  
+								 
+
+								  
+									  
+								 
+							  $content .= '</div>
+							  </div>
+						  </div>';		
+
+		
+					}
+		
+        	$num++;
+
+					} //stat_q fetch
+			}  //stat num row end
+			
+		return $content;
+}
+
+/*
+------------------
+SPONSORS PAGE
+-----------------
+*/
 
   public function sponsors_grid($category) {
 		$content = '';
@@ -345,25 +497,27 @@ class sponsors_main extends config {
 						$tempId = 'id="'.$achor.'Sponsor"';
 						$tempIdTwo = 'id="'.$achor.'SponsorBox"';
 					
-					
-					//# ez után kell egy url anchor tag
+	
+	
+	/*	
+	//Old one
+				
+	     $content .='<div class="SponsorLogoContainer">
+            <a href="#'.$achor.'" class="SponsorGridAnchor" data-sponsornametag="'.$achor.'" title="'.$sponsors['sponsor_name'].'"><div class="SponsorLogo" id="'.$tempId.'" style="background-image: url(img/sponsors/logos/'.$sponsors['image_url'].');"></div></a>
+        </div>';
+	*/
+	
+ 
+
 			 $content .=' <!-- '.$sponsors['sponsor_name'].' -->
-            <a href="#'.$achor.'" class="SponsorGridAnchor" data-sponsornametag="'.$achor.'"><div class="Sponsor" '.$tempId.' data-sponsornum="'.$sponsors['sponsor_id'].'" '.$tag.'>
-                <div '.$tempIdTwo.' class="SponsorLogo" style="background-image: url(img/sponsors/logos/'.$sponsors['image_url'].');"></div>
-                <img src="img/sponsors/sponsor-hover-plus-icon.png" alt="+">
+            <a href="#" class="SponsorGridAnchor" data-sponsornametag="'.$achor.'" data-sponsornum="'.$sponsors['sponsor_id'].'" data-reveal-id="emptymodal"><div class="Sponsor" '.$tempId.' data-sponsornum="'.$sponsors['sponsor_id'].'" '.$tag.'>
+                <div '.$tempIdTwo.' class="SponsorLogoContainer">
+			 	    <img data-img="'.$sponsors['image_url'].'" class="SponsorLogo" src="img/sponsors/logos/'.$sponsors['image_url'].'" alt="'.$sponsors['sponsor_name'].'">
+				</div>
+               
             </div>
             </a>
-            <!-- END '.$sponsors['sponsor_name'].' --> ';		
-									 
-
-			/*					
-		$content .='<!-- '.$sponsors['sponsor_name'].' -->
-        <div class="Sponsor">
-            <div class="SponsorLogo" data-sponsortag="'.$taglist.'"><img src="img/sponsors/logos/'.$sponsors['image_url'].'" alt="'.$sponsors['alt_name'].'"></div>
-
-        </div>
-        <!-- END '.$sponsors['sponsor_name'].' --> ';
-        	*/
+            <!-- END '.$sponsors['sponsor_name'].' --> ';	
 			
 
 					} //stat_q fetch
@@ -390,6 +544,7 @@ class sponsors_main extends config {
 					while($sponsors = $stat->fetch()){
 						
 	                                  $taglist = '';
+
 									  
 									  		 
 								      $tags_q = "SELECT filter_sub_id FROM sponsors_filter_connection WHERE sponsor_id = :id";	
@@ -410,32 +565,42 @@ class sponsors_main extends config {
 					} else {
 					   $tag = '';	
 					}
+					
+
 											 
 			$achor = $this->clean_str($sponsors['sponsor_name']);
-									 
-			 $content .=' <!-- '.$sponsors['sponsor_name'].' -->
-            <a href="sponsors#'.$achor.'"><div class="Sponsor" data-sponsornum="'.$sponsors['sponsor_id'].'" '.$tag.'>
-                <div class="SponsorLogo" style="background-image: url(img/sponsors/logos/'.$sponsors['image_url'].');"></div>
-                <img src="img/sponsors/sponsor-hover-plus-icon.png" alt="+">
-				<p class="ALaCarteTextContainer">'.$sponsors['text'].'</p>
+			
+						$tempId = 'id="'.$achor.'Sponsor"';
+						$tempIdTwo = 'id="'.$achor.'SponsorBox"';
+			
+						 $content .=' <!-- '.$sponsors['sponsor_name'].' -->
+             <a href="#" class="SponsorGridAnchor AlaCarteAnchor" data-sponsornametag="'.$achor.'" data-sponsornum="'.$sponsors['sponsor_id'].'" data-reveal-id="emptymodal"><div class="Sponsor AlacarteSponsor" '.$tempId.' data-sponsornum="'.$sponsors['sponsor_id'].'" '.$tag.'>
+                <div '.$tempIdTwo.' class="SponsorLogoContainer">
+			 	    <img data-img="'.$sponsors['image_url'].'" class="SponsorLogo" src="img/sponsors/logos/'.$sponsors['image_url'].'" alt="'.$sponsors['sponsor_name'].'">
+					<p class="AlacarteText">'.$sponsors['text'].'</p>
+				</div>
+               
             </div>
             </a>
-            <!-- END '.$sponsors['sponsor_name'].' --> ';		
-									 
-						/*		
-		$content .='<!-- '.$sponsors['sponsor_name'].' -->
-        <div class="Sponsor">
-            <div class="SponsorLogo" data-sponsortag="'.$taglist.'"><img src="img/sponsors/logos/'.$sponsors['image_url'].'" alt="'.$sponsors['alt_name'].'"></div>
-
-        </div>
-        <!-- END '.$sponsors['sponsor_name'].' --> ';
-        	*/
-
+            <!-- END '.$sponsors['sponsor_name'].' --> ';	
+			
+			
+		/*	
+		old
+		
+				     $content .='<div class="SponsorLogoContainer ALaCarte">
+            <a href="#'.$achor.'" class="SponsorGridAnchor" data-sponsornametag="'.$achor.'" title="'.$sponsors['sponsor_name'].'"><div class="SponsorLogo" id="'.$tempId.'" style="background-image: url(img/sponsors/logos/'.$sponsors['image_url'].');"></div>
+			<p>'.$sponsors['text'].'</p></a>
+        </div>';
+									
+*/
 					} //stat_q fetch
 			}  //stat num row end
 			
 		return $content;
 }
+//-----------------------------------------
+
 
 public function get_search_data() {
 	$values = array();

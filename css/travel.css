@@ -1,0 +1,183 @@
+@charset "utf-8";
+/* CSS Document for the Venue page */
+
+body {
+	background-color: #fff;	
+}
+body * {
+	box-sizing: border-box;	
+}
+
+/* Header */
+header {
+	background-image:url(../img/travel/travelheader.jpg);
+	background-repeat:no-repeat;
+	background-size: contain;
+	width:100%;
+	height:27.08333vw; 
+	color:#fff;
+	margin-top: 4.0625vw;
+	margin-bottom: -5px;
+}
+#HeaderInnerContainer {
+	padding-top: 4.6875vw;
+	padding-left: 16.666666vw;	
+}
+header h1 {
+	font-size:3.125833vw;
+	margin-top: 0px;
+	margin-bottom: 2.4vw;
+}
+header p {
+	width: 100%;
+	max-width:29vw;
+	font-size:1.25vw;
+	line-height: 1.5625vw;
+	margin-bottom: 3.9vw;
+}
+#BookNowButton {
+	font-size: 1.25vw;
+	font-weight: 600;
+	background-color: rgba(255, 255, 255, 0);
+	color: #fff;
+	border: 0.15625vw solid #fff;
+	padding-top: 0.8vw;
+	max-width: 15.625vw;
+	height: 3.6458333vw;
+	text-align: center;
+	
+	text-transform: uppercase;
+	transition: all 0.3s ease-in;
+}
+#BookNowButton:hover {
+	background-color: #106ab5;
+	border: 0.15625vw solid #106ab5;
+	color:#fff;
+}
+@media (max-width: 1000px) {
+	header {
+		margin-top: 50px;	
+	}
+}
+@media (max-width: 767px) {
+	header {
+		display: none;	
+	}
+}
+/* END Header */
+
+/* Tab Panel Buttons */
+#TabPanelButtonsContainer {
+	width: 100%;	
+	max-width: 1100px;
+	margin: 0 auto;
+	margin-top: 90px;
+	margin-bottom: 50px;
+	font-size: 0;
+	text-align: center;
+}
+.TabPanelButton {
+	width: 100%;
+	max-width: 256px;
+	height: 50px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 16px;	
+	text-align: center;
+	background-color: #e0e0e0;
+	color: #737373;
+	border-bottom: 5px solid #e0e0e0;
+	display: inline-block;
+	text-transform: uppercase;
+	padding-top: 15px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.TabPanelButton:hover, .ClickedTabButton {
+	color: #e0e0e0;
+	background-color: #106ab5;
+	border-bottom: 5px solid #7bbcd2;
+}
+#AirlineButton, #HotelsButton, #PartnerProgramButton {
+	margin-right: 2px;	
+}
+@media (max-width: 1280px) {
+#TabPanelButtonsContainer {
+	max-width: 85.9375vw;
+	margin-top: 7.03125vw;
+	margin-bottom: 3.90625vw;
+}
+.TabPanelButton {
+	max-width: 20vw;
+	height: 3.90625vw;
+	font-size: 1.25vw;	
+	padding-top: 1vw;
+	border-bottom: 0.390625vw solid #e0e0e0;
+}
+.TabPanelButton:hover, .ClickedTabButton {
+	border-bottom: 0.390625vw solid #7bbcd2;
+}
+#AirlineButton, #HotelsButton, #PartnerProgramButton {
+	margin-right: 0.15625vw;	
+}	
+}
+@media (max-width: 1000px) {
+#TabPanelButtonsContainer {
+	max-width: 100%;
+	margin-top: 60px;
+	margin-bottom: 35px;
+}
+.TabPanelButton {
+	max-width: 172px;
+	height: 35px;
+	font-size: 14px;	
+	padding-top: 7px;
+	border-bottom: 3px solid #e0e0e0;
+}
+.TabPanelButton:hover, .ClickedTabButton {
+	border-bottom: 3px solid #7bbcd2;
+}
+#AirlineButton, #HotelsButton, #PartnerProgramButton {
+	margin-right: 2px;	
+}			
+}
+/* END Tab Panel Buttons */
+
+#TabPanelWrapper {
+	width: 100%;
+	max-width: 1024px;
+	margin: 0 auto;
+}
+.TabPanel {
+	overflow: hidden;
+	/*height: 100%;
+	max-height: 0;*/
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	transition: all 1s;
+	display: none;
+}
+/* Airline */
+#Airline {
+	/*max-height: 100%;*/
+	display: block;
+}
+/* END Airline */
+
+/* Hotels */
+#Hotels {
+	/*max-height: 0;*/
+}
+/* END Hotels */
+
+/* Partner Program */
+#PartnerProgram {
+	/*max-height: 0;*/
+}
+/* END Partner Program */
+
+/* Getting There */
+#GettingThere {
+	/*max-height: 0;*/
+}
+/* END Getting There */

@@ -116,8 +116,8 @@ public function speakers() {
       $content .='<li id="Speakers'.$data['speaker_tag'].'">
         <div class="SpeakersImageContainer">
 			  <div class="SpeakerOverlay">
-	            <h1 class="FontRaleway">'.$data['speaker_name'].'</h1>
-		        <h3 class="FontRaleway">'.$data['company_name'].'</h3>
+	            <h3 class="FontRaleway">'.$data['speaker_name'].'</h3>
+		        <h4 class="FontRaleway">'.$data['company_name'].'</h4>
 	         </div>
 	   <img class="Square" alt="'.$data['speaker_name'].'" src="img/speakers/SpeakerPhotos/'.$data['image_url'].'" title="'; 
 		$content .= "<h3 class='SpeakerName'>".$data['speaker_name']."</h3><p class='SpeakerCompany'>".$data['company_name']."</p><p class='SpeakerInfo'>".$mpbio_text[0]."</p><p class='SpeakerHoverLinks'><a title='".$Socials[1]."' target='_blank' href='".$Socials[1]."'><i class='fa fa-twitter TwitterColor'></i></a><a title='".$data['company_name']."' target='_blank' href='".$CompanyWebsite['company_website']."'><i class='fa fa-link TwitterColor'></i></a></p>";

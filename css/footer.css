@@ -8,19 +8,19 @@ footer {
 	background-repeat: repeat;
 	color: #fff;
 }
-footer h1 {
+footer h2 {
 	font-size: 24px;
 	font-weight: 400;
 	margin-top: 0;
 	margin-bottom: 25px;	
 }
-footer h2 {
+footer h3 {
 	font-size: 20px;
 	font-weight: 400;
 	margin-top: 0;
 	margin-bottom: 10px;	
 }
-footer h2 .fa {
+footer h3 .fa {
 	padding-right: 7px;	
 }
 #FooterWrapper {
@@ -58,7 +58,8 @@ footer h2 .fa {
 	margin-bottom: 40px;
 }
 #FooterRightWrapper form {
-	margin-bottom: 90px;	
+	margin-bottom: 90px;
+	font-size: 0;	
 }
 #FooterRightWrapper form input {
 	height: 70px;
@@ -131,7 +132,6 @@ footer h2 .fa {
 	padding-top: 12px;
 	padding-bottom: 8px;
 	background-color: rgba(0, 0, 0, 0.38);
-	/*background-color: rgba(51, 51, 46, 0.36);*/
 	clear: both;
 	text-align: center;
 }
@@ -192,12 +192,12 @@ footer h2 .fa {
 		max-width: 100%;
 		padding-top: 42px;	
 	}
-	footer h1 {
+	footer h2 {
 		font-size: 20px;
 		margin-top: 0;
 		margin-bottom: 25px;	
 	}
-	footer h2 {
+	footer h3 {
 		font-size: 18px;
 		margin-bottom: 15px;	
 	}
@@ -231,7 +231,7 @@ footer h2 .fa {
 		margin-bottom: 45px;
 		text-align: center;	
 	}
-	#FooterRightWrapper form h1 {
+	#FooterRightWrapper form h2 {
 		text-align: left;	
 	}
 	#FooterRightWrapper form input {
